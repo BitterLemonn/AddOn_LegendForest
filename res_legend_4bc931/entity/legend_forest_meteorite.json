@@ -1,0 +1,33 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "rolling": "animation.meteorite.rolling"
+            },
+            "enable_attachables": false,
+            "geometry": {
+                "default": "geometry.meteorite"
+            },
+            "identifier": "legend_forest:meteorite",
+            "materials": {
+                "default": "entity_emissive_alpha"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "particle_effects": {
+                "meteorite_flame": "legend_forest:meteorite_flame",
+                "meteorite_smoke": "legend_forest:meteorite_smoke"
+            },
+            "scripts": {
+                "animate": [
+                   "rolling"
+                ]
+            },
+            "textures": {
+                "default": "textures/entity/meteorite"
+            }
+        }
+    }
+}

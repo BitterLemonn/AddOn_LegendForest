@@ -1,0 +1,26 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "legend_forest:bone_meal_recipe_3"
+        },
+        "priority": 0,
+        "ingredients": [
+            {
+                "item": "legend_forest:deer_horn"
+            }
+        ],
+        "result": {
+            "item": "minecraft:bone_meal",
+            "count": 1
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "legend_forest:deer_horn"
+            }
+        ]
+    }
+}

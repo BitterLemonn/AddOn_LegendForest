@@ -1,0 +1,128 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:entity": {
+        "component_groups": {
+            "legend_forest:disappeared": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "netease:ban_bandwidth_optimization": {},
+            "minecraft:behavior.look_at_player": {
+                "look_distance": 8,
+                "priority": 6
+            },
+            "minecraft:behavior.random_hover": {
+                "priority": 1,
+                "xz_dist": 8,
+                "y_dist": 8,
+                "y_offset": -1,
+                "interval": 1,
+                "hover_height": [1, 4]
+            },
+            "minecraft:behavior.float": {
+                "priority": 20
+            },
+            "minecraft:damage_sensor": {
+                "triggers": {
+                    "cause": "fall",
+                    "deals_damage": false
+                }
+            },
+            "minecraft:leashable": {
+                "soft_distance": 4.0,
+                "hard_distance": 6.0,
+                "max_distance": 10.0
+            },
+            "minecraft:breathable": {
+                "breathes_air": true,
+                "breathes_water": false,
+                "suffocate_time": 0,
+                "total_supply": 15
+            },
+            "minecraft:can_climb": {
+            },
+            "minecraft:movement": {
+                "value": 0.4
+            },
+            "minecraft:flying_speed": {
+                "value": 0.2
+            },
+            "minecraft:navigation.hover": {
+                "can_path_over_water": true,
+                "can_sink": false,
+                "can_path_from_air": true,
+                "avoid_water": true,
+                "avoid_damage_blocks": true,
+                "avoid_sun": false
+            },
+            "minecraft:movement.hover": {},
+            "minecraft:jump.static": {},
+            "minecraft:can_fly": {},
+            "minecraft:collision_box": {
+                "height": 0.4,
+                "width": 0.3
+            },
+            "minecraft:experience_reward": {
+                "on_death": "query.last_hit_by_player ? 2 : 0"
+            },
+            "minecraft:health": {
+                "max": 4.0,
+                "value": 4.0
+            },
+            "minecraft:nameable": {
+            },
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:scale": {
+                "value": 0.7
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "mob",
+                    "shimmer_bug",
+                    "animal",
+                    "arthropod"
+                ]
+            },
+            "minecraft:underwater_movement": {
+                "value": 0.15
+            },
+            "minecraft:physics": {},
+            "minecraft:timer": {
+                "looping": true,
+                "time": [180, 240],
+                "time_down_event": {
+                    "event": "legend_forest:despawn"
+                }
+            },
+            "minecraft:breedable": {
+                "breed_items": [
+                    "legend_forest:gold_branch"
+                ],
+                "require_tame": false
+            },
+            "minecraft:behavior.breed": {
+                "priority": 3,
+                "speed_multiplier": 0.75
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:shimmer_bug",
+            "is_experimental": false,
+            "is_spawnable": true,
+            "is_summonable": true
+        },
+        "events": {
+            "legend_forest:despawn": {
+                "add": {
+                    "component_groups": [
+                        "legend_forest:disappeared"
+                    ]
+                }
+            }
+        }
+    }
+}

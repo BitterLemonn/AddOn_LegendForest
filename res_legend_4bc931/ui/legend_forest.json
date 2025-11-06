@@ -1,0 +1,43 @@
+{
+    "boss_health_bar_filled": {
+        "$clip_ratio_label_text": "#clip_ratio",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "bindings": [
+            {
+                "binding_collection_name": "boss_bars",
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio",
+                "binding_type": "collection"
+            }
+        ],
+        "clip_direction": "left",
+        "clip_pixelperfect": false,
+        "layer": 2,
+        "offset": [0, 10],
+        "size": [183, 13],
+        "texture": "textures/ui/filled_progress_bar",
+        "type": "image",
+        "visible": false
+    },
+    "boss_health_bar_frame": {
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "layer": 1,
+        "offset": [0, 10],
+        "size": [183, 13],
+        "texture": "textures/ui/empty_progress_bar",
+        "type": "image",
+        "visible": false
+    },
+    "namespace": "legend_forest",
+    "ui_tick": {
+        "type": "screen",
+        "bindings": [
+            {
+                "binding_condition": "always",
+                "binding_name": "#main.gametick"
+            }
+        ]
+    }
+}

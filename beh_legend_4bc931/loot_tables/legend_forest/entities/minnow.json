@@ -1,0 +1,14 @@
+{
+    "pools": [
+        {
+            "entries": [
+                {
+                    "name": "legend_forest:minnow",
+                    "type": "item",
+                    "weight": 1
+                }
+            ],
+            "rolls": 1
+        }
+    ]
+}

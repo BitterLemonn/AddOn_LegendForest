@@ -1,0 +1,48 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 16
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0.05
+            },
+            "minecraft:destroy_time": {
+                "value": 2.0
+            },
+            "minecraft:explosion_resistance": {
+                "value": 3.0
+            },
+            "minecraft:flammable": {
+                "burn_odds": 20,
+                "flame_odds": 5
+            },
+            "minecraft:map_color": {
+                "color": "#2b4451"
+            },
+            "netease:pathable": {
+                "value": false
+            },
+            "netease:render_layer": {
+                "value": "opaque"
+            },
+            "netease:solid": {
+                "value": true
+            },
+            "netease:tier": {
+                "destroy_special": false,
+                "digger": "hatchet",
+                "level": 0
+            },
+            "netease:fuel": {
+                "duration": 15
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:planks_shimmer",
+            "register_to_creative_menu": true,
+            "category": "legend_forest"
+        }
+    }
+}

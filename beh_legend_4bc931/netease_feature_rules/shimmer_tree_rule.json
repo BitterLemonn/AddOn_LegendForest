@@ -1,0 +1,52 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:feature_rules": {
+        "conditions": {
+            "minecraft:biome_filter": [
+                {
+                    "any_of": [
+                        {
+                            "operator": "==",
+                            "test": "has_biome_tag",
+                            "value": "shimmer_forest"
+                        },
+                        {
+                            "operator": "==",
+                            "test": "has_biome_tag",
+                            "value": "shimmer_forest_hills"
+                        },
+                        {
+                            "operator": "==",
+                            "test": "has_biome_tag",
+                            "value": "shimmer_flower_forest"
+                        }
+                    ]
+                }
+            ],
+            "placement_pass": "after_surface_pass"
+        },
+        "description": {
+            "identifier": "legend_forest:shimmer_tree_rule",
+            "places_feature": "legend_forest:shimmer_tree_feature"
+        },
+        "distribution": {
+            "coordinate_eval_order": "zxy",
+            "iterations": "query.noise(variable.originx, variable.originz) < 0.5 ? 20 : 14",
+            "x": {
+                "distribution": "uniform",
+                "extent": [
+                    0,
+                    16
+                ]
+            },
+            "y": "query.get_height_at(variable.originx, variable.originz)",
+            "z": {
+                "distribution": "uniform",
+                "extent": [
+                    0,
+                    16
+                ]
+            }
+        }
+    }
+}

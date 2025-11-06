@@ -1,0 +1,156 @@
+{
+    "resource_pack_name": "vanilla",
+    "texture_data": {
+        "legend_forest:amber_upgrade_smithing_template": {
+            "textures": "textures/items/amber_upgrade_smithing_template"
+        },
+        "legend_forest:blue_stew": {
+            "textures": "textures/items/blue_stew"
+        },
+        "legend_forest:book_disenchanted": {
+            "textures": "textures/items/book_disenchanted"
+        },
+        "legend_forest:bucket_minnow": {
+            "textures": "textures/items/bucket_minnow"
+        },
+        "legend_forest:bug_net": {
+            "textures": "textures/items/bug_net"
+        },
+        "legend_forest:cooked_minnow": {
+            "textures": "textures/items/cooked_minnow"
+        },
+        "legend_forest:cooked_porkchop": {
+            "textures": "textures/items/cooked_porkchop"
+        },
+        "legend_forest:cooked_vension": {
+            "textures": "textures/items/cooked_vension"
+        },
+        "legend_forest:dead_sword_easter": {
+            "textures": "textures/items/dead_sword_easter"
+        },
+        "legend_forest:deer_horn": {
+            "textures": "textures/items/deer_horn"
+        },
+        "legend_forest:empty_fur_bag": {
+            "textures": "textures/items/empty_fur_bag"
+        },
+        "legend_forest:fire_crystal": {
+            "textures": "textures/items/fire_crystal"
+        },
+        "legend_forest:forest_amber": {
+            "textures": "textures/items/forest_amber"
+        },
+        "legend_forest:forest_will": {
+            "textures": "textures/items/forest_will"
+        },
+        "legend_forest:fur_cape": {
+            "textures": "textures/items/fur_cape"
+        },
+        "legend_forest:fur_leather": {
+            "textures": "textures/items/fur_leather"
+        },
+        "legend_forest:goblin_ear": {
+            "textures": "textures/items/goblin_ear"
+        },
+        "legend_forest:goblin_soup": {
+            "textures": "textures/items/goblin_soup"
+        },
+        "legend_forest:goblin_teeth": {
+            "textures": "textures/items/goblin_teeth"
+        },
+        "legend_forest:golden_minnow": {
+            "textures": "textures/items/golden_minnow"
+        },
+        "legend_forest:herb": {
+            "textures": "textures/items/herb"
+        },
+        "legend_forest:herb_bag": {
+            "textures": "textures/items/herb_bag"
+        },
+        "legend_forest:ice_gem": {
+            "textures": "textures/items/ice_gem"
+        },
+        "legend_forest:mal_broken_horn": {
+            "textures": "textures/items/mal_broken_horn"
+        },
+        "legend_forest:mal_fire_wand": {
+            "textures": "textures/items/mal_fire_wand"
+        },
+        "legend_forest:mal_ice_wand": {
+            "textures": "textures/items/mal_ice_wand"
+        },
+        "legend_forest:malfurion_wand": {
+            "textures": "textures/items/malfurion_wand"
+        },
+        "legend_forest:minnow": {
+            "textures": "textures/items/minnow"
+        },
+        "legend_forest:moon_crystal": {
+            "textures": "textures/items/moon_crystal"
+        },
+        "legend_forest:mushroom_meat": {
+            "textures": "textures/items/mushroom_meat"
+        },
+        "legend_forest:pnakotic_manuscript": {
+            "textures": "textures/items/pnakotic_manuscript"
+        },
+        "legend_forest:porkchop": {
+            "textures": "textures/items/porkchop"
+        },
+        "legend_forest:raw_moon_ore": {
+            "textures": "textures/items/raw_moon_ore"
+        },
+        "legend_forest:sapling_shimmer_item": {
+            "textures": "textures/items/sapling_shimmer"
+        },
+        "legend_forest:shaman_headbone": {
+            "textures": "textures/items/shaman_headbone"
+        },
+        "legend_forest:shaman_wand": {
+            "textures": "textures/items/shaman_wand"
+        },
+        "legend_forest:shimmer_bug": {
+            "textures": "textures/items/shimmer_bug"
+        },
+        "legend_forest:splendor_boots": {
+            "textures": "textures/items/splendor_boots"
+        },
+        "legend_forest:splendor_chestplate": {
+            "textures": "textures/items/splendor_chestplate"
+        },
+        "legend_forest:splendor_helmet": {
+            "textures": "textures/items/splendor_helmet"
+        },
+        "legend_forest:splendor_ingot": {
+            "textures": "textures/items/splendor_ingot"
+        },
+        "legend_forest:splendor_leggings": {
+            "textures": "textures/items/splendor_leggings"
+        },
+        "legend_forest:star_axe": {
+            "textures": "textures/items/star_axe"
+        },
+        "legend_forest:star_hoe": {
+            "textures": "textures/items/star_hoe"
+        },
+        "legend_forest:star_ingot": {
+            "textures": "textures/items/star_ingot"
+        },
+        "legend_forest:star_nugget": {
+            "textures": "textures/items/star_nugget"
+        },
+        "legend_forest:star_pickaxe": {
+            "textures": "textures/items/star_pickaxe"
+        },
+        "legend_forest:star_shovel": {
+            "textures": "textures/items/star_shovel"
+        },
+        "legend_forest:star_sword": {
+            "textures": "textures/items/star_sword"
+        },
+        "legend_forest:vension": {
+            "textures": "textures/items/vension"
+        }
+    },
+    "texture_name": "atlas.items"
+}

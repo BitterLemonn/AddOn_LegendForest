@@ -1,0 +1,134 @@
+{
+    "dy_load_list": [
+        "sounds/legend_forest_music/shimmer_forest/spring_forest",
+        "sounds/legend_forest_music/shimmer_forest/the_old_forest"
+    ],
+    "format_version": "1.14.0",
+    "sound_definitions": {
+        "dy_load_list": [
+            "sounds/legend_forest_music/shimmer_forest/spring_forest",
+            "sounds/legend_forest_music/shimmer_forest/the_old_forest"
+        ],
+        "legend_forest_mob.goblin.death": {
+            "category": "hostile",
+            "sounds": [
+                {
+                    "name": "sounds/legend_forest_mob/goblin/death1",
+                    "volume": 0.35
+                }
+            ]
+        },
+        "legend_forest_mob.goblin.hurt": {
+            "category": "hostile",
+            "sounds": [
+                {
+                    "name": "sounds/legend_forest_mob/goblin/hurt1",
+                    "volume": 0.35
+                }
+            ]
+        },
+        "legend_forest_mob.goblin.say": {
+            "category": "hostile",
+            "sounds": [
+                {
+                    "name": "sounds/legend_forest_mob/goblin/say1",
+                    "volume": 0.35
+                }
+            ]
+        },
+        "legend_forest_mob.malfurion.attack": {
+            "category": "hostile",
+            "sounds": [
+                {
+                    "name": "sounds/legend_forest_mob/malfurion/attack1",
+                    "volume": 2
+                },
+                {
+                    "name": "sounds/legend_forest_mob/malfurion/attack2",
+                    "volume": 2
+                }
+            ]
+        },
+        "legend_forest_mob.malfurion.death": {
+            "category": "hostile",
+            "sounds": [
+                {
+                    "name": "sounds/legend_forest_mob/malfurion/death1"
+                }
+            ]
+        },
+        "legend_forest_mob.malfurion.fire_attack": {
+            "category": "hostile",
+            "sounds": [
+                {
+                    "name": "sounds/legend_forest_mob/malfurion/attack3"
+                }
+            ]
+        },
+        "legend_forest_mob.malfurion.hurt": {
+            "category": "hostile",
+            "sounds": [
+                {
+                    "name": "sounds/legend_forest_mob/malfurion/hurt1"
+                },
+                {
+                    "name": "sounds/legend_forest_mob/malfurion/hurt2"
+                }
+            ]
+        },
+        "legend_forest_mob.malfurion.roaring": {
+            "category": "hostile",
+            "sounds": [
+                {
+                    "name": "sounds/legend_forest_mob/malfurion/roaring"
+                }
+            ]
+        },
+        "legend_forest_mob.malfurion.step": {
+            "category": "hostile",
+            "sounds": [
+                {
+                    "name": "sounds/legend_forest_mob/malfurion/step1"
+                }
+            ]
+        },
+        "legend_forest_mob.malfurion.teleporting": {
+            "category": "hostile",
+            "sounds": [
+                {
+                    "name": "sounds/legend_forest_mob/malfurion/teleporting"
+                }
+            ]
+        },
+        "legend_forest_mob.shimmer_bug.say": {
+            "category": "neutral",
+            "sounds": [
+                {
+                    "name": "sounds/legend_forest_mob/shimmer_bug/say1"
+                }
+            ]
+        },
+        "music.legend_forest.shimmer_forest_1": {
+            "category": "music",
+            "sounds": [
+                {
+                    "load_on_low_memory": true,
+                    "name": "sounds/legend_forest_music/shimmer_forest/spring_forest",
+                    "stream": true,
+                    "volume": 0.2
+                }
+            ]
+        },
+        "music.legend_forest.shimmer_forest_2": {
+            "category": "music",
+            "sounds": [
+                {
+                    "load_on_low_memory": true,
+                    "name": "sounds/legend_forest_music/shimmer_forest/the_old_forest",
+                    "stream": true,
+                    "volume": 0.2
+                }
+            ]
+        }
+    }
+}

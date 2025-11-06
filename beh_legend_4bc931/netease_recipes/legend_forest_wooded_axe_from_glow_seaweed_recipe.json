@@ -1,0 +1,36 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "legend_forest:wooden_axe_from_glow_seaweed_recipe"
+        },
+        "key": {
+            "I": {
+                "item": "minecraft:stick"
+            },
+            "O": {
+                "item": "legend_forest:planks_glow_seaweed"
+            }
+        },
+        "pattern": [
+            "OO",
+            "OI",
+            " I"
+        ],
+        "result": {
+            "count": 1,
+            "item": "minecraft:wooden_axe"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "minecraft:stick"
+            },
+            {
+                "item": "legend_forest:planks_glow_seaweed"
+            }
+        ]
+    }
+}

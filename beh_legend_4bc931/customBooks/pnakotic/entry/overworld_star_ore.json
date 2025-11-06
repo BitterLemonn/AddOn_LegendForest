@@ -1,0 +1,26 @@
+{
+    "parent": "overworld",
+    "icon": "textures/book_imgs/icon/star_ore_icon",
+    "title": "星粒矿石",
+    "pages": [
+        {
+            "type": "imagePage",
+            "image": "textures/book_imgs/imgs/star_ore",
+            "imageSize": [80, 70],
+            "content": "星粒矿石，一种神秘的矿石。原本只会在神话之森维度中出现，但是由于位面的交错导致其遍布主世界各地。",
+            "contentTextSize": 9
+        },
+        {
+            "type": "tableRecipePage",
+            "recipeId": "legend_forest:star_ingot",
+            "content": "将零碎的星粒捶打成锭，可以制作一些比较实用的工具或武器，其与月结晶的相性也十分不错可以锻打成合金。"
+        },
+        {
+            "type": "tableRecipePage",
+            "recipeId": "legend_forest:splendor_ingot",
+            "content": "将星粒锭与月结晶锭合成的星辉合金，其延展性足以制作合适的盔甲。"
+        }
+    ],
+    "sortnum": 1,
+    "isLocked": false
+}

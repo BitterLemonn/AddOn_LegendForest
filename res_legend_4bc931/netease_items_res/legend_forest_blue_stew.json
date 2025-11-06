@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "legend_forest:blue_stew"
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:blue_stew",
+            "register_to_create_menu": true
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "legend_forest:purple_dye_recipe"
+        },
+        "priority": 0,
+        "ingredients": [
+            {
+                "item": "legend_forest:shimmer_rose"
+            }
+        ],
+        "result": {
+            "item": "minecraft:purple_dye",
+            "count": 1
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "legend_forest:shimmer_rose"
+            }
+        ]
+    }
+}

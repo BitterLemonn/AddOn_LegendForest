@@ -1,0 +1,13 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:scatter_feature": {
+        "description": {
+            "identifier": "legend_forest:shimmer_lose_warehouse_scatter_feature"
+        },
+        "places_feature": "legend_forest:shimmer_lose_warehouse_feature",
+        "iterations": 1,
+        "x": 0,
+        "y": -1,
+        "z": 0
+    }
+}

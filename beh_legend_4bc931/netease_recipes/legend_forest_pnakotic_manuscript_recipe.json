@@ -1,0 +1,32 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "legend_forest:pnakotic_manuscript_recipe"
+        },
+        "priority": 0,
+        "ingredients": [
+            {
+                "item": "legend_forest:sapling_shimmer_item"
+            },
+            {
+                "item": "minecraft:book"
+            }
+        ],
+        "result": {
+            "item": "legend_forest:pnakotic_manuscript",
+            "count": 1
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "legend_forest:sapling_shimmer_item"
+            },
+            {
+                "item": "minecraft:book"
+            }
+        ]
+    }
+}

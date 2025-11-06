@@ -1,0 +1,36 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "legend_forest:log_shimmer_core_recipe"
+        },
+        "key": {
+            "O": {
+                "item": "legend_forest:root_shimmer"
+            },
+            "U": {
+                "item": "legend_forest:splendor_ingot"
+            }
+        },
+        "pattern": [
+            " O ",
+            "OUO",
+            " O "
+        ],
+        "result": {
+            "count": 1,
+            "item": "legend_forest:log_shimmer_core"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "legend_forest:root_shimmer"
+            },
+            {
+                "item": "legend_forest:splendor_ingot"
+            }
+        ]
+    }
+}

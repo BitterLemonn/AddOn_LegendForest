@@ -1,0 +1,65 @@
+{
+    "format_version": "1.13.0",
+    "animation_controllers": {
+        "controller.animation.mushroom_knight.move": {
+            "initial_state": "idle",
+            "states": {
+                "idle": {
+                    "transitions": [
+                        {"walking": "q.ground_speed > 0.05"}
+                    ],
+                    "blend_transition": 0.2
+                },
+                "walking": {
+                    "animations": [
+                        "move"
+                    ],
+                    "transitions": [
+                        {"idle": "q.ground_speed < 0.05"}
+                    ],
+                    "blend_transition": 0.2
+                }
+            }
+        },
+        "controller.animation.mushroom_knight.attack": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {"sweep_attack": "q.mark_variant == 1"},
+                        {"head_tun": "q.mark_variant == 2"},
+                        {"storm_attack": "q.mark_variant == 3"}
+                    ],
+                    "blend_transition": 0.1
+                },
+                "sweep_attack": {
+                    "animations": [
+                        "sweep_attack"
+                    ],
+                    "transitions": [
+                        {"default": "q.mark_variant == 0"}
+                    ],
+                    "blend_transition": 0.1
+                },
+                "head_tun": {
+                    "animations": [
+                        "head_tun"
+                    ],
+                    "transitions": [
+                        {"default": "q.mark_variant == 0"}
+                    ],
+                    "blend_transition": 0.1
+                },
+                "storm_attack": {
+                    "animations": [
+                        "storm_attack"
+                    ],
+                    "transitions": [
+                        {"default": "q.mark_variant == 0"}
+                    ],
+                    "blend_transition": 0.1
+                }
+            }
+        }
+    }
+}

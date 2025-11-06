@@ -1,0 +1,139 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.spawn_vine.spawn": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 2.5,
+			"bones": {
+				"main": {
+					"position": {
+						"0.0": [0, -5, 0],
+						"0.5": [0, -5, 0],
+						"0.625": [0, 0, 0],
+						"2.25": [0, 0, 0]
+					},
+					"scale": {
+						"0.0": [0, 0, 0],
+						"0.4583": [0, 0, 0],
+						"0.5": [1, 1, 1],
+						"2.25": [1, 1, 1],
+						"2.5": [1, 0, 1]
+					}
+				},
+				"base1": {
+					"rotation": {
+						"0.0": [42.5, 0, 0],
+						"0.5": [42.5, 0, 0],
+						"0.75": ["math.cos(query.anim_time * 248) * 5", 0, "math.sin(query.anim_time * 375) * 5"],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"bottom1": {
+					"rotation": {
+						"0.0": [102.5, 0, 0],
+						"0.625": [102.5, 0, 0],
+						"1.0": ["math.sin(query.anim_time * 223) * 10", 0, "math.cos(query.anim_time * 252) * 10"],
+						"1.75": ["math.sin(query.anim_time * 223) * 10", 0, "math.cos(query.anim_time * 252) * 10"],
+						"2.0": [-35, 0, 0],
+						"2.25": [-35, 0, 0]
+					}
+				},
+				"middle1": {
+					"rotation": {
+						"0.0": [-25, 0, 0],
+						"1.0": ["math.sin(query.anim_time * 213) * 50", 0, "math.sin(query.anim_time * 272) * 5"],
+						"1.75": ["math.sin(query.anim_time * 213) * 50", 0, "math.sin(query.anim_time * 272) * 5"],
+						"2.0": [-87.5, 0, 0],
+						"2.25": [-87.5, 0, 0]
+					}
+				},
+				"top1": {
+					"rotation": {
+						"0.0": [-32.5, 0, 0],
+						"1.0": [0, 0, "math.sin(query.anim_time * 236) * 10"],
+						"1.75": [0, 0, "math.sin(query.anim_time * 236) * 10"],
+						"2.0": [-92.5, 0, 0],
+						"2.25": [-92.5, 0, 0]
+					}
+				},
+				"base2": {
+					"rotation": {
+						"0.0": [0, 0, -42.5],
+						"0.5": [0, 0, -42.5],
+						"0.75": ["math.sin(query.anim_time * 273) * 5", 0, "math.cos(query.anim_time * 328) * 5"],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"bottom2": {
+					"rotation": {
+						"0.0": [0, 0, -102.5],
+						"0.625": [0, 0, -102.5],
+						"1.0": ["math.cos(query.anim_time * 253) * 10", 0, "math.sin(query.anim_time * 212) * 10"],
+						"1.75": ["math.cos(query.anim_time * 253) * 10", 0, "math.sin(query.anim_time * 212) * 10"],
+						"2.0": [0, 0, 62.5],
+						"2.25": [0, 0, 62.5]
+					}
+				},
+				"middle2": {
+					"rotation": {
+						"0.0": [0, 0, 22.5],
+						"1.0": ["math.sin(query.anim_time * 213) * 5", 0, "math.cos(query.anim_time * 272) * 50"],
+						"1.75": ["math.sin(query.anim_time * 213) * 5", 0, "math.cos(query.anim_time * 272) * 50"],
+						"2.0": [0, 0, 55],
+						"2.25": [0, 0, 55]
+					}
+				},
+				"top2": {
+					"rotation": {
+						"0.0": [0, 0, 32.5],
+						"1.0": [0, 0, "math.sin(query.anim_time * 236) * 10"],
+						"1.75": [0, 0, "math.sin(query.anim_time * 236) * 10"],
+						"2.0": [0, 0, 102.5],
+						"2.25": [0, 0, 102.5]
+					}
+				},
+				"base3": {
+					"rotation": {
+						"0.0": [0, 0, 42.5],
+						"0.5": [0, 0, 42.5],
+						"0.75": ["math.cos(query.anim_time * 319) * 5", 0, "math.sin(query.anim_time * 384) * 5"],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"bottom3": {
+					"rotation": {
+						"0.0": [0, 0, 102.5],
+						"0.625": [0, 0, 102.5],
+						"1.0": ["math.sin(query.anim_time * 213) * 7", 0, "math.cos(query.anim_time * 252) * 7"],
+						"1.75": ["math.sin(query.anim_time * 213) * 7", 0, "math.cos(query.anim_time * 252) * 7"],
+						"2.0": [0, 0, -55],
+						"2.25": [0, 0, -55]
+					}
+				},
+				"middle3": {
+					"rotation": {
+						"0.0": [0, 0, -22.5],
+						"1.0": ["math.sin(query.anim_time * 233) * 5", 0, "-math.cos(query.anim_time * 252) * 50"],
+						"1.75": ["math.sin(query.anim_time * 233) * 5", 0, "-math.cos(query.anim_time * 252) * 50"],
+						"2.0": [0, 0, -67.5],
+						"2.25": [0, 0, -67.5]
+					}
+				},
+				"top3": {
+					"rotation": {
+						"0.0": [0, 0, -32.5],
+						"1.0": [0, 0, "math.sin(query.anim_time * 236) * 10"],
+						"1.75": [0, 0, "math.sin(query.anim_time * 236) * 10"],
+						"2.0": [0, 0, -92.5],
+						"2.25": [0, 0, -92.5]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "dirt_dot"
+				}
+			}
+		}
+	}
+}

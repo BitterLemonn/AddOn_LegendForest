@@ -1,0 +1,25 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:attachable": {
+        "description": {
+            "geometry": {
+                "default": "geometry.armor.splendor.leggings"
+            },
+            "identifier": "legend_forest:splendor_leggings",
+            "materials": {
+                "default": "armor",
+                "enchanted": "armor_enchanted"
+            },
+            "render_controllers": [
+                "controller.render.armor"
+            ],
+            "scripts": {
+                "parent_setup": "variable.leg_layer_visible = 0.0;"
+            },
+            "textures": {
+                "default": "textures/entity/armor/splendor_armor",
+                "enchanted": "textures/misc/enchanted_item_glint"
+            }
+        }
+    }
+}

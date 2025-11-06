@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "legend_forest:moon_crystal"
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:moon_crystal",
+            "register_to_create_menu": true
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "node_ID": "legend_forest:faith_rite",
+    "parent_node": "legend_forest:shimmer_forest",
+    "title": "信仰仪式",
+    "unfinished_icon": "textures/items/shaman_headbone",
+    "finished_icon": "textures/items/shaman_headbone",
+    "use_default_icon_background": true,
+    "goal_number": 1,
+    "goal_details": {
+        "goal_type": "default_get",
+        "item_dict": {
+            "newItemName": "legend_forest:shaman_headbone"
+        }
+    },
+    "node_description": "哥布林萨满是哥布林族群中少数拥有高智慧的个体，也许它的存在与森林的秘密有关。\n§c完成进度条件：获得萨满头骨",
+    "is_hidden": false,
+    "depend_parent": true
+}

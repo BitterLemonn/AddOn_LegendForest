@@ -1,0 +1,48 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 16
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0.05
+            },
+            "minecraft:destroy_time": {
+                "value": 0.6
+            },
+            "minecraft:explosion_resistance": {
+                "value": 0.6
+            },
+            "minecraft:map_color": {
+                "color": "#512a50"
+            },
+            "netease:random_tick": {
+                "enable": true,
+                "tick_to_script": true
+            },
+            "netease:render_layer": {
+                "value": "opaque"
+            },
+            "netease:solid": {
+                "value": true
+            },
+            "netease:pathable": {
+                "value": false
+            },
+            "netease:tier": {
+                "destroy_special": false,
+                "digger": "shovel",
+                "level": 0
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/legend_forest/blocks/dirt.json"
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:shimmer_grass_block",
+            "register_to_creative_menu": true,
+            "category": "legend_forest"
+        }
+    }
+}

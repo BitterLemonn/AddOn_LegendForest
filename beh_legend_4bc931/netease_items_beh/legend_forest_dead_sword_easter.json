@@ -1,0 +1,24 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:max_damage": 640,
+            "minecraft:max_stack_size": 1,
+            "netease:weapon": {
+                "attack_damage": 8,
+                "enchantment": 16,
+                "level": 2,
+                "speed": 6,
+                "type": "sword"
+            },
+            "netease:customtips": {
+                "value": "§8似乎记载着一个悲伤的故事, 世人总是后悔立下的誓言\n若有幸来到维纳斯湖, 看到湖面上优雅美丽的天鹅\n或许有答案§r"
+            }
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:dead_sword_easter",
+            "register_to_create_menu": false
+        }
+    }
+}

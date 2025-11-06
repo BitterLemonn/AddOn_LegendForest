@@ -1,0 +1,7 @@
+{
+    "ui_defs": [
+        "ui/book_tips.json",
+        "ui/legend_forest.json",
+        "ui/netease_editor_template_namespace.json"
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:structure_template_feature": {
+        "description": {
+            "identifier": "legend_forest:shimmer_goblin_camp_feature"
+        },
+        "structure_name": "legend_forest:goblin",
+        "adjustment_radius": 8,
+        "facing_direction": "random",
+        "constraints": {
+            "grounded": {},
+            "unburied": {},
+            "block_intersection": {
+                "block_whitelist": [
+                    "minecraft:air",
+                    "minecraft:dirt",
+                    "minecraft:cave_vines",
+                    "minecraft:cave_vines_body_with_berries",
+                    "minecraft:cave_vines_head_with_berries",
+                    "legend_forest:yellow_leaves_cape_1",
+                    "legend_forest:yellow_leaves_cape_2",
+                    "legend_forest:yellow_leaves_cape_3",
+                    "legend_forest:shimmer_grass_block",
+                    "legend_forest:shimmer_grass_block_check",
+                    "legend_forest:shimmer_grass",
+                    "legend_forest:shimmer_bud",
+                    "legend_forest:shimmer_flower",
+                    "legend_forest:shimmer_rose",
+                    "legend_forest:candle_flower_bottom",
+                    "legend_forest:candle_flower_upper",
+                    "legend_forest:gold_branch",
+                    "legend_forest:blue_mushroom"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "flying": "animation.shimmer_bug.flying",
+                "idle": "animation.shimmer_bug.idle"
+            },
+            "geometry": {
+                "default": "geometry.shimmer_bug"
+            },
+            "identifier": "legend_forest:shimmer_bug",
+            "materials": {
+                "default": "entity_emissive_alpha"
+            },
+            "particle_effects": {
+                "flash": "legend_forest:shimmer_flash"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "scripts": {
+                "animate": [
+                    "idle",
+                    {
+                        "flying": "query.modified_move_speed > 0.01"
+                    }
+                ]
+            },
+            "spawn_egg": {
+                "base_color": "#391e06",
+                "overlay_color": "#f6db42"
+            },
+            "textures": {
+                "default": "textures/entity/shimmer_bug"
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.magic_deer.baby_transform": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"position": [0, 4, 0],
+					"scale": 2
+				},
+				"left_horn": {
+					"scale": 0
+				},
+				"right_horn": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.magic_deer.attack": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": ["(math.sin(variable.attack_time * 180.0) * 0.2) - this", "query.target_y_rotation - this", 0]
+				},
+				"neck": {
+					"rotation": ["(math.sin(variable.attack_time * 180.0) * 57.3) - this", 0, 0]
+				}
+			}
+		},
+		"animation.magic_deer.idle": {
+			"animation_length": 1,
+			"bones": {
+				"tail": {
+					"rotation": [0, "math.sin(query.anim_time * 360) * 20", 0]
+				}
+			}
+		}
+	}
+}

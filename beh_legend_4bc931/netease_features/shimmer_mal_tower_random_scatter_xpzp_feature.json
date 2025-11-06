@@ -1,0 +1,20 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:scatter_feature": {
+        "description": {
+            "identifier": "legend_forest:shimmer_mal_tower_random_scatter_xpzp_feature"
+        },
+        "places_feature": "legend_forest:shimmer_mal_tower_snap_feature",
+        "iterations": 1,
+        "scatter_chance": 100.0,
+        "x": {
+            "distribution": "uniform",
+            "extent": [8, 12]
+        },
+        "y": 0,
+        "z": {
+            "distribution": "uniform",
+            "extent": [8, 12]
+        }
+    }
+}

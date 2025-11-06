@@ -1,0 +1,28 @@
+{
+    "pools": [
+        {
+            "conditions": [
+                {
+                    "condition": "killed_by_player"
+                }
+            ],
+            "entries": [
+                {
+                    "functions": [
+                        {
+                            "count": {
+                                "max": 10,
+                                "min": 4
+                            },
+                            "function": "set_count"
+                        }
+                    ],
+                    "name": "legend_forest:mushroom_meat",
+                    "type": "item",
+                    "weight": 1
+                }
+            ],
+            "rolls": 1
+        }
+    ]
+}

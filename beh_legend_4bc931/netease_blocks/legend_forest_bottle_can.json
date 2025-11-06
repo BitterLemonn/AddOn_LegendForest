@@ -1,0 +1,62 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0.0
+            },
+            "minecraft:destroy_time": {
+                "value": 0.2
+            },
+            "minecraft:explosion_resistance": {
+                "value": 0.2
+            },
+            "minecraft:map_color": {
+                "color": "#81c6d1"
+            },
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        0.6875,
+                        0.5625,
+                        0.6875
+                    ],
+                    "min": [
+                        0.3125,
+                        0.0,
+                        0.3125
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        0.6875,
+                        0.5625,
+                        0.6875
+                    ],
+                    "min": [
+                        0.3125,
+                        0.0,
+                        0.3125
+                    ]
+                }
+            },
+            "netease:pathable": {
+                "value": false
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "netease:solid": {
+                "value": false
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:bottle_can",
+            "register_to_creative_menu": true,
+            "category": "legend_forest"
+        }
+    }
+}

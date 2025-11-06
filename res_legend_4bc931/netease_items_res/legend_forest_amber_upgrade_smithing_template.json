@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "legend_forest:amber_upgrade_smithing_template"
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:amber_upgrade_smithing_template",
+            "register_to_create_menu": true
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:max_stack_size": 1,
+            "minecraft:foil": true,
+            "netease:allow_offhand": {
+                "value": true
+            },
+            "netease:customtips": {
+                "value": "§7将其放在副手, 主手持有需要祛魔的物品\n使用即可祛魔§r"
+            }
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:book_disenchanted",
+            "register_to_create_menu": true
+        }
+    }
+}

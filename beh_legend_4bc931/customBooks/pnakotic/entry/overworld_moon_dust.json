@@ -1,0 +1,36 @@
+{
+    "parent": "overworld",
+    "icon": "textures/items/moon_crystal",
+    "title": "月岩",
+    "pages": [
+        {
+            "type": "textPage",
+            "content": "相传是月球是从地球分离出去的一块，所以还留存着一些月球上的物质，这些物质经过长时间的演变便形成了这种矿石",
+            "contentTextSize": 10
+        },
+        {
+            "type": "imagePage",
+            "subtitle": "月岩",
+            "content": "在洞穴深处可以找到这种矿石，虽然不像星粒矿石如此常见，但是也不算是罕见的矿石",
+            "image": "textures/book_imgs/imgs/moon_stone",
+            "imageSize": [80, 60]
+        },
+        {
+            "type": "textPage",
+            "content": "古书记载着开采以及使用这种矿物的方法，但是由于失传几乎不可能完成的开采下来。直接开采下来会破碎成小块，但是可以通过烧炼的方法将其提纯成结晶。提纯的月结晶有着月亮的光辉以及撕裂位面的能力。",
+            "contentTextSize": 10
+        },
+        {
+            "type": "highlightPage",
+            "itemData": [
+                {
+                    "item": "legend_forest:moon_crystal"
+                }
+            ],
+            "itemSize": [60.0, 60.0],
+            "info": "月结晶",
+            "content": "闪闪发光让人有想家的感觉，与星粒有很好的契合性"
+        }
+    ],
+    "sortnum": 2
+}

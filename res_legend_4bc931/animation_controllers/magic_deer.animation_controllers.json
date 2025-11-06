@@ -1,0 +1,43 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.magic_deer.attack": {
+            "initial_state": "default",
+            "states": {
+                "attacking": {
+                    "animations": [
+                        "attack"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "variable.attack_time <= 0.05"
+                        }
+                    ]
+                },
+                "idle": {
+                    "animations": [
+                        "idle"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.any_animation_finished"
+                        }
+                    ]
+                },
+                "default": {
+                    "animations": [
+                        "look_at_target"
+                    ],
+                    "transitions": [
+                        {
+                            "attacking": "query.has_target && variable.attack_time"
+                        },
+                        {
+                            "idle": "math.random(1,8) == 1"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

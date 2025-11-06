@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "legend_forest:bucket_minnow"
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:bucket_minnow",
+            "register_to_create_menu": true
+        }
+    }
+}

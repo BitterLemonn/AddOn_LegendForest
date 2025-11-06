@@ -1,0 +1,24 @@
+{
+    "parent": "shimmer",
+    "icon": "textures/items/sapling_shimmer.png",
+    "title": "进入微光森林",
+    "pages": [
+        {
+            "type": "textPage",
+            "content": "直指苍穹的巨木使得这片森林终日得不到阳光的沐浴，只有生灵带来的点点微光，这里居住着高度社会性的哥布林、纯洁的独角兽，也有着守护着整个森林的守护者\n§c完成进度条件：进入微光森林",
+            "contentTextSize": 10
+        },
+        {
+            "type": "imagePage",
+            "subtitle": "微光森林",
+            "content": "在这里你可以看到闪闪发光的微光虫，以及成群结队的哥布林军队。如果你运气不错的话还能看到哥布林狩猎幻鹿，以及他们的丰收之舞",
+            "image": "textures/book_imgs/imgs/shimmer_forest",
+            "imageSize": [
+                100,
+                80
+            ]
+        }
+    ],
+    "sortnum": 0,
+    "isLocked": false
+}

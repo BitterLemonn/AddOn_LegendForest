@@ -1,0 +1,90 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0.0
+            },
+            "minecraft:destroy_time": {
+                "value": 0.0
+            },
+            "minecraft:explosion_resistance": {
+                "value": 0.0
+            },
+            "minecraft:flammable": {
+                "burn_odds": 100,
+                "flame_odds": 60
+            },
+            "netease:neighborchanged_sendto_script": {
+                "value": true
+            },
+            "minecraft:loot": {
+                "table": ""
+            },
+            "minecraft:map_color": {
+                "color": "#a4731d"
+            },
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        0.9,
+                        1.9,
+                        0.9
+                    ],
+                    "min": [
+                        0.1,
+                        0.0,
+                        0.1
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "netease:may_place_on": {
+                "block": [
+                    "minecraft:grass",
+                    "minecraft:dirt",
+                    "minecraft:podzol",
+                    "minecraft:farmland",
+                    "minecraft:mycelium",
+                    "minecraft:dirt_with_roots",
+                    "legend_forest:shimmer_grass_block",
+                    "legend_forest:shimmer_grass_block_check"
+                ]
+            },
+            "netease:pathable": {
+                "value": true
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "netease:snow_recover_able": {
+                "value": true
+            },
+            "netease:solid": {
+                "value": false
+            },
+            "netease:water_destory": {
+                "value": true
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:candle_flower_bottom",
+            "register_to_creative_menu": false,
+            "category": "legend_forest"
+        }
+    }
+}

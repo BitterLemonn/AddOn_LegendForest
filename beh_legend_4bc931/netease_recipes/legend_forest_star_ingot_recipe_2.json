@@ -1,0 +1,26 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "legend_forest:star_ingot_recipe_2"
+        },
+        "priority": 0,
+        "ingredients": [
+            {
+                "item": "legend_forest:star_block"
+            }
+        ],
+        "result": {
+            "item": "legend_forest:star_ingot",
+            "count": 9
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "legend_forest:star_block"
+            }
+        ]
+    }
+}

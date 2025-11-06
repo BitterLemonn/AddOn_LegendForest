@@ -1,0 +1,34 @@
+{
+    "parent": "shimmer",
+    "icon": "textures/items/fur_leather",
+    "title": "幻鹿",
+    "pages": [
+        {
+            "type": "textPage",
+            "content": "幻鹿是微光森林中除了微光虫之外最常见的动物了，他们常年生活在微光森林中，靠微光浆果存活。因为常年食用微光浆果，导致他体内开始累积有致幻的毒素所以被称为幻鹿。",
+            "contentTextSize": 9
+        },
+        {
+            "type": "entityPage",
+            "subtitle": "幻鹿",
+            "content": "突如其来的位面交错不仅把部分的微光树带到了主世界，也有部分幻鹿会出现在主世界中" ,
+            "entity": {
+                "name": "legend_forest:magic_deer",
+                "offset": [
+                    0,
+                    -20
+                ],
+                "molang_dict":{
+                }
+            }
+        },
+        {
+            "type": "tableRecipePage",
+            "recipeId": "legend_forest:empty_fur_bag",
+            "content": "使用皮毛缝制的皮袋，是作为香囊的最好容器"
+        }
+    ],
+    "lockMsg": "请先完成进度'微光环绕'",
+    "sortnum": 1,
+    "isLocked": true
+}

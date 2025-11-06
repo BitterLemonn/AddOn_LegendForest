@@ -1,0 +1,72 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0.0
+            },
+            "minecraft:destroy_time": {
+                "value": 999
+            },
+            "minecraft:explosion_resistance": {
+                "value": 999
+            },
+            "minecraft:flammable": {
+                "burn_odds": 60,
+                "flame_odds": 30
+            },
+            "minecraft:map_color": {
+                "color": "#252421"
+            },
+            "minecraft:loot": {
+                "table": ""
+            },
+            "netease:water_source": {
+                "value": true
+            },
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "netease:pathable": {
+                "value": false
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "netease:solid": {
+                "value": false
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:dead_sword_easter_block",
+            "register_to_creative_menu": false,
+            "category": "legend_forest"
+        }
+    }
+}

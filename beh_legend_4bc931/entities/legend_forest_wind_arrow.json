@@ -1,0 +1,98 @@
+{
+    "format_version": "1.15.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "legend_forest:wind_arrow",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "runtime_identifier": "minecraft:arrow"
+        },
+        "component_groups": {
+            "legend_forest:despawning": {
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": [1.5, 1.5],
+                    "time_down_event": {
+                        "event": "legend_forest:despawn"
+                    }
+                }
+            },
+            "legend_forest:despawned": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:collision_box": {
+                "width": 0.3,
+                "height": 0.15
+            },
+            "minecraft:damage_sensor": {
+                "triggers": {
+                    "cause": "all",
+                    "deals_damage": false
+                }
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "filters": {"test": "in_lava", "subject": "self", "operator": "==", "value": true},
+                        "cause": "lava",
+                        "damage_per_tick": 4
+                    }
+                ]
+            },
+            "minecraft:projectile": {
+                "on_hit": {
+                    "definition_event": {
+                        "affect_projectile": true,
+                        "event_trigger": {
+                            "event": "legend_forest:despawning",
+                            "target": "self"
+                        }
+                    },
+                    "impact_damage": {
+                        "damage": [4, 6],
+                        "knockback": true,
+                        "semi_random_diff_damage": true,
+                        "destroy_on_hit": true
+                    },
+                    "remove_on_hit": {}
+                },
+                "hit_sound": "wool",
+                "power": 1.8,
+                "gravity": 0.05,
+                "uncertainty_base": 0.1,
+                "uncertainty_multiplier": 4,
+                "anchor": 1,
+                "inertia": 1,
+                "liquid_inertia": 1,
+                "offset": [0, 0.1, 0]
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": true
+            }
+        },
+        "events": {
+            "legend_forest:despawning": {
+                "add": {
+                    "component_groups": [
+                        "legend_forest:despawning"
+                    ]
+                }
+            },
+            "legend_forest:despawn": {
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:despawning"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "legend_forest:despawned"
+                    ]
+                }
+            }
+        }
+    }
+}

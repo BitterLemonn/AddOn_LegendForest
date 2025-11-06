@@ -1,0 +1,21 @@
+{
+    "parent": "overworld",
+    "icon": "textures/book_imgs/icon/shimmer_log_noarc",
+    "title": "微光树",
+    "pages":[
+        {
+            "type": "textPage",
+            "content": "位面的交错使得这种异常位面中的植物也逃逸出原本的位面生长在这",
+            "contentTextSize": 10
+        },
+        {
+            "type": "imagePage",
+            "subtitle": "微光树",
+            "content": "在几乎所有生长着树木的生态群系可以找到微光树",
+            "image": "textures/book_imgs/imgs/shimmer_tree",
+            "imageSize": [80, 100],
+            "info": "微光树"
+        }
+    ],
+    "sortnum": 0    
+}

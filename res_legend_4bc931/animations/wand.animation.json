@@ -1,0 +1,39 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.wand.third_person_charge": {
+            "loop": true,
+            "bones": {
+                "rightArm": {
+                    "rotation": [
+                        "query.target_x_rotation + ((72000.0 - query.main_hand_item_use_duration) / 20.0 > 1.0 ? math.sin((72000.0 - query.main_hand_item_use_duration) / 20.0 * 180) * 3 -72.3 : (72000.0 - query.main_hand_item_use_duration) / 20.0 * -72.3)",
+                        "(query.target_y_rotation < -10.0 ? -10.0 : query.target_y_rotation) + ((72000.0 - query.main_hand_item_use_duration) / 20.0 > 1.0 ? math.sin((72000.0 - query.main_hand_item_use_duration) / 20.0 * 180) * 3 -42.2 : (72000.0 - query.main_hand_item_use_duration) / 20.0 * -42.2)",
+                        0.0
+                    ]
+                },
+                "leftArm": {
+                    "rotation": [
+                        "query.target_x_rotation - ((72000.0 - query.main_hand_item_use_duration) / 20.0 > 1.0 ? math.sin((72000.0 - query.main_hand_item_use_duration) / 20.0 * 180) * 3 + 12.3 : 12.3 * (72000.0 - query.main_hand_item_use_duration) / 20.0)",
+                        0.0,
+                        "(72000.0 - query.main_hand_item_use_duration) / 20.0 > 1.0 ? math.sin((72000.0 - query.main_hand_item_use_duration) / 20.0 * 180) * 1.5 -12.2 : (72000.0 - query.main_hand_item_use_duration) / 20.0 * -12.2"
+                    ]
+                }
+            }
+        },
+        "animation.wand.wield": {
+            "loop": true,
+            "bones": {
+                "rightitem": {
+                    "position": [
+                        "c.is_first_person ? 1.2 : 0.0",
+                        "c.is_first_person ? 1.2 : 0.0",
+                        "c.is_first_person ? 3.0 : 0.0"
+                    ],
+                    "rotation": [
+                        "0.0", "c.is_first_person ? 60.0 : 0.0", "c.is_first_person ? -30.0 : 0.0"
+                    ]
+                }
+            }
+        }
+    }
+}

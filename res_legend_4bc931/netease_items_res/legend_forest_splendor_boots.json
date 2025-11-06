@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "legend_forest:splendor_boots"
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:splendor_boots",
+            "register_to_create_menu": true
+        }
+    }
+}

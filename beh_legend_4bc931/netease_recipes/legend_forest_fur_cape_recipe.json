@@ -1,0 +1,36 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "legend_forest:fur_cape_recipe"
+        },
+        "key": {
+            "O": {
+                "item": "legend_forest:fur_leather"
+            },
+            "I": {
+                "item": "legend_forest:deer_horn"
+            }
+        },
+        "pattern": [
+            "I I",
+            "OOO",
+            "OOO"
+        ],
+        "result": {
+            "count": 1,
+            "item": "legend_forest:fur_cape"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "legend_forest:fur_leather"
+            },
+            {
+                "item": "legend_forest:deer_horn"
+            }
+        ]
+    }
+}

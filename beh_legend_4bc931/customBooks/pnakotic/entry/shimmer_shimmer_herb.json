@@ -1,0 +1,30 @@
+{
+    "parent": "shimmer",
+    "icon": "textures/items/herb",
+    "title": "微光齿蒿",
+    "pages": [
+        {
+            "type": "textPage",
+            "content": "在生机勃勃的微光森林中，孕育了许多奇特的植物，其中也有部分可以入药，微光齿蒿便隐藏在众多的杂草之中。",
+            "contentTextSize": 10
+        },
+        {
+            "type": "highlightPage",
+            "itemData": [
+                {
+                    "item": "legend_forest:herb"
+                }
+            ],
+            "itemSize": [60.0, 60.0],
+            "info": "微光齿蒿",
+            "content": "微光齿蒿可以通过破坏微光草获得，由于其药物价值，可以直接食用，收集起来作为香囊随身佩戴也是不错的选择。"
+        },
+        {
+            "type": "tableRecipePage",
+            "recipeId": "legend_forest:herb_bag",
+            "content": "使用皮毛袋装起来的微光齿蒿，散发着幽幽清香，随身佩戴还会使佩戴者提升对魔法的抗性。紧急情况下还能将其一口吞下，以解燃眉之急。\n§4佩戴功能需要安装《Platinum-铂》作为饰品前置§r"
+        }
+    ],
+    "sortnum": 2,
+    "isLocked": true
+}

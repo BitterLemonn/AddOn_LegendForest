@@ -1,0 +1,48 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.magic_bud.move": {
+            "initial_state": "default",
+            "states": {
+                "flying": {
+                    "animations": ["fly"],
+                    "transitions": [
+                        {
+                            "default": "query.modified_move_speed <= 0.2"
+                        }
+                    ],
+                    "blend_transition": 0.2
+                },
+                "default": {
+                    "animations": ["idle"],
+                    "transitions": [
+                        {
+                            "flying": "query.modified_move_speed > 0.2"
+                        }
+                    ],
+                    "blend_transition": 0.2
+                }
+            }
+        },
+        "controller.animation.magic_bud.attack": {
+            "initial_state": "default",
+            "states": {
+                "attacking": {
+                    "animations": ["attack"],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "default": {
+                    "transitions": [
+                        {
+                            "attacking": "variable.has_target && query.facing_target_to_range_attack"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

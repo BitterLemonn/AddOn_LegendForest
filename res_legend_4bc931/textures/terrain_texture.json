@@ -1,0 +1,197 @@
+{
+    "resource_pack_name": "vanilla",
+    "texture_data": {
+        "legend_forest:amber_ore": {
+            "textures": "textures/blocks/amber_ore"
+        },
+        "legend_forest:blue_mushroom": {
+            "textures": "textures/blocks/blue_mushroom"
+        },
+        "legend_forest:bottle_can": {
+            "textures": "textures/blocks/bug_bottle"
+        },
+        "legend_forest:candle_flower_bottom": {
+            "textures": "textures/blocks/candle_flower_bottom"
+        },
+        "legend_forest:candle_flower_upper": {
+            "textures": "textures/blocks/candle_flower_upper"
+        },
+        "legend_forest:carried_shimmer_lily": {
+            "textures": "textures/items/carried_shimmer_lily"
+        },
+        "legend_forest:dead_sword_block": {
+            "textures": "textures/blocks/dead_sword_easter_block"
+        },
+        "legend_forest:deepslate_amber_ore": {
+            "textures": "textures/blocks/deepslate_amber_ore"
+        },
+        "legend_forest:deepslate_moon_stone": {
+            "textures": "textures/blocks/deepslate_moon_stone"
+        },
+        "legend_forest:deepslate_star_ore": {
+            "textures": "textures/blocks/deepslate_star_ore"
+        },
+        "legend_forest:empty": {
+            "textures": "textures/blocks/empty"
+        },
+        "legend_forest:forest_anchor_charged_top": {
+            "textures": "textures/blocks/forest_anchor_charged_top"
+        },
+        "legend_forest:forest_anchor_empty_side": {
+            "textures": "textures/blocks/forest_anchor_empty_side"
+        },
+        "legend_forest:forest_anchor_empty_top": {
+            "textures": "textures/blocks/forest_anchor_empty_top"
+        },
+        "legend_forest:forest_anchor_one_side": {
+            "textures": "textures/blocks/forest_anchor_one_side"
+        },
+        "legend_forest:forest_anchor_three_side": {
+            "textures": "textures/blocks/forest_anchor_three_side"
+        },
+        "legend_forest:forest_anchor_two_side": {
+            "textures": "textures/blocks/forest_anchor_two_side"
+        },
+        "legend_forest:forest_portal": {
+            "textures": "textures/blocks/forest_portal"
+        },
+        "legend_forest:glow_seaweed_block": {
+            "textures": "textures/blocks/glow_seaweed_block"
+        },
+        "legend_forest:gold_branch": {
+            "textures": "textures/blocks/gold_branch"
+        },
+        "legend_forest:ice_thorn": {
+            "textures": "textures/blocks/ice_thorn"
+        },
+        "legend_forest:ice_thorn_carried": {
+            "textures": "textures/blocks/ice_thorn_carried"
+        },
+        "legend_forest:leaves_shimmer": {
+            "textures": "textures/blocks/leaves_shimmer"
+        },
+        "legend_forest:leaves_shimmer_carried": {
+            "textures": "textures/blocks/leaves_shimmer_opaque"
+        },
+        "legend_forest:log_shimmer_core": {
+            "textures": "textures/blocks/log_shimmer_core"
+        },
+        "legend_forest:log_shimmer_side": {
+            "textures": "textures/blocks/log_shimmer_side"
+        },
+        "legend_forest:log_shimmer_side2": {
+            "textures": "textures/blocks/log_shimmer_side2"
+        },
+        "legend_forest:log_shimmer_top": {
+            "textures": "textures/blocks/log_shimmer_top"
+        },
+        "legend_forest:malfurion_altar_1": {
+            "textures": "textures/blocks/malfurion_altar"
+        },
+        "legend_forest:moon_crystal_block": {
+            "textures": "textures/blocks/moon_crystal_block"
+        },
+        "legend_forest:moon_stone": {
+            "textures": "textures/blocks/moon_stone"
+        },
+        "legend_forest:overworld_portal": {
+            "textures": "textures/blocks/overworld_portal"
+        },
+        "legend_forest:planks_glow_seaweed": {
+            "textures": "textures/blocks/planks_glow_seaweed"
+        },
+        "legend_forest:planks_shimmer": {
+            "textures": "textures/blocks/planks_shimmer"
+        },
+        "legend_forest:reed_shimmer": {
+            "textures": "textures/blocks/reed_shimmer"
+        },
+        "legend_forest:reed_shimmer_bottom": {
+            "textures": "textures/blocks/reed_shimmer_bottom"
+        },
+        "legend_forest:reed_shimmer_top": {
+            "textures": "textures/blocks/reed_shimmer_top"
+        },
+        "legend_forest:reed_shimmer_top_1": {
+            "textures": "textures/blocks/reed_shimmer_top"
+        },
+        "legend_forest:rimmed_log_shimmer_side": {
+            "textures": "textures/blocks/rimmed_log_shimmer_side"
+        },
+        "legend_forest:rimmed_log_shimmer_side2": {
+            "textures": "textures/blocks/rimmed_log_shimmer_side2"
+        },
+        "legend_forest:rimmed_log_shimmer_top": {
+            "textures": "textures/blocks/rimmed_log_shimmer_top"
+        },
+        "legend_forest:sapling_shimmer": {
+            "textures": "textures/items/sapling_shimmer"
+        },
+        "legend_forest:shimmer_flower": {
+            "textures": "textures/blocks/shimmer_flower"
+        },
+        "legend_forest:shimmer_grass": {
+            "textures": "textures/blocks/shimmer_grass"
+        },
+        "legend_forest:shimmer_grass_block_side": {
+            "textures": {
+                "variations": [
+                    {
+                        "path": "textures/blocks/shimmer_grass_block_side"
+                    },
+                    {
+                        "path": "textures/blocks/shimmer_grass_block_side2"
+                    }
+                ]
+            }
+        },
+        "legend_forest:shimmer_grass_block_top": {
+            "textures": {
+                "variations": [
+                    {
+                        "path": "textures/blocks/shimmer_grass_block_top",
+                        "weight": 90
+                    },
+                    {
+                        "path": "textures/blocks/shimmer_grass_block_top2",
+                        "weight": 10
+                    }
+                ]
+            }
+        },
+        "legend_forest:shimmer_grass_short": {
+            "textures": "textures/blocks/shimmer_grass_short"
+        },
+        "legend_forest:shimmer_lily": {
+            "textures": "textures/blocks/shimmer_lily"
+        },
+        "legend_forest:shimmer_rose": {
+            "textures": "textures/blocks/shimmer_rose"
+        },
+        "legend_forest:shimmer_waterlily": {
+            "textures": "textures/blocks/shimmer_waterlily_pad"
+        },
+        "legend_forest:star_block": {
+            "textures": "textures/blocks/star_block"
+        },
+        "legend_forest:star_ore": {
+            "textures": "textures/blocks/star_ore"
+        },
+        "legend_forest:stripped_log_shimmer_side": {
+            "textures": "textures/blocks/stripped_log_shimmer_side"
+        },
+        "legend_forest:stripped_log_shimmer_side2": {
+            "textures": "textures/blocks/stripped_log_shimmer_side2"
+        },
+        "legend_forest:stripped_log_shimmer_top": {
+            "textures": "textures/blocks/stripped_log_shimmer_top"
+        },
+        "legend_forest:twigs_shimmer": {
+            "textures": "textures/blocks/twigs_shimmer"
+        },
+        "legend_forest:yellow_leaves_cape": {
+            "textures": "textures/blocks/yellower_leaves_cape"
+        }
+    },
+    "texture_name": "atlas.terrain"
+}

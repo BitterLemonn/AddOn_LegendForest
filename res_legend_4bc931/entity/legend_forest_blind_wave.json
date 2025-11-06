@@ -1,0 +1,33 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "rotate": "animation.blind_wave.rotate",
+                "target": "animation.blind_wave.target"
+            },
+            "geometry": {
+                "default": "geometry.blind_wave"
+            },
+            "identifier": "legend_forest:blind_wave",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "scripts": {
+                "animate": [
+                    "rotate",
+                    "target"
+                ]
+            },
+            "particle_effects": {
+                "blind_wave_line": "legend_forest:blind_wave_line"
+            },
+            "textures": {
+                "default": "textures/entity/blind_wave"
+            }
+        }
+    }
+}

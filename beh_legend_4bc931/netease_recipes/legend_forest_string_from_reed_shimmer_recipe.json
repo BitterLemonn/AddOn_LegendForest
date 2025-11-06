@@ -1,0 +1,28 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "legend_forest:string_from_reed_shimmer_recipe"
+        },
+        "key": {
+            "O": {
+                "item": "legend_forest:reed_shimmer_top"
+            }
+        },
+        "pattern": [
+            "OOO"
+        ],
+        "result": {
+            "count": 3,
+            "item": "minecraft:string"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "legend_forest:reed_shimmer_top"
+            }
+        ]
+    }
+}

@@ -1,0 +1,70 @@
+{
+    "parent": "shimmer",
+    "icon": "textures/items/shaman_headbone.png",
+    "title": "绿林团伙",
+    "pages": [
+        {
+            "type": "textPage",
+            "content": "哥布林是一种生活在微光森林的高度社会化的生物，他们当中一些猎人会去狩猎野生的幻鹿。当然他们也有极强的领地意识对于入侵他们领地的人类而言，他们会蜂拥而出讨伐敌人\n哥布林中的普通种，当中一些是勇猛的猎人为了保持群体的生存，他们会去狩猎幻鹿。还有一些学会了使用弓箭，他们将唾液涂在箭矢上，让命中的猎物肌肉麻痹、行动缓慢",
+            "contentTextSize": 9
+        },
+        {
+            "type": "entityPage",
+            "subtitle": "哥布林",
+            "content": "哥布林",
+            "entity": {
+                "name": "legend_forest:goblin",
+                "offset": [
+                    0,
+                    -20
+                ],
+                "molang_dict": {
+                    "variable.has_target": 0,
+                    "variable.gliding_speed_value": 0,
+                    "variable.attack_state": 0,
+                    "variable.attack_time": 0,
+                    "variable.tcos0": 0,
+                    "variable.attack": 0,
+                    "variable.attack2": 0,
+                    "variable.z_bob": 0,
+                    "variable.x_bob": 0,
+                    "variable.is_preview": 1
+                }
+            }
+        },
+        {
+            "type": "textPage",
+            "content": "哥布林中有些精通巫术、脸部有涂装的家伙，与直接蛮干的哥布林战士不同。他们擅长从远处发射致盲法术，让击中的敌人失去视力。并且他们会远离敌人，以弥补自己不擅近战的弱点\n身为萨满也是具有群体治疗的法术的，所以一个哥布林小队基本会以一个萨满为核心进行作战。",
+            "contentTextSize": 9,
+            "subtitle": "哥布林萨满"
+        },
+        {
+            "type": "entityPage",
+            "subtitle": "哥布林萨满",
+            "content": "哥布林萨满",
+            "entity": {
+                "name": "legend_forest:goblin",
+                "offset": [
+                    0,
+                    -20
+                ],
+                "molang_dict": {
+                    "variable.has_target": 0,
+                    "variable.gliding_speed_value": 0,
+                    "variable.attack_state": 0,
+                    "variable.attack_time": 0,
+                    "variable.tcos0": 0,
+                    "variable.attack": 0,
+                    "variable.attack2": 0,
+                    "variable.z_bob": 0,
+                    "variable.x_bob": 0,
+                    "variable.shaman_preview": 1,
+                    "variable.is_preview": 1
+                }
+            }
+        }
+    ],
+    "lockMsg": "请先完成进度'微光环绕'",
+    "sortnum": 5,
+    "isLocked": true
+}

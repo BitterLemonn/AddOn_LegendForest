@@ -1,0 +1,31 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "spawn": "animation.spawn_vine.spawn"
+            },
+            "geometry": {
+                "default": "geometry.spawn_vine"
+            },
+            "identifier": "legend_forest:spawn_vine",
+            "materials": {
+                "default": "entity"
+            },
+            "particle_effects": {
+                "dirt_dot": "legend_forest:dirt_dot"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "scripts": {
+                "animate": [
+                    "spawn"
+                ]
+            },
+            "textures": {
+                "default": "textures/entity/spawn_vine"
+            }
+        }
+    }
+}

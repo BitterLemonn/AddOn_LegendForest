@@ -1,0 +1,20 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:ore_feature": {
+        "description": {
+            "identifier": "legend_forest:shimmer_glow_seaweed_block_ore_feature"
+        },
+        "count": 8,
+        "replace_rules": [
+            {
+                "places_block": "legend_forest:glow_seaweed_block",
+                "may_replace": [
+                    "minecraft:water",
+                    "legend_forest:shimmer_grass_block_check",
+                    "legend_forest:shimmer_grass_block",
+                    "minecraft:seagrass"
+                ]
+            }
+        ]
+    }
+}

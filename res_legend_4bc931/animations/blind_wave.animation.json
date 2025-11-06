@@ -1,0 +1,36 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.blind_wave.rotate": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": ["query.anim_time * 67.48", "query.anim_time * 123.48", "query.anim_time * 213.48"]
+				},
+				"right": {
+					"rotation": ["query.anim_time * 67.48", "query.anim_time * 213.48", "query.anim_time * 123.48"]
+				},
+				"left": {
+					"rotation": ["query.anim_time * 123.48", "query.anim_time * 67.48", "query.anim_time * 213.48"]
+				},
+				"middle": {
+					"rotation": ["query.anim_time * 67.48", "query.anim_time * 123.48", "query.anim_time * 213.48"]
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "blind_wave_line",
+					"locator": "tail"
+				}
+			}
+		},
+		"animation.blind_wave.target": {
+			"loop": true,
+			"bones": {
+				"straight": {
+					"rotation": ["query.target_x_rotation", 0, 0]
+				}
+			}
+		}
+	}
+}

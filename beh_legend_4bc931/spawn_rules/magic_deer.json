@@ -1,0 +1,47 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:spawn_rules": {
+        "conditions": [
+            {
+                "minecraft:biome_filter": {
+                    "any_of": [
+                        {
+                            "operator": "==",
+                            "test": "has_biome_tag",
+                            "value": "shimmer_forest"
+                        },
+                        {
+                            "operator": "==",
+                            "test": "has_biome_tag",
+                            "value": "forest"
+                        }
+                    ]
+                },
+                "minecraft:distance_filter": {
+                    "max": 32,
+                    "min": 12
+                },
+                "minecraft:herd": {
+                    "max_size": 4,
+                    "min_size": 1
+                },
+                "minecraft:spawns_on_block_filter": [
+                    "minecraft:grass",
+                    "legend_forest:shimmer_grass_block",
+                    "legend_forest:shimmer_grass_block_check"
+                ],
+                "minecraft:spawns_on_surface": {
+                },
+                "minecraft:spawns_underground": {
+                },
+                "minecraft:weight": {
+                    "default": 3
+                }
+            }
+        ],
+        "description": {
+            "identifier": "legend_forest:magic_deer",
+            "population_control": "animal"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "parent": "enchantment",
+    "icon": "textures/items/fur_cape",
+    "title": "魔法保护",
+    "pages": [
+        {
+            "type": "textPage",
+            "content": "魔法保护，当装备拥有此附魔的装备时受到的魔法伤害将降低\n\n适用的工具与装备:\n头盔, 胸甲, 护腿, 靴子\n\n最大等级: 5",
+            "contentTextSize": 10
+        },
+        {
+            "type": "highlightPage",
+            "itemData": [
+                {"item": "legend_forest:fur_cape"}
+            ],
+            "content": "初始拥有此附魔的装备与工具: 毛皮披风",
+            "contentTextSize": 10
+        }
+    ],
+    "sortnum": 0
+}

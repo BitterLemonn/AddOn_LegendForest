@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "legend_forest:forest_amber"
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:forest_amber",
+            "register_to_create_menu": true
+        }
+    }
+}

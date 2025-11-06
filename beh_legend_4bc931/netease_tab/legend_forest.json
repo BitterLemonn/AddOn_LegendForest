@@ -1,0 +1,10 @@
+{
+    "category": [
+        {
+            "name":"legend_forest", //分页名称，自定义物品的json中category的值
+            "labelText":"itemCategory.name.legend_forest", //分页描述，可在zh_CN.lang中设置中文名称
+            "icon": "textures/book_imgs/icon/shimmer_log_noarc", //分页图标路径
+            "sort_by_identifier" : false //分页内的item是否进行排序（选填，默认false）
+        }
+    ]
+}

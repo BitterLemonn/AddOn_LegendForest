@@ -1,0 +1,51 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.shimmer_bug.idle": {
+			"loop": true,
+			"bones": {
+				"leg_back": {
+					"rotation": ["math.sin(query.anim_time * 57.5) * 5", 0, 0]
+				},
+				"leg_middle": {
+					"rotation": ["-math.sin(query.anim_time * 82.5) * 5", 0, 0]
+				},
+				"leg_front": {
+					"rotation": ["math.sin(query.anim_time * 66.5) * 5", 0, 0]
+				},
+				"left_tentacle": {
+					"rotation": ["math.sin(query.anim_time * 80) * 5", "-math.sin(query.anim_time * 60) * 3", 0]
+				},
+				"right_tentacle": {
+					"rotation": ["math.sin(query.anim_time * 85 + 15) * 5", "math.sin(query.anim_time * 60) * 3", 0]
+				}
+			}
+		},
+		"animation.shimmer_bug.flying": {
+			"loop": true,
+			"bones": {
+				"leg_back": {
+					"rotation": [20, 0, 0]
+				},
+				"leg_middle": {
+					"rotation": [20, 0, 0]
+				},
+				"leg_front": {
+					"rotation": [20, 0, 0]
+				},
+				"right_wing": {
+					"rotation": ["math.sin(query.anim_time * 3600) * 15", "-math.abs(math.sin(query.anim_time * 120)) * 10 ", 0]
+				},
+				"left_wing": {
+					"rotation": ["math.sin(query.anim_time * 3600) * 15", "math.abs(math.sin(query.anim_time * 120)) * 10 ", 0]
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "flash",
+					"locator": "leg_middle"
+				}
+			}
+		}
+	}
+}

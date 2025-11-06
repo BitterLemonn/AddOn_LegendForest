@@ -1,0 +1,497 @@
+{
+    "pools": [
+        {
+            "rolls": {
+                "min": 0,
+                "max": 2
+            },
+            "entries": [
+                {
+                    "name": "legend_forest:moon_crystal",
+                    "type": "item",
+                    "weight": 30,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:iron_ingot",
+                    "weight": 60,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:gold_ingot",
+                    "weight": 12,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:emerald",
+                    "weight": 35,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:diamond",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "min": 1,
+                "max": 2
+            },
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:iron_nugget",
+                    "weight": 50,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 10
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:gold_nugget",
+                    "weight": 10,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 10
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "legend_forest:star_nugget",
+                    "type": "item",
+                    "weight": 20,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 3,
+                                "max": 8
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "empty",
+                    "weight": 40
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "min": 2,
+                "max": 4
+            },
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:coal",
+                    "weight": 40,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:stick",
+                    "weight": 20,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 6,
+                                "max": 8
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:glow_berries",
+                    "weight": 10,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 4,
+                                "max": 10
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "legend_forest:fur_leather",
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "legend_forest:vension",
+                    "weight": 10,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 6
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "legend_forest:deer_horn",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:beef",
+                    "weight": 10,
+                    "function": {
+                        "function": "set_count",
+                        "count": {
+                            "min": 2,
+                            "max": 4
+                        }
+                    }
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:leather",
+                    "weight": 10,
+                    "function": {
+                        "function": "set_count",
+                        "count": {
+                            "min": 1,
+                            "max": 2
+                        }
+                    }
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:bone",
+                    "weight": 30,
+                    "function": {
+                        "function": "set_count",
+                        "count": {
+                            "min": 6,
+                            "max": 8
+                        }
+                    }
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:rotten_flesh",
+                    "weight": 20,
+                    "function": {
+                        "function": "set_count",
+                        "count": {
+                            "min": 5,
+                            "max": 10
+                        }
+                    }
+                },
+                {
+                    "name": "minecraft:arrow",
+                    "type": "item",
+                    "weight": 10,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 5
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "minecraft:string",
+                    "weight": 10,
+                    "type": "item",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 5
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "legend_forest:blue_mushroom",
+                    "type": "item",
+                    "weight": 10,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 5
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "legend_forest:gold_branch",
+                    "type": "item",
+                    "weight": 20,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "min": 0,
+                "max": 2
+            },
+            "entries": [
+                {
+                    "name": "minecraft:iron_sword",
+                    "type": "item",
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "enchant_randomly"
+                        },
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.05,
+                                "max": 0.65
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "legend_forest:star_sword",
+                    "type": "item",
+                    "weight": 3,
+                    "functions": [
+                        {
+                            "function": "enchant_randomly"
+                        },
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.05,
+                                "max": 0.65
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "minecraft:iron_pickaxe",
+                    "type": "item",
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "enchant_randomly"
+                        },
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.05,
+                                "max": 0.65
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "legend_forest:star_pickaxe",
+                    "type": "item",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "enchant_randomly"
+                        },
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.05,
+                                "max": 0.65
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "minecraft:iron_helmet",
+                    "type": "item",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "enchant_randomly"
+                        },
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.05,
+                                "max": 0.65
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "minecraft:iron_chestplate",
+                    "type": "item",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "enchant_randomly"
+                        },
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.05,
+                                "max": 0.65
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "minecraft:iron_leggings",
+                    "type": "item",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "enchant_randomly"
+                        },
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.05,
+                                "max": 0.65
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "minecraft:iron_boots",
+                    "type": "item",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "enchant_randomly"
+                        },
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.05,
+                                "max": 0.65
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "min": 0,
+                "max": 2
+            },
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:book",
+                    "weight": 20,
+                    "functions": [
+                        {
+                            "function": "enchant_randomly"
+                        }
+                    ]
+                },
+                {
+                    "type": "empty",
+                    "weight": 20
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "min": 0,
+                "max": 1
+            },
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "legend_forest:amber_upgrade_smithing_template",
+                    "weight": 1
+                },
+                {
+                    "type": "empty",
+                    "weight": 4
+                }
+            ]
+        }
+    ]
+}

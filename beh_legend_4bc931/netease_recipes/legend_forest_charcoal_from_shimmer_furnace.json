@@ -1,0 +1,19 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_furnace": {
+        "description": {
+            "identifier": "legend_forest:charcoal_from_shimmer_furnace"
+        },
+        "input": {
+            "count": 1,
+            "item": "legend_forest:log_shimmer"
+        },
+        "output": {
+            "count": 1,
+            "item": "minecraft:charcoal"
+        },
+        "tags": [
+            "furnace"
+        ]
+    }
+}

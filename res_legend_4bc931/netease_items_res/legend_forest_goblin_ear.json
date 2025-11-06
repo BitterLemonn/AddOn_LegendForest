@@ -1,0 +1,12 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "legend_forest:goblin_ear"
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:goblin_ear"
+        }
+    }
+}

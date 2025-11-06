@@ -1,0 +1,37 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 16
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0.0
+            },
+            "minecraft:destroy_time": {
+                "value": 9999
+            },
+            "minecraft:explosion_resistance": {
+                "value": 8000
+            },
+            "minecraft:map_color": {
+                "color": "#cfb447"
+            },
+            "netease:pathable": {
+                "value": false
+            },
+            "netease:render_layer": {
+                "value": "opaque"
+            },
+            "netease:solid": {
+                "value": true
+            },
+            "minecraft:loot": {
+                "table": ""
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:malfurion_altar"
+        }
+    }
+}

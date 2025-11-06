@@ -1,0 +1,17 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "legend_forest:forest_will",
+            "netease:frame_anim_in_scene": {
+                "ticks_per_frame": 10,
+                "texture_path": "textures/items/forest_will"
+            }
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:forest_will",
+            "register_to_create_menu": true
+        }
+    }
+}

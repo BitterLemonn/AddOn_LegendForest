@@ -1,0 +1,24 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:max_damage": 120,
+            "minecraft:max_stack_size": 1,
+            "netease:armor": {
+                "armor_slot": 1,
+                "defense": 4,
+                "enchantment": 20,
+                "knockback_resistance": 0,
+                "toughness": 0
+            },
+            "netease:customtips": {
+                "value": "§7魔法保护 II§r"
+            }
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:fur_cape",
+            "register_to_create_menu": true
+        }
+    }
+}

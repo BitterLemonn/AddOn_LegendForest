@@ -1,0 +1,209 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:entity": {
+        "component_groups": {
+            "legend_forest:has_explode": {
+                "minecraft:target_nearby_sensor": {
+                    "inside_range": 2.5,
+                    "outside_range": 6.0,
+                    "must_see": true,
+                    "on_inside_range": {
+                        "event": "legend_forest:start_exploding",
+                        "target": "self"
+                    },
+                    "on_outside_range": {
+                        "event": "legend_forest:stop_exploding",
+                        "target": "self"
+                    },
+                    "on_vision_lost_inside_range": {
+                        "event": "legend_forest:stop_exploding",
+                        "target": "self"
+                    }
+                }
+            },
+            "legend_forest:explode": {
+                "minecraft:explode": {
+                    "fuse_length": 1.5,
+                    "fuse_lit": true,
+                    "power": 3,
+                    "breaks_blocks": false,
+                    "causes_fire": false,
+                    "destroy_affected_by_griefing": true
+                }
+            },
+            "legend_forest:range_attack": {
+                "minecraft:behavior.ranged_attack": {
+                    "attack_interval_max": 8,
+                    "attack_interval_min": 2,
+                    "attack_radius": 4,
+                    "attack_radius_min": 2,
+                    "priority": 0,
+                    "speed_multiplier": 1.1,
+                    "target_in_sight_time": 0.1
+                },
+                "minecraft:shooter": {
+                    "def": "legend_forest:wind_arrow",
+                    "type": "Arrow"
+                }
+            }
+        },
+        "components": {
+            "netease:ban_bandwidth_optimization": {},
+            "minecraft:behavior.look_at_player": {
+                "look_distance": 8,
+                "priority": 6
+            },
+            "minecraft:behavior.random_hover": {
+                "priority": 1,
+                "xz_dist": 8,
+                "y_dist": 2,
+                "y_offset": -1,
+                "interval": 1,
+                "hover_height": [1, 4]
+            },
+            "minecraft:behavior.float": {
+                "priority": 8
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "fall",
+                        "deals_damage": false
+                    },
+                    {
+                        "cause": "entity_explosion",
+                        "deals_damage": false
+                    }
+                ]
+            },
+            "minecraft:leashable": {
+                "soft_distance": 4.0,
+                "hard_distance": 6.0,
+                "max_distance": 10.0
+            },
+            "minecraft:breathable": {
+                "breathes_air": true,
+                "breathes_water": false,
+                "suffocate_time": 0,
+                "total_supply": 15
+            },
+            "minecraft:can_climb": {
+            },
+            "minecraft:movement": {
+                "value": 0.4
+            },
+            "minecraft:flying_speed": {
+                "value": 0.12
+            },
+            "minecraft:navigation.hover": {
+                "can_path_over_water": true,
+                "can_sink": false,
+                "can_path_from_air": true,
+                "avoid_water": true,
+                "avoid_damage_blocks": true,
+                "avoid_sun": false
+            },
+            "minecraft:movement.hover": {},
+            "minecraft:jump.static": {},
+            "minecraft:can_fly": {},
+            "minecraft:collision_box": {
+                "height": 0.4,
+                "width": 0.3
+            },
+            "minecraft:experience_reward": {
+                "on_death": "query.last_hit_by_player ? 5 : 0"
+            },
+            "minecraft:health": {
+                "max": 30.0,
+                "value": 30.0
+            },
+            "minecraft:nameable": {
+            },
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:scale": {
+                "value": 1.5
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "mob",
+                    "magic_bud",
+                    "artifact"
+                ]
+            },
+            "minecraft:underwater_movement": {
+                "value": 0.15
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 2,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "any_of": [
+                                {"test": "is_family", "subject": "other", "value": "player"},
+                                {"test": "is_family", "subject": "other", "value": "irongolem"},
+                                {"test": "is_family", "subject": "other", "value": "snowgolem"}
+                            ]
+                        },
+                        "max_dist": 16
+                    }
+                ],
+                "must_see": true
+            },
+            "minecraft:follow_range": {
+                "value": 16
+            },
+            "minecraft:physics": {},
+            "minecraft:timer": {
+                "looping": true,
+                "time": [30, 60],
+                "time_down_event": {
+                    "event": "legend_forest:has_explode"
+                }
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:magic_bud",
+            "is_experimental": false,
+            "is_spawnable": true,
+            "is_summonable": true
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "legend_forest:range_attack"
+                    ]
+                }
+            },
+            "legend_forest:has_explode": {
+                "add": {
+                    "component_groups": [
+                        "legend_forest:has_explode"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:ranged_attack"
+                    ]
+                }
+            },
+            "legend_forest:start_exploding": {
+                "add": {
+                    "component_groups": [
+                        "legend_forest:explode"
+                    ]
+                }
+            },
+            "legend_forest:stop_exploding": {
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:explode"
+                    ]
+                }
+            }
+        }
+    }
+}

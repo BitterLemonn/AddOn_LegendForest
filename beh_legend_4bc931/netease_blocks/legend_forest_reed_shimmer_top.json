@@ -1,0 +1,83 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0.8
+            },
+            "minecraft:destroy_time": {
+                "value": 0.0
+            },
+            "minecraft:explosion_resistance": {
+                "value": 0.0
+            },
+            "minecraft:flammable": {
+                "burn_odds": 100,
+                "flame_odds": 60
+            },
+            "minecraft:loot": {
+                "table": ""
+            },
+            "minecraft:map_color": {
+                "color": "#6c598d"
+            },
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        0.9,
+                        0.9,
+                        0.9
+                    ],
+                    "min": [
+                        0.1,
+                        -1.0,
+                        0.1
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "netease:may_place_on": {
+                "block": [
+                    "legend_forest:reed_shimmer_bottom"
+                ]
+            },
+            "netease:neighborchanged_sendto_script": {
+                "value": true
+            },
+            "netease:pathable": {
+                "value": true
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "netease:snow_recover_able": {
+                "value": true
+            },
+            "netease:solid": {
+                "value": false
+            },
+            "netease:water_destory": {
+                "value": true
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:reed_shimmer_top",
+            "register_to_creative_menu": true,
+            "category": "legend_forest"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:single_block_feature": {
+        "description": {
+            "identifier": "legend_forest:shimmer_replace_underwater_feature"
+        },
+        "places_block": "legend_forest:shimmer_grass_block_check",
+        "enforce_placement_rules": false,
+        "enforce_survivability_rules": false,
+        "may_replace": [
+            "minecraft:gravel",
+            "minecraft:clay",
+            "minecraft:sand",
+            "minecraft:dirt"
+        ]
+    }
+}

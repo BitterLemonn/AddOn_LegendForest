@@ -1,0 +1,18 @@
+{
+    "node_ID": "legend_forest:twinkle_star",
+    "parent_node": "legend_forest:shimmer_forest",
+    "title": "一闪一闪亮晶晶",
+    "unfinished_icon": "textures/items/shimmer_bug_static",
+    "finished_icon": "textures/items/shimmer_bug_static",
+    "use_default_icon_background": true,
+    "goal_details": {
+        "goal_type": "default_get",
+        "item_dict": {
+            "newItemName": "legend_forest:shimmer_bug"
+        }
+    },
+    "goal_number": 1,
+    "node_description": "被捕捉后的微光虫就只会静静的散发着光芒，再也不会自由的飞翔了\n§c完成进度条件：获得微光虫§r",
+    "is_hidden": true,
+    "depend_parent": true
+}

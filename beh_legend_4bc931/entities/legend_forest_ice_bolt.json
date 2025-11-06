@@ -1,0 +1,120 @@
+{
+    "format_version": "1.15.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "legend_forest:ice_bolt",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "runtime_identifier": "minecraft:arrow"
+        },
+        "component_groups": {
+            "legend_forest:despawned": {
+                "minecraft:instant_despawn": {
+                }
+            },
+            "legend_forest:despawning": {
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": [
+                        1.5,
+                        1.5
+                    ],
+                    "time_down_event": {
+                        "event": "legend_forest:despawn"
+                    }
+                }
+            }
+        },
+        "components": {
+            "minecraft:collision_box": {
+                "height": 0.25,
+                "width": 0.5
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "deals_damage": false,
+                        "cause": "all"
+                    }
+                ]
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "cause": "lava",
+                        "damage_per_tick": 4,
+                        "filters": {
+                            "operator": "==",
+                            "subject": "self",
+                            "test": "in_lava",
+                            "value": true
+                        }
+                    }
+                ]
+            },
+            "minecraft:persistent": {
+            },
+            "minecraft:projectile": {
+                "anchor": 1,
+                "gravity": 0.05,
+                "hit_sound": "glass",
+                "inertia": 1,
+                "liquid_inertia": 1,
+                "offset": [
+                    0,
+                    0.1,
+                    0
+                ],
+                "on_hit": {
+                    "definition_event": {
+                        "affect_projectile": true,
+                        "event_trigger": {
+                            "event": "legend_forest:despawning",
+                            "target": "self"
+                        }
+                    },
+                    "impact_damage": {
+                        "damage": [
+                            2,
+                            4
+                        ],
+                        "destroy_on_hit": true,
+                        "knockback": true,
+                        "semi_random_diff_damage": true
+                    },
+                    "remove_on_hit": {
+                    }
+                },
+                "power": 1.8,
+                "should_bounce": true,
+                "uncertainty_base": 2,
+                "uncertainty_multiplier": 4
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": true
+            }
+        },
+        "events": {
+            "legend_forest:despawn": {
+                "add": {
+                    "component_groups": [
+                        "legend_forest:despawned"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:despawning"
+                    ]
+                }
+            },
+            "legend_forest:despawning": {
+                "add": {
+                    "component_groups": [
+                        "legend_forest:despawning"
+                    ]
+                }
+            }
+        }
+    }
+}

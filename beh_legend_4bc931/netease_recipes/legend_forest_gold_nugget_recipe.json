@@ -1,0 +1,26 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "legend_forest:legend_forest_gold_nugget_recipe"
+        },
+        "priority": 0,
+        "ingredients": [
+            {
+                "item": "legend_forest:gold_branch"
+            }
+        ],
+        "result": {
+            "item": "minecraft:gold_nugget",
+            "count": 2
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "legend_forest:gold_branch"
+            }
+        ]
+    }
+}

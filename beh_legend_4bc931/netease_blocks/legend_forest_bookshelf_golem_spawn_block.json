@@ -1,0 +1,37 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0.0
+            },
+            "minecraft:destroy_time": {
+                "value": 9999
+            },
+            "minecraft:explosion_resistance": {
+                "value": 8000
+            },
+            "minecraft:loot": {
+                "table": ""
+            },
+            "netease:block_entity": {
+                "client_tick": false,
+                "movable": false,
+                "tick": true
+            },
+            "netease:render_layer": {
+                "value": "opaque"
+            },
+            "netease:solid": {
+                "value": false
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:bookshelf_golem_spawn_block",
+            "register_to_creative_menu": false
+        }
+    }
+}

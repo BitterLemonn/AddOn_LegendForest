@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "legend_forest:mushroom_meat"
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:mushroom_meat",
+            "register_to_create_menu": true
+        }
+    }
+}

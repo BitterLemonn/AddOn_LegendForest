@@ -1,0 +1,31 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "flow": "animation.wind_arrow.flow"
+            },
+            "geometry": {
+                "default": "geometry.wind_arrow"
+            },
+            "identifier": "legend_forest:wind_arrow",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "render_controllers": [
+                "controller.render.item_sprite"
+            ],
+            "scripts": {
+                "animate": [
+                    "flow"
+                ]
+            },
+            "particle_effects": {
+                "wind_arrow": "legend_forest:wind_arrow"
+            },
+            "textures": {
+                "default": "textures/entity/wind_arrow"
+            }
+        }
+    }
+}

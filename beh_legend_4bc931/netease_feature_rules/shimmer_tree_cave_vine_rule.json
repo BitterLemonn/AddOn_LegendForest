@@ -1,0 +1,48 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:feature_rules": {
+        "description": {
+            "identifier": "legend_forest:shimmer_tree_cave_vine_rule",
+            "places_feature": "legend_forest:shimmer_tree_cave_vine_surface_feature"
+        },
+        "conditions": {
+            "placement_pass": "after_surface_pass",
+            "minecraft:biome_filter": [
+                {
+                    "any_of": [
+                        {
+                            "operator": "==",
+                            "test": "has_biome_tag",
+                            "value": "shimmer_forest"
+                        },
+                        {
+                            "operator": "==",
+                            "test": "has_biome_tag",
+                            "value": "shimmer_forest_hills"
+                        },
+                        {
+                            "operator": "==",
+                            "test": "has_biome_tag",
+                            "value": "shimmer_flower_forest"
+                        }
+                    ]
+                }
+            ]
+        },
+        "distribution": {
+            "iterations": 60,
+            "x": {
+                "distribution": "uniform",
+                "extent": [0, 16]
+            },
+            "y": {
+                "distribution": "uniform",
+                "extent": [60, 90]
+            },
+            "z": {
+                "distribution": "uniform",
+                "extent": [0, 16]
+            }
+        }
+    }
+}

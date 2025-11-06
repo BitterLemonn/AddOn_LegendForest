@@ -1,0 +1,16 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:max_stack_size": 64,
+            "netease:customtips": {
+                "value": "§8暂时没有任何用途\n请期待正式版§r"
+            }
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:forest_amber",
+            "register_to_create_menu": true
+        }
+    }
+}

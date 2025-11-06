@@ -1,0 +1,18 @@
+{
+    "parent": "enchantment",
+    "icon": "textures/items/book_enchanted",
+    "title": "魂灵牵引",
+    "pages": [
+        {
+            "type": "textPage",
+            "content": "魂灵牵引，使用拥有此附魔的物品击杀生物后有几率获得生命吸收效果\n\n适用的工具与装备:\n剑, 镐, 斧, 锹, 锄\n\n最大等级: 1",
+            "contentTextSize": 10
+        },
+        {
+            "type": "textPage",
+            "content": "初始拥有此附魔的装备与工具: ???",
+            "contentTextSize": 10
+        }
+    ],
+    "sortnum": 2
+}

@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "legend_forest:golden_minnow"
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:golden_minnow",
+            "register_to_create_menu": true
+        }
+    }
+}

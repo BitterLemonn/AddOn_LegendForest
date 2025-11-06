@@ -1,0 +1,63 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.armor.fur.cape",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 2, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "waist",
+					"parent": "root",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{"origin": [-4, 22, -3], "size": [8, 3, 5], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "other",
+					"parent": "body",
+					"pivot": [0, 24.5, 2],
+					"cubes": [
+						{"origin": [-4, 12, 2], "size": [8, 13, 1], "pivot": [0, 18.5, 2.5], "rotation": [0, 180, 0], "uv": [0, 8]}
+					]
+				},
+				{
+					"name": "cape",
+					"parent": "body",
+					"pivot": [0, 24, 3]
+				},
+				{
+					"name": "leftArm",
+					"parent": "body",
+					"pivot": [5, 22, 0],
+					"cubes": [
+						{"origin": [4, 23, -3], "size": [5, 2, 6], "uv": [0, 22], "mirror": true}
+					]
+				},
+				{
+					"name": "rightArm",
+					"parent": "body",
+					"pivot": [-5, 22, 0],
+					"cubes": [
+						{"origin": [-9, 23, -3], "size": [5, 2, 6], "uv": [0, 22]}
+					]
+				}
+			]
+		}
+	]
+}

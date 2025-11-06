@@ -1,0 +1,105 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.bookshelf_golem.attack": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {"ground_attack_normal": "query.mod.animation_index == 1.0"},
+                        {"ground_attack_fast": "query.mod.animation_index == 2.0"},
+                        {"ground_attack_hard": "query.mod.animation_index == 3.0"},
+                        {"lit_attack": "query.mod.animation_index == 4.0"}
+                    ]
+                },
+                "ground_attack_normal": {
+                    "animations": ["ground_attack_normal"],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished || query.mod.animation_index == 0.0"
+                        }
+                    ],
+                    "blend_transition": 0.1
+                },
+                "ground_attack_fast": {
+                    "animations": ["ground_attack_fast"],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished || query.mod.animation_index == 0.0"
+                        }
+                    ],
+                    "blend_transition": 0.1
+                },
+                "ground_attack_hard": {
+                    "animations": ["ground_attack_hard"],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished || query.mod.animation_index == 0.0"
+                        }
+                    ],
+                    "blend_transition": 0.1
+                },
+                "lit_attack": {
+                    "animations": ["lit_attack"],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished || query.mod.animation_index == 0.0"
+                        }
+                    ],
+                    "blend_transition": 0.1
+                }
+            }
+        },
+        "controller.animation.bookshelf_golem.walk": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {"move": "query.modified_move_speed > 0.01"}
+                    ]
+                },
+                "move": {
+                    "animations": ["move"],
+                    "transitions": [
+                        {
+                            "default": "query.modified_move_speed <= 0.01"
+                        }
+                    ],
+                    "blend_transition": 0.1
+                }
+            }
+        },
+        "controller.animation.bookshelf_golem.status": {
+            "initial_state": "sleep",
+            "states": {
+                "sleep": {
+                    "animations": ["sleep"],
+                    "transitions": [
+                        {"awake": "query.variant == 1"},
+                        {"normal": "query.variant == 2"},
+                        {"dying": "query.variant == 3"}
+                    ],
+                    "blend_transition": 0.1
+                },
+                "awake": {
+                    "animations": ["awake"],
+                    "transitions": [
+                        {"normal": "query.variant == 2"},
+                        {"dying": "query.variant == 3"}
+                    ],
+                    "blend_transition": 0.1
+                },
+                "normal": {
+                    "animations": ["look_at_target"],
+                    "transitions": [
+                        {"dying": "query.variant == 3"}
+                    ],
+                    "blend_transition": 0.1
+                },
+                "dying": {
+                    "animations": ["death"]
+                }
+            }
+        }
+    }
+}

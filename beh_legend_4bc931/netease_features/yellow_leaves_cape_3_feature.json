@@ -1,0 +1,20 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:single_block_feature": {
+        "description": {
+            "identifier": "legend_forest:yellow_leaves_cape_3_feature"
+        },
+        "places_block": "legend_forest:yellow_leaves_cape_3",
+        "enforce_placement_rules": true,
+        "enforce_survivability_rules": true,
+        "may_place_on": [
+            "legend_forest:shimmer_grass_block",
+            "legend_forest:shimmer_grass_block_check"
+        ],
+        "may_replace": [
+            "legend_forest:yellow_leaves_cape_1",
+            "legend_forest:yellow_leaves_cape_2",
+            "minecraft:air"
+        ]
+    }
+}

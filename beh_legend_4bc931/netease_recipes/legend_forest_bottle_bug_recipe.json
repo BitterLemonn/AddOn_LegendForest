@@ -1,0 +1,32 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "legend_forest:bottle_bug_recipe"
+        },
+        "priority": 0,
+        "ingredients": [
+            {
+                "item": "legend_forest:bottle_can"
+            },
+            {
+                "item": "legend_forest:shimmer_bug"
+            }
+        ],
+        "result": {
+            "item": "legend_forest:bottle_bug",
+            "count": 1
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "legend_forest:bottle_can"
+            },
+            {
+                "item": "legend_forest:shimmer_bug"
+            }
+        ]
+    }
+}

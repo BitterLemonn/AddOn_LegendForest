@@ -1,0 +1,48 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "legend_forest:bug_light",
+			"basic_render_parameters": {
+				"material": "particles_blend",
+				"texture": "textures/particle/particles"
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_steady": {
+				"spawn_rate": 5,
+				"max_particles": 5
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 1
+			},
+			"minecraft:emitter_shape_point": {
+				"offset": ["math.random(-0.5, 0.5)", "math.random(0.2, 0.5)", "math.random(-0.5, 0.5)"]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": 3
+			},
+			"minecraft:particle_initial_speed": 0,
+			"minecraft:particle_motion_dynamic": {},
+			"minecraft:particle_appearance_billboard": {
+				"size": ["0.2 * (3 - variable.particle_age) / 3", "0.2 * (3 - variable.particle_age) / 3"],
+				"facing_camera_mode": "rotate_xyz",
+				"uv": {
+					"texture_width": 128,
+					"texture_height": 128,
+					"flipbook": {
+						"base_UV": [56, 96],
+						"size_UV": [8, 8],
+						"step_UV": [-8, 0],
+						"frames_per_second": 8,
+						"max_frame": 16,
+						"stretch_to_lifetime": true
+					}
+				}
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": [1, 0.65882, 0, 1]
+			}
+		}
+	}
+}

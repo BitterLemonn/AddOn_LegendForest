@@ -1,0 +1,18 @@
+{
+    "node_ID": "legend_forest:get_wood",
+    "parent_node": "legend_forest:legend_forest",
+    "title": "获得木头?",
+    "unfinished_icon": "textures/book_imgs/icon/shimmer_log_noarc",
+    "finished_icon": "textures/book_imgs/icon/shimmer_log_noarc",
+    "use_default_icon_background": true,
+    "goal_details": {
+        "goal_type": "default_get",
+        "item_dict": {
+            "newItemName": "legend_forest:log_shimmer"
+        }
+    },
+    "goal_number": 20,
+    "node_description": "位面的交错使得这种异常位面中的植物也逃逸出原本的位面生长在这\n§c完成进度条件：获得20个微光原木§r",
+    "is_hidden": false,
+    "depend_parent": true
+}

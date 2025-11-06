@@ -1,0 +1,8 @@
+{
+    "title": "微光森林",
+    "content": "直指苍穹的巨木使得这片森林终日得不到阳光的沐浴，只有生灵带来的点点微光，这里居住着高度社会性的哥布林，也有着守护着整个森林的守护者",
+    "isLocked": true,
+    "icon": "textures/items/sapling_shimmer",
+    "lockMsg": "请先完成其他章节",
+    "sortnum": 1
+}

@@ -1,0 +1,25 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.meteorite.rolling": {
+			"loop": true,
+			"bones": {
+				"outer": {
+					"rotation": [0, 0, "query.anim_time * -360"]
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "meteorite_flame",
+						"locator": "top"
+					},
+					{
+						"effect": "meteorite_smoke",
+						"locator": "top"
+					}
+				]
+			}
+		}
+	}
+}

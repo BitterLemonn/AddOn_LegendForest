@@ -1,0 +1,12 @@
+{
+    "node_ID": "legend_forest:new_world",
+    "parent_node": "legend_forest:moon_crystal",
+    "title": "美丽新世界",
+    "unfinished_icon": "textures/blocks/portal_placeholder",
+    "finished_icon": "textures/blocks/portal_placeholder",
+    "use_default_icon_background": true,
+    "goal_number": 1,
+    "node_description": "经过人们长时间的研究，发现这种来自月球的产物可以和另一位面的植物产生共鸣，撕裂空间，这种力量甚至强到能将实体传送到他们的位面\n§c完成进度条件：进入传送门§r\n§a请先完成进度'获得木头？'和'你的月亮我的尘'",
+    "is_hidden": false,
+    "depend_parent": true
+}

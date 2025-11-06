@@ -1,0 +1,40 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:food": {
+                "can_always_eat": true,
+                "effects": [
+                    {
+                        "amplifier": 1,
+                        "chance": 1.0,
+                        "duration": 15,
+                        "name": "nausea"
+                    },
+                    {
+                        "amplifier": 0,
+                        "chance": 0.4,
+                        "duration": 10,
+                        "name": "poison"
+                    },
+                    {
+                        "amplifier": 1,
+                        "chance": 1.0,
+                        "duration": 20,
+                        "name": "speed"
+                    }
+                ],
+                "nutrition": 6,
+                "saturation_modifier": "normal",
+                "using_converts_to": "minecraft:bowl"
+            },
+            "minecraft:max_stack_size": 16,
+            "minecraft:use_duration": 40.0
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:goblin_soup",
+            "register_to_create_menu": true
+        }
+    }
+}

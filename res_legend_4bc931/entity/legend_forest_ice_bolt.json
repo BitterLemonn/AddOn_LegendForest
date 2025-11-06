@@ -1,0 +1,31 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "facing": "animation.ice_bolt.facing"
+            },
+            "geometry": {
+                "default": "geometry.ice_bolt"
+            },
+            "identifier": "legend_forest:ice_bolt",
+            "materials": {
+                "default": "entity"
+            },
+            "render_controllers": [
+                "controller.render.item_sprite"
+            ],
+            "scripts": {
+                "animate": [
+                    "facing"
+                ]
+            },
+            "particle_effects": {
+                "ice_bolt_tail": "legend_forest:ice_bolt_tail"
+            },
+            "textures": {
+                "default": "textures/entity/ice_bolt"
+            }
+        }
+    }
+}

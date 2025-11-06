@@ -1,0 +1,40 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "idle": "animation.magic_bud.idle",
+                "attack": "animation.magic_bud.attack",
+                "look_at_target": "animation.magic_bud.look_at_target.default",
+                "fly": "animation.magic_bud.fly",
+                "dance": "animation.magic_bud.dance",
+                "move_controller": "controller.animation.magic_bud.move",
+                "attack_controller": "controller.animation.magic_bud.attack"
+            },
+            "geometry": {
+                "default": "geometry.magic_bud"
+            },
+            "identifier": "legend_forest:magic_bud",
+            "materials": {
+                "default": "entity_emissive_alpha"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "scripts": {
+                "animate": [
+                    "look_at_target",
+                    "move_controller",
+                    "attack_controller"
+                ]
+            },
+            "spawn_egg": {
+                "base_color": "#3c6d37",
+                "overlay_color": "#659345"
+            },
+            "textures": {
+                "default": "textures/entity/magic_bud"
+            }
+        }
+    }
+}

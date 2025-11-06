@@ -1,0 +1,50 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:spawn_rules": {
+        "conditions": [
+            {
+                "minecraft:biome_filter": {
+                    "all_of": [
+                        {
+                            "operator": "==",
+                            "test": "has_biome_tag",
+                            "value": "shimmer_forest"
+                        }
+                    ]
+                },
+                "minecraft:brightness_filter": {
+                    "max": 8,
+                    "min": 0,
+                    "adjust_for_weather": true
+                },
+                "minecraft:density_limit": {
+                    "surface": 8,
+                    "underground": 8
+                },
+                "minecraft:difficulty_filter": {
+                    "max": "hard",
+                    "min": "easy"
+                },
+                "minecraft:distance_filter": {
+                    "max": 32,
+                    "min": 12
+                },
+                "minecraft:herd": {
+                    "max_size": 4,
+                    "min_size": 1
+                },
+                "minecraft:spawns_on_surface": {
+                },
+                "minecraft:spawns_underground": {
+                },
+                "minecraft:weight": {
+                    "default": 20
+                }
+            }
+        ],
+        "description": {
+            "identifier": "legend_forest:goblin",
+            "population_control": "monster"
+        }
+    }
+}

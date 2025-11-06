@@ -1,0 +1,113 @@
+{
+    "format_version": "1.20.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 1200.0
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 50.0
+            },
+            "minecraft:light_dampening": 15,
+            "minecraft:map_color": "#a084c6",
+            "minecraft:geometry": "geometry.legend_forest.full_block",
+            "minecraft:collision_box": true,
+            "minecraft:selection_box": true,
+            "netease:tier": {
+                "destroy_special": true,
+                "digger": "hatchet",
+                "level": 3
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:forest_anchor",
+            "register_to_creative_menu": true,
+            "category": "legend_forest",
+            "states": {
+                "legend_forest:charged_level": [0, 1, 2, 3]
+            }
+        },
+        "permutations": [
+            {
+                "condition": "q.block_property('legend_forest:charged_level') == 0",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "legend_forest:forest_anchor_empty_side",
+                            "render_method": "opaque"
+                        },
+                        "up": {
+                            "texture": "legend_forest:forest_anchor_empty_top",
+                            "render_method": "opaque"
+                        },
+                        "down": {
+                            "texture": "legend_forest:log_shimmer_core",
+                            "render_method": "opaque"
+                        }
+                    },
+                    "minecraft:light_emission": 0
+                }
+            },
+            {
+                "condition": "q.block_property('legend_forest:charged_level') == 1",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "legend_forest:forest_anchor_one_side",
+                            "render_method": "opaque"
+                        },
+                        "up": {
+                            "texture": "legend_forest:forest_anchor_charged_top",
+                            "render_method": "opaque"
+                        },
+                        "down": {
+                            "texture": "legend_forest:log_shimmer_core",
+                            "render_method": "opaque"
+                        }
+                    },
+                    "minecraft:light_emission": 5
+                }
+            },
+            {
+                "condition": "q.block_property('legend_forest:charged_level') == 2",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "legend_forest:forest_anchor_two_side",
+                            "render_method": "opaque"
+                        },
+                        "up": {
+                            "texture": "legend_forest:forest_anchor_charged_top",
+                            "render_method": "opaque"
+                        },
+                        "down": {
+                            "texture": "legend_forest:log_shimmer_core",
+                            "render_method": "opaque"
+                        }
+                    },
+                    "minecraft:light_emission": 10
+                }
+            },
+            {
+                "condition": "q.block_property('legend_forest:charged_level') == 3",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "legend_forest:forest_anchor_three_side",
+                            "render_method": "opaque"
+                        },
+                        "up": {
+                            "texture": "legend_forest:forest_anchor_charged_top",
+                            "render_method": "opaque"
+                        },
+                        "down": {
+                            "texture": "legend_forest:log_shimmer_core",
+                            "render_method": "opaque"
+                        }
+                    },
+                    "minecraft:light_emission": 15
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "parent": "enchantment",
+    "icon": "textures/items/star_sword",
+    "title": "星芒修补",
+    "pages": [
+        {
+            "type": "textPage",
+            "content": "星芒修补，拥有此附魔的工具与装备可以在夜晚或者神话之森维度中缓慢的回复耐久度\n\n适用的工具与装备:\n剑, 镐, 斧, 锹, 锄\n\n最大等级: 1",
+            "contentTextSize": 10
+        },
+        {
+            "type": "highlightPage",
+            "itemData": [
+                {"item": "legend_forest:star_pickaxe"},
+                {"item": "legend_forest:star_axe"},
+                {"item": "legend_forest:star_shovel"},
+                {"item": "legend_forest:star_hoe"},
+                {"item": "legend_forest:star_sword"}
+            ],
+            "content": "初始拥有此附魔的装备与工具: 星尘剑, 星尘镐, 星尘斧, 星尘锹, 星尘铲",
+            "contentTextSize": 10
+        }
+    ],
+    "sortnum": 3
+}

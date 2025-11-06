@@ -1,0 +1,12 @@
+{
+    "node_ID": "legend_forest:shimmer_forest",
+    "parent_node": "legend_forest:new_world",
+    "title": "微光环绕",
+    "unfinished_icon": "textures/items/sapling_shimmer",
+    "finished_icon": "textures/items/sapling_shimmer",
+    "use_default_icon_background": true,
+    "goal_number": 1,
+    "node_description": "直指苍穹的巨木使得这片森林终日得不到阳光的沐浴，只有生灵带来的点点微光，这里居住着高度社会性的哥布林，也有着守护着整个森林的守护者\n§c完成进度条件：进入微光森林",
+    "is_hidden": false,
+    "depend_parent": false
+}

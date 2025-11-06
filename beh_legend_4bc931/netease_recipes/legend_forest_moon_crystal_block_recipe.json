@@ -1,0 +1,30 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "legend_forest:moon_crystal_block_recipe"
+        },
+        "key": {
+            "O": {
+                "item": "legend_forest:moon_crystal"
+            }
+        },
+        "pattern": [
+            "OOO",
+            "OOO",
+            "OOO"
+        ],
+        "result": {
+            "count": 1,
+            "item": "legend_forest:moon_crystal_block"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "legend_forest:moon_crystal"
+            }
+        ]
+    }
+}

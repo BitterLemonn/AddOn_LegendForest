@@ -1,0 +1,24 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:single_block_feature": {
+        "description": {
+            "identifier": "legend_forest:reed_shimmer_bottom_feature"
+        },
+        "places_block": "legend_forest:reed_shimmer_bottom",
+        "enforce_placement_rules": false,
+        "enforce_survivability_rules": true,
+        "may_place_on": [
+            "minecraft:grass",
+            "minecraft:dirt",
+            "minecraft:podzol",
+            "minecraft:farmland",
+            "minecraft:mycelium",
+            "minecraft:dirt_with_roots",
+            "legend_forest:shimmer_grass_block",
+            "legend_forest:shimmer_grass_block_check"
+        ],
+        "may_replace": [
+            "minecraft:water"
+        ]
+    }
+}

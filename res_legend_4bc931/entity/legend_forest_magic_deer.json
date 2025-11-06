@@ -1,0 +1,45 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "attack": "animation.magic_deer.attack",
+                "idle": "animation.magic_deer.idle",
+                "baby_transform": "animation.magic_deer.baby_transform",
+                "look_at_target": "animation.common.look_at_target",
+                "setup": "animation.cow.setup.v1.0",
+                "walk": "animation.quadruped.walk",
+                "general_controller": "controller.animation.magic_deer.attack"
+            },
+            "geometry": {
+                "default": "geometry.magic_deer"
+            },
+            "identifier": "legend_forest:magic_deer",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "scripts": {
+                "animate": [
+                    "setup",
+                    {
+                        "walk": "query.modified_move_speed"
+                    },
+                    {
+                        "baby_transform": "query.is_baby"
+                    },
+                    "general_controller"
+                ]
+            },
+            "spawn_egg": {
+                "base_color": "#F4A460",
+                "overlay_color": "#A0522D"
+            },
+            "textures": {
+                "default": "textures/entity/magic_deer"
+            }
+        }
+    }
+}

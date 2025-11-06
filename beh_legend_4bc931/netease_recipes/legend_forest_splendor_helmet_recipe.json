@@ -1,0 +1,29 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "legend_forest:splendor_helmet_recipe"
+        },
+        "key": {
+            "O": {
+                "item": "legend_forest:splendor_ingot"
+            }
+        },
+        "pattern": [
+            "OOO",
+            "O O"
+        ],
+        "result": {
+            "count": 1,
+            "item": "legend_forest:splendor_helmet"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "legend_forest:splendor_ingot"
+            }
+        ]
+    }
+}

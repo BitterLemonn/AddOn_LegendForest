@@ -1,0 +1,70 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0.0
+            },
+            "minecraft:destroy_time": {
+                "value": 0.0
+            },
+            "minecraft:explosion_resistance": {
+                "value": 0.0
+            },
+            "minecraft:map_color": {
+                "color": "#d18494"
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/legend_forest/blocks/lily.json"
+            },
+            "netease:may_place_on": {
+                "block": [
+                    "minecraft:water"
+                ]
+            },
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        1.0,
+                        0.031,
+                        1.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        1.0,
+                        0.0625,
+                        1.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "netease:pathable": {
+                "value": false
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "netease:solid": {
+                "value": false
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:shimmer_lily",
+            "register_to_creative_menu": true,
+            "category": "legend_forest"
+        }
+    }
+}

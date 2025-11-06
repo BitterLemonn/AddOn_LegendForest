@@ -1,0 +1,307 @@
+{
+    "format_version": [
+        1,
+        1,
+        0
+    ],
+    "legend_forest:amber_ore": {
+        "sound": "stone",
+        "textures": "legend_forest:amber_ore"
+    },
+    "legend_forest:blue_mushroom": {
+        "model_item_texture": "legend_forest:blue_mushroom",
+        "model_textures": [
+            "legend_forest:blue_mushroom"
+        ],
+        "netease_model": "customblocks:web_preset",
+        "sound": "grass"
+    },
+    "legend_forest:bookshelf_golem_spawn_block": {
+        "sound": "wood",
+        "textures": {
+            "up": "bookshelf_top",
+            "down": "bookshelf_top",
+            "side": "bookshelf"
+        }
+    },
+    "legend_forest:bottle_bug": {
+        "netease_model": "legend_forest:bottle_can",
+        "sound": "glass"
+    },
+    "legend_forest:bottle_can": {
+        "netease_model": "legend_forest:bottle_can",
+        "sound": "glass"
+    },
+    "legend_forest:candle_flower_bottom": {
+        "model_item_texture": "legend_forest:candle_flower_bottom",
+        "model_textures": [
+            "legend_forest:candle_flower_bottom"
+        ],
+        "netease_model": "customblocks:web_preset",
+        "sound": "grass"
+    },
+    "legend_forest:candle_flower_upper": {
+        "model_item_texture": "legend_forest:candle_flower_upper",
+        "model_textures": [
+            "legend_forest:candle_flower_upper"
+        ],
+        "netease_model": "customblocks:web_preset",
+        "sound": "grass"
+    },
+    "legend_forest:dead_sword_easter_block": {
+        "model_textures": [
+            "legend_forest:dead_sword_block"
+        ],
+        "netease_model": "legend_forest:dead_sword_block",
+        "sound": "stone"
+    },
+    "legend_forest:deepslate_amber_ore": {
+        "sound": "deepslate",
+        "textures": "legend_forest:deepslate_amber_ore"
+    },
+    "legend_forest:deepslate_moon_stone": {
+        "sound": "deepslate",
+        "textures": "legend_forest:deepslate_moon_stone"
+    },
+    "legend_forest:deepslate_star_ore": {
+        "sound": "deepslate",
+        "textures": "legend_forest:deepslate_star_ore"
+    },
+    "legend_forest:forest_anchor": {
+        "sound": "metal"
+    },
+    "legend_forest:forest_portal": {
+        "sound": "glass",
+        "textures": "legend_forest:forest_portal"
+    },
+    "legend_forest:glow_seaweed_block": {
+        "sound": "grass",
+        "textures": "legend_forest:glow_seaweed_block"
+    },
+    "legend_forest:goblin_spawn_block": {
+        "textures": "legend_forest:empty"
+    },
+    "legend_forest:gold_branch": {
+        "model_item_texture": "legend_forest:gold_branch",
+        "model_textures": [
+            "legend_forest:gold_branch"
+        ],
+        "netease_model": "customblocks:web_preset",
+        "sound": "grass"
+    },
+    "legend_forest:ice_thorn": {
+        "model_item_texture": "legend_forest:ice_thorn_carried",
+        "model_textures": [
+            "legend_forest:ice_thorn"
+        ],
+        "netease_model": "customblocks:web_preset",
+        "sound": "glass"
+    },
+    "legend_forest:leaves_shimmer": {
+        "brightness_gamma": 0.8,
+        "carried_textures": "legend_forest:leaves_shimmer_carried",
+        "isotropic": {
+            "down": true,
+            "up": true
+        },
+        "sound": "grass",
+        "textures": "legend_forest:leaves_shimmer",
+        "use_colormap": "textures/colormap/shimmer_colormap"
+    },
+    "legend_forest:log_shimmer": {
+        "carried_textures": {
+            "down": "legend_forest:log_shimmer_top",
+            "side": "legend_forest:log_shimmer_side",
+            "up": "legend_forest:log_shimmer_top"
+        },
+        "sound": "wood",
+        "textures": {
+            "down": "legend_forest:log_shimmer_side",
+            "east": "legend_forest:log_shimmer_side2",
+            "north": "legend_forest:log_shimmer_top",
+            "south": "legend_forest:log_shimmer_top",
+            "up": "legend_forest:log_shimmer_side",
+            "west": "legend_forest:log_shimmer_side2"
+        }
+    },
+    "legend_forest:log_shimmer_core": {
+        "sound": "wood",
+        "textures": "legend_forest:log_shimmer_core"
+    },
+    "legend_forest:malfurion_altar": {
+        "netease_model": "legend_forest:malfurion_altar",
+        "sound": "stone"
+    },
+    "legend_forest:moon_crystal_block": {
+        "sound": "amethyst_block",
+        "textures": "legend_forest:moon_crystal_block"
+    },
+    "legend_forest:moon_stone": {
+        "sound": "stone",
+        "textures": "legend_forest:moon_stone"
+    },
+    "legend_forest:overworld_portal": {
+        "sound": "glass",
+        "textures": "legend_forest:overworld_portal"
+    },
+    "legend_forest:planks_glow_seaweed": {
+        "sound": "wood",
+        "textures": "legend_forest:planks_glow_seaweed"
+    },
+    "legend_forest:planks_shimmer": {
+        "sound": "wood",
+        "textures": "legend_forest:planks_shimmer"
+    },
+    "legend_forest:reed_shimmer_bottom": {
+        "model_textures": [
+            "legend_forest:reed_shimmer_bottom"
+        ],
+        "netease_model": "legend_forest:reed_shimmer_bottom",
+        "sound": "grass"
+    },
+    "legend_forest:reed_shimmer_top": {
+        "model_textures": [
+            "legend_forest:reed_shimmer_top"
+        ],
+        "netease_item_texture": "legend_forest:reed_shimmer",
+        "netease_model": "legend_forest:reed_shimmer_top",
+        "sound": "grass"
+    },
+    "legend_forest:rimmed_log_shimmer": {
+        "carried_textures": {
+            "down": "legend_forest:rimmed_log_shimmer_top",
+            "side": "legend_forest:rimmed_log_shimmer_side",
+            "up": "legend_forest:rimmed_log_shimmer_top"
+        },
+        "sound": "wood",
+        "textures": {
+            "down": "legend_forest:rimmed_log_shimmer_side",
+            "east": "legend_forest:rimmed_log_shimmer_side2",
+            "north": "legend_forest:rimmed_log_shimmer_top",
+            "south": "legend_forest:rimmed_log_shimmer_top",
+            "up": "legend_forest:rimmed_log_shimmer_side",
+            "west": "legend_forest:rimmed_log_shimmer_side2"
+        }
+    },
+    "legend_forest:root_shimmer": {
+        "sound": "wood",
+        "textures": "legend_forest:log_shimmer_side"
+    },
+    "legend_forest:sapling_shimmer": {
+        "model_item_texture": "legend_forest:sapling_shimmer",
+        "model_textures": [
+            "legend_forest:sapling_shimmer"
+        ],
+        "netease_model": "customblocks:web_preset",
+        "sound": "grass"
+    },
+    "legend_forest:shimmer_bud": {
+        "model_item_texture": "legend_forest:shimmer_grass",
+        "model_textures": [
+            "legend_forest:shimmer_grass_short"
+        ],
+        "netease_model": "customblocks:web_preset",
+        "sound": "grass"
+    },
+    "legend_forest:shimmer_flower": {
+        "model_item_texture": "legend_forest:shimmer_flower",
+        "model_textures": [
+            "legend_forest:shimmer_flower"
+        ],
+        "netease_model": "customblocks:web_preset",
+        "sound": "grass"
+    },
+    "legend_forest:shimmer_grass": {
+        "model_item_texture": "legend_forest:shimmer_grass",
+        "model_textures": [
+            "legend_forest:shimmer_grass"
+        ],
+        "netease_model": "customblocks:web_preset",
+        "sound": "grass"
+    },
+    "legend_forest:shimmer_grass_block": {
+        "sound": "grass",
+        "textures": {
+            "down": "dirt",
+            "side": "legend_forest:shimmer_grass_block_side",
+            "up": "legend_forest:shimmer_grass_block_top"
+        }
+    },
+    "legend_forest:shimmer_grass_block_check": {
+        "sound": "grass",
+        "textures": {
+            "down": "dirt",
+            "side": "legend_forest:shimmer_grass_block_side",
+            "up": "legend_forest:shimmer_grass_block_top"
+        }
+    },
+    "legend_forest:shimmer_lily": {
+        "model_item_texture": "legend_forest:carried_shimmer_lily",
+        "model_textures": [
+            "legend_forest:shimmer_waterlily",
+            "legend_forest:shimmer_lily"
+        ],
+        "netease_model": "legend_forest:shimmer_lily",
+        "sound": "grass"
+    },
+    "legend_forest:shimmer_rose": {
+        "model_item_texture": "legend_forest:shimmer_rose",
+        "model_textures": [
+            "legend_forest:shimmer_rose"
+        ],
+        "netease_model": "customblocks:web_preset",
+        "sound": "grass"
+    },
+    "legend_forest:spawner_malfurion": {
+        "textures": "mob_spawner"
+    },
+    "legend_forest:star_block": {
+        "sound": "stone",
+        "textures": "legend_forest:star_block"
+    },
+    "legend_forest:star_ore": {
+        "sound": "stone",
+        "textures": "legend_forest:star_ore"
+    },
+    "legend_forest:stripped_log_shimmer": {
+        "carried_textures": {
+            "down": "legend_forest:stripped_log_shimmer_top",
+            "side": "legend_forest:stripped_log_shimmer_side",
+            "up": "legend_forest:stripped_log_shimmer_top"
+        },
+        "sound": "wood",
+        "textures": {
+            "down": "legend_forest:stripped_log_shimmer_side",
+            "east": "legend_forest:stripped_log_shimmer_side2",
+            "north": "legend_forest:stripped_log_shimmer_top",
+            "south": "legend_forest:stripped_log_shimmer_top",
+            "up": "legend_forest:stripped_log_shimmer_side",
+            "west": "legend_forest:stripped_log_shimmer_side2"
+        }
+    },
+    "legend_forest:stripped_root_shimmer": {
+        "sound": "wood",
+        "textures": "legend_forest:stripped_log_shimmer_side"
+    },
+    "legend_forest:twigs_shimmer": {
+        "model_item_texture": "legend_forest:twigs_shimmer",
+        "model_textures": [
+            "legend_forest:twigs_shimmer"
+        ],
+        "netease_model": "customblocks:web_preset",
+        "sound": "grass",
+        "use_colormap": "textures/colormap/shimmer_colormap"
+    },
+    "legend_forest:yellow_leaves_cape_1": {
+        "netease_model": "legend_forest:yellow_leaves_cape_1",
+        "sound": "grass"
+    },
+    "legend_forest:yellow_leaves_cape_2": {
+        "netease_model": "legend_forest:yellow_leaves_cape_2",
+        "sound": "grass"
+    },
+    "legend_forest:yellow_leaves_cape_3": {
+        "netease_model": "legend_forest:yellow_leaves_cape_3",
+        "sound": "grass"
+    }
+}

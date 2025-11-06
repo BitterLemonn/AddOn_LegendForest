@@ -1,0 +1,35 @@
+{
+    "parent": "overworld",
+    "icon": "textures/blocks/portal_placeholder.png",
+    "title": "神话之森传送门",
+    "pages": [
+        {
+            "type": "textPage",
+            "content": "经过人们长时间的研究，发现这种来自月球的产物可以和另一位面的植物产生共鸣，撕裂空间，这种力量甚至强到能将实体传送到他们的位面",
+            "contentTextSize": 10
+        },
+        {
+            "type": "tableRecipePage",
+            "recipeId": "legend_forest:log_shimmer_core",
+            "content": "为了能够创造出跨越维度的传送门需要能够激发月结晶所蕴含能量的微光木核心"
+        },
+        {
+            "type": "tableRecipePage",
+            "recipeId": "legend_forest:rimmed_log_shimmer",
+            "content": "维持稳定的能量输出需要镶边微光原木配合微光原木，这些都是你创造去往神话世界的必备材料"
+        },
+        {
+            "type": "imagePage",
+            "subtitle": "神话传送门",
+            "content": "使用月结晶点击微光木核心即可打开传送门",
+            "image": "textures/book_imgs/imgs/legend_portal",
+            "imageSize": [
+                100,
+                100
+            ]
+        }
+    ],
+    "lockMsg": "请先完成进度'获得木头？'和'月亮代表我的晶'",
+    "sortnum": 3,
+    "isLocked": true
+}

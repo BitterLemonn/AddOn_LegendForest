@@ -1,0 +1,24 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:max_damage": 215,
+            "minecraft:max_stack_size": 1,
+            "netease:armor": {
+                "armor_slot": 0,
+                "defense": 3,
+                "enchantment": 11,
+                "knockback_resistance": 0,
+                "toughness": 0
+            },
+            "netease:customtips": {
+                "value": "§7耐久 I\n磁力 I§r"
+            }
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:splendor_helmet",
+            "register_to_create_menu": true
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "empty",
+                    "weight": 9
+                },
+                {
+                    "type": "item",
+                    "name": "legend_forest:sapling_shimmer_item",
+                    "weight": 1
+                }
+            ]
+        }
+    ]
+}

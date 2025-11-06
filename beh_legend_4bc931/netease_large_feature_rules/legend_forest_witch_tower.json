@@ -1,0 +1,23 @@
+{
+    "format_version": "1.14.0",
+    "netease:large_feature_rules": {
+        "allowed_biomes": [
+            "shimmer_forest"
+        ],
+        "center_pool_rotation": [
+            0,
+            90,
+            180,
+            270
+        ],
+        "description": {
+            "identifier": "legend_forest:witch_tower",
+            "place_pool": "legend_forest:witch_tower_main"
+        },
+        "height": "variable.height",
+        "ignore_fit_in_context": false,
+        "max_depth": 1,
+        "min_town_separation": 1,
+        "town_spacing": 18
+    }
+}

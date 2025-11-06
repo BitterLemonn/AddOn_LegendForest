@@ -1,0 +1,23 @@
+{
+    "pools": [
+        {
+            "rolls": 2,
+            "entries": [
+                {
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 8,
+                                "min": 2
+                            }
+                        }
+                    ],
+                    "type": "item",
+                    "name": "legend_forest:star_nugget",
+                    "weight": 1
+                }
+            ]
+        }
+    ]
+}

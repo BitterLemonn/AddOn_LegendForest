@@ -1,0 +1,121 @@
+{
+    "entity_sounds": {
+        "entities": {
+            "legend_forest:magic_deer": {
+                "volume": 0.8,
+                "pitch": [
+                    0.8,
+                    1.2
+                ],
+                "events": {
+                    "ambient": "mob.llama.idle",
+                    "death": "mob.llama.death",
+                    "hurt": "mob.llama.hurt",
+                    "mad": "mob.llama.angry",
+                    "step": {
+                        "sound": "mob.llama.step",
+                        "volume": 0.15,
+                        "pitch": 1.0
+                    },
+                    "eat": {
+                        "sound": "mob.llama.eat",
+                        "volume": [
+                            0.5,
+                            1.5
+                        ],
+                        "pitch": [
+                            0.8,
+                            1.2
+                        ]
+                    }
+                }
+            },
+            "legend_forest:goblin": {
+                "volume": 0.8,
+                "pitch": [
+                    0.8,
+                    1.2
+                ],
+                "events": {
+                    "ambient": "legend_forest_mob.goblin.say",
+                    "hurt": "legend_forest_mob.goblin.hurt",
+                    "death": "legend_forest_mob.goblin.death",
+                    "step": {
+                        "sound": "mob.zombie.step",
+                        "volume": 0.3,
+                        "pitch": 1.0
+                    }
+                }
+            },
+            "legend_forest:hog": {
+                "volume": 1.0,
+                "pitch": [
+                    0.8,
+                    1.2
+                ],
+                "events": {
+                    "ambient": "mob.hoglin.ambient",
+                    "angry": "mob.hoglin.angry",
+                    "attack": "mob.hoglin.attack",
+                    "hurt": "mob.hoglin.hurt",
+                    "death": "mob.hoglin.death",
+                    "retreat": "mob.hoglin.retreat",
+                    "step": {
+                        "sound": "mob.hoglin.step",
+                        "volume": 0.3,
+                        "pitch": 1.0
+                    }
+                }
+            },
+            "legend_forest:shimmer_bug": {
+                "volume": 0.1,
+                "pitch": [
+                    0.76,
+                    1.14
+                ],
+                "events": {
+                    "ambient": "legend_forest.shimmer_bug.say",
+                    "hurt": "mob.bat.hurt",
+                    "death": "mob.bat.death",
+                    "takeoff": {
+                        "sound": "mob.bat.takeoff",
+                        "volume": 0.05,
+                        "pitch": [
+                            0.8,
+                            1.2
+                        ]
+                    }
+                }
+            },
+            "legend_forest:ice_bolt": {
+                "volume": 0.0
+            },
+            "legend_forest:malfurion": {
+                "volume": 0.8,
+                "pitch": [
+                    0.8,
+                    1.2
+                ],
+                "events": {
+                    "hurt": {
+                        "sound": "legend_forest_mob.malfurion.hurt",
+                        "volume": 1.0,
+                        "pitch": [0.7, 1.1]
+                    },
+                    "death": "legend_forest_mob.malfurion.death",
+                    "step": {
+                        "sound": "legend_forest_mob.malfurion.step",
+                        "volume": 0.5,
+                        "pitch": 1.0
+                    },
+                    "cast.spell": "legend_forest_mob.malfurion.attack",
+                    "roar": {
+                        "sound": "legend_forest_mob.malfurion.roar",
+                        "volume": 1.0,
+                        "pitch": [0.7, 1.1]
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "parent": "shimmer",
+    "icon": "textures/items/malfurion_wand",
+    "title": "森林的大祭司",
+    "pages": [
+        {
+            "type": "textPage",
+            "content": "森茂祭司作为森林的守护者立下誓约守护着微光森林，祂将祂的无数分身安置在祂自己的祭坛上，保护着森林的不同片区。尽管被击杀也不会对祂的本体造成威胁。",
+            "contentTextSize": 11
+        },
+        {
+            "type": "entityPage",
+            "subtitle": "森茂祭司",
+            "content": "森茂祭司是森林的德鲁伊会根据多种情况使用不同的法术，如果要向祂挑战请一定要看清其释放的法术。" ,
+            "entity": {
+                "name": "legend_forest:malfurion",
+                "offset": [
+                    0,
+                    -20
+                ],
+                "molang_dict":{
+                    "variable.has_target": 0,
+                    "variable.gliding_speed_value": 0,
+                    "variable.attack_state": 0,
+                    "variable.attack_time": 0,
+                    "variable.tcos0": 0,
+                    "variable.attack": 0,
+                    "variable.attack2": 0,
+                    "variable.z_bob": 0,
+                    "variable.x_bob": 0
+                }
+            }
+        }
+    ],
+    "lockMsg": "请先完成进度'信仰仪式'",
+    "sortnum": 6,
+    "isLocked": true
+}

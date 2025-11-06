@@ -1,0 +1,18 @@
+{
+    "node_ID": "legend_forest:kitchen_malefic",
+    "parent_node": "legend_forest:shimmer_forest",
+    "title": "厨房煞星",
+    "unfinished_icon": "textures/items/goblin_soup",
+    "finished_icon": "textures/items/goblin_soup",
+    "use_default_icon_background": true,
+    "goal_number": 1,
+    "goal_details": {
+        "goal_type": "default_get",
+        "item_dict": {
+            "newItemName": "legend_forest:goblin_soup"
+        }
+    },
+    "node_description": "哥布林总是拥有这迅猛快捷的体格。没有人知道他们是如何获得这个能力的\n§c完成进度条件：获得哥布林浓汤",
+    "is_hidden": true,
+    "depend_parent": true
+}

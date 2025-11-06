@@ -1,0 +1,115 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.malfurion.move": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "move": "query.modified_move_speed > 0.05"
+                        }
+                    ]
+                },
+                "move": {
+                    "animations": ["move"],
+                    "transitions": [
+                        {
+                            "default": "query.modified_move_speed <= 0.05"
+                        }
+                    ],
+                    "blend_transition": 0.1
+                }
+            }
+        },
+        "controller.animation.malfurion.status": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "animations": ["look_at_target"],
+                    "transitions": [
+                        {
+                            "death": "query.mark_variant == 1"
+                        }
+                    ],
+                    "blend_transition": 0.1
+                },
+                "death": {
+                    "animations": ["death"],
+                    "transitions": [],
+                    "blend_transition": 0.1
+                }
+            }
+        },
+        "controller.animation.malfurion.skill": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "casting": "query.is_casting && query.mod.animation_index == 0.0"
+                        },
+                        {
+                            "ice_spelling": "query.mod.animation_index == 1.0"
+                        },
+                        {
+                            "fire_spelling": "query.mod.animation_index == 2.0"
+                        },
+                        {
+                            "teleport": "query.mod.animation_index == 3.0"
+                        },
+                        {
+                            "normal_attack": "query.mod.animation_index == 4.0"
+                        }
+                    ],
+                    "blend_transition": 0.2
+                },
+                "casting": {
+                    "animations": ["summon_vines"],
+                    "transitions": [
+                        {
+                            "default": "!query.is_casting || query.mod.animation_index != 0.0"
+                        }
+                    ],
+                    "blend_transition": 0.2
+                },
+                "ice_spelling": {
+                    "animations": ["ice_spelling"],
+                    "transitions": [
+                        {
+                            "default": "query.mod.animation_index != 1.0"
+                        }
+                    ],
+                    "blend_transition": 0.2
+                },
+                "fire_spelling": {
+                    "animations": ["fire_spelling"],
+                    "transitions": [
+                        {
+                            "default": "query.mod.animation_index != 2.0"
+                        }
+                    ],
+                    "blend_transition": 0.2
+                },
+                "teleport": {
+                    "animations": ["teleport"],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ],
+                    "blend_transition": 0.2
+                },
+                "normal_attack": {
+                    "animations": ["normal_attack"],
+                    "transitions": [
+                        {
+                            "default": "query.mod.animation_index != 4.0"
+                        }
+                    ],
+                    "blend_transition": 0.2
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "flop": "animation.cod.flop",
+                "swim": "animation.cod.swim",
+                "general_controller": "controller.animation.fish.general"
+            },
+            "geometry": {
+                "default": "geometry.minnow"
+            },
+            "identifier": "legend_forest:minnow",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "scripts": {
+                "pre_animation": [
+                    "variable.ZRot = !query.is_in_water ? Math.cos((query.time_stamp + query.frame_alpha) * 14.32) * 90 : 0.0;",
+                    "variable.AnimationAmountBlend = Math.lerp(variable.AnimationAmountPrev, variable.AnimationAmount, query.frame_alpha);"
+                ],
+                "animate": [
+                    "general_controller"
+                ]
+            },
+            "spawn_egg": {
+                "base_color": "#FFEAF6",
+                "overlay_color": "#F3B7D5"
+            },
+            "textures": {
+                "default": "textures/entity/minnow"
+            }
+        }
+    }
+}

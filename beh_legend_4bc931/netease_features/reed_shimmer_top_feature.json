@@ -1,0 +1,17 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:single_block_feature": {
+        "description": {
+            "identifier": "legend_forest:reed_shimmer_top_feature"
+        },
+        "places_block": "legend_forest:reed_shimmer_top",
+        "enforce_placement_rules": false,
+        "enforce_survivability_rules": true,
+        "may_place_on": [
+            "legend_forest:reed_shimmer_bottom"
+        ],
+        "may_replace": [
+            "minecraft:air"
+        ]
+    }
+}

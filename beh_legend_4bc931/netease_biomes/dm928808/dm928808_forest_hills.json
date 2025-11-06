@@ -1,0 +1,58 @@
+{
+    "format_version": "1.14.0",
+    "minecraft:biome": {
+        "components": {
+            "dm928808": {
+
+            },
+            "minecraft:overworld_generation_rules": {
+                "generate_for_climates": [
+                    [
+                        "frozen",
+                        3
+                    ],
+                    [
+                        "cold",
+                        5
+                    ],
+                    [
+                        "medium",
+                        8
+                    ],
+                    [
+                        "lukewarm",
+                        8
+                    ],
+                    [
+                        "warm",
+                        9
+                    ]
+                ],
+                "hills_transformation": "dm928808_forest",
+                "mutate_transformation": "dm928808_flower_forest",
+                "shore_transformation": "dm928808_flower_forest"
+            },
+            "minecraft:overworld_height": {
+                "noise_type": "default_mutated"
+            },
+            "minecraft:surface_parameters": {
+                "foundation_material": "minecraft:stone",
+                "mid_material": "minecraft:dirt",
+                "sea_floor_depth": 0,
+                "sea_floor_material": "minecraft:dirt",
+                "sea_material": "minecraft:water",
+                "top_material": "legend_forest:shimmer_grass_block_check"
+            },
+            "shimmer_forest": {
+
+            },
+            "shimmer_forest_hills": {
+
+            }
+        },
+        "description": {
+            "identifier": "dm928808_forest_hills",
+            "inherits": "forest_hills"
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "title": "额外附魔",
+    "content": "模组内添加的额外附魔介绍",
+    "isLocked": false,
+    "icon": "textures/items/book_enchanted",
+    "sortnum": 99
+}

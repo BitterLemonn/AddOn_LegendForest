@@ -1,0 +1,18 @@
+{
+    "format_version": "1.13.0", 
+    "minecraft:biome": {
+        "description": {
+            "identifier": "dm928808_ocean", 
+            "inherits": "ocean"
+        }, 
+        "components": {
+            "minecraft:world_generation_rules": {
+                "hills_transformation": "dm928808_deep_ocean", 
+                "generate_for_climates": [
+                    ["medium", 0]
+                ]
+            },
+            "dm928808": {}
+        }
+    }
+}

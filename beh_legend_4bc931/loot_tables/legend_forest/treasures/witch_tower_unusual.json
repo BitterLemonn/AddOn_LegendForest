@@ -1,0 +1,249 @@
+{
+    "pools": [
+        {
+            "rolls": {
+                "min": 0,
+                "max": 2
+            },
+            "entries": [
+                {
+                    "name": "legend_forest:moon_crystal",
+                    "type": "item",
+                    "weight": 30,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:iron_ingot",
+                    "weight": 60,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:gold_ingot",
+                    "weight": 12,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:emerald",
+                    "weight": 35,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:diamond",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "min": 2,
+                "max": 5
+            },
+            "entries": [
+                {
+                    "name": "minecraft:book",
+                    "type": "item",
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "minecraft:paper",
+                    "type": "item",
+                    "weight": 30,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "minecraft:ink_sac",
+                    "type": "item",
+                    "weight": 10,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "minecraft:feather",
+                    "type": "item",
+                    "weight": 20,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "minecraft:writable_book",
+                    "type": "item",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "name": "minecraft:iron_sword",
+                    "type": "item",
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": {
+                                "min": 15,
+                                "max": 39
+                            },
+                            "treasure": true
+                        },
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.25,
+                                "max": 0.85
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "minecraft:diamond_sword",
+                    "type": "item",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": {
+                                "min": 15,
+                                "max": 39
+                            },
+                            "treasure": true
+                        },
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.25,
+                                "max": 0.85
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "legend_forest:star_sword",
+                    "type": "item",
+                    "weight": 3,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": {
+                                "min": 15,
+                                "max": 39
+                            },
+                            "treasure": true
+                        },
+                        {
+                            "function": "specific_enchants",
+                            "enchants": [
+                                {
+                                    "id": "legend_forest:star_recovery",
+                                    "level": 1
+                                }
+                            ]
+                        },
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.25,
+                                "max": 0.85
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "min": 1,
+                "max": 3
+            },
+            "entries": [
+                {
+                    "type": "empty",
+                    "weight": 3
+                },
+                {
+                    "name": "minecraft:enchanted_book",
+                    "type": "item",
+                    "weight": 2,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": {
+                                "min": 20,
+                                "max": 39
+                            },
+                            "treasure": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

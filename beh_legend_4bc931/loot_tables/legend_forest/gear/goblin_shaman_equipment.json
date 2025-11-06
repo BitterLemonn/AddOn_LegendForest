@@ -1,0 +1,23 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "functions": [
+                        {
+                            "count": {
+                                "max": 1,
+                                "min": 1
+                            },
+                            "function": "set_count"
+                        }
+                    ],
+                    "type": "item",
+                    "name": "legend_forest:shaman_wand",
+                    "weight": 1
+                }
+            ]
+        }
+    ]
+}

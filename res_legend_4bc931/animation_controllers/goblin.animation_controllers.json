@@ -1,0 +1,61 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.goblin.attack": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "ranged_hold": "(!variable.is_preview && query.variant == 0 && query.is_item_name_any('slot.weapon.mainhand','minecraft:bow') && !query.is_admiring && query.has_target) || (query.variant == 1 && query.is_item_name_any('slot.weapon.mainhand','legend_forest:shaman_wand') && !query.is_admiring && query.has_target)"
+                        },
+                        {
+                            "shaman_magic": "query.variant == 1 && query.mark_variant == 1"
+                        },
+                        {
+                            "hand_attack": "query.has_target && query.variant == 0 && !query.is_item_equipped && variable.attack_time >= 0.0 && !query.is_admiring"
+                        },
+                        {
+                            "melee_attack": "query.has_target && query.variant == 0 && query.is_item_equipped && !query.is_admiring && !query.is_item_name_any('slot.weapon.mainhand','minecraft:bow')"
+                        }
+                    ]
+                },
+                "shaman_magic": {
+                    "animations": ["shaman_magic"],
+                    "transitions": [
+                        {
+                            "default": "query.mark_variant == 0 && query.all_animations_finished"
+                        }
+                    ]
+                },
+                "ranged_hold": {
+                    "animations": ["crossbow_hold"],
+                    "transitions": [
+                        {
+                            "default": "query.is_admiring || !query.has_target"
+                        },
+                        {
+                            "shaman_magic": "query.variant == 1 && query.mark_variant == 1"
+                        }
+                    ]
+                },
+                "melee_attack": {
+                    "animations": ["melee_attack"],
+                    "transitions": [
+                        {
+                            "default": "!query.is_item_equipped || !variable.has_target || variable.attack_time < 0.0 ||  query.is_admiring"
+                        }
+                    ]
+                },
+                "hand_attack": {
+                    "animations": ["hand_attack"],
+                    "transitions": [
+                        {
+                            "default": "query.is_item_equipped || !variable.has_target || variable.attack_time < 0.0 ||  query.is_admiring"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

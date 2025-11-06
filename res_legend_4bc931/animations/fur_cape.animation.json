@@ -1,0 +1,13 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.fur_cape.flap": {
+			"loop": true,
+			"bones": {
+				"other": {
+					"rotation": ["5 + math.sin(query.anim_time * 126.21) * 3 + query.cape_flap_amount * 75", 0, 0]
+				}
+			}
+		}
+	}
+}

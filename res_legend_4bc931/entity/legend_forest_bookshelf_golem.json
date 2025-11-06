@@ -1,0 +1,50 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "look_at_target": "animation.humanoid.look_at_target.default",
+                "move": "animation.bookshelf_golem.walk",
+                "ground_attack_normal": "animation.bookshelf_golem.ground_attack_normal",
+                "ground_attack_fast": "animation.bookshelf_golem.ground_attack_fast",
+                "ground_attack_hard": "animation.bookshelf_golem.ground_attack_hard",
+                "lit_attack": "animation.bookshelf_golem.lit_attack",
+                "death": "animation.bookshelf_golem.dead",
+                "sleep": "animation.bookshelf_golem.sleep",
+                "awake": "animation.bookshelf_golem.awake",
+                "attack_controller": "controller.animation.bookshelf_golem.attack",
+                "move_controller": "controller.animation.bookshelf_golem.walk",
+                "status_controller": "controller.animation.bookshelf_golem.status"
+            },
+            "hide_armor": true,
+            "geometry": {
+                "default": "geometry.bookshelf_golem"
+            },
+            "identifier": "legend_forest:bookshelf_golem",
+            "materials": {
+                "default": "entity"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "particle_effects": {
+                "ground_attack_smoke": "legend_forest:ground_attack_smoke",
+                "death_explosion": "legend_forest:bookshelf_golem_death"
+            },
+            "scripts": {
+                "animate": [
+                    "attack_controller",
+                    "move_controller",
+                    "status_controller"
+                ]
+            },
+            "spawn_egg": {
+                "base_color": "#8f7041",
+                "overlay_color": "#682a72"
+            },
+            "textures": {
+                "default": "textures/entity/bookshelf_golem"
+            }
+        }
+    }
+}

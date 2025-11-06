@@ -1,0 +1,19 @@
+{
+    "item": "legend_forest:pnakotic_manuscript",
+    "title1": "纳克特手稿",
+    "title2": "欢迎来到神话的世界",
+    "content": "人类经常受限于强大的存在或其他宇宙力量。但这些存在与其说是恶意的，不如说是对人类漠不关心。最终人类在一个冷漠的宇宙中是孤独的且没有自保能力。在这样一个浩瀚无边、而又毫无理性与目的可言的宇宙中，人类所认识和规定的法则与观念都是毫无意义的。",
+    "titleArea":{
+        "offset": [-10,0],
+        "textSize1": 9,
+        "textSize2":7,         
+        "padding": 1           
+    },
+    "categoryConfig":{
+        "contentTextSize": 9
+    },
+    "pageConfig": {
+        "contentTextSize": 8
+    }
+
+}

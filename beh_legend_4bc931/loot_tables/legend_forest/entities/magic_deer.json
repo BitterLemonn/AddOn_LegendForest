@@ -1,0 +1,60 @@
+{
+    "pools": [
+        {
+            "entries": [
+                {
+                    "functions": [
+                        {
+                            "count": {
+                                "max": 2,
+                                "min": 1
+                            },
+                            "function": "set_count"
+                        }
+                    ],
+                    "name": "legend_forest:vension",
+                    "type": "item",
+                    "weight": 2
+                },
+                {
+                    "functions": [
+                        {
+                            "count": {
+                                "max": 1,
+                                "min": 0
+                            },
+                            "function": "set_count"
+                        }
+                    ],
+                    "name": "legend_forest:fur_leather",
+                    "type": "item",
+                    "weight": 1
+                }
+            ],
+            "rolls": 2
+        },
+        {
+            "entries": [
+                {
+                    "functions": [
+                        {
+                            "count": {
+                                "max": 1,
+                                "min": 0
+                            },
+                            "function": "set_count"
+                        }
+                    ],
+                    "name": "legend_forest:deer_horn",
+                    "type": "item",
+                    "weight": 1
+                },
+                {
+                    "type": "empty",
+                    "weight": 3
+                }
+            ],
+            "rolls": 1
+        }
+    ]
+}

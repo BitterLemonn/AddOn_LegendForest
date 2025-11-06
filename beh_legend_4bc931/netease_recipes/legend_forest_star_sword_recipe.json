@@ -1,0 +1,36 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "legend_forest:star_sword_recipe"
+        },
+        "key": {
+            "O": {
+                "item": "legend_forest:star_ingot"
+            },
+            "I": {
+                "item": "minecraft:stick"
+            }
+        },
+        "pattern": [
+            "O",
+            "O",
+            "I"
+        ],
+        "result": {
+            "count": 1,
+            "item": "legend_forest:star_sword"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "legend_forest:star_ingot"
+            },
+            {
+                "item": "minecraft:stick"
+            }
+        ]
+    }
+}

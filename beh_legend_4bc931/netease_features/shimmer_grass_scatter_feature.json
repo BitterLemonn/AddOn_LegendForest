@@ -1,0 +1,23 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:scatter_feature": {
+        "description": {
+            "identifier": "legend_forest:shimmer_grass_scatter_feature"
+        },
+        "places_feature": "legend_forest:shimmer_grass_snap_feature",
+        "iterations": 5,
+        "scatter_chance": 80.0,
+        "x": {
+            "distribution": "uniform",
+            "extent": [0, 15]
+        },
+        "y": {
+            "distribution": "uniform",
+            "extent": [0, 15]
+        },
+        "z": {
+            "distribution": "uniform",
+            "extent": [0, 15]
+        }
+    }
+}

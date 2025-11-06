@@ -1,0 +1,58 @@
+{
+    "format_version": "1.14.0",
+    "minecraft:biome": {
+        "components": {
+            "dm928808": {
+            },
+            "minecraft:overworld_generation_rules": {
+                "generate_for_climates": [
+                    [
+                        "frozen",
+                        0
+                    ],
+                    [
+                        "cold",
+                        0
+                    ],
+                    [
+                        "medium",
+                        0
+                    ],
+                    [
+                        "lukewarm",
+                        0
+                    ],
+                    [
+                        "warm",
+                        0
+                    ]
+                ],
+                "hills_transformation": "dm928808_mesa_plateau_stone_mutated",
+                "mutate_transformation": "dm928808_mesa_plateau_stone_mutated"
+            },
+            "minecraft:overworld_height": {
+                "noise_type": "mountains"
+            },
+            "minecraft:mesa_surface": {
+                "bryce_pillars": true,
+                "clay_material": "minecraft:stone",
+                "foundation_material": "minecraft:stone",
+                "hard_clay_material": "minecraft:mossy_cobblestone",
+                "has_forest": true,
+                "mid_material": "minecraft:stone",
+                "sea_floor_depth": 2,
+                "sea_floor_material": "minecraft:gravel",
+                "sea_material": "minecraft:water",
+                "top_material": "minecraft:stone"
+            },
+            "spider_land": {
+            },
+            "spider_land_stone_mutated": {
+            }
+        },
+        "description": {
+            "identifier": "dm928808_mesa_plateau_stone_mutated",
+            "inherits": "mesa_plateau_stone_mutated"
+        }
+    }
+}

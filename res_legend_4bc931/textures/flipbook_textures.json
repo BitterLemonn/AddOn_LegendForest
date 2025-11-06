@@ -1,0 +1,56 @@
+[
+    {
+        "flipbook_texture": "textures/blocks/log_shimmer_side",
+        "atlas_tile": "legend_forest:log_shimmer_side",
+        "ticks_per_frame": 40
+    },
+    {
+        "flipbook_texture": "textures/blocks/log_shimmer_side2",
+        "atlas_tile": "legend_forest:log_shimmer_side2",
+        "ticks_per_frame": 40
+    },
+    {
+        "flipbook_texture": "textures/blocks/forest_anchor_charged_top",
+        "atlas_tile": "legend_forest:forest_anchor_charged_top"
+    },
+    {
+        "flipbook_texture": "textures/blocks/forest_portal",
+        "atlas_tile": "legend_forest:forest_portal"
+    },
+    {
+        "flipbook_texture": "textures/blocks/glow_seaweed_block",
+        "atlas_tile": "legend_forest:glow_seaweed_block",
+        "ticks_per_frame": 20
+    },
+    {
+        "flipbook_texture": "textures/blocks/overworld_portal",
+        "atlas_tile": "legend_forest:overworld_portal"
+    },
+    {
+        "flipbook_texture": "textures/blocks/reed_shimmer_top",
+        "atlas_tile": "legend_forest:reed_shimmer_top",
+        "ticks_per_frame": 10,
+        "blend_frames": false
+    },
+    {
+        "flipbook_texture": "textures/blocks/shimmer_grass_block_top2",
+        "atlas_tile": "legend_forest:shimmer_grass_block_top",
+        "atlas_tile_variant": 1,
+        "ticks_per_frame": 40
+    },
+    {
+        "flipbook_texture": "textures/blocks/rimmed_log_shimmer_side",
+        "atlas_tile": "legend_forest:rimmed_log_shimmer_side",
+        "ticks_per_frame": 40
+    },
+    {
+        "flipbook_texture": "textures/blocks/rimmed_log_shimmer_side2",
+        "atlas_tile": "legend_forest:rimmed_log_shimmer_side2",
+        "ticks_per_frame": 40
+    },
+    {
+        "flipbook_texture": "textures/blocks/log_shimmer_core",
+        "atlas_tile": "legend_forest:log_shimmer_core",
+        "ticks_per_frame": 8
+    }
+]

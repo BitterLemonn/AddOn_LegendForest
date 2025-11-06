@@ -1,0 +1,29 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "legend_forest:mal_ice_wand",
+            "materials": {
+                "default": "entity_alphatest",
+                "enchanted": "entity_alphatest_glint"
+            },
+            "textures": {
+                "default": "textures/items/mal_ice_wand"
+            },
+            "geometry": {
+                "default": "geometry.wand"
+            },
+            "animations": {
+                "wield": "animation.wand.wield"
+            },
+            "scripts": {
+                "animate": [
+                    "wield"
+                ]
+            },
+            "render_controllers": [
+                "controller.render.item_sprite"
+            ]
+        }
+    }
+}

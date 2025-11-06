@@ -1,0 +1,95 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "legend_forest:blind_wave",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "runtime_identifier": "minecraft:snowball"
+        },
+        "component_groups": {
+            "minecraft:exploding": {
+                "minecraft:explode": {
+                    "breaks_blocks": false,
+                    "fuse_length": 0,
+                    "fuse_lit": true,
+                    "power": 1,
+                    "fire_affected_by_griefing": true,
+                    "destroy_affected_by_griefing": true
+                }
+            }
+        },
+        "components": {
+            "minecraft:collision_box": {
+                "width": 0.25,
+                "height": 0.25
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "deals_damage": false,
+                        "cause": "all"
+                    }
+                ]
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "filters": {"test": "in_lava", "subject": "self", "operator": "==", "value": true},
+                        "cause": "lava",
+                        "damage_per_tick": 4
+                    }
+                ]
+            },
+            "minecraft:projectile": {
+                "on_hit": {
+                    "definition_event": {
+                        "affect_projectile": true,
+                        "event_trigger": {
+                            "event": "minecraft:explode",
+                            "target": "self"
+                        }
+                    },
+                    "impact_damage": {
+                        "damage": [4, 6],
+                        "knockback": true,
+                        "semi_random_diff_damage": false,
+                        "destroy_on_hit": true
+                    },
+                    "mob_effect": {
+                        "effect": "blindness",
+                        "durationeasy": 5,
+                        "durationnormal": 8,
+                        "durationhard": 15,
+                        "amplifier": 0
+                    }
+                },
+                "hit_sound": "bow.hit",
+                "power": 1.6,
+                "gravity": 0.0,
+                "uncertainty_base": 0,
+                "uncertainty_multiplier": 0,
+                "anchor": 1,
+                "inertia": 1,
+                "liquid_inertia": 1,
+                "should_bounce": false,
+                "offset": [-0.05, -0.1, -0.05]
+            },
+            "minecraft:physics": {
+            },
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            }
+        },
+        "events": {
+            "minecraft:explode": {
+                "add": {
+                    "component_groups": [
+                        "minecraft:exploding"
+                    ]
+                }
+            }
+        }
+    }
+}

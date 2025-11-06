@@ -1,0 +1,16 @@
+{
+    "node_ID": "legend_forest:legend_forest",
+    "title": "堕入黑暗",
+    "unfinished_icon": "textures/items/pnakotic_manuscript",
+    "finished_icon": "textures/items/pnakotic_manuscript",
+    "use_default_icon_background": true,
+    "window_background": "textures/blocks/dirt",
+    "goal_details": {
+        "goal_type": "default_get",
+        "item_dict": {
+            "newItemName": "legend_forest:pnakotic_manuscript"
+        }
+    },
+    "goal_number": 1,
+    "node_description": "想了解那世界以外的真相，无论是时间、空间还是维度，人们必须忘记诸如有机生命、善与恶、爱与恨，以及人类这个种族所有的微不足道的临时特性。"
+}

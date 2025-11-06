@@ -1,0 +1,1224 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:entity": {
+        "component_groups": {
+            "slow_shooter": {
+                "minecraft:shooter": {
+                    "aux_val": 19,
+                    "def": "minecraft:arrow",
+                    "type": "Arrow"
+                }
+            },
+            "normal_shooter": {
+                "minecraft:shooter": {
+                    "aux_val": 0,
+                    "def": "minecraft:arrow",
+                    "type": "Arrow"
+                }
+            },
+            "goblin_jockey": {
+                "minecraft:behavior.find_mount": {
+                    "max_failed_attempts": 20,
+                    "priority": 1,
+                    "start_delay": 15,
+                    "within_radius": 16
+                }
+            },
+            "hunter": {
+                "minecraft:behavior.nearest_attackable_target": {
+                    "attack_interval": 1.0,
+                    "entity_types": {
+                        "filters": {
+                            "any_of": [
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "player"
+                                },
+                                {
+                                    "all_of": [
+                                        {
+                                            "test": "is_family",
+                                            "subject": "other",
+                                            "value": "deer"
+                                        },
+                                        {
+                                            "test": "is_family",
+                                            "subject": "other",
+                                            "value": "can_hunt"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "snowgolem"
+                                },
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "irongolem"
+                                }
+                            ]
+                        },
+                        "max_dist": 40
+                    },
+                    "within_radius": 20,
+                    "must_see": true,
+                    "priority": 0,
+                    "reselect_targets": true
+                },
+                "minecraft:type_family": {
+                    "family": [
+                        "mob",
+                        "goblin",
+                        "goblin_hunter",
+                        "monster"
+                    ]
+                }
+            },
+            "jockey_range_unit": {
+                "minecraft:behavior.charge_held_item": {
+                    "items": [
+                        "minecraft:bow"
+                    ],
+                    "priority": 3
+                },
+                "minecraft:behavior.ranged_attack": {
+                    "attack_interval_max": 10,
+                    "attack_interval_min": 1,
+                    "attack_radius": 16,
+                    "attack_radius_min": 4,
+                    "priority": 5,
+                    "speed_multiplier": 1.0,
+                    "target_in_sight_time": 0.1
+                },
+                "minecraft:equipment": {
+                    "table": "loot_tables/legend_forest/gear/goblin_ranged_equipment.json",
+                    "slot_drop_chance": [
+                        {
+                            "slot": "slot.weapon.mainhand",
+                            "drop_chance": 0.0
+                        },
+                        {
+                            "slot": "slot.armor.head",
+                            "drop_chance": 0.0
+                        },
+                        {
+                            "slot": "slot.armor.chest",
+                            "drop_chance": 0.0
+                        },
+                        {
+                            "slot": "slot.armor.legs",
+                            "drop_chance": 0.0
+                        },
+                        {
+                            "slot": "slot.armor.feet",
+                            "drop_chance": 0.0
+                        }
+                    ]
+                },
+                "minecraft:shooter": {
+                    "aux_val": 0,
+                    "def": "minecraft:arrow",
+                    "type": "Arrow"
+                },
+                "minecraft:variant": {
+                    "value": 0
+                }
+            },
+            "melee_unit": {
+                "minecraft:follow_range": {
+                    "value": 24
+                },
+                "minecraft:attack": {
+                    "damage": 2
+                },
+                "minecraft:health": {
+                    "max": 16.0,
+                    "value": 16.0
+                },
+                "minecraft:behavior.melee_attack": {
+                    "priority": 5,
+                    "speed_multiplier": 1.1,
+                    "track_target": true
+                },
+                "minecraft:equipment": {
+                    "table": "loot_tables/legend_forest/gear/armor_set_leather.json",
+                    "slot_drop_chance": [
+                        {
+                            "slot": "slot.weapon.mainhand",
+                            "drop_chance": 0.0
+                        },
+                        {
+                            "slot": "slot.armor.head",
+                            "drop_chance": 0.0
+                        },
+                        {
+                            "slot": "slot.armor.chest",
+                            "drop_chance": 0.0
+                        },
+                        {
+                            "slot": "slot.armor.legs",
+                            "drop_chance": 0.0
+                        },
+                        {
+                            "slot": "slot.armor.feet",
+                            "drop_chance": 0.0
+                        }
+                    ]
+                },
+                "minecraft:variant": {
+                    "value": 0
+                }
+            },
+            "not_hunter": {
+                "minecraft:type_family": {
+                    "family": [
+                        "mob",
+                        "goblin",
+                        "monster"
+                    ]
+                }
+            },
+            "ranged_unit": {
+                "minecraft:follow_range": {
+                    "value": 24
+                },
+                "minecraft:behavior.charge_held_item": {
+                    "items": [
+                        "minecraft:bow"
+                    ],
+                    "priority": 3
+                },
+                "minecraft:behavior.ranged_attack": {
+                    "attack_interval_max": 8,
+                    "attack_interval_min": 2,
+                    "attack_radius": 20,
+                    "attack_radius_min": 3,
+                    "priority": 5,
+                    "speed_multiplier": 1.1,
+                    "target_in_sight_time": 0.1
+                },
+                "minecraft:health": {
+                    "max": 8.0,
+                    "value": 8.0
+                },
+                "minecraft:equipment": {
+                    "table": "loot_tables/legend_forest/gear/goblin_ranged_equipment.json",
+                    "slot_drop_chance": [
+                        {
+                            "slot": "slot.weapon.mainhand",
+                            "drop_chance": 0.0
+                        },
+                        {
+                            "slot": "slot.armor.head",
+                            "drop_chance": 0.0
+                        },
+                        {
+                            "slot": "slot.armor.chest",
+                            "drop_chance": 0.0
+                        },
+                        {
+                            "slot": "slot.armor.legs",
+                            "drop_chance": 0.0
+                        },
+                        {
+                            "slot": "slot.armor.feet",
+                            "drop_chance": 0.0
+                        }
+                    ]
+                },
+                "minecraft:variant": {
+                    "value": 0
+                },
+                "minecraft:timer": {
+                    "looping": true,
+                    "time": [10, 15],
+                    "time_down_event": {
+                        "event": "legend_forest:change_shooter"
+                    }
+                }
+            },
+            "shaman": {
+                "minecraft:follow_range": {
+                    "value": 32
+                },
+                "minecraft:shareables": {
+                    "items": [
+                        {
+                            "item": "minecraft:golden_helmet",
+                            "pickup_limit": 1,
+                            "priority": 3,
+                            "stored_in_inventory": true
+                        },
+                        {
+                            "item": "minecraft:golden_chestplate",
+                            "pickup_limit": 1,
+                            "priority": 3,
+                            "stored_in_inventory": true
+                        },
+                        {
+                            "item": "minecraft:golden_leggings",
+                            "pickup_limit": 1,
+                            "priority": 3,
+                            "stored_in_inventory": true
+                        },
+                        {
+                            "item": "minecraft:golden_boots",
+                            "pickup_limit": 1,
+                            "priority": 3,
+                            "stored_in_inventory": true
+                        },
+                        {
+                            "item": "minecraft:iron_helmet",
+                            "pickup_limit": 1,
+                            "priority": 2,
+                            "stored_in_inventory": true
+                        },
+                        {
+                            "item": "minecraft:iron_chestplate",
+                            "pickup_limit": 1,
+                            "priority": 2,
+                            "stored_in_inventory": true
+                        },
+                        {
+                            "item": "minecraft:iron_leggings",
+                            "pickup_limit": 1,
+                            "priority": 2,
+                            "stored_in_inventory": true
+                        },
+                        {
+                            "item": "minecraft:iron_boots",
+                            "pickup_limit": 1,
+                            "priority": 2,
+                            "stored_in_inventory": true
+                        },
+                        {
+                            "item": "minecraft:diamond_helmet",
+                            "pickup_limit": 1,
+                            "priority": 0,
+                            "stored_in_inventory": true
+                        },
+                        {
+                            "item": "minecraft:diamond_chestplate",
+                            "pickup_limit": 1,
+                            "priority": 0,
+                            "stored_in_inventory": true
+                        },
+                        {
+                            "item": "minecraft:diamond_leggings",
+                            "pickup_limit": 1,
+                            "priority": 0,
+                            "stored_in_inventory": true
+                        },
+                        {
+                            "item": "minecraft:diamond_boots",
+                            "pickup_limit": 1,
+                            "priority": 0,
+                            "stored_in_inventory": true
+                        },
+                        {
+                            "item": "minecraft:leather_helmet",
+                            "pickup_limit": 1,
+                            "priority": 4,
+                            "stored_in_inventory": true
+                        },
+                        {
+                            "item": "minecraft:leather_chestplate",
+                            "pickup_limit": 1,
+                            "priority": 4,
+                            "stored_in_inventory": true
+                        },
+                        {
+                            "item": "minecraft:leather_leggings",
+                            "pickup_limit": 1,
+                            "priority": 4,
+                            "stored_in_inventory": true
+                        },
+                        {
+                            "item": "minecraft:leather_boots",
+                            "pickup_limit": 1,
+                            "priority": 4,
+                            "stored_in_inventory": true
+                        },
+                        {
+                            "item": "legend_forest:splendor_helmet",
+                            "pickup_limit": 1,
+                            "priority": 1,
+                            "stored_in_inventory": true
+                        },
+                        {
+                            "item": "legend_forest:splendor_chestplate",
+                            "pickup_limit": 1,
+                            "priority": 1,
+                            "stored_in_inventory": true
+                        },
+                        {
+                            "item": "legend_forest:splendor_leggings",
+                            "pickup_limit": 1,
+                            "priority": 1,
+                            "stored_in_inventory": true
+                        },
+                        {
+                            "item": "legend_forest:splendor_boots",
+                            "pickup_limit": 1,
+                            "priority": 1,
+                            "stored_in_inventory": true
+                        }
+                    ]
+                },
+                "minecraft:type_family": {
+                    "family": [
+                        "mob",
+                        "goblin",
+                        "goblin_shaman",
+                        "monster"
+                    ]
+                },
+                "minecraft:behavior.avoid_mob_type": {
+                    "priority": 1,
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player"
+                            },
+                            "max_dist": 16,
+                            "walk_speed_multiplier": 1.2,
+                            "sprint_speed_multiplier": 1.33
+                        }
+                    ]
+                },
+                "minecraft:health": {
+                    "max": 12.0,
+                    "value": 12.0
+                },
+                "minecraft:behavior.ranged_attack": {
+                    "attack_interval_max": 6,
+                    "attack_interval_min": 4,
+                    "attack_radius": 30,
+                    "attack_radius_min": 10,
+                    "priority": 2,
+                    "speed_multiplier": 1.1,
+                    "target_in_sight_time": 0.1,
+                    "swing": true
+                },
+                "minecraft:equipment": {
+                    "table": "loot_tables/legend_forest/gear/goblin_shaman_equipment.json",
+                    "slot_drop_chance": [
+                        {
+                            "slot": "slot.weapon.mainhand",
+                            "drop_chance": 0.0
+                        },
+                        {
+                            "slot": "slot.armor.head",
+                            "drop_chance": 0.0
+                        },
+                        {
+                            "slot": "slot.armor.chest",
+                            "drop_chance": 0.0
+                        },
+                        {
+                            "slot": "slot.armor.legs",
+                            "drop_chance": 0.0
+                        },
+                        {
+                            "slot": "slot.armor.feet",
+                            "drop_chance": 0.0
+                        }
+                    ]
+                },
+                "minecraft:shooter": {
+                    "def": "legend_forest:blind_wave"
+                },
+                "minecraft:variant": {
+                    "value": 1
+                },
+                "minecraft:loot": {
+                    "table": "loot_tables/legend_forest/entities/goblin.shaman.json"
+                }
+            },
+            "shaman_cooldown": {
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": [30, 50],
+                    "time_down_event": {
+                        "event": "legend_forest:shaman_cooldown_end",
+                        "target": "self"
+                    }
+                },
+                "minecraft:mark_variant": {
+                    "value": 0
+                }
+            },
+            "shaman_checking_1": {
+                "minecraft:entity_sensor": {
+                    "event": "legend_forest:shaman_check_1_over",
+                    "event_filters": {
+                        "any_of": [
+                            {
+                                "subject": "other",
+                                "test": "is_family",
+                                "value": "goblin"
+                            },
+                            {
+                                "subject": "other",
+                                "test": "is_family",
+                                "value": "player"
+                            }
+                        ]
+                    },
+                    "minimum_count": 2,
+                    "sensor_range": 16
+                },
+                "minecraft:mark_variant": {
+                    "value": 0
+                }
+            },
+            "shaman_checking_2": {
+                "minecraft:entity_sensor": {
+                    "event": "legend_forest:shaman_spelling",
+                    "event_filters": {
+                        "test": "has_target",
+                        "subject": "self"
+                    },
+                    "require_all": true,
+                    "minimum_count": 1,
+                    "sensor_range": 1
+                },
+                "minecraft:mark_variant": {
+                    "value": 0
+                }
+            },
+            "shaman_spelling": {
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": 2,
+                    "time_down_event": {
+                        "event": "legend_forest:shaman_cast_spell",
+                        "target": "self"
+                    }
+                },
+                "minecraft:mark_variant": {
+                    "value": 1
+                }
+            }
+        },
+        "components": {
+            "minecraft:damage_sensor": {
+                "on_damage": {
+                    "filters": {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "goblin"
+                    },
+                    "deals_damage": false
+                }
+            },
+            "minecraft:annotation.open_door": {
+            },
+            "minecraft:behavior.avoid_mob_type": {
+                "avoid_mob_sound": "retreat",
+                "entity_types": [
+                    {
+                        "check_if_outnumbered": true,
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "subject": "other",
+                                    "test": "has_target",
+                                    "value": true
+                                },
+                                {
+                                    "subject": "other",
+                                    "test": "is_family",
+                                    "value": "deer"
+                                }
+                            ]
+                        },
+                        "sprint_speed_multiplier": 1.2
+                    }
+                ],
+                "priority": 4,
+                "remove_target": true,
+                "sound_interval": {
+                    "range_max": 5.0,
+                    "range_min": 2.0
+                }
+            },
+            "minecraft:behavior.equip_item": {
+                "priority": 5
+            },
+            "minecraft:behavior.eat_carried_item": {
+                "delay_before_eating": 3
+            },
+            "minecraft:behavior.float": {
+                "priority": 0
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 0,
+                "alert_same_type": true,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "test": "is_family",
+                            "subject": "other",
+                            "operator": "!=",
+                            "value": "goblin"
+                        }
+                    }
+                ]
+            },
+            "minecraft:behavior.look_at_player": {
+                "look_distance": 8,
+                "priority": 6
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 2,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "any_of": [
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "player"
+                                },
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "snowgolem"
+                                },
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "irongolem"
+                                }
+                            ]
+                        },
+                        "max_dist": 30
+                    }
+                ],
+                "attack_interval": 5,
+                "must_see": true
+            },
+            "minecraft:behavior.pickup_items": {
+                "can_pickup_any_item": false,
+                "cooldown_after_being_attacked": 20.0,
+                "goal_radius": 2,
+                "max_dist": 10,
+                "pickup_based_on_chance": false,
+                "priority": 6,
+                "speed_multiplier": 1.5
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 12
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 8,
+                "speed_multiplier": 0.8
+            },
+            "minecraft:breathable": {
+                "suffocate_time": 0,
+                "total_supply": 15
+            },
+            "minecraft:can_climb": {
+            },
+            "minecraft:celebrate_hunt": {
+                "broadcast": true,
+                "celebrate_sound": "celebrate",
+                "celebration_targets": {
+                    "any_of": [
+                        {
+                            "test": "is_family",
+                            "operator": "==",
+                            "value": "deer"
+                        },
+                        {
+                            "test": "is_family",
+                            "operator": "==",
+                            "value": "player"
+                        }
+                    ]
+                },
+                "duration": 10,
+                "radius": 16,
+                "sound_interval": {
+                    "range_max": 5.0,
+                    "range_min": 2.0
+                }
+            },
+            "minecraft:collision_box": {
+                "height": 1.65,
+                "width": 0.65
+            },
+            "minecraft:equip_item": {
+            },
+            "minecraft:experience_reward": {
+                "on_death": "query.last_hit_by_player ? 1 + (query.equipment_count * Math.Random(1,2)) : 0"
+            },
+            "minecraft:group_size": {
+                "radius": 32
+            },
+            "minecraft:health": {
+                "max": 10.0,
+                "value": 10.0
+            },
+            "minecraft:inventory": {
+                "inventory_size": 2
+            },
+            "minecraft:jump.static": {
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/legend_forest/entities/goblin.json"
+            },
+            "minecraft:movement": {
+                "value": 0.35
+            },
+            "minecraft:movement.basic": {
+            },
+            "minecraft:nameable": {
+            },
+            "minecraft:navigation.walk": {
+                "avoid_water": true,
+                "can_open_doors": true,
+                "can_pass_doors": true,
+                "can_path_over_water": false,
+                "can_walk": true
+            },
+            "minecraft:physics": {
+            },
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:scale": {
+                "value": 0.75
+            },
+            "minecraft:shareables": {
+                "items": [
+                    {
+                        "item": "minecraft:gold_ingot",
+                        "priority": 1,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:iron_ingot",
+                        "priority": 1,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:diamond",
+                        "priority": 1,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "legend_forest:star_ingot",
+                        "priority": 1,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:emerald",
+                        "priority": 1,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:iron_nugget",
+                        "priority": 1,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:gold_nugget",
+                        "priority": 1,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "legend_forest:star_nugget",
+                        "priority": 1,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "legend_forest:moon_crystal",
+                        "priority": 1,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "legend_forest:splendor_ingot",
+                        "priority": 1,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:bow",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "minecraft:iron_sword",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "minecraft:golden_sword",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "minecraft:diamond_sword",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "legend_forest:star_sword",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "minecraft:golden_helmet",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "minecraft:golden_chestplate",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "minecraft:golden_leggings",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "minecraft:golden_boots",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "minecraft:iron_helmet",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "minecraft:iron_chestplate",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "minecraft:iron_leggings",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "minecraft:iron_boots",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "minecraft:diamond_helmet",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "minecraft:diamond_chestplate",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "minecraft:diamond_leggings",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "minecraft:diamond_boots",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "minecraft:leather_helmet",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "minecraft:leather_chestplate",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "minecraft:leather_leggings",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "minecraft:leather_boots",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "legend_forest:splendor_helmet",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "legend_forest:splendor_chestplate",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "legend_forest:splendor_leggings",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "legend_forest:splendor_boots",
+                        "pickup_limit": 1,
+                        "priority": 2,
+                        "stored_in_inventory": true
+                    },
+                    {
+                        "item": "legend_forest:deer_horn",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "legend_forest:fur_leather",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "legend_forest:vension",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "legend_forest:cooked_vension",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:apple",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:golden_apple",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:enchanted_golden_apple",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:chicken",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:cooked_chicken",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:cooked_porkchop",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:cooked_beef",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:cooked_mutton",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:cooked_rabbit",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:beef",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:porkchop",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:rabbit",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:rabbit_foot",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:rabbit_hide",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:rabbit_stew",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:beetroot_soup",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:beetroot",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:beetroot_seeds",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:beetroot_soup",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:carrot",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:golden_carrot",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    },
+                    {
+                        "item": "minecraft:potato",
+                        "priority": 2,
+                        "stored_in_inventory": false
+                    }
+                ]
+            },
+            "minecraft:underwater_movement": {
+                "value": 0.15
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:goblin",
+            "is_experimental": false,
+            "is_spawnable": true,
+            "is_summonable": true,
+            "runtime_identifier": "minecraft:piglin",
+            "properties": {
+                "legend_forest:now_shooter": {
+                    "type": "enum",
+                    "values": ["normal", "slow"],
+                    "default": "normal",
+                    "client_sync": true
+                }
+            }
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "randomize": [
+                    {
+                        "add": {
+                            "component_groups": [
+                                "melee_unit",
+                                "hunter"
+                            ]
+                        },
+                        "remove": {
+                        },
+                        "weight": 45
+                    },
+                    {
+                        "add": {
+                            "component_groups": [
+                                "melee_unit",
+                                "not_hunter"
+                            ]
+                        },
+                        "remove": {
+                        },
+                        "weight": 20
+                    },
+                    {
+                        "add": {
+                            "component_groups": [
+                                "ranged_unit",
+                                "hunter",
+                                "normal_shooter"
+                            ]
+                        },
+                        "remove": {
+                        },
+                        "weight": 10
+                    },
+                    {
+                        "add": {
+                            "component_groups": [
+                                "ranged_unit",
+                                "not_hunter",
+                                "normal_shooter"
+                            ]
+                        },
+                        "remove": {
+                        },
+                        "weight": 5
+                    },
+                    {
+                        "trigger": "spawn_shaman",
+                        "weight": 20
+                    }
+                ]
+            },
+            "spawn_shaman": {
+                "add": {
+                    "component_groups": [
+                        "shaman",
+                        "not_hunter",
+                        "shaman_cooldown"
+                    ]
+                },
+                "remove": {
+                }
+            },
+            "legend_forest:shaman_cooldown_end": {
+                "add": {
+                    "component_groups": [
+                        "shaman_checking_1"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "shaman_cooldown"
+                    ]
+                }
+            },
+            "legend_forest:shaman_check_1_over": {
+                "add": {
+                    "component_groups": [
+                        "shaman_checking_2"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "shaman_checking_1"
+                    ]
+                }
+            },
+            "legend_forest:shaman_cast_spell": {
+                "remove": {
+                    "component_groups": [
+                        "shaman_spelling"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "shaman_cooldown"
+                    ]
+                }
+            },
+            "legend_forest:shaman_spelling": {
+                "add": {
+                    "component_groups": [
+                        "shaman_spelling"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "shaman_checking_2"
+                    ]
+                }
+            },
+            // 哥布林弓箭手切换箭矢
+            "legend_forest:change_shooter": {
+                "sequence": [
+                    {
+                        "trigger": {
+                            "filters": {
+                                "test": "enum_property",
+                                "domain": "legend_forest:now_shooter",
+                                "value": "normal"
+                            },
+                            "event": "legend_forest:change_to_slow"
+                        }
+                    },
+                    {
+                        "trigger": {
+                            "filters": {
+                                "test": "enum_property",
+                                "domain": "legend_forest:now_shooter",
+                                "value": "slow"
+                            },
+                            "event": "legend_forest:change_to_normal"
+                        }
+                    }
+                ]
+            },
+            "legend_forest:change_to_slow": {
+                "set_property": {
+                    "legend_forest:now_shooter": "slow"
+                },
+                "add": {
+                    "component_groups": [
+                        "slow_shooter"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "normal_shooter"
+                    ]
+                }
+            },
+            "legend_forest:change_to_normal": {
+                "set_property": {
+                    "legend_forest:now_shooter": "normal"
+                },
+                "add": {
+                    "component_groups": [
+                        "normal_shooter"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "slow_shooter"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,100 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0.0
+            },
+            "minecraft:destroy_time": {
+                "value": 0.0
+            },
+            "minecraft:explosion_resistance": {
+                "value": 0.0
+            },
+            "minecraft:flammable": {
+                "burn_odds": 100,
+                "flame_odds": 60
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/legend_forest/blocks/grass.json"
+            },
+            "minecraft:map_color": {
+                "color": "#4b2e51"
+            },
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        0.9,
+                        0.8,
+                        0.9
+                    ],
+                    "min": [
+                        0.1,
+                        0.0,
+                        0.1
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "netease:block_random_offset": {
+                "x_scope": [
+                    0.0,
+                    0.5
+                ],
+                "z_scope": [
+                    0.0,
+                    0.5
+                ]
+            },
+            "netease:can_built_over": {
+                "value": true
+            },
+            "netease:may_place_on": {
+                "block": [
+                    "minecraft:grass",
+                    "minecraft:dirt",
+                    "minecraft:podzol",
+                    "minecraft:farmland",
+                    "minecraft:mycelium",
+                    "minecraft:dirt_with_roots",
+                    "legend_forest:shimmer_grass_block",
+                    "legend_forest:shimmer_grass_block_check"
+                ]
+            },
+            "netease:pathable": {
+                "value": true
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "netease:snow_recover_able": {
+                "value": true
+            },
+            "netease:solid": {
+                "value": false
+            },
+            "netease:water_destory": {
+                "value": true
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:shimmer_bud",
+            "register_to_creative_menu": true,
+            "category": "legend_forest"
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "parent": "enchantment",
+    "icon": "textures/items/splendor_chestplate",
+    "title": "磁力",
+    "pages": [
+        {
+            "type": "textPage",
+            "content": "磁力，当装备拥有此附魔的装备时增加物品拾取范围\n\n适用的工具与装备:\n头盔, 胸甲, 护腿, 靴子\n\n最大等级: 2",
+            "contentTextSize": 10
+        },
+        {
+            "type": "highlightPage",
+            "itemData": [
+                {"item": "legend_forest:splendor_helmet"},
+                {"item": "legend_forest:splendor_chestplate"},
+                {"item": "legend_forest:splendor_leggings"},
+                {"item": "legend_forest:splendor_boots"}
+            ],
+            "content": "初始拥有此附魔的装备与工具: \n星辉合金头盔, 星辉合金胸甲, 星辉合金护腿, 星辉合金靴子",
+            "contentTextSize": 10
+        }
+    ],
+    "sortnum": 1
+}

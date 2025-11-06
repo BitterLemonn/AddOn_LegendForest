@@ -1,0 +1,18 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:ore_feature": {
+        "description": {
+            "identifier": "legend_forest:resin_shimmer_feature"
+        },
+        "count": 12,
+        "replace_rules": [
+            {
+                "places_block": "legend_forest:log_shimmer_resin",
+                "may_replace": [
+                    "legend_forest:log_shimmer",
+                    "legend_forest:root_shimmer"
+                ]
+            }
+        ]
+    }
+}

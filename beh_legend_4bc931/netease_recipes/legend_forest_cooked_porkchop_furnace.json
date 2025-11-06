@@ -1,0 +1,21 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_furnace": {
+        "description": {
+            "identifier": "legend_forest:cooked_porkchop_furnace"
+        },
+        "input": {
+            "count": 1,
+            "item": "legend_forest:porkchop"
+        },
+        "output": {
+            "count": 1,
+            "item": "legend_forest:cooked_porkchop"
+        },
+        "tags": [
+            "furnace",
+            "campfire",
+            "smoker"
+        ]
+    }
+}

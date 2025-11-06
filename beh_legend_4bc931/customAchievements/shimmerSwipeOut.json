@@ -1,0 +1,18 @@
+{
+    "node_ID": "legend_forest:swipe_out",
+    "parent_node": "legend_forest:shimmer_forest",
+    "title": "\"祛\"旧迎新",
+    "unfinished_icon": "textures/items/book_disenchanted",
+    "finished_icon": "textures/items/book_disenchanted",
+    "use_default_icon_background": true,
+    "goal_details": {
+        "goal_type": "default_get",
+        "item_dict": {
+            "newItemName": "legend_forest:book_disenchanted"
+        }
+    },
+    "goal_number": 1,
+    "node_description": "怎么书柜里还藏着这本书?\n§c完成进度条件：击败书架傀儡并获取祛魔书§r",
+    "is_hidden": true,
+    "depend_parent": true
+}

@@ -1,0 +1,269 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mushroom_knight.born": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 3,
+			"bones": {
+				"bottom": {
+					"position": {
+						"0.0": [0, -6, 0],
+						"2.0": [0, 0, 0]
+					},
+					"scale": {
+						"0.0": [0, 0, 0],
+						"2.0": [1, 1, 1]
+					}
+				},
+				"head": {
+					"rotation": {
+						"0.0": ["math.cos(query.anim_time * 500) * 15", 0, "math.sin(query.anim_time * 500) * 15"],
+						"2.0": [0, 0, 0]
+					},
+					"position": {
+						"0.0": [0, -6, 0],
+						"2.0": [0, 0, 0]
+					},
+					"scale": {
+						"0.0": [0, 0, 0],
+						"2.0": [1, 1, 1]
+					}
+				},
+				"right_hand": {
+					"rotation": {
+						"2.0": [0, 0, 0],
+						"2.7": [-267.07333, -59.14444, 1.89213],
+						"3.0": [0, 0, 0]
+					}
+				},
+				"right_item": {
+					"scale": {
+						"2.7": [0, 0, 0],
+						"3.0": [1, 1, 1]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "knight_mushroom_born",
+					"locator": "bottom"
+				},
+				"0.1": {
+					"effect": "dirt_dot",
+					"locator": "bottom"
+				}
+			}
+		},
+		"animation.mushroom_knight.move": {
+			"loop": true,
+			"bones": {
+				"bottom": {
+					"rotation": ["math.sin(query.modified_distance_moved * 38.17) * 22 * query.modified_move_speed", 0, 0],
+					"position": [0, "math.abs(math.sin(query.modified_distance_moved * 38.17 / 2)) * 2 * query.modified_move_speed", 0]
+				},
+				"head": {
+					"rotation": ["math.cos(query.modified_distance_moved * 38.17) * 22 * query.modified_move_speed", 0, 0],
+					"position": [0, "math.abs(math.sin(query.modified_distance_moved * 38.17 / 2)) * 2 * query.modified_move_speed", 0]
+				},
+				"right_hand": {
+					"rotation": [
+						"math.sin(query.modified_distance_moved * 38.17) * 5 * query.modified_move_speed",
+						"math.sin(query.modified_distance_moved * 38.17) * 5 * query.modified_move_speed",
+						0
+					]
+				}
+			}
+		},
+		"animation.mushroom_knight.idle": {
+			"loop": true,
+			"bones": {
+				"main": {
+					"scale": "math.sin(query.anim_time * 56.32) * 0.05 + 0.95"
+				},
+				"right_hand": {
+					"rotation": [0, 0, "math.sin(query.anim_time * 57.35) * 6"]
+				},
+				"left_hand": {
+					"rotation": [0, 0, "-math.sin(query.anim_time * 57.35) * 6"]
+				},
+				"head": {
+					"rotation": [0, 0, "math.sin(query.anim_time * 107.35) * 3"]
+				}
+			}
+		},
+		"animation.mushroom_knight.dead": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 2,
+			"bones": {
+				"head": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [-72.5, 0, 0]
+					},
+					"position": {
+						"1.0": [0, 0, 0],
+						"2.0": [0, -32, 0]
+					}
+				},
+				"top": {
+					"rotation": {
+						"0.25": [0, 0, 0],
+						"0.75": [-40, 0, 0]
+					}
+				},
+				"right_hand": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.0": [160.55844, 49.97233, 176.65771]
+					}
+				},
+				"bottom": {
+					"position": {
+						"1.0": [0, 0, 0],
+						"2.0": [0, -32, 0]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.75": {
+					"effect": "dead_smoke",
+					"locator": "bottom"
+				}
+			}
+		},
+		"animation.mushroom_knight.look_at_target": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": ["query.eye_target_x_rotation", "query.eye_target_y_rotation", 0]
+				}
+			}
+		},
+		"animation.mushroom_knight.head_tun": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 2.25,
+			"bones": {
+				"head": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": ["math.sin(query.anim_time * 265.4) * 15 -45", 0, 0],
+						"1.0": [-45, 0, 0],
+						"1.25": ["math.abs(math.cos(query.anim_time * 720)) * 72.5", 0, 0],
+						"1.75": [72.5, 0, 0],
+						"2.25": [0, 0, 0]
+					}
+				},
+				"right_hand": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [67.5, 0, 67.5],
+						"1.0": [67.5, 0, 67.5],
+						"1.25": [117.5, 0, 67.5],
+						"1.75": [117.5, 0, 67.5],
+						"2.25": [0, 0, 0]
+					}
+				},
+				"left_hand": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [45, 0, -67.5],
+						"1.0": [45, 0, -67.5],
+						"2.25": [0, 0, 0]
+					}
+				}
+			},
+			"particle_effects": {
+				"1.25": {
+					"effect": "dead_smoke",
+					"locator": "bottom"
+				},
+				"1.5": {
+					"effect": "dead_smoke",
+					"locator": "bottom"
+				},
+				"1.75": {
+					"effect": "dead_smoke",
+					"locator": "bottom"
+				}
+			}
+		},
+		"animation.mushroom_knight.sweep_attack": {
+			"animation_length": 2.25,
+			"bones": {
+				"head": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, "math.sin(query.anim_time * 360) * 5 + 40", 0],
+						"0.75": [0, 40, 0],
+						"1.0": [0, "math.sin(query.anim_time * 720) * 20 - 87.5", 0],
+						"1.5": [0, -87.5, 0],
+						"2.25": [0, 0, 0]
+					}
+				},
+				"right_hand": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": ["math.sin(query.anim_time * 360) * 5 + 25", 42.5, 0],
+						"0.75": [25, 42.5, 0],
+						"1.0": [20.78828, -43.77544, 22.79547],
+						"1.5": [20.78828, -43.77544, 22.79547],
+						"2.25": [0, 0, 0]
+					}
+				},
+				"left_hand": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.2083": [-77.0171, -9.55883, -4.13964],
+						"1.5": [-77.0171, -9.55883, -4.13964],
+						"2.25": [0, 0, 0]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.75": {
+					"effect": "sweep_smoke",
+					"locator": "hummer"
+				}
+			}
+		},
+		"animation.mushroom_knight.storm_attack": {
+			"animation_length": 4,
+			"bones": {
+				"head": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [17.5, "math.sin(query.anim_time * 360) * 10", 0],
+						"1.0": [17.5, 0, 0],
+						"1.25": [0, 0, 0],
+						"3.25": [0, "math.sin(query.anim_time * 720) * 10 -360 * 6", 0]
+					}
+				},
+				"right_hand": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [-23.90118, -32.85816, -10.88924],
+						"1.0": [-23.9, -32.86, -10.89],
+						"1.25": [23.22244, -2.91612, -12.78344],
+						"3.25": [23.22244, -2.91612, -12.78344],
+						"3.75": [0, 0, 0]
+					}
+				},
+				"left_hand": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [-62.41043, 4.43385, 2.31336],
+						"1.0": [-62.41, 4.43, 2.31],
+						"3.25": [-62.41, 4.43, 2.31],
+						"3.75": [0, 0, 0]
+					}
+				}
+			},
+			"particle_effects": {
+				"1.25": {
+					"effect": "storm_smoke",
+					"locator": "bottom"
+				}
+			}
+		}
+	}
+}

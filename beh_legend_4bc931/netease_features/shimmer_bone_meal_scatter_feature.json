@@ -1,0 +1,20 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:scatter_feature": {
+        "description": {
+            "identifier": "legend_forest:shimmer_bone_meal_scatter_feature"
+        },
+        "places_feature": "legend_forest:shimmer_bone_meal_snap_feature",
+        "iterations": 15,
+        "scatter_chance": 100.0,
+        "x": {
+            "distribution": "gaussian",
+            "extent": [-4, 4]
+        },
+        "y": 2,
+        "z": {
+            "distribution": "gaussian",
+            "extent": [-4, 4]
+        }
+    }
+}

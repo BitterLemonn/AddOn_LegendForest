@@ -1,0 +1,29 @@
+{
+    "parent": "shimmer",
+    "icon": "textures/blocks/forest_anchor_three_side",
+    "title": "森林复苏锚",
+    "pages": [
+        {
+            "type": "textPage",
+            "content": "人们常常困扰，离去的魂魄会挣脱维度的束缚回到他原有的归属之地。直到冒险家“奥·福斯特”发现将大量的月结晶打磨成块，并使用微光核心加固能够吸引离去的灵魂并给予复苏的机会。",
+            "contentTextSize": 10
+        },
+        {
+            "type": "highlightPage",
+            "itemData": [
+                {
+                    "item": "legend_forest:forest_anchor"
+                }
+            ],
+            "itemSize": [60.0, 60.0],
+            "info": "森林复苏锚",
+            "content": "可以使用月结晶为其重复充能，随后点击存在能量的森林复苏锚即可设置重生点，充能完全的复苏锚能够给予最多三次的重生机会。"
+        },
+        {
+            "type": "tableRecipePage",
+            "recipeId": "legend_forest:forest_anchor"
+        }
+    ],
+    "sortnum": 3,
+    "isLocked": false
+}

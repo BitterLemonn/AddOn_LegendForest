@@ -1,0 +1,75 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0.0
+            },
+            "minecraft:destroy_time": {
+                "value": 0.1
+            },
+            "minecraft:explosion_resistance": {
+                "value": 0.1
+            },
+            "minecraft:flammable": {
+                "burn_odds": 100,
+                "flame_odds": 60
+            },
+            "minecraft:map_color": {
+                "color": "#a4731d"
+            },
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        1.0,
+                        0.125,
+                        1.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "netease:pathable": {
+                "value": true
+            },
+            "netease:render_layer": {
+                "value": "blend"
+            },
+            "netease:snow_recover_able": {
+                "value": true
+            },
+            "netease:solid": {
+                "value": false
+            },
+            "netease:fuel": {
+                "duration": 5
+            },
+            "netease:water_destory": {
+                "value": true
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:yellow_leaves_cape_1",
+            "register_to_creative_menu": true,
+            "category": "legend_forest"
+        }
+    }
+}

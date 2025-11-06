@@ -1,0 +1,78 @@
+{
+   "alpha_in" : {
+      "anim_type" : "alpha",
+      "duration" : 0.50,
+      "from" : 0.0,
+      "next" : "@book_tips.alpha_still",
+      "to" : 1.0
+   },
+   "alpha_out" : {
+      "anim_type" : "alpha",
+      "duration" : 0.50,
+      "from" : 1.0,
+      "next" : "",
+      "to" : 0.0
+   },
+   "alpha_still" : {
+      "anim_type" : "alpha",
+      "duration" : 2.0,
+      "from" : 1.0,
+      "next" : "@book_tips.alpha_out",
+      "to" : 1.0
+   },
+   "base_panel" : {
+      "anchor_from" : "top_middle",
+      "anchor_to" : "top_middle",
+      "controls" : [
+         {
+            "bg" : {
+               "alpha" : 0.0,
+               "clip_direction" : "left",
+               "clip_ratio" : 0.0,
+               "controls" : [
+                  {
+                     "book_img" : {
+                        "anchor_from" : "left_middle",
+                        "anchor_to" : "left_middle",
+                        "clip_direction" : "left",
+                        "clip_ratio" : 0.0,
+                        "layer" : 1,
+                        "offset" : [ 8.0, 0.0 ],
+                        "size" : [ "100.0%y+0.0px", "50.0%+0.0px" ],
+                        "texture" : "textures/items/pnakotic_manuscript",
+                        "type" : "image"
+                     }
+                  },
+                  {
+                     "tips_label" : {
+                        "color" : [ 0.08627450980392157, 0.08627450980392157, 0.08627450980392157 ],
+                        "font_type" : "default",
+                        "layer" : 2,
+                        "text" : "新章节已解锁",
+                        "type" : "label"
+                     }
+                  }
+               ],
+               "is_new_nine_slice" : true,
+               "layer" : 1,
+               "nine_slice_buttom" : 15,
+               "nine_slice_left" : 15,
+               "nine_slice_right" : 15,
+               "nine_slice_top" : 15,
+               "propagate_alpha" : true,
+               "size" : [ "default", "20.0%x+0.0px" ],
+               "texture" : "textures/ui/book_back",
+               "type" : "image"
+            }
+         }
+      ],
+      "layer" : 1,
+      "offset" : [ 0.0, 25.0 ],
+      "size" : [ "30.0%+0.0px", "100.0%cm+0.0px" ],
+      "type" : "panel"
+   },
+   "namespace" : "book_tips",
+   "screen@common.base_screen" : {
+      "$screen_content" : "book_tips.base_panel"
+   }
+}

@@ -1,0 +1,37 @@
+{
+    "pools": [
+        {
+            "entries": [
+                {
+                    "functions": [
+                        {
+                            "count": {
+                                "max": 3,
+                                "min": 1
+                            },
+                            "function": "set_count"
+                        }
+                    ],
+                    "name": "legend_forest:porkchop",
+                    "type": "item",
+                    "weight": 2
+                },
+                {
+                    "functions": [
+                        {
+                            "count": {
+                                "max": 2,
+                                "min": 0
+                            },
+                            "function": "set_count"
+                        }
+                    ],
+                    "name": "legend_forest:fur_leather",
+                    "type": "item",
+                    "weight": 1
+                }
+            ],
+            "rolls": 2
+        }
+    ]
+}

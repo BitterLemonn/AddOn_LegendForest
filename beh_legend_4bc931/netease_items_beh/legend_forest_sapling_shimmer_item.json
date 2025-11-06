@@ -1,0 +1,28 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:seed": {
+                "crop_result": "legend_forest:sapling_shimmer",
+                "plant_at": [
+                    "minecraft:grass",
+                    "minecraft:dirt",
+                    "minecraft:podzol",
+                    "minecraft:farmland",
+                    "minecraft:mycelium",
+                    "minecraft:dirt_with_roots",
+                    "legend_forest:shimmer_grass_block",
+                    "legend_forest:shimmer_grass_block_check"
+                ]
+            },
+            "netease:fuel": {
+                "duration": 5
+            }
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:sapling_shimmer_item",
+            "register_to_create_menu": true
+        }
+    }
+}

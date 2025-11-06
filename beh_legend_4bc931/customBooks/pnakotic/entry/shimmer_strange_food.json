@@ -1,0 +1,51 @@
+{
+    "parent": "shimmer",
+    "icon": "textures/items/goblin_soup",
+    "title": "奇巧食材",
+    "pages": [
+        {
+            "type": "textPage",
+            "subtitle": "哥布林浓汤",
+            "content": "哥布林总是拥有这迅猛快捷的体格。没有人知道他们是如何获得这个能力的，于是就有人动起了歪念头。他尝试将哥布林的各个部分熬煮成汤，大口饮下并声称破解了秘密。",
+            "contentTextSize": 10
+        },
+        {
+            "type": "tableRecipePage",
+            "subtitle": "哥布林浓汤",
+            "recipeId": "legend_forest:goblin_soup",
+            "content": "粘稠的汤水漂浮着几片不知原形的肉片，一股浓烈的腥臭味从中散发出来，不敢想象这是什么味道。\n§4若添加了《秘林乐事》此配方将被取消，请到厨锅查看配方§r"
+        },
+        {
+            "type": "textPage",
+            "subtitle": "蘑菇炖肉",
+            "content": "比起直接生啃哥布林的怪人，很显然森林里还有更多适合食用的食材。比如烤肋排和熟鹿排。但是懂得品尝美食的老饕们显然不满足于没有任何调味的烤肉，他们便盯上了遍布森林的青蓝菇。",
+            "contentTextSize": 10
+        },
+        {
+            "type": "tableRecipePage",
+            "subtitle": "蘑菇炖肉",
+            "recipeId": "legend_forest:blue_stew",
+            "content": "这是一道独特的菜肴，虽然青蓝菇的加入让这道菜的颜色变得有些怪异，但其独特的风味却让人难以忘怀。\n§4若添加了《秘林乐事》此配方将被取消，请到厨锅查看配方§r"
+        },
+        {
+            "type": "textPage",
+            "subtitle": "肥硕的蘑菇肉?",
+            "content": "还得是直接吃烤肉来的痛快! 一位鼻青脸肿的战士如是说。成天吃蘑菇，迟早有一天会遭报应的。",
+            "contentTextSize": 10
+        },
+        {
+            "type": "highlightPage",
+            "itemData": [
+                {
+                    "item": "legend_forest:mushroom_meat"
+                }
+            ],
+            "itemSize": [60.0, 60.0],
+            "info": "肥硕的蘑菇肉?",
+            "content": "怎么? 你以为这是蘑菇? 这可是肉! 肥硕的蘑菇肉!"
+        }
+    ],
+    "sortnum": 4,
+    "isLocked": true,
+    "lockMsg": "请先完成进度'微光环绕'"
+}

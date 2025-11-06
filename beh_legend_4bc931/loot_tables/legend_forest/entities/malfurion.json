@@ -1,0 +1,84 @@
+{
+    "pools": [
+        {
+            "entries": [
+                {
+                    "functions": [
+                        {
+                            "count": {
+                                "max": 3,
+                                "min": 2
+                            },
+                            "function": "set_count"
+                        }
+                    ],
+                    "name": "legend_forest:fur_leather",
+                    "type": "item",
+                    "weight": 3
+                },
+                {
+                    "functions": [
+                        {
+                            "count": {
+                                "max": 3,
+                                "min": 2
+                            },
+                            "function": "set_count"
+                        }
+                    ],
+                    "name": "legend_forest:deer_horn",
+                    "type": "item",
+                    "weight": 3
+                },
+                {
+                    "type": "empty",
+                    "weight": 2
+                }
+            ],
+            "rolls": 5
+        },
+        {
+            "entries": [
+                {
+                    "name": "legend_forest:fire_crystal",
+                    "type": "item",
+                    "weight": 4
+                },
+                {
+                    "name": "legend_forest:ice_gem",
+                    "type": "item",
+                    "weight": 4
+                },
+                {
+                    "name": "legend_forest:forest_will",
+                    "type": "item",
+                    "weight": 2
+                }
+            ],
+            "rolls": 1
+        },
+        {
+            "entries": [
+                {
+                    "functions": [
+                        {
+                            "count": {
+                                "max": 2,
+                                "min": 1
+                            },
+                            "function": "set_count"
+                        }
+                    ],
+                    "name": "legend_forest:mal_broken_horn",
+                    "type": "item",
+                    "weight": 2
+                },
+                {
+                    "type": "empty",
+                    "weight": 1
+                }
+            ],
+            "rolls": 1
+        }
+    ]
+}

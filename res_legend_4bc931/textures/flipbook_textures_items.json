@@ -1,0 +1,12 @@
+[
+    {
+        "atlas_tile": "legend_forest:forest_will",
+        "flipbook_texture": "textures/items/forest_will",
+        "ticks_per_frame": 10
+    },
+    {
+        "atlas_tile": "legend_forest:shimmer_bug",
+        "flipbook_texture": "textures/items/shimmer_bug",
+        "ticks_per_frame": 10
+    }
+]

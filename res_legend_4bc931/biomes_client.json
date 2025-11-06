@@ -1,0 +1,19 @@
+{
+    "biomes": {
+        "dm928808_forest": {
+            "water_surface_color": "#a58ae4",
+            "water_fog_color": "#8065bf",
+            "fog_color": "#47315e"
+        },
+        "dm928808_forest_hills": {
+            "water_surface_color": "#a58ae4",
+            "water_fog_color": "#8065bf",
+            "fog_color": "#47315e"
+        },
+        "dm928808_flower_forest": {
+            "water_surface_color": "#a58ae4",
+            "water_fog_color": "#8065bf",
+            "fog_color": "#47315e"
+        }
+    }
+}

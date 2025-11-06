@@ -1,0 +1,12 @@
+{
+    "node_ID": "legend_forest:god_fall",
+    "parent_node": "legend_forest:faith_rite",
+    "title": "永不沉眠",
+    "unfinished_icon": "textures/items/malfurion_wand",
+    "finished_icon": "textures/items/malfurion_wand",
+    "use_default_icon_background": true,
+    "goal_number": 1,
+    "node_description": "森茂祭司是森林的德鲁伊掌握着各种法术，祂静静地守望着整座森林，守护着森林的安宁。\n§c完成进度条件：击退森茂祭司(化身)",
+    "is_hidden": false,
+    "depend_parent": true
+}

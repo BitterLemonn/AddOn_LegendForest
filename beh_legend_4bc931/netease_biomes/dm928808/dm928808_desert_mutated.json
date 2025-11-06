@@ -1,0 +1,35 @@
+{
+    "format_version": "1.14.0",
+    "minecraft:biome": {
+        "components": {
+            "abandon_land": {
+
+            },
+            "abandon_land_mutated": {
+
+            },
+            "dm928808": {
+
+            },
+            "minecraft:overworld_generation_rules": {
+                "hills_transformation": "dm928808_desert_hills",
+                "mutate_transformation": "dm928808_desert_mutated"
+            },
+            "minecraft:overworld_height": {
+                "noise_type": "default_mutated"
+            },
+            "minecraft:surface_parameters": {
+                "foundation_material": "minecraft:stone",
+                "mid_material": "minecraft:sandstone",
+                "sea_floor_depth": 0,
+                "sea_floor_material": "minecraft:gravel",
+                "sea_material": "minecraft:water",
+                "top_material": "minecraft:sand"
+            }
+        },
+        "description": {
+            "identifier": "dm928808_desert_mutated",
+            "inherits": "desert_mutated"
+        }
+    }
+}

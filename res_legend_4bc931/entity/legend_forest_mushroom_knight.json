@@ -1,0 +1,61 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "look_at_target": "animation.mushroom_knight.look_at_target",
+                "move": "animation.mushroom_knight.move",
+                "move_controller": "controller.animation.mushroom_knight.move",
+                "static": "animation.mushroom_knight.static",
+                "born": "animation.mushroom_knight.born",
+                "idle": "animation.mushroom_knight.idle",
+                "dead": "animation.mushroom_knight.dead",
+                "sweep_attack": "animation.mushroom_knight.sweep_attack",
+                "head_tun": "animation.mushroom_knight.head_tun",
+                "storm_attack": "animation.mushroom_knight.storm_attack",
+                "attack_controller": "controller.animation.mushroom_knight.attack"
+            },
+            "enable_attachables": false,
+            "geometry": {
+                "default": "geometry.mushroom_knight"
+            },
+            "identifier": "legend_forest:mushroom_knight",
+            "materials": {
+                "default": "entity"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "scripts": {
+                "animate": [
+                    "look_at_target",
+                    "move_controller",
+                    "attack_controller",
+                    {
+                        "idle": "query.variant == 1"
+                    },
+                    {
+                        "born": "query.variant == 0"
+                    },
+                    {
+                        "dead": "query.variant == 2"
+                    }
+                ]
+            },
+            "particle_effects": {
+                "knight_mushroom_born": "legend_forest:knight_mushroom_born",
+                "dirt_dot": "legend_forest:dirt_dot",
+                "dead_smoke": "legend_forest:dead_smoke",
+                "storm_smoke": "legend_forest:storm_smoke",
+                "sweep_smoke": "legend_forest:sweep_smoke"
+            },
+            "spawn_egg": {
+                "base_color": "#e4dab9",
+                "overlay_color": "#5a75cb"
+            },
+            "textures": {
+                "default": "textures/entity/mushroom_knight"
+            }
+        }
+    }
+}

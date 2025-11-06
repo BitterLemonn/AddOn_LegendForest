@@ -1,0 +1,36 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "legend_forest:bug_net_recipe"
+        },
+        "key": {
+            "I": {
+                "item": "minecraft:stick"
+            },
+            "O": {
+                "item": "minecraft:string"
+            }
+        },
+        "pattern": [
+            "IOO",
+            "IO ",
+            "I  "
+        ],
+        "result": {
+            "count": 1,
+            "item": "legend_forest:bug_net"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "minecraft:stick"
+            },
+            {
+                "item": "minecraft:string"
+            }
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "legend_forest:shaman_headbone"
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:shaman_headbone",
+            "register_to_create_menu": true
+        }
+    }
+}

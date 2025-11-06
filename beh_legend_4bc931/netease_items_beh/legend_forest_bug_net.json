@@ -1,0 +1,15 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:max_stack_size": 1,
+            "minecraft:max_damage": 64,
+            "minecraft:hand_equipped": true
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:bug_net",
+            "register_to_create_menu": true
+        }
+    }
+}

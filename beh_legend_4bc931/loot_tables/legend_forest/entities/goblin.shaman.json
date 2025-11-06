@@ -1,0 +1,47 @@
+{
+    "pools": [
+        {
+            "conditions": [
+                {
+                    "condition": "killed_by_player"
+                }
+            ],
+            "entries": [
+                {
+                    "functions": [
+                        {
+                            "count": {
+                                "max": 2,
+                                "min": 0
+                            },
+                            "function": "set_count"
+                        }
+                    ],
+                    "name": "legend_forest:goblin_teeth",
+                    "type": "item",
+                    "weight": 4
+                },
+                {
+                    "functions": [
+                        {
+                            "count": {
+                                "max": 2,
+                                "min": 0
+                            },
+                            "function": "set_count"
+                        }
+                    ],
+                    "name": "legend_forest:goblin_ear",
+                    "type": "item",
+                    "weight": 4
+                },
+                {
+                    "name": "legend_forest:shaman_headbone",
+                    "type": "item",
+                    "weight": 2
+                }
+            ],
+            "rolls": 1
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "legend_forest:golden_minnow_recipe"
+        },
+        "key": {
+            "O": {
+                "item": "minecraft:gold_nugget"
+            },
+            "X": {
+                "item": "legend_forest:cooked_minnow"
+            }
+        },
+        "pattern": [
+            " O ",
+            "OXO",
+            " O "
+        ],
+        "result": {
+            "count": 1,
+            "item": "legend_forest:golden_minnow"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "minecraft:gold_nugget"
+            },
+            {
+                "item": "legend_forest:cooked_minnow"
+            }
+        ]
+    }
+}

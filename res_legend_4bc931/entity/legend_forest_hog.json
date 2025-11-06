@@ -1,0 +1,48 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "attack": "animation.hog.attack",
+                "attack_controller": "controller.animation.hog.attack",
+                "baby_scaling": "animation.hog.baby_scaling",
+                "idle": "animation.hog.idle",
+                "look_at_target": "animation.hog.look_at_target",
+                "walk": "animation.hog.walk"
+            },
+            "geometry": {
+                "default": "geometry.hog"
+            },
+            "identifier": "legend_forest:hog",
+            "materials": {
+                "default": "entity"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "scripts": {
+                "animate": [
+                    "look_at_target",
+                    "walk",
+                    {
+                        "baby_scaling": "query.is_baby"
+                    },
+                    "attack_controller",
+                    "idle"
+                ],
+                "pre_animation": [
+                    "variable.tcos_right_side = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+                    "variable.tcos_left_side = -variable.tcos_right_side;",
+                    "variable.attack_head_rot =  Math.sin(variable.attack_time * 180.0) * -37.3;"
+                ]
+            },
+            "spawn_egg": {
+                "base_color": "#723913",
+                "overlay_color": "#905136"
+            },
+            "textures": {
+                "default": "textures/entity/hog"
+            }
+        }
+    }
+}

@@ -1,0 +1,805 @@
+{
+    "format_version": "1.20.0",
+    "minecraft:entity": {
+        "component_groups": {
+            // 正常伤害过滤器
+            "legend_forest:normal_sensor": {
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "entity_explosion",
+                            "deals_damage": false
+                        },
+                        {
+                            "cause": "fire",
+                            "deals_damage": false
+                        },
+                        {
+                            "cause": "fire_tick",
+                            "deals_damage": false
+                        },
+                        {
+                            "on_damage": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "has_damage",
+                                            "value": "suicide"
+                                        }
+                                    ]
+                                },
+                                "target": "self",
+                                "event": "legend_forest:dying"
+                            },
+                            "deals_damage": false,
+                            "cause": "suicide"
+                        }
+                    ]
+                }
+            },
+            // 无敌状态过滤器
+            "legend_forest:invincible_sensor": {
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "all",
+                            "deals_damage": false
+                        }
+                    ]
+                }
+            },
+            // 技术性组 - 技能cd
+            "legend_forest:skill_cd": {
+                "minecraft:timer": {
+                    "time": [0, 6],
+                    "time_down_event": {
+                        "event": "legend_forest:skill_cd_over"
+                    }
+                }
+            },
+            // 技术性组 - 取消攻击组件 取消寻路
+            "legend_forest:on_attack": {
+                "minecraft:underwater_movement": {
+                    "value": 0.0
+                },
+                "minecraft:movement": {
+                    "value": 0.0
+                }
+            },
+            // 技术性组 - 添加攻击组件用于寻路
+            "legend_forest:not_attack": {
+                "minecraft:underwater_movement": {
+                    "value": 0.15
+                },
+                "minecraft:movement": {
+                    "value": 0.25
+                },
+                "minecraft:behavior.ranged_attack": {
+                    "priority": 0,
+                    "charge_charged_trigger": 0.0,
+                    "charge_shoot_trigger": 0.0,
+                    "attack_radius_min": 6.0,
+                    "attack_interval_min": 0.0,
+                    "attack_interval_max": 0.0,
+                    "attack_radius": 16.0
+                },
+                "minecraft:behavior.look_at_player": {
+                    "look_distance": 8,
+                    "priority": 8
+                },
+                "minecraft:behavior.look_at_target": {
+                    "priority": 3
+                }
+            },
+            // 正常状态
+            "legend_forest:alive": {
+                "minecraft:behavior.nearest_attackable_target": {
+                    "attack_interval": 1.0,
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "any_of": [
+                                    {
+                                        "subject": "other",
+                                        "test": "is_family",
+                                        "value": "player"
+                                    },
+                                    {
+                                        "subject": "other",
+                                        "test": "is_family",
+                                        "value": "skeleton_guardian"
+                                    },
+                                    {
+                                        "subject": "other",
+                                        "test": "is_family",
+                                        "value": "irongolem"
+                                    },
+                                    {
+                                        "subject": "other",
+                                        "test": "is_family",
+                                        "value": "snowgolem"
+                                    }
+                                ]
+                            },
+                            "max_dist": 32
+                        }
+                    ],
+                    "must_see": true,
+                    "priority": 1,
+                    "reselect_targets": true
+                },
+                "minecraft:behavior.random_stroll": {
+                    "priority": 8,
+                    "speed_multiplier": 0.8
+                },
+                "minecraft:environment_sensor": {
+                    "triggers": [
+                        {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "enum_property",
+                                        "domain": "legend_forest:on_attack",
+                                        "value": "false"
+                                    },
+                                    {
+                                        "test": "enum_property",
+                                        "domain": "legend_forest:on_teleport",
+                                        "value": "false"
+                                    },
+                                    {
+                                        "test": "has_target"
+                                    },
+                                    {
+                                        "test": "target_distance",
+                                        "operator": "<=",
+                                        "value": 20
+                                    },
+                                    {
+                                        "test": "target_distance",
+                                        "operator": ">",
+                                        "value": 4
+                                    }
+                                ]
+                            },
+                            "event": "legend_forest:random_attack"
+                        },
+                        {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "enum_property",
+                                        "domain": "legend_forest:on_attack",
+                                        "value": "false"
+                                    },
+                                    {
+                                        "test": "enum_property",
+                                        "domain": "legend_forest:on_teleport",
+                                        "value": "false"
+                                    },
+                                    {
+                                        "test": "has_target"
+                                    },
+                                    {
+                                        "test": "target_distance",
+                                        "operator": "<=",
+                                        "value": 4
+                                    }
+                                ]
+                            },
+                            "event": "legend_forest:random_attack_close_distance"
+                        }
+                    ]
+                }
+            },
+            // 召唤藤蔓
+            "legend_forest:summoner": {
+                "minecraft:behavior.summon_entity": {
+                    "priority": 0,
+                    "summon_choices": [
+                        {
+                            "cast_duration": 2.0,
+                            "cooldown_time": 3.6,
+                            "max_activation_range": 4.0,
+                            "min_activation_range": 0.0,
+                            "particle_color": "#FF664D59",
+                            "sequence": [
+                                {
+                                    "base_delay": 1.0,
+                                    "delay_per_summon": 0.0,
+                                    "entity_lifespan": 5.5,
+                                    "entity_type": "legend_forest:spawn_vine",
+                                    "num_entities_spawned": 4,
+                                    "shape": "circle",
+                                    "size": 1.5,
+                                    "sound_event": "prepare.attack",
+                                    "target": "self"
+                                },
+                                {
+                                    "base_delay": 1.0,
+                                    "delay_per_summon": 0.0,
+                                    "entity_lifespan": 5.5,
+                                    "entity_type": "legend_forest:spawn_vine",
+                                    "num_entities_spawned": 10,
+                                    "shape": "circle",
+                                    "size": 4.5,
+                                    "target": "self"
+                                }
+                            ],
+                            "start_sound_event": "cast.spell",
+                            "weight": 2
+                        },
+                        {
+                            "cast_duration": 2.0,
+                            "cooldown_time": 1.2,
+                            "max_activation_range": 4.0,
+                            "min_activation_range": 0.0,
+                            "particle_color": "#FF664D59",
+                            "sequence": [
+                                {
+                                    "base_delay": 1.0,
+                                    "delay_per_summon": 0.0,
+                                    "entity_lifespan": 1.1,
+                                    "entity_type": "minecraft:evocation_fang",
+                                    "num_entities_spawned": 6,
+                                    "shape": "circle",
+                                    "size": 1.5,
+                                    "sound_event": "prepare.attack",
+                                    "target": "self"
+                                },
+                                {
+                                    "base_delay": 1.0,
+                                    "delay_per_summon": 0.0,
+                                    "entity_lifespan": 1.1,
+                                    "entity_type": "minecraft:evocation_fang",
+                                    "num_entities_spawned": 12,
+                                    "shape": "circle",
+                                    "size": 4.5,
+                                    "target": "self"
+                                }
+                            ],
+                            "start_sound_event": "cast.spell",
+                            "weight": 2
+                        },
+                        {
+                            "cast_duration": 2.0,
+                            "cooldown_time": 2.4,
+                            "min_activation_range": 3.0,
+                            "particle_color": "#FF664D59",
+                            "sequence": [
+                                {
+                                    "base_delay": 1.0,
+                                    "delay_per_summon": 0.1,
+                                    "entity_lifespan": 5.5,
+                                    "entity_type": "legend_forest:spawn_vine",
+                                    "num_entities_spawned": 8,
+                                    "shape": "line",
+                                    "size": 14,
+                                    "target": "self"
+                                },
+                                {
+                                    "base_delay": 0.0,
+                                    "delay_per_summon": 0.2,
+                                    "entity_lifespan": 1.1,
+                                    "entity_type": "minecraft:evocation_fang",
+                                    "num_entities_spawned": 12,
+                                    "shape": "line",
+                                    "size": 14,
+                                    "target": "self"
+                                }
+                            ],
+                            "start_sound_event": "cast.spell",
+                            "weight": 3
+                        }
+                    ]
+                }
+            },
+            // 死亡动画
+            "legend_forest:dying": {
+                "minecraft:mark_variant": {
+                    "value": 1
+                },
+                "minecraft:timer": {
+                    "time": 2.5,
+                    "time_down_event": {
+                        "event": "legend_forest:dead"
+                    }
+                }
+            },
+            // 死亡状态
+            "legend_forest:dead": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:variant": {
+                "value": 0
+            },
+            "minecraft:skin_id": {
+                "value": 0
+            },
+            "minecraft:behavior.float": {
+                "priority": 0
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 1
+            },
+            "minecraft:can_climb": {
+            },
+            "minecraft:jump.static": {
+            },
+            "minecraft:movement.basic": {
+            },
+            "minecraft:navigation.walk": {
+                "avoid_water": true,
+                "can_open_doors": true,
+                "can_pass_doors": true,
+                "can_path_over_water": true,
+                "can_walk": true,
+                "is_amphibious": true
+            },
+            "minecraft:equip_item": {},
+            "minecraft:mark_variant": {
+                "value": 0
+            },
+            "minecraft:persistent": {
+            },
+            "minecraft:boss": {
+                "hud_range": 55,
+                "name": "森茂祭司(化身)"
+            },
+            "minecraft:collision_box": {
+                "height": 1.8,
+                "width": 0.75
+            },
+            "minecraft:equipment": {
+                "slot_drop_chance": [
+                    {
+                        "slot": "slot.weapon.mainhand",
+                        "drop_chance": 0.0
+                    },
+                    {
+                        "slot": "slot.armor.head",
+                        "drop_chance": 0.0
+                    },
+                    {
+                        "slot": "slot.armor.chest",
+                        "drop_chance": 0.0
+                    },
+                    {
+                        "slot": "slot.armor.legs",
+                        "drop_chance": 0.0
+                    },
+                    {
+                        "slot": "slot.armor.feet",
+                        "drop_chance": 0.0
+                    }
+                ],
+                "table": "loot_tables/legend_forest/gear/malfurion_equipment.json"
+            },
+            "minecraft:experience_reward": {
+                "on_death": "query.last_hit_by_player ? 65 + Math.Random(10,30) : 0"
+            },
+            "minecraft:health": {
+                "max": 200,
+                "value": 200
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/legend_forest/entities/malfurion.json"
+            },
+            "minecraft:knockback_resistance": {
+                "value": 0.65
+            },
+            "minecraft:physics": {
+            },
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:scale": {
+                "value": 1.0
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "mob",
+                    "monster",
+                    "boss",
+                    "malfurion"
+                ]
+            },
+            "minecraft:follow_range": {
+                "value": 48
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:malfurion",
+            "is_experimental": false,
+            "is_spawnable": true,
+            "is_summonable": true,
+            "properties": {
+                "legend_forest:on_attack": {
+                    "type": "enum",
+                    "values": ["false", "true"],
+                    "default": "false",
+                    "client_sync": true
+                },
+                "legend_forest:on_teleport": {
+                    "type": "enum",
+                    "values": ["false", "true"],
+                    "default": "false",
+                    "client_sync": true
+                },
+                "legend_forest:can_use_skill": {
+                    "type": "enum",
+                    "values": ["false", "true"],
+                    "default": "true",
+                    "client_sync": true
+                }
+            }
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "legend_forest:normal_sensor",
+                        "legend_forest:alive",
+                        "legend_forest:not_attack"
+                    ]
+                }
+            },
+            // 死亡动画
+            "legend_forest:dying": {
+                "add": {
+                    "component_groups": [
+                        "legend_forest:dying",
+                        "legend_forest:on_attack",
+                        "legend_forest:invincible_sensor"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:normal_sensor",
+                        "legend_forest:not_attack",
+                        "legend_forest:alive",
+                        "legend_forest:summoner",
+                        "legend_forest:not_attack",
+                        "legend_forest:skill_cd"
+                    ]
+                }
+            },
+            // 死亡状态
+            "legend_forest:dead": {
+                "add": {
+                    "component_groups": [
+                        "legend_forest:dead"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:dying"
+                    ]
+                }
+            },
+            // 选择召唤技能或不执行任何动作
+            "legend_forest:random_attack_close_distance": {
+                "randomize": [
+                    {
+                        "weight": 7,
+                        "trigger": {
+                            "event": "legend_forest:summon_spell"
+                        }
+                    },
+                    {
+                        "weight": 3,
+                        "trigger": {
+                            "event": "legend_forest:do_nothing"
+                        }
+                    }
+                ]
+            },
+            // 不做任何动作
+            "legend_forest:do_nothing": {
+                "set_property": {
+                    "legend_forest:on_attack": "true"
+                }
+            },
+            // 选择普通攻击或随机技能
+            "legend_forest:random_attack": {
+                "sequence": [
+                    {
+                        "set_property": {
+                            "legend_forest:on_attack": "true"
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "enum_property",
+                            "domain": "legend_forest:can_use_skill",
+                            "value": "true"
+                        },
+                        "randomize": [
+                            {
+                                "weight": 7,
+                                "trigger": {
+                                    "event": "legend_forest:random_skill"
+                                }
+                            },
+                            {
+                                "weight": 3,
+                                "trigger": {
+                                    "event": "legend_forest:normal_attack"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "filters": {
+                            "test": "enum_property",
+                            "domain": "legend_forest:can_use_skill",
+                            "value": "false"
+                        },
+                        "trigger": {
+                            "event": "legend_forest:normal_attack"
+                        }
+                    }
+                ]
+            },
+            // 触发随机技能
+            "legend_forest:random_skill": {
+                "sequence": [
+                    {
+                        "set_property": {
+                            "legend_forest:can_use_skill": "false"
+                        }
+                    },
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "has_target"
+                                },
+                                {
+                                    "test": "target_distance",
+                                    "operator": "<=",
+                                    "value": 8
+                                }
+                            ]
+                        },
+                        "randomize": [
+                            {
+                                "weight": 2,
+                                "trigger": {
+                                    "event": "legend_forest:ice_spell"
+                                }
+                            },
+                            {
+                                "weight": 2,
+                                "trigger": {
+                                    "event": "legend_forest:fire_spell"
+                                }
+                            },
+                            {
+                                "weight": 6,
+                                "trigger": {
+                                    "event": "legend_forest:summon_spell"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "has_target"
+                                },
+                                {
+                                    "test": "target_distance",
+                                    "operator": ">",
+                                    "value": 8
+                                }
+                            ]
+                        },
+                        "randomize": [
+                            {
+                                "weight": 6,
+                                "trigger": {
+                                    "event": "legend_forest:ice_spell"
+                                }
+                            },
+                            {
+                                "weight": 4,
+                                "trigger": {
+                                    "event": "legend_forest:fire_spell"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            // 技能cd结束
+            "legend_forest:skill_cd_over": {
+                "sequence": [
+                    {
+                        "set_property": {
+                            "legend_forest:can_use_skill": "true"
+                        }
+                    },
+                    {
+                        "remove": {
+                            "component_groups": [
+                                "legend_forest:skill_cd"
+                            ]
+                        }
+                    }
+                ]
+            },
+            // 传送
+            "legend_forest:teleport": {
+                "sequence": [
+                    {
+                        "set_property": {
+                            "legend_forest:on_teleport": "true"
+                        }
+                    },
+                    {
+                        "add": {
+                            "component_groups": [
+                                "legend_forest:invincible_sensor",
+                                "legend_forest:on_attack"
+                            ]
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "legend_forest:normal_sensor",
+                                "legend_forest:not_attack"
+                            ]
+                        }
+                    }
+                ]
+            },
+            // 传送结束
+            "legend_forest:teleport_end": {
+                "sequence": [
+                    {
+                        "set_property": {
+                            "legend_forest:on_teleport": "false"
+                        }
+                    },
+                    {
+                        "remove": {
+                            "component_groups": [
+                                "legend_forest:invincible_sensor",
+                                "legend_forest:on_attack"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "legend_forest:normal_sensor",
+                                "legend_forest:not_attack"
+                            ]
+                        }
+                    }
+                ]
+            },
+            // 召唤藤蔓
+            "legend_forest:summon_spell": {
+                "sequence": [
+                    {
+                        "set_property": {
+                            "legend_forest:on_attack": "true",
+                            "legend_forest:can_use_skill": "false"
+                        }
+                    },
+                    {
+                        "add": {
+                            "component_groups": [
+                                "legend_forest:summoner"
+                            ]
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "legend_forest:not_attack"
+                            ]
+                        }
+                    }
+                ]
+            },
+            // 冰锥法术
+            "legend_forest:ice_spell": {
+                "add": {
+                    "component_groups": [
+                        "legend_forest:on_attack"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:not_attack"
+                    ]
+                }
+            },
+            // 火球法术
+            "legend_forest:fire_spell": {
+                "add": {
+                    "component_groups": [
+                        "legend_forest:on_attack"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:not_attack"
+                    ]
+                }
+            },
+            // 普通攻击
+            "legend_forest:normal_attack": {
+                "add": {
+                    "component_groups": [
+                        "legend_forest:on_attack"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:not_attack"
+                    ]
+                }
+            },
+            // 攻击结束 - 可以使用下一次攻击
+            "legend_forest:attack_end": {
+                "sequence": [
+                    {
+                        "set_property": {
+                            "legend_forest:on_attack": "false"
+                        }
+                    },
+                    {
+                        "remove": {
+                            "component_groups": [
+                                "legend_forest:on_attack"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "legend_forest:not_attack"
+                            ]
+                        }
+                    }
+                ]
+            },
+            // 普通攻击结束 - 可以移动
+            "legend_forest:normal_attack_end": {
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:on_attack"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "legend_forest:not_attack"
+                    ]
+                }
+            },
+            // 技能结束
+            "legend_forest:skill_end": {
+                "sequence": [
+                    {
+                        "remove": {
+                            "component_groups": [
+                                "legend_forest:summoner"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "legend_forest:skill_cd"
+                            ]
+                        }
+                    },
+                    {
+                        "trigger": {
+                            "event": "legend_forest:attack_end"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

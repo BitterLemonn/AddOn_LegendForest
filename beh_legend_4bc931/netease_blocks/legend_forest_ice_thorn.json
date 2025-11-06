@@ -1,0 +1,74 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0.0
+            },
+            "minecraft:destroy_time": {
+                "value": 0.0
+            },
+            "minecraft:explosion_resistance": {
+                "value": 0.0
+            },
+            "minecraft:map_color": {
+                "color": "#70e6e0"
+            },
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        0.8,
+                        0.7,
+                        0.8
+                    ],
+                    "min": [
+                        0.2,
+                        0.0,
+                        0.2
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "netease:on_entity_inside": {
+                "send_python_event": true
+            },
+            "netease:pathable": {
+                "value": true
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "minecraft:loot": {
+                "table": ""
+            },
+            "netease:solid": {
+                "value": false
+            },
+            "netease:neighborchanged_sendto_script": {
+                "value": true
+            },
+            "netease:water_destory": {
+                "value": true
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:ice_thorn",
+            "register_to_creative_menu": true,
+            "category": "legend_forest"
+        }
+    }
+}

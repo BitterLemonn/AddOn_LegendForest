@@ -1,0 +1,38 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "legend_forest:herb_bag_recipe"
+        },
+        "priority": 0,
+        "ingredients": [
+            {
+                "item": "legend_forest:empty_fur_bag"
+            },
+            {
+                "item": "legend_forest:blue_mushroom"
+            },
+            {
+                "item": "legend_forest:herb"
+            }
+        ],
+        "result": {
+            "item": "legend_forest:herb_bag",
+            "count": 1
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "legend_forest:empty_fur_bag"
+            },
+            {
+                "item": "legend_forest:blue_mushroom"
+            },
+            {
+                "item": "legend_forest:herb"
+            }
+        ]
+    }
+}

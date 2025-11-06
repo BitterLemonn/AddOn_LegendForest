@@ -1,0 +1,38 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:spawn_rules": {
+        "conditions": [
+            {
+                "minecraft:biome_filter": {
+                    "all_of": [
+                        {
+                            "operator": "==",
+                            "test": "has_biome_tag",
+                            "value": "shimmer_flower_forest"
+                        }
+                    ]
+                },
+                "minecraft:density_limit": {
+                    "surface": 20
+                },
+                "minecraft:distance_filter": {
+                    "max": 32,
+                    "min": 12
+                },
+                "minecraft:herd": {
+                    "max_size": 8,
+                    "min_size": 4
+                },
+                "minecraft:spawns_underwater": {},
+                "minecraft:spawns_on_surface": {},
+                "minecraft:weight": {
+                    "default": 70
+                }
+            }
+        ],
+        "description": {
+            "identifier": "legend_forest:minnow",
+            "population_control": "water_animal"
+        }
+    }
+}

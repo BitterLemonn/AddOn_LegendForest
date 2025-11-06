@@ -1,0 +1,24 @@
+{
+    "format_version": "1.14.0",
+    "minecraft:biome": {
+        "components": {
+            "dm340654": {},
+            "minecraft:overworld_height": {
+                "noise_type": "default_mutated"
+            },
+            "minecraft:surface_parameters": {
+                "foundation_material": "minecraft:stone",
+                "mid_material": "minecraft:dirt",
+                "sea_floor_depth": 0,
+                "sea_floor_material": "minecraft:dirt",
+                "sea_material": "minecraft:water",
+                "top_material": "legend_forest:shimmer_grass_block_check"
+            },
+            "shimmer_forest": {},
+            "shimmer_forest_hills": {}
+        },
+        "description": {
+            "identifier": "shimmer_forest_hills"
+        }
+    }
+}

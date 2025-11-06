@@ -1,0 +1,449 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:entity": {
+        "component_groups": {
+            "legend_forest:normal_sensor": {
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "on_damage": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "has_damage",
+                                            "value": "suicide"
+                                        }
+                                    ]
+                                },
+                                "target": "self",
+                                "event": "legend_forest:death"
+                            },
+                            "deals_damage": false,
+                            "cause": "suicide"
+                        },
+                        {
+                            "deals_damage": false,
+                            "cause": "fall"
+                        },
+                        {
+                            "deals_damage": true,
+                            "cause": "all",
+                            "damage_multiplier": 0.75
+                        }
+                    ]
+                }
+            },
+            "legend_forest:less_sensor": {
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "on_damage": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "has_damage",
+                                            "value": "suicide"
+                                        }
+                                    ]
+                                },
+                                "target": "self",
+                                "event": "legend_forest:death"
+                            },
+                            "deals_damage": false,
+                            "cause": "suicide"
+                        },
+                        {
+                            "deals_damage": false,
+                            "cause": "fall"
+                        },
+                        {
+                            "deals_damage": true,
+                            "cause": "all",
+                            "damage_multiplier": 0.15
+                        }
+                    ]
+                }
+            },
+            "legend_forest:start_anime": {
+                "minecraft:damage_sensor": {
+                    "triggers": {
+                        "cause": "all",
+                        "deals_damage": false
+                    }
+                },
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": [4.0, 4.0],
+                    "time_down_event": {
+                        "event": "legend_forest:start_anime_over"
+                    }
+                },
+                "minecraft:variant": {
+                    "value": 0
+                }
+            },
+            "legend_forest:normal_state": {
+                "minecraft:behavior.look_at_target": {
+                    "probability": 0.35,
+                    "priority": 4,
+                    "look_distance": 16
+                },
+                "minecraft:variant": {
+                    "value": 1
+                },
+                "minecraft:behavior.hurt_by_target": {
+                    "priority": 1
+                },
+                "minecraft:behavior.look_at_player": {
+                    "look_distance": 8,
+                    "priority": 6
+                },
+                "minecraft:behavior.nearest_attackable_target": {
+                    "attack_interval": 1.0,
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "any_of": [
+                                    {
+                                        "subject": "other",
+                                        "test": "is_family",
+                                        "value": "player"
+                                    },
+                                    {
+                                        "subject": "other",
+                                        "test": "is_family",
+                                        "value": "skeleton_guardian"
+                                    },
+                                    {
+                                        "subject": "other",
+                                        "test": "is_family",
+                                        "value": "irongolem"
+                                    },
+                                    {
+                                        "subject": "other",
+                                        "test": "is_family",
+                                        "value": "snowgolem"
+                                    }
+                                ]
+                            },
+                            "max_dist": 30
+                        }
+                    ],
+                    "must_see": false,
+                    "priority": 0,
+                    "reselect_targets": true
+                },
+                "minecraft:behavior.random_stroll": {
+                    "priority": 8,
+                    "speed_multiplier": 0.8
+                },
+                "minecraft:jump.static": {
+                },
+                "minecraft:movement": {
+                    "value": 0.35
+                },
+                "minecraft:movement.basic": {
+                },
+                "minecraft:navigation.walk": {
+                    "avoid_water": true,
+                    "can_open_doors": true,
+                    "can_pass_doors": true,
+                    "can_path_over_water": false,
+                    "can_walk": true,
+                    "is_amphibious": false
+                },
+                "minecraft:underwater_movement": {
+                    "value": 0.15
+                }
+            },
+            "legend_forest:dead_state": {
+                "minecraft:variant": {
+                    "value": 2
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": {
+                        "cause": "all",
+                        "deals_damage": false
+                    }
+                },
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": [2.0, 2.0],
+                    "time_down_event": {
+                        "event": "legend_forest:need_remove"
+                    }
+                }
+            },
+            "legend_forest:disappeared": {
+                "minecraft:instant_despawn": {}
+            },
+            "legend_forest:attack_mode": {
+                "minecraft:behavior.python_custom:sweep_attack": {
+                    "priority": 2,
+                    "module_path": "Script_LegendForest.Script_Entity.mushroomKnightServer",
+                    "class_name": "SweepAttack",
+                    "arg_dict": {},
+                    "control_flags": ["move"]
+                },
+                "minecraft:behavior.python_custom:head_tun": {
+                    "priority": 2,
+                    "module_path": "Script_LegendForest.Script_Entity.mushroomKnightServer",
+                    "class_name": "HeadTun",
+                    "arg_dict": {},
+                    "control_flags": ["move"]
+                },
+                "minecraft:behavior.python_custom:storm_attack": {
+                    "priority": 4,
+                    "module_path": "Script_LegendForest.Script_Entity.mushroomKnightServer",
+                    "class_name": "StormAttack",
+                    "arg_dict": {},
+                    "control_flags": ["move"]
+                }
+            },
+            "legend_forest:crazy_mode": {
+                "minecraft:behavior.python_custom:sweep_attack": {
+                    "priority": 2,
+                    "module_path": "Script_LegendForest.Script_Entity.mushroomKnightServer",
+                    "class_name": "SweepAttack",
+                    "arg_dict": {},
+                    "control_flags": ["move", "look"]
+                },
+                "minecraft:behavior.python_custom:head_tun": {
+                    "priority": 2,
+                    "module_path": "Script_LegendForest.Script_Entity.mushroomKnightServer",
+                    "class_name": "HeadTun",
+                    "arg_dict": {},
+                    "control_flags": ["move", "look"]
+                },
+                "minecraft:behavior.python_custom:storm_attack": {
+                    "priority": 2,
+                    "module_path": "Script_LegendForest.Script_Entity.mushroomKnightServer",
+                    "class_name": "StormAttack",
+                    "arg_dict": {},
+                    "control_flags": ["move", "look"]
+                }
+            },
+            "legend_forest:no_attack": {
+                "minecraft:attack": {
+                    "damage": 4
+                },
+                "minecraft:mark_variant": {
+                    "value": 0
+                }
+            },
+            "legend_forest:sweep_attack": {
+                "minecraft:attack": {
+                    "damage": 0
+                },
+                "minecraft:mark_variant": {
+                    "value": 1
+                },
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": [2.25, 2.25],
+                    "time_down_event": {
+                        "event": "legend_forest:back_to_normal"
+                    }
+                }
+            },
+            "legend_forest:head_tun": {
+                "minecraft:attack": {
+                    "damage": 0
+                },
+                "minecraft:mark_variant": {
+                    "value": 2
+                },
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": [2.25, 2.25],
+                    "time_down_event": {
+                        "event": "legend_forest:back_to_normal"
+                    }
+                }
+            },
+            "legend_forest:storm_attack": {
+                "minecraft:attack": {
+                    "damage": 0
+                },
+                "minecraft:mark_variant": {
+                    "value": 3
+                },
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": [4.0, 4.0],
+                    "time_down_event": {
+                        "event": "legend_forest:back_to_normal"
+                    }
+                }
+            }
+        },
+        "components": {
+            "minecraft:follow_range": {
+                "value": 64
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:knockback_resistance": {
+                "value": 1.0
+            },
+            "minecraft:behavior.float": {
+                "priority": 0
+            },
+            "minecraft:can_climb": {
+            },
+            "minecraft:collision_box": {
+                "height": 1.5,
+                "width": 0.75
+            },
+            "minecraft:experience_reward": {
+                "on_death": "query.last_hit_by_player ? 60 + math.random(5,20) : 0"
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/legend_forest/entities/mushroom_knight.json"
+            },
+            "minecraft:health": {
+                "max": 200,
+                "value": 200
+            },
+            "minecraft:physics": {
+            },
+            "minecraft:scale": {
+                "value": 1.7
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "mob",
+                    "monster",
+                    "boss",
+                    "mushroom_knight"
+                ]
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:mushroom_knight",
+            "is_experimental": false,
+            "is_spawnable": true,
+            "is_summonable": true
+        },
+        "events": {
+            "legend_forest:start_anime_over": {
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:start_anime"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "legend_forest:normal_state",
+                        "legend_forest:attack_mode",
+                        "legend_forest:normal_sensor",
+                        "legend_forest:no_attack"
+                    ]
+                }
+            },
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "legend_forest:start_anime"
+                    ]
+                }
+            },
+            "legend_forest:death": {
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:normal_state"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "legend_forest:dead_state"
+                    ]
+                }
+            },
+            "legend_forest:need_remove": {
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:dead_state"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "legend_forest:disappeared"
+                    ]
+                }
+            },
+            "legend_forest:back_to_normal": {
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:sweep_attack",
+                        "legend_forest:head_tun",
+                        "legend_forest:storm_attack",
+                        "legend_forest:less_sensor"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "legend_forest:normal_sensor",
+                        "legend_forest:no_attack"
+                    ]
+                }
+            },
+            "legend_forest:sweep_attack": {
+                "add": {
+                    "component_groups": [
+                        "legend_forest:sweep_attack",
+                        "legend_forest:less_sensor"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:no_attack",
+                        "legend_forest:normal_sensor"
+                    ]
+                }
+            },
+            "legend_forest:head_tun": {
+                "add": {
+                    "component_groups": [
+                        "legend_forest:head_tun",
+                        "legend_forest:less_sensor"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:no_attack",
+                        "legend_forest:normal_sensor"
+                    ]
+                }
+            },
+            "legend_forest:storm_attack": {
+                "add": {
+                    "component_groups": [
+                        "legend_forest:storm_attack",
+                        "legend_forest:less_sensor"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:no_attack",
+                        "legend_forest:normal_sensor"
+                    ]
+                }
+            },
+            "legend_forest:crazy_mode": {
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:attack_mode"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "legend_forest:crazy_mode"
+                    ]
+                }
+            }
+        }
+    }
+}

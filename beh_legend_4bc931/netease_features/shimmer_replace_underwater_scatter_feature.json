@@ -1,0 +1,13 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:scatter_feature": {
+        "description": {
+            "identifier": "legend_forest:shimmer_replace_underwater_scatter_feature"
+        },
+        "places_feature": "legend_forest:shimmer_replace_underwater_feature",
+        "iterations": "t.height=q.above_top_solid(v.originx,v.originz); return t.height<64?1:0;",
+        "x": 0,
+        "y": "t.height-1",
+        "z": 0
+    }
+}

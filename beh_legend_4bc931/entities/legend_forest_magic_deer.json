@@ -1,0 +1,357 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:entity": {
+        "component_groups": {
+            "legend_forest:magic_deer_can_hunt": {
+                "minecraft:type_family": {
+                    "family": [
+                        "mob",
+                        "deer",
+                        "can_hunt"
+                    ]
+                }
+            },
+            "minecraft:magic_deer_adult": {
+                "minecraft:behavior.breed": {
+                    "priority": 3,
+                    "speed_multiplier": 0.8
+                },
+                "minecraft:behavior.hurt_by_target": {
+                    "alert_same_type": true,
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "any_of": [
+                                    {
+                                        "subject": "other",
+                                        "test": "is_family",
+                                        "value": "player"
+                                    }
+                                ]
+                            },
+                            "max_dist": 20
+                        },
+                        {
+                            "filters": {
+                                "any_of": [
+                                    {
+                                        "subject": "other",
+                                        "test": "is_family",
+                                        "value": "goblin"
+                                    }
+                                ]
+                            },
+                            "max_dist": 20
+                        }
+                    ]
+                },
+                "minecraft:behavior.nearest_attackable_target": {
+                    "attack_interval": 5,
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "any_of": [
+                                ]
+                            },
+                            "max_dist": 8
+                        }
+                    ],
+                    "must_see": true,
+                    "priority": 0,
+                    "reselect_targets": true
+                },
+                "minecraft:breedable": {
+                    "breed_items": [
+                        "minecraft:glow_berries"
+                    ],
+                    "breeds_with": {
+                        "baby_type": "legend_forest:magic_deer",
+                        "breed_event": {
+                            "event": "minecraft:entity_born",
+                            "target": "baby"
+                        },
+                        "mate_type": "legend_forest:magic_deer"
+                    },
+                    "require_tame": false
+                },
+                "minecraft:experience_reward": {
+                    "on_bred": "Math.Random(1,7)",
+                    "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
+                },
+                "minecraft:loot": {
+                    "table": "loot_tables/legend_forest/entities/magic_deer.json"
+                },
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": [60, 300],
+                    "time_down_event": {
+                        "event": "legend_forest:deer_can_hunt"
+                    }
+                }
+            },
+            "minecraft:magic_deer_angry": {
+                "minecraft:angry": {
+                    "broadcast_anger": true,
+                    "broadcast_range": 20,
+                    "calm_event": {
+                        "event": "minecraft:on_calm",
+                        "target": "self"
+                    },
+                    "duration": 25
+                },
+                "minecraft:on_target_acquired": {
+                }
+            },
+            "minecraft:magic_deer_baby": {
+                "minecraft:ageable": {
+                    "duration": 1200,
+                    "feed_items": [
+                        "minecraft:glow_berries"
+                    ],
+                    "grow_up": {
+                        "event": "minecraft:ageable_grow_up",
+                        "target": "self"
+                    }
+                },
+                "minecraft:behavior.follow_parent": {
+                    "priority": 5,
+                    "speed_multiplier": 1.1
+                },
+                "minecraft:experience_reward": {
+                    "on_death": "query.last_hit_by_player ? 2 + (query.equipment_count * Math.Random(1,3)) : 0"
+                },
+                "minecraft:is_baby": {
+                },
+                "minecraft:scale": {
+                    "value": 0.5
+                }
+            }
+        },
+        "components": {
+            "minecraft:attack": {
+                "damage": 3.0,
+                "effect_duration": 20,
+                "effect_name": "Nausea"
+            },
+            "minecraft:behavior.avoid_mob_type": {
+                "avoid_mob_sound": "retreat",
+                "entity_types": [
+                    {
+                        "filters": {
+                            "any_of": [
+                                {
+                                    "subject": "other",
+                                    "test": "is_family",
+                                    "value": "goblin"
+                                }
+                            ]
+                        },
+                        "max_dist": 6
+                    }
+                ],
+                "priority": 4,
+                "remove_target": false,
+                "sound_interval": {
+                    "range_max": 5.0,
+                    "range_min": 2.0
+                }
+            },
+            "minecraft:behavior.float": {
+                "priority": 0
+            },
+            "minecraft:behavior.look_at_player": {
+                "look_distance": 8,
+                "priority": 6
+            },
+            "minecraft:behavior.melee_attack": {
+                "priority": 1,
+                "reach_multiplier": 1.65,
+                "speed_multiplier": 1.0,
+                "track_target": true
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 8,
+                "speed_multiplier": 0.8
+            },
+            "minecraft:behavior.tempt": {
+                "items": [
+                    "minecraft:glow_berries"
+                ],
+                "priority": 4,
+                "speed_multiplier": 1.0
+            },
+            "minecraft:collision_box": {
+                "height": 1.65,
+                "width": 1.0
+            },
+            "minecraft:health": {
+                "max": 30.0,
+                "value": 30.0
+            },
+            "minecraft:jump.static": {
+            },
+            "minecraft:movement": {
+                "value": 0.35
+            },
+            "minecraft:movement.basic": {
+                "max_turn": 30.0
+            },
+            "minecraft:nameable": {
+            },
+            "minecraft:navigation.walk": {
+                "avoid_water": true,
+                "can_open_doors": false,
+                "can_pass_doors": true,
+                "can_path_over_water": false,
+                "can_walk": true
+            },
+            "minecraft:on_target_acquired": {
+                "event": "minecraft:become_angry",
+                "target": "self"
+            },
+            "minecraft:physics": {
+            },
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:scale": {
+                "value": 1
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "mob",
+                    "deer",
+                    "animals"
+                ]
+            },
+            "minecraft:underwater_movement": {
+                "value": 0.15
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:magic_deer",
+            "is_experimental": false,
+            "is_spawnable": true,
+            "is_summonable": true,
+            "runtime_identifier": "legend_forest:magic_deer"
+        },
+        "events": {
+            "legend_forest:deer_can_hunt": {
+                "add": {
+                    "component_groups": [
+                        "legend_forest:magic_deer_can_hunt"
+                    ]
+                }
+            },
+            "minecraft:ageable_grow_up": {
+                "add": {
+                    "component_groups": [
+                        "minecraft:magic_deer_adult"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "minecraft:magic_deer_baby"
+                    ]
+                }
+            },
+            "minecraft:become_angry": {
+                "add": {
+                    "component_groups": [
+                        "minecraft:magic_deer_angry"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "minecraft:magic_deer_calm"
+                    ]
+                }
+            },
+            "minecraft:entity_born": {
+                "add": {
+                    "component_groups": [
+                        "minecraft:magic_deer_baby"
+                    ]
+                },
+                "remove": {
+                }
+            },
+            "minecraft:entity_spawned": {
+                "randomize": [
+                    {
+                        "add": {
+                            "component_groups": [
+                                "minecraft:magic_deer_adult",
+                                "minecraft:magic_deer_calm"
+                            ]
+                        },
+                        "weight": 60
+                    },
+                    {
+                        "add": {
+                            "component_groups": [
+                                "minecraft:magic_deer_adult",
+                                "minecraft:magic_deer_calm",
+                                "legend_forest:magic_deer_can_hunt"
+                            ]
+                        },
+                        "weight": 35
+                    },
+                    {
+                        "add": {
+                            "component_groups": [
+                                "minecraft:magic_deer_baby",
+                                "minecraft:magic_deer_calm"
+                            ]
+                        },
+                        "weight": 5
+                    }
+                ]
+            },
+            "minecraft:entity_transformed": {
+                "sequence": [
+                    {
+                        "add": {
+                            "component_groups": [
+                                "minecraft:magic_deer_baby",
+                                "minecraft:magic_deer_calm"
+                            ]
+                        },
+                        "filters": {
+                            "subject": "other",
+                            "test": "has_component",
+                            "value": "minecraft:is_baby"
+                        }
+                    },
+                    {
+                        "add": {
+                            "component_groups": [
+                                "minecraft:magic_deer_adult",
+                                "minecraft:magic_deer_calm"
+                            ]
+                        },
+                        "filters": {
+                            "operator": "!=",
+                            "subject": "other",
+                            "test": "has_component",
+                            "value": "minecraft:is_baby"
+                        }
+                    }
+                ]
+            },
+            "minecraft:on_calm": {
+                "add": {
+                    "component_groups": [
+                        "minecraft:magic_deer_calm"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "minecraft:magic_deer_angry"
+                    ]
+                }
+            }
+        }
+    }
+}

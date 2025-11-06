@@ -1,0 +1,18 @@
+{
+    "node_ID": "legend_forest:moon_crystal",
+    "parent_node": "legend_forest:legend_forest",
+    "title": "月亮代表我的晶",
+    "unfinished_icon": "textures/items/moon_crystal",
+    "finished_icon": "textures/items/moon_crystal",
+    "use_default_icon_background": true,
+    "goal_details": {
+        "goal_type": "default_get",
+        "item_dict": {
+            "newItemName": "legend_forest:moon_crystal"
+        }
+    },
+    "goal_number": 2,
+    "node_description": "闪闪发光让人有想家的感觉，与星粒有很好的契合性\n§c完成进度条件：烧制并获得2个月结晶§r",
+    "is_hidden": false,
+    "depend_parent": true
+}
