@@ -1,8 +1,8 @@
+# -*- coding: utf-8 -*-
 import time
 
 
-class logging():
-
+class logging(object):
     USE_LOGGER = True
     LOG_LEVEL = "DEBUG"
 

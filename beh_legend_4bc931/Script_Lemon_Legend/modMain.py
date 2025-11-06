@@ -1,8 +1,8 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 
 from .QuModLibs.QuMod import *
 
 MyMod = EasyMod()
 
 # server
-MyMod.Server("Server.Portal.PortalServer")
+MyMod.Server("portal.server")
