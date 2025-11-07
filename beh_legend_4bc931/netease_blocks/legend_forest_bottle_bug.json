@@ -33,9 +33,6 @@
                 "movable": false,
                 "tick": true
             },
-            "netease:pathable": {
-                "value": false
-            },
             "netease:render_layer": {
                 "value": "blend"
             },

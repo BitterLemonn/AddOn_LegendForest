@@ -10,15 +10,6 @@
             "netease:face_directional": {
                 "type": "facing_direction"
             },
-            "netease:pathable": {
-                "value": false
-            },
-            "netease:render_layer": {
-                "value": "opaque"
-            },
-            "netease:solid": {
-                "value": true
-            },
             "netease:tier": {
                 "destroy_special": false,
                 "digger": "hatchet",

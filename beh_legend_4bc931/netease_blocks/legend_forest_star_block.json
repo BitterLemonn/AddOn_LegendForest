@@ -3,15 +3,6 @@
     "minecraft:block": {
         "components": {
             "minecraft:map_color": "#9b5eaf",
-            "netease:pathable": {
-                "value": false
-            },
-            "netease:render_layer": {
-                "value": "opaque"
-            },
-            "netease:solid": {
-                "value": true
-            },
             "netease:tier": {
                 "destroy_special": true,
                 "digger": "pickaxe",

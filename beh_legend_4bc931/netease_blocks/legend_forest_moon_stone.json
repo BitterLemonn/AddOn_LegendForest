@@ -4,15 +4,6 @@
         "components": {
             "minecraft:loot": "loot_tables/legend_forest/blocks/raw_moon_ore.json",
             "minecraft:map_color": "#a4913f",
-            "netease:pathable": {
-                "value": false
-            },
-            "netease:render_layer": {
-                "value": "opaque"
-            },
-            "netease:solid": {
-                "value": true
-            },
             "netease:tier": {
                 "destroy_special": true,
                 "digger": "pickaxe",

@@ -8,9 +8,6 @@
                 "movable": false,
                 "tick": true
             },
-            "netease:render_layer": {
-                "value": "opaque"
-            },
             "netease:solid": {
                 "value": false
             },

@@ -8,9 +8,6 @@
             },
             "minecraft:map_color": "#1f5141",
             "netease:no_crop_face_block": {},
-            "netease:pathable": {
-                "value": false
-            },
             "netease:render_layer": {
                 "value": "optionalAlpha"
             },

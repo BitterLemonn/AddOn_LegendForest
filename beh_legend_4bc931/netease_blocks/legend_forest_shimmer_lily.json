@@ -35,9 +35,6 @@
                     ]
                 }
             },
-            "netease:pathable": {
-                "value": false
-            },
             "netease:render_layer": {
                 "value": "alpha"
             },
