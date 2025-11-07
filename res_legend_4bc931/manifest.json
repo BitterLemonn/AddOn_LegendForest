@@ -1,8 +1,8 @@
 {
     "format_version": 2,
     "header": {
-        "description": "",
-        "name": "",
+        "description": "Legend Forest Resources",
+        "name": "Legend Forest",
         "uuid": "76753ed2-d991-40bd-ae8b-8ae04604430c",
         "version": [
             1,
@@ -17,7 +17,7 @@
     },
     "modules": [
         {
-            "description": "",
+            "description": "Legend Forest Resources",
             "type": "resources",
             "uuid": "b1193d6e-3578-4142-b4a2-e4a9d8b5d807",
             "version": [

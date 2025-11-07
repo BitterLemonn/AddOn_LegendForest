@@ -1,8 +1,8 @@
 {
     "format_version": 2,
     "header": {
-        "description": "",
-        "name": "",
+        "description": "Legend Forest Behaviors",
+        "name": "Legend Forest",
         "uuid": "1d87e5be-2adc-4646-8a57-0f836688c7b2",
         "version": [
             1,
@@ -17,7 +17,7 @@
     },
     "modules": [
         {
-            "description": "",
+            "description": "Legend Forest Behaviors",
             "type": "data",
             "uuid": "081a7c55-2b1e-4479-8348-f81bdd891f08",
             "version": [
