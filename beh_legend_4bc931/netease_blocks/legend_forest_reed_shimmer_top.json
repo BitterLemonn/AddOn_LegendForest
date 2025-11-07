@@ -1,29 +1,13 @@
 {
-    "format_version": "1.10.0",
+    "format_version": "1.21.0",
     "minecraft:block": {
         "components": {
-            "minecraft:block_light_absorption": {
-                "value": 0
-            },
-            "minecraft:block_light_emission": {
-                "emission": 0.8
-            },
-            "minecraft:destroy_time": {
-                "value": 0.0
-            },
-            "minecraft:explosion_resistance": {
-                "value": 0.0
-            },
             "minecraft:flammable": {
-                "burn_odds": 100,
-                "flame_odds": 60
+                "catch_chance_modifier": 60,
+                "destroy_chance_modifier": 100
             },
-            "minecraft:loot": {
-                "table": ""
-            },
-            "minecraft:map_color": {
-                "color": "#6c598d"
-            },
+            "minecraft:loot": "",
+            "minecraft:map_color": "#6c598d",
             "netease:aabb": {
                 "clip": {
                     "max": [
@@ -72,6 +56,14 @@
             },
             "netease:water_destory": {
                 "value": true
+            },
+            "minecraft:light_dampening": 0,
+            "minecraft:light_emission": 12,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.0
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 0.0
             }
         },
         "description": {

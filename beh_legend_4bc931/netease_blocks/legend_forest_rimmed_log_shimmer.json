@@ -1,26 +1,12 @@
 {
-    "format_version": "1.10.0",
+    "format_version": "1.21.0",
     "minecraft:block": {
         "components": {
-            "minecraft:block_light_absorption": {
-                "value": 16
-            },
-            "minecraft:block_light_emission": {
-                "emission": 0.0
-            },
-            "minecraft:destroy_time": {
-                "value": 2.5
-            },
-            "minecraft:explosion_resistance": {
-                "value": 2.5
-            },
             "minecraft:flammable": {
-                "burn_odds": 0,
-                "flame_odds": 5
+                "catch_chance_modifier": 5,
+                "destroy_chance_modifier": 0
             },
-            "minecraft:map_color": {
-                "color": "#2b4451"
-            },
+            "minecraft:map_color": "#2b4451",
             "netease:face_directional": {
                 "type": "facing_direction"
             },
@@ -37,6 +23,14 @@
                 "destroy_special": false,
                 "digger": "hatchet",
                 "level": 0
+            },
+            "minecraft:light_dampening": 15,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 2.5
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 2.5
             }
         },
         "description": {

@@ -1,27 +1,23 @@
 {
-    "format_version": "1.10.0",
+    "format_version": "1.21.0",
     "minecraft:block": {
         "components": {
             "netease:neighborchanged_sendto_script": {
                 "value": true
-            },
-            "minecraft:block_light_emission": {
-                "emission": 1.0
             },
             "netease:portal": {
                 "particle_east_west": "legend_forest:portal_ns",
                 "particle_north_south": "legend_forest:portal_we",
                 "target_dimension": 928808
             },
-            "minecraft:loot": {
-                "table": ""
-            },
+            "minecraft:loot": "",
             "netease:water_destory": {
                 "value": true
             },
             "netease:on_entity_inside": {
                 "send_python_event": true
-            }
+            },
+            "minecraft:light_emission": 15
         },
         "description": {
             "base_block": "portal",

@@ -65,7 +65,6 @@ class PortalServerService(BaseService):
         # 读取世界数据
         comp = serverApi.GetEngineCompFactory().CreateExtraData(levelId)
         portalData = comp.GetExtraData(PORTAL_DATA_KEY)
-        logging.debug("PortalServerService: 读取传送门数据: {}".format(portalData))
         self.portalManager.deserialize(portalData)
 
     @BaseService.Listen(Events.ItemUseOnAfterServerEvent)
@@ -80,7 +79,6 @@ class PortalServerService(BaseService):
                 dimensionId in [0, 928808, 340654] and \
                 serverUtils.UsingCooldownServerService.access().setCooldown(playerId):
 
-            logging.debug("blockName:{}".format(blockName))
             if blockName != PortalFrameConfig.CORE_BLOCK:
                 serverApi.GetEngineCompFactory().CreateGame(levelId) \
                     .SetOnePopupNotice(playerId, "请在传送门核心上使用月结晶",
@@ -153,6 +151,7 @@ class PortalServerService(BaseService):
 
         if minErrors:
             errorPos = minErrors[0]["pos"]
+            errorPos = (float(errorPos[0]), float(errorPos[1]), float(errorPos[2]))
             errorBlock = minErrors[0]["block"]
             blockName = validator.gameComp.GetChinese("tile.{}.name".format(errorBlock))
             errorMsg = "可能的位置: {} 应为 {}".format(errorPos, blockName)
@@ -175,15 +174,15 @@ class PortalServerService(BaseService):
         # 获取传送门方向
         direction = PortalFrameConfig.getDirectionFromAux(aux)
         if direction is None:
-            # aux值无效，直接销毁传送门
+            # aux值无效，直接销毁传送门（不传递方向，让destroyPortal自己查找）
             destroyer = PortalDestroyer(dimensionId, self.portalManager)
             destroyer.destroyPortal(blockPos)
             return
 
         # 检查传送门完整性
         destroyer = PortalDestroyer(dimensionId, self.portalManager)
-        if not destroyer.checkPortalIntegrity(blockPos, changePos, toBlockName):
-            destroyer.destroyPortal(blockPos)
+        if not destroyer.checkPortalIntegrity(blockPos, changePos, toBlockName, direction):
+            destroyer.destroyPortal(blockPos, direction)
 
 
 class PortalDestroyer(object):
@@ -194,15 +193,31 @@ class PortalDestroyer(object):
         self.blockComp = serverApi.GetEngineCompFactory().CreateBlockInfo(dimensionId)
         self.portalManager = portalManager or PortalManager()
 
-    def checkPortalIntegrity(self, portalPos, changedPos, newBlockName):
-        """检查传送门完整性"""
-        # 获取传送门数据
-        portalData = self.portalManager.findPortalData(portalPos, self.dimensionId)
+    def checkPortalIntegrity(self, portalBlockPos, changedPos, newBlockName, direction):
+        """检查传送门完整性
+        
+        Args:
+            portalBlockPos: 传送门方块的位置
+            changedPos: 变化的位置
+            newBlockName: 新方块的名称
+            direction: 传送门方向
+        """
+        # 尝试查找传送门数据（使用附近查找，因为portalBlockPos可能不是核心位置）
+        portalData = self.portalManager.findPortalData(portalBlockPos, self.dimensionId)
+
+        # 如果找不到，尝试从传送门方块位置反推核心位置
         if not portalData:
+            possibleCenters = PortalFrameConfig.getCenterPosFromPortalBlock(portalBlockPos, direction)
+            for testCenter in possibleCenters:
+                portalData = self.portalManager.findPortalData(testCenter, self.dimensionId)
+                if portalData:
+                    break
+
+        if not portalData:
+            logging.warning("PortalDestroyer: 完整性检查时未找到传送门数据")
             return False
 
-        direction = portalData.direction
-        adjacentPositions = PortalFrameConfig.getAdjacentPositions(portalPos, direction)
+        adjacentPositions = PortalFrameConfig.getAdjacentPositions(portalBlockPos, direction)
 
         # 检查变化的位置是否是关键位置
         if changedPos in adjacentPositions:
@@ -212,22 +227,58 @@ class PortalDestroyer(object):
 
         return True
 
-    def destroyPortal(self, portalPos):
-        """销毁传送门"""
-        # 获取传送门数据以确定方向和范围
-        portalData = self.portalManager.findPortalData(portalPos, self.dimensionId)
-        if not portalData:
+    def destroyPortal(self, portalBlockPos, direction=None):
+        """销毁传送门
+        
+        Args:
+            portalBlockPos: 传送门方块的位置
+            direction: 传送门方向，如果为None则尝试查找
+        """
+        # 如果没有提供方向，尝试从传送门数据中获取
+        portalData = None
+        centerPos = None
+
+        if direction is None:
+            # 直接查找附近的传送门数据
+            portalData = self.portalManager.findPortalData(portalBlockPos, self.dimensionId)
+            if portalData:
+                direction = portalData.direction
+                centerPos = portalData.pos
+
+        # 如果仍然没有方向信息，无法销毁
+        if direction is None:
+            logging.error("PortalDestroyer: 无法确定传送门方向，无法销毁")
             return
 
-        direction = portalData.direction
-        _, _, emptyPositions = PortalFrameConfig.getFramePositions(portalPos, direction)
+        # 如果没有找到传送门数据，尝试从传送门方块位置反推核心位置
+        if centerPos is None:
+            possibleCenters = PortalFrameConfig.getCenterPosFromPortalBlock(portalBlockPos, direction)
+            # 尝试每个可能的核心位置
+            for testCenter in possibleCenters:
+                portalData = self.portalManager.findPortalData(testCenter, self.dimensionId)
+                if portalData:
+                    centerPos = portalData.pos
+                    break
+
+            # 如果还是没找到，使用第一个可能的核心位置
+            if centerPos is None and possibleCenters:
+                centerPos = possibleCenters[0]
+                logging.warning("PortalDestroyer: 未找到传送门数据，使用推测的核心位置: {}".format(centerPos))
+
+        # 获取所有传送门方块位置
+        _, _, emptyPositions = PortalFrameConfig.getFramePositions(centerPos, direction)
 
         # 将所有传送门方块替换为空气
         for pos in emptyPositions:
-            self.blockComp.SetBlockNew(pos, {"name": "minecraft:air", "aux": 0}, 1, self.dimensionId)
+            blockInfo = self.blockComp.GetBlockNew(pos, self.dimensionId)
+            # 只替换传送门方块
+            if PortalFrameConfig.isPortalBlock(blockInfo.get("name", "")):
+                self.blockComp.SetBlockNew(pos, {"name": "minecraft:air", "aux": 0}, 1, self.dimensionId,
+                                           updateNeighbors=False)
 
-        # 从传送门管理器中移除数据
-        self.portalManager.removePortalData(portalPos, self.dimensionId)
-        # 保存数据到世界
-        dataComp = serverApi.GetEngineCompFactory().CreateExtraData(levelId)
-        dataComp.SetExtraData(PORTAL_DATA_KEY, self.portalManager.serialize())
+        # 从传送门管理器中移除数据（使用核心位置）
+        if portalData or centerPos:
+            self.portalManager.removePortalData(centerPos, self.dimensionId)
+            # 保存数据到世界
+            dataComp = serverApi.GetEngineCompFactory().CreateExtraData(levelId)
+            dataComp.SetExtraData(PORTAL_DATA_KEY, self.portalManager.serialize())

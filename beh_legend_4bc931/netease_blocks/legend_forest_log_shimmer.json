@@ -1,29 +1,12 @@
 {
-    "format_version": "1.10.0",
+    "format_version": "1.21.0",
     "minecraft:block": {
         "components": {
-            "minecraft:block_light_absorption": {
-                "value": 16
-            },
-            "minecraft:block_light_emission": {
-                "emission": 0.0
-            },
-            "minecraft:destroy_time": {
-                "value": 2.0
-            },
-            "minecraft:explosion_resistance": {
-                "value": 2.0
-            },
             "minecraft:flammable": {
-                "burn_odds": 5,
-                "flame_odds": 5
+                "catch_chance_modifier": 5,
+                "destroy_chance_modifier": 5
             },
-            "minecraft:map_color": {
-                "color": "#2b4451"
-            },
-            "netease:face_directional": {
-                "type": "facing_direction"
-            },
+            "minecraft:map_color": "#2b4451",
             "netease:pathable": {
                 "value": false
             },
@@ -40,12 +23,66 @@
             },
             "netease:fuel": {
                 "duration": 15
+            },
+            "minecraft:light_dampening": 15,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 2.0
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 2.0
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "up": {
+                    "texture": "legend_forest:log_shimmer_top",
+                    "render_method": "opaque"
+                },
+                "down": {
+                    "texture": "legend_forest:log_shimmer_top",
+                    "render_method": "opaque"
+                },
+                "*": {
+                    "texture": "legend_forest:log_shimmer_side",
+                    "render_method": "opaque"
+                }
             }
         },
         "description": {
             "identifier": "legend_forest:log_shimmer",
             "register_to_creative_menu": true,
-            "category": "legend_forest"
-        }
+            "category": "legend_forest",
+            "traits": {
+                "minecraft:placement_position": {
+                    "enabled_states": [
+                        "minecraft:block_face"
+                    ]
+                }
+            }
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('minecraft:block_face') == 'west' || q.block_state('minecraft:block_face') == 'east'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [0, 0, 90]
+                    }
+                }
+            }, {
+                "condition": "q.block_state('minecraft:block_face') == 'down' || q.block_state('minecraft:block_face') == 'up'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [0, 0, 0]
+                    }
+                }
+            }, {
+                "condition": "q.block_state('minecraft:block_face') == 'north' || q.block_state('minecraft:block_face') == 'south'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [90, 0, 0]
+                    }
+                }
+            }
+        ]
     }
 }

@@ -60,6 +60,29 @@ class PortalFrameConfig(object):
             return []
 
     @staticmethod
+    def getCenterPosFromPortalBlock(portalBlockPos, direction):
+        """从传送门方块位置反推核心位置"""
+        x, y, z = portalBlockPos
+        
+        # 传送门方块的y坐标范围是 centerY+1 到 centerY+3
+        # 所以核心的y坐标是传送门方块的y-1, y-2, 或 y-3
+        # 我们需要检查多个可能的核心位置
+        possibleCenters = []
+        
+        if direction == "x":
+            # x方向的传送门方块可能在 centerX-1, centerX, centerX+1
+            for dx in [-1, 0, 1]:
+                for dy in [1, 2, 3]:
+                    possibleCenters.append((x - dx, y - dy, z))
+        else:  # direction == "z"
+            # z方向的传送门方块可能在 centerZ-1, centerZ, centerZ+1
+            for dz in [-1, 0, 1]:
+                for dy in [1, 2, 3]:
+                    possibleCenters.append((x, y - dy, z - dz))
+        
+        return possibleCenters
+
+    @staticmethod
     def getFramePositions(centerPos, direction):
         """获取框架位置列表"""
         x, y, z = centerPos

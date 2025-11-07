@@ -1,22 +1,8 @@
 {
-    "format_version": "1.10.0",
+    "format_version": "1.21.0",
     "minecraft:block": {
         "components": {
-            "minecraft:block_light_absorption": {
-                "value": 16
-            },
-            "minecraft:block_light_emission": {
-                "emission": 0.0
-            },
-            "minecraft:destroy_time": {
-                "value": 1.5
-            },
-            "minecraft:explosion_resistance": {
-                "value": 1.5
-            },
-            "minecraft:map_color": {
-                "color": "#e9a123"
-            },
+            "minecraft:map_color": "#e9a123",
             "netease:pathable": {
                 "value": false
             },
@@ -30,6 +16,14 @@
                 "destroy_special": true,
                 "digger": "pickaxe",
                 "level": 1
+            },
+            "minecraft:light_dampening": 15,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 1.5
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 1.5
             }
         },
         "description": {

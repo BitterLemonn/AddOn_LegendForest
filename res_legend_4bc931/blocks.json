@@ -109,20 +109,7 @@
         "use_colormap": "textures/colormap/shimmer_colormap"
     },
     "legend_forest:log_shimmer": {
-        "carried_textures": {
-            "down": "legend_forest:log_shimmer_top",
-            "side": "legend_forest:log_shimmer_side",
-            "up": "legend_forest:log_shimmer_top"
-        },
-        "sound": "wood",
-        "textures": {
-            "down": "legend_forest:log_shimmer_side",
-            "east": "legend_forest:log_shimmer_side2",
-            "north": "legend_forest:log_shimmer_top",
-            "south": "legend_forest:log_shimmer_top",
-            "up": "legend_forest:log_shimmer_side",
-            "west": "legend_forest:log_shimmer_side2"
-        }
+        "sound": "wood"
     },
     "legend_forest:log_shimmer_core": {
         "sound": "wood",
@@ -252,9 +239,6 @@
         "netease_model": "customblocks:web_preset",
         "sound": "grass"
     },
-    "legend_forest:spawner_malfurion": {
-        "textures": "mob_spawner"
-    },
     "legend_forest:star_block": {
         "sound": "stone",
         "textures": "legend_forest:star_block"
@@ -282,15 +266,6 @@
     "legend_forest:stripped_root_shimmer": {
         "sound": "wood",
         "textures": "legend_forest:stripped_log_shimmer_side"
-    },
-    "legend_forest:twigs_shimmer": {
-        "model_item_texture": "legend_forest:twigs_shimmer",
-        "model_textures": [
-            "legend_forest:twigs_shimmer"
-        ],
-        "netease_model": "customblocks:web_preset",
-        "sound": "grass",
-        "use_colormap": "textures/colormap/shimmer_colormap"
     },
     "legend_forest:yellow_leaves_cape_1": {
         "netease_model": "legend_forest:yellow_leaves_cape_1",

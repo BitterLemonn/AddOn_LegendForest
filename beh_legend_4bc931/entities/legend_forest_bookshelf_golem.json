@@ -139,14 +139,14 @@
                             "damage_multiplier": 0.75
                         },
                         {
-                            "cause": "suicide",
+                            "cause": "self_destruct",
                             "deals_damage": false,
                             "on_damage": {
                                 "filters": {
                                     "all_of": [
                                         {
                                             "test": "has_damage",
-                                            "value": "suicide"
+                                            "value": "self_destruct"
                                         }
                                     ]
                                 },

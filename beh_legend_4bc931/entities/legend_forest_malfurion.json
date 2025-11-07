@@ -24,7 +24,7 @@
                                     "all_of": [
                                         {
                                             "test": "has_damage",
-                                            "value": "suicide"
+                                            "value": "self_destruct"
                                         }
                                     ]
                                 },
@@ -32,7 +32,7 @@
                                 "event": "legend_forest:dying"
                             },
                             "deals_damage": false,
-                            "cause": "suicide"
+                            "cause": "self_destruct"
                         }
                     ]
                 }

@@ -1,29 +1,13 @@
 {
-    "format_version": "1.10.0",
+    "format_version": "1.21.0",
     "minecraft:block": {
         "components": {
-            "minecraft:block_light_absorption": {
-                "value": 2
-            },
-            "minecraft:block_light_emission": {
-                "emission": 0.0
-            },
-            "minecraft:destroy_time": {
-                "value": 0.2
-            },
-            "minecraft:explosion_resistance": {
-                "value": 0.2
-            },
             "minecraft:flammable": {
-                "burn_odds": 60,
-                "flame_odds": 30
+                "catch_chance_modifier": 30,
+                "destroy_chance_modifier": 60
             },
-            "minecraft:map_color": {
-                "color": "#1f5141"
-            },
-            "netease:no_crop_face_block": {
-
-            },
+            "minecraft:map_color": "#1f5141",
+            "netease:no_crop_face_block": {},
             "netease:pathable": {
                 "value": false
             },
@@ -33,8 +17,14 @@
             "netease:solid": {
                 "value": false
             },
-            "minecraft:loot": {
-                "table": "loot_tables/legend_forest/blocks/sapling_shimmer.json"
+            "minecraft:loot": "loot_tables/legend_forest/blocks/sapling_shimmer.json",
+            "minecraft:light_dampening": 2,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.2
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 0.2
             }
         },
         "description": {

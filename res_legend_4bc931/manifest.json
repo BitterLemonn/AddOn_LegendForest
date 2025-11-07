@@ -1,1 +1,40 @@
-{"format_version":1,"header":{"description":"","name":"","uuid":"76753ed2-d991-40bd-ae8b-8ae04604430c","version":[1,0,0],"min_engine_version":[1,18,0]},"modules":[{"description":"","type":"resources","uuid":"b1193d6e-3578-4142-b4a2-e4a9d8b5d807","version":[1,0,0]}],"dependencies":[{"uuid":"1d87e5be-2adc-4646-8a57-0f836688c7b2","version":[1,0,0]}]}
+{
+    "format_version": 2,
+    "header": {
+        "description": "",
+        "name": "",
+        "uuid": "76753ed2-d991-40bd-ae8b-8ae04604430c",
+        "version": [
+            1,
+            0,
+            0
+        ],
+        "min_engine_version": [
+            1,
+            18,
+            0
+        ]
+    },
+    "modules": [
+        {
+            "description": "",
+            "type": "resources",
+            "uuid": "b1193d6e-3578-4142-b4a2-e4a9d8b5d807",
+            "version": [
+                1,
+                0,
+                0
+            ]
+        }
+    ],
+    "dependencies": [
+        {
+            "uuid": "1d87e5be-2adc-4646-8a57-0f836688c7b2",
+            "version": [
+                1,
+                0,
+                0
+            ]
+        }
+    ]
+}

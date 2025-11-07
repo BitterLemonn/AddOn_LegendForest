@@ -1,22 +1,8 @@
 {
-    "format_version": "1.10.0",
+    "format_version": "1.21.0",
     "minecraft:block": {
         "components": {
-            "minecraft:block_light_absorption": {
-                "value": 16
-            },
-            "minecraft:block_light_emission": {
-                "emission": 0.0
-            },
-            "minecraft:destroy_time": {
-                "value": 9999
-            },
-            "minecraft:explosion_resistance": {
-                "value": 8000
-            },
-            "minecraft:map_color": {
-                "color": "#cfb447"
-            },
+            "minecraft:map_color": "#cfb447",
             "netease:pathable": {
                 "value": false
             },
@@ -26,8 +12,14 @@
             "netease:solid": {
                 "value": true
             },
-            "minecraft:loot": {
-                "table": ""
+            "minecraft:loot": "",
+            "minecraft:light_dampening": 15,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 9999
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 8000
             }
         },
         "description": {

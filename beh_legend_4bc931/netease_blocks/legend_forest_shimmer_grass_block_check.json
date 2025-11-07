@@ -1,22 +1,8 @@
 {
-    "format_version": "1.10.0",
+    "format_version": "1.21.0",
     "minecraft:block": {
         "components": {
-            "minecraft:block_light_absorption": {
-                "value": 16
-            },
-            "minecraft:block_light_emission": {
-                "emission": 0.05
-            },
-            "minecraft:destroy_time": {
-                "value": 0.6
-            },
-            "minecraft:explosion_resistance": {
-                "value": 0.6
-            },
-            "minecraft:map_color": {
-                "color": "#512a50"
-            },
+            "minecraft:map_color": "#512a50",
             "netease:neighborchanged_sendto_script": {
                 "value": true
             },
@@ -34,8 +20,14 @@
                 "digger": "shovel",
                 "level": 0
             },
-            "minecraft:loot": {
-                "table": "loot_tables/legend_forest/blocks/dirt.json"
+            "minecraft:loot": "loot_tables/legend_forest/blocks/dirt.json",
+            "minecraft:light_dampening": 15,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.6
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 0.6
             }
         },
         "description": {

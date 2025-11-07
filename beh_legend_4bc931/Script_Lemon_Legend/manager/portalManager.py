@@ -101,8 +101,6 @@ class PortalManager(object):
             if dm in self.spatialGrids:
                 self.spatialGrids[dm].remove(portalData)
             logging.debug("PortalManager: 移除传送门: {}".format(portalData))
-        else:
-            logging.error("PortalManager: 未找到传送门数据, pos: {}, dm: {}".format(pos, dm))
 
     def findPortalsInRange(self, pos, dm, maxDistance):
         """查找指定范围内的所有传送门"""

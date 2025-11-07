@@ -11,7 +11,7 @@
                                     "all_of": [
                                         {
                                             "test": "has_damage",
-                                            "value": "suicide"
+                                            "value": "self_destruct"
                                         }
                                     ]
                                 },
@@ -19,7 +19,7 @@
                                 "event": "legend_forest:death"
                             },
                             "deals_damage": false,
-                            "cause": "suicide"
+                            "cause": "self_destruct"
                         },
                         {
                             "deals_damage": false,
@@ -42,7 +42,7 @@
                                     "all_of": [
                                         {
                                             "test": "has_damage",
-                                            "value": "suicide"
+                                            "value": "self_destruct"
                                         }
                                     ]
                                 },
@@ -50,7 +50,7 @@
                                 "event": "legend_forest:death"
                             },
                             "deals_damage": false,
-                            "cause": "suicide"
+                            "cause": "self_destruct"
                         },
                         {
                             "deals_damage": false,
