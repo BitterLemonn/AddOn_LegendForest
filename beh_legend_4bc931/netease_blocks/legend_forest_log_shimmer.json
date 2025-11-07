@@ -26,16 +26,13 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "up": {
-                    "texture": "legend_forest:log_shimmer_top",
-                    "render_method": "opaque"
+                    "texture": "legend_forest:log_shimmer_top"
                 },
                 "down": {
-                    "texture": "legend_forest:log_shimmer_top",
-                    "render_method": "opaque"
+                    "texture": "legend_forest:log_shimmer_top"
                 },
                 "*": {
-                    "texture": "legend_forest:log_shimmer_side",
-                    "render_method": "opaque"
+                    "texture": "legend_forest:log_shimmer_side"
                 }
             }
         },
@@ -56,21 +53,35 @@
                 "condition": "q.block_state('minecraft:block_face') == 'west' || q.block_state('minecraft:block_face') == 'east'",
                 "components": {
                     "minecraft:transformation": {
-                        "rotation": [0, 0, 90]
+                        "rotation": [
+                            0,
+                            0,
+                            90
+                        ]
                     }
                 }
-            }, {
+            },
+            {
                 "condition": "q.block_state('minecraft:block_face') == 'down' || q.block_state('minecraft:block_face') == 'up'",
                 "components": {
                     "minecraft:transformation": {
-                        "rotation": [0, 0, 0]
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ]
                     }
                 }
-            }, {
+            },
+            {
                 "condition": "q.block_state('minecraft:block_face') == 'north' || q.block_state('minecraft:block_face') == 'south'",
                 "components": {
                     "minecraft:transformation": {
-                        "rotation": [90, 0, 0]
+                        "rotation": [
+                            90,
+                            0,
+                            0
+                        ]
                     }
                 }
             }

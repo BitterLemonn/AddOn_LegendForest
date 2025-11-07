@@ -47,6 +47,13 @@
             },
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 8000
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "legend_forest:empty",
+                    "render_method": "alpha_test"
+                }
             }
         },
         "description": {

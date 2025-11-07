@@ -18,6 +18,13 @@
             },
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 3.0
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "legend_forest:planks_glow_seaweed",
+                    "render_method": "opaque"
+                }
             }
         },
         "description": {

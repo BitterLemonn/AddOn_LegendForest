@@ -16,6 +16,13 @@
             },
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 2500
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "legend_forest:amber_ore",
+                    "render_method": "opaque"
+                }
             }
         },
         "description": {

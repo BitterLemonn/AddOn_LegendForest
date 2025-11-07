@@ -16,6 +16,13 @@
             },
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 3
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "legend_forest:deepslate_star_ore",
+                    "render_method": "opaque"
+                }
             }
         },
         "description": {

@@ -18,6 +18,21 @@
             },
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 8000
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "bookshelf",
+                    "render_method": "opaque"
+                },
+                "up": {
+                    "texture": "bookshelf_top",
+                    "render_method": "opaque"
+                },
+                "down": {
+                    "texture": "bookshelf_top",
+                    "render_method": "opaque"
+                }
             }
         },
         "description": {
