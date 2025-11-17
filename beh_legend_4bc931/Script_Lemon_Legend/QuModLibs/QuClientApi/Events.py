@@ -550,3 +550,547 @@ class Events:
         def __init__(self, dic):
             self.musicName = dic.get("musicName")  # type: str
             ''' 音乐名称 '''
+
+    class AddPlayerCreatedClientEvent:
+        ''' 玩家创建时触发 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+
+    class GameRenderTickEvent:
+        ''' 游戏渲染tick事件 '''
+        def __init__(self, dic):
+            pass
+
+    class CameraMotionStartClientEvent:
+        ''' 相机运动器开始事件。相机添加运动器后，运动器开始运行时触发 '''
+        def __init__(self, dic):
+            self.motionId = dic.get("motionId")  # type: int
+            ''' 运动器id '''
+
+    class CameraMotionStopClientEvent:
+        ''' 相机运动器停止事件。相机添加运动器并开始运行后，运动器自动停止时触发 '''
+        def __init__(self, dic):
+            self.motionId = dic.get("motionId")  # type: int
+            ''' 运动器id '''
+            self.remove = dic.get("remove")  # type: bool
+            ''' 是否移除该运动器，设置为False则保留，默认为True，即运动器停止后自动移除 '''
+
+    class DimensionChangeFinishClientEvent:
+        ''' 玩家维度改变完成后客户端抛出 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家实体id '''
+            self.fromDimensionId = dic.get("fromDimensionId")  # type: int
+            ''' 维度改变前的维度 '''
+            self.toDimensionId = dic.get("toDimensionId")  # type: int
+            ''' 维度改变后的维度 '''
+            self.toPos = dic.get("toPos")  # type: tuple
+            ''' 改变后的位置x,y,z,其中y值为脚底加上角色的身高值 '''
+
+    class OnLocalPlayerActionClientEvent:
+        ''' 玩家动作事件，当本地玩家开始/停止某些动作时触发该事件 '''
+        def __init__(self, dic):
+            self.actionType = dic.get("actionType")  # type: int
+            ''' 动作事件枚举，详见Minecraft枚举值文档的PlayerActionType '''
+
+    class OnLocalPlayerStartJumpClientEvent:
+        ''' 本地玩家开始跳跃时触发 '''
+        def __init__(self, dic):
+            pass
+
+    class PlayerAttackEntityEvent:
+        ''' 触发时机：当本地玩家攻击时触发该事件 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.victimId = dic.get("victimId")  # type: str
+            ''' 受击者id '''
+            self.damage = dic.get("damage")  # type: float
+            ''' 客户端收到的是真实伤害值，且修改无效 '''
+            self.isCrit = dic.get("isCrit")  # type: bool
+            ''' 本次攻击是否产生暴击,不支持修改 '''
+
+    class PlayerPermissionChangeClientEvent:
+        ''' 玩家权限变更事件 '''
+        def __init__(self, dic):
+            self.causePlayerId = dic.get("causePlayerId")  # type: str
+            ''' 发起者id '''
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.oldPermission = dic.get("oldPermission")  # type: dict
+            ''' 变化前的权限字典 '''
+            self.newPermission = dic.get("newPermission")  # type: dict
+            ''' 变化后的权限字典 '''
+            self.changeCause = dic.get("changeCause")  # type: int
+            ''' 变化原因，详见Minecraft枚举值文档的PermissionChangeCause '''
+
+    class UpdatePlayerSkinClientEvent:
+        ''' 触发时机：玩家加入游戏或通过更衣室局内换肤后 同步皮肤信息至客户端后触发 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+
+    class AnvilCreateResultItemAfterClientEvent:
+        ''' 玩家点击铁砧合成得到的物品时抛出的事件 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家实体id '''
+            self.itemShowName = dic.get("itemShowName")  # type: str
+            ''' 合成后的物品显示名称 '''
+            self.itemDict = dic.get("itemDict")  # type: dict
+            ''' 合成后的物品的物品信息字典 '''
+            self.oldItemDict = dic.get("oldItemDict")  # type: dict
+            ''' 合成前的物品的物品信息字典（铁砧内第一个物品） '''
+            self.materialItemDict = dic.get("materialItemDict")  # type: dict
+            ''' 合成所使用材料的物品信息字典（铁砧内第二个物品） '''
+
+    class CraftUpdateResultItemClientEvent:
+        ''' 玩家工作台界面更新显示可合成物品时抛出的事件 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家实体id '''
+            self.itemDict = dic.get("itemDict")  # type: dict
+            ''' 合成后的物品的物品信息字典 '''
+
+    class GrindStoneRemovedEnchantClientEvent:
+        ''' 玩家点击砂轮合成得到的物品时抛出的事件 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家实体id '''
+            self.oldItemDict = dic.get("oldItemDict")  # type: dict
+            ''' 合成前的物品物品信息字典（砂轮内第一个物品） '''
+            self.additionalItemDict = dic.get("additionalItemDict")  # type: dict
+            ''' 作为合成材料的物品物品信息字典（砂轮内第二个物品） '''
+            self.newItemDict = dic.get("newItemDict")  # type: dict
+            ''' 合成后的物品物品信息字典 '''
+            self.exp = dic.get("exp")  # type: int
+            ''' 本次合成返还的经验 '''
+
+    class InventoryItemChangedClientEvent:
+        ''' 玩家背包物品变化时客户端抛出的事件 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家实体id '''
+            self.slot = dic.get("slot")  # type: int
+            ''' 背包槽位 '''
+            self.oldItemDict = dic.get("oldItemDict")  # type: dict
+            ''' 变化前槽位中的物品，格式参考物品信息字典 '''
+            self.newItemDict = dic.get("newItemDict")  # type: dict
+            ''' 变化后槽位中的物品，格式参考物品信息字典 '''
+
+    class PlayerTryAddCustomContainerItemClientEvent:
+        ''' 玩家尝试将物品添加到自定义容器时触发该事件 '''
+        def __init__(self, dic):
+            self.itemDict = dic.get("itemDict")  # type: dict
+            ''' 尝试添加物品的物品信息字典 '''
+            self.collectionName = dic.get("collectionName")  # type: str
+            ''' 放入容器名称，对应容器json中"custom_description"字段 '''
+            self.collectionType = dic.get("collectionType")  # type: str
+            ''' 放入容器类型，目前仅支持netease_container和netease_ui_container '''
+            self.collectionIndex = dic.get("collectionIndex")  # type: int
+            ''' 放入容器索引 '''
+            self.x = dic.get("x")  # type: int
+            ''' 容器方块x坐标 '''
+            self.y = dic.get("y")  # type: int
+            ''' 容器方块y坐标 '''
+            self.z = dic.get("z")  # type: int
+            ''' 容器方块z坐标 '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 是否取消该操作，默认为false，事件中改为true时拒绝此次放入自定义容器的操作 '''
+
+    class PlayerTryDropItemClientEvent:
+        ''' 触发时机：玩家丢弃物品时触发 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.itemDict = dic.get("itemDict")  # type: dict
+            ''' 物品dict '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 是否取消此次操作 '''
+
+    class PlayerTryPutCustomContainerItemClientEvent:
+        ''' 玩家尝试将物品放入自定义容器时触发该事件 '''
+        def __init__(self, dic):
+            self.itemDict = dic.get("itemDict")  # type: dict
+            ''' 尝试放入物品的物品信息字典 '''
+            self.collectionName = dic.get("collectionName")  # type: str
+            ''' 放入容器名称，对应容器json中"custom_description"字段 '''
+            self.collectionType = dic.get("collectionType")  # type: str
+            ''' 放入容器类型，目前仅支持netease_container和netease_ui_container '''
+            self.collectionIndex = dic.get("collectionIndex")  # type: int
+            ''' 放入容器索引 '''
+            self.x = dic.get("x")  # type: int
+            ''' 容器方块x坐标 '''
+            self.y = dic.get("y")  # type: int
+            ''' 容器方块y坐标 '''
+            self.z = dic.get("z")  # type: int
+            ''' 容器方块z坐标 '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 是否取消该操作，默认为false，事件中改为true时拒绝此次放入自定义容器的操作 '''
+
+    class PlayerTryRemoveCustomContainerItemClientEvent:
+        ''' 玩家尝试从自定义容器中移除物品时触发该事件 '''
+        def __init__(self, dic):
+            self.itemDict = dic.get("itemDict")  # type: dict
+            ''' 尝试移除物品的物品信息字典 '''
+            self.collectionName = dic.get("collectionName")  # type: str
+            ''' 放入容器名称，对应容器json中"custom_description"字段 '''
+            self.collectionType = dic.get("collectionType")  # type: str
+            ''' 放入容器类型，目前仅支持netease_container和netease_ui_container '''
+            self.collectionIndex = dic.get("collectionIndex")  # type: int
+            ''' 目标容器索引 '''
+            self.x = dic.get("x")  # type: int
+            ''' 容器方块x坐标 '''
+            self.y = dic.get("y")  # type: int
+            ''' 容器方块y坐标 '''
+            self.z = dic.get("z")  # type: int
+            ''' 容器方块z坐标 '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 是否取消该操作，默认为false，事件中改为true时拒绝此次移除物品的操作 '''
+
+    class BlockAnimateRandomTickEvent:
+        ''' 触发时机：以摄像机为中心，随机选取周围的方块触发Tick，触发的数量取决于设备性能。只有添加了netease:block_animate_random_tick的自定义方块才会触发此事件 '''
+        def __init__(self, dic):
+            self.blockPos = dic.get("blockPos")  # type: tuple
+            ''' 方块坐标 '''
+            self.blockName = dic.get("blockName")  # type: str
+            ''' 方块的identifier，包含命名空间及名称 '''
+            self.auxData = dic.get("auxData")  # type: int
+            ''' 方块附加值 '''
+
+    class FallingBlockCauseDamageBeforeClientEvent:
+        ''' 触发时机：当下落的方块开始计算砸到实体的伤害时，客户端触发该事件 '''
+        def __init__(self, dic):
+            self.fallingBlockId = dic.get("fallingBlockId")  # type: str
+            ''' 下落的方块实体id '''
+            self.fallingBlockX = dic.get("fallingBlockX")  # type: float
+            ''' 下落的方块实体位置x '''
+            self.fallingBlockY = dic.get("fallingBlockY")  # type: float
+            ''' 下落的方块实体位置y '''
+            self.fallingBlockZ = dic.get("fallingBlockZ")  # type: float
+            ''' 下落的方块实体位置z '''
+            self.blockName = dic.get("blockName")  # type: str
+            ''' 重力方块的identifier，包含命名空间及名称 '''
+            self.fallTickAmount = dic.get("fallTickAmount")  # type: int
+            ''' 下落的方块实体持续下落了多少tick '''
+            self.fallDistance = dic.get("fallDistance")  # type: float
+            ''' 下落距离 '''
+            self.collidingEntitys = dic.get("collidingEntitys")  # type: list
+            ''' 碰撞到的实体id列表 '''
+            self.fallDamage = dic.get("fallDamage")  # type: float
+            ''' 下落伤害 '''
+            self.dimensionId = dic.get("dimensionId")  # type: int
+            ''' 下落的方块实体维度id '''
+
+    class ModBlockEntityLoadedClientEvent:
+        ''' 客户端自定义方块实体初始化完成时触发 '''
+        def __init__(self, dic):
+            self.posX = dic.get("posX")  # type: int
+            ''' 自定义方块实体的位置X '''
+            self.posY = dic.get("posY")  # type: int
+            ''' 自定义方块实体的位置Y '''
+            self.posZ = dic.get("posZ")  # type: int
+            ''' 自定义方块实体的位置Z '''
+            self.dimensionId = dic.get("dimensionId")  # type: int
+            ''' 维度id '''
+            self.blockName = dic.get("blockName")  # type: str
+            ''' 方块的identifier，包含命名空间及名称 '''
+
+    class ModBlockEntityRemoveClientEvent:
+        ''' 客户端自定义方块实体卸载时触发 '''
+        def __init__(self, dic):
+            self.posX = dic.get("posX")  # type: int
+            ''' 自定义方块实体的位置X '''
+            self.posY = dic.get("posY")  # type: int
+            ''' 自定义方块实体的位置Y '''
+            self.posZ = dic.get("posZ")  # type: int
+            ''' 自定义方块实体的位置Z '''
+            self.dimensionId = dic.get("dimensionId")  # type: int
+            ''' 维度id '''
+            self.blockName = dic.get("blockName")  # type: str
+            ''' 方块的identifier，包含命名空间及名称 '''
+
+    class ModBlockEntityTickClientEvent:
+        ''' 客户端自定义方块实体tick事件 '''
+        def __init__(self, dic):
+            self.posX = dic.get("posX")  # type: int
+            ''' 自定义方块实体的位置X '''
+            self.posY = dic.get("posY")  # type: int
+            ''' 自定义方块实体的位置Y '''
+            self.posZ = dic.get("posZ")  # type: int
+            ''' 自定义方块实体的位置Z '''
+            self.dimensionId = dic.get("dimensionId")  # type: int
+            ''' 维度id '''
+            self.blockName = dic.get("blockName")  # type: str
+            ''' 方块的identifier，包含命名空间及名称 '''
+
+    class OnAfterFallOnBlockClientEvent:
+        ''' 触发时机：当实体降落到方块后客户端触发，主要用于力的计算 '''
+        def __init__(self, dic):
+            self.entityId = dic.get("entityId")  # type: str
+            ''' 实体id '''
+            self.posX = dic.get("posX")  # type: float
+            ''' 实体位置x '''
+            self.posY = dic.get("posY")  # type: float
+            ''' 实体位置y '''
+            self.posZ = dic.get("posZ")  # type: float
+            ''' 实体位置z '''
+            self.motionX = dic.get("motionX")  # type: float
+            ''' 瞬时移动X方向的力 '''
+            self.motionY = dic.get("motionY")  # type: float
+            ''' 瞬时移动Y方向的力 '''
+            self.motionZ = dic.get("motionZ")  # type: float
+            ''' 瞬时移动Z方向的力 '''
+            self.blockName = dic.get("blockName")  # type: str
+            ''' 方块的identifier，包含命名空间及名称 '''
+            self.calculate = dic.get("calculate")  # type: bool
+            ''' 是否按脚本层传值计算力 '''
+
+    class OnEntityInsideBlockClientEvent:
+        ''' 触发时机：当实体碰撞盒所在区域有方块时，客户端持续触发 '''
+        def __init__(self, dic):
+            self.entityId = dic.get("entityId")  # type: str
+            ''' 实体id '''
+            self.dimensionId = dic.get("dimensionId")  # type: int
+            ''' 实体所在维度id '''
+            self.slowdownMultiX = dic.get("slowdownMultiX")  # type: float
+            ''' 实体移速X方向的减速比例 '''
+            self.slowdownMultiY = dic.get("slowdownMultiY")  # type: float
+            ''' 实体移速Y方向的减速比例 '''
+            self.slowdownMultiZ = dic.get("slowdownMultiZ")  # type: float
+            ''' 实体移速Z方向的减速比例 '''
+            self.blockX = dic.get("blockX")  # type: int
+            ''' 方块位置x '''
+            self.blockY = dic.get("blockY")  # type: int
+            ''' 方块位置y '''
+            self.blockZ = dic.get("blockZ")  # type: int
+            ''' 方块位置z '''
+            self.blockName = dic.get("blockName")  # type: str
+            ''' 方块的identifier，包含命名空间及名称 '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 可由脚本层回传True给引擎，阻止触发后续原版逻辑 '''
+
+    class OnModBlockNeteaseEffectCreatedClientEvent:
+        ''' 自定义方块实体绑定的特效创建成功事件，在自定义方块实体中绑定的特效创建成功时触发以及使用接口CreateFrameEffectForBlockEntity或CreateParticleEffectForBlockEntity为自定义方块实体添加特效成功时触发 '''
+        def __init__(self, dic):
+            self.posX = dic.get("posX")  # type: int
+            ''' 自定义方块实体的位置X '''
+            self.posY = dic.get("posY")  # type: int
+            ''' 自定义方块实体的位置Y '''
+            self.posZ = dic.get("posZ")  # type: int
+            ''' 自定义方块实体的位置Z '''
+            self.dimensionId = dic.get("dimensionId")  # type: int
+            ''' 维度id '''
+            self.blockName = dic.get("blockName")  # type: str
+            ''' 方块的identifier，包含命名空间及名称 '''
+            self.effectType = dic.get("effectType")  # type: int
+            ''' 特效类型，0为序列帧，1为粒子 '''
+            self.effectName = dic.get("effectName")  # type: str
+            ''' 特效名称 '''
+
+    class OnStandOnBlockClientEvent:
+        ''' 触发时机：当实体站立到方块上时客户端持续触发 '''
+        def __init__(self, dic):
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 是否允许触发，默认为False，若设为True，可阻止触发后续物理交互事件 '''
+            self.blockX = dic.get("blockX")  # type: int
+            ''' 方块x坐标 '''
+            self.blockY = dic.get("blockY")  # type: int
+            ''' 方块y坐标 '''
+            self.blockZ = dic.get("blockZ")  # type: int
+            ''' 方块z坐标 '''
+            self.entityId = dic.get("entityId")  # type: str
+            ''' 触发的entity的唯一ID '''
+            self.blockName = dic.get("blockName")  # type: str
+            ''' 方块的identifier，包含命名空间及名称 '''
+
+    class ShearsDestoryBlockBeforeClientEvent:
+        ''' 触发时机：玩家手持剪刀破坏方块时，有剪刀特殊效果的方块会在客户端线程触发该事件 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.x = dic.get("x")  # type: int
+            ''' 方块x坐标 '''
+            self.y = dic.get("y")  # type: int
+            ''' 方块y坐标 '''
+            self.z = dic.get("z")  # type: int
+            ''' 方块z坐标 '''
+            self.blockName = dic.get("blockName")  # type: str
+            ''' 方块的identifier，包含命名空间及名称 '''
+            self.auxValue = dic.get("auxValue")  # type: int
+            ''' 方块附加值 '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 设为True可以取消剪刀破坏 '''
+
+    class StepOffBlockClientEvent:
+        ''' 触发时机：实体移动离开一个实心方块时触发 '''
+        def __init__(self, dic):
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 是否允许触发，默认为False，若设为True，可阻止触发后续物理交互事件 '''
+            self.blockX = dic.get("blockX")  # type: int
+            ''' 方块x坐标 '''
+            self.blockY = dic.get("blockY")  # type: int
+            ''' 方块y坐标 '''
+            self.blockZ = dic.get("blockZ")  # type: int
+            ''' 方块z坐标 '''
+            self.entityId = dic.get("entityId")  # type: str
+            ''' 触发的entity的唯一ID '''
+            self.blockName = dic.get("blockName")  # type: str
+            ''' 方块的identifier，包含命名空间及名称 '''
+
+    class PlayMusicClientEvent:
+        ''' 播放背景音乐时触发 '''
+        def __init__(self, dic):
+            self.name = dic.get("name")  # type: str
+            ''' 即资源包中sounds/music_definitions.json中的event_name，并且对应sounds/sound_definitions.json中的key '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 设为True可屏蔽该次音效播放 '''
+
+    class PlaySoundClientEvent:
+        ''' 播放场景音效或UI音效时触发 '''
+        def __init__(self, dic):
+            self.name = dic.get("name")  # type: str
+            ''' 即资源包中sounds/sound_definitions.json中的key '''
+            self.pos = dic.get("pos")  # type: tuple
+            ''' 音效播放的位置。UI音效为(0,0,0) '''
+            self.volume = dic.get("volume")  # type: float
+            ''' 音量，范围为0-1 '''
+            self.pitch = dic.get("pitch")  # type: float
+            ''' 播放速度，正常速度为1 '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 设为True可屏蔽该次音效播放 '''
+
+    class GyroSensorChangedClientEvent:
+        ''' 触发时机：陀螺仪传感器姿态发生变化时 '''
+        def __init__(self, dic):
+            self.xDiff = dic.get("xDiff")  # type: float
+            ''' x轴角速度，单位为弧度/s '''
+            self.yDiff = dic.get("yDiff")  # type: float
+            ''' y轴角速度，单位为弧度/s '''
+            self.zDiff = dic.get("zDiff")  # type: float
+            ''' z轴角速度，单位为弧度/s '''
+            self.orientation = dic.get("orientation")  # type: int
+            ''' 当前屏幕朝向,0竖屏正向 1横屏向左 2竖屏倒置 3横屏向右 '''
+            self.timestamp = dic.get("timestamp")  # type: float
+            ''' 触发时间戳,秒 '''
+
+    class MouseWheelClientEvent:
+        ''' 鼠标滚轮滚动时触发 '''
+        def __init__(self, dic):
+            self.direction = dic.get("direction")  # type: int
+            ''' 1为向上滚动，0为向下滚动 '''
+
+    class OnBackButtonReleaseClientEvent:
+        ''' 返回按钮（目前特指安卓系统导航中的返回按钮）松开时触发 '''
+        def __init__(self, dic):
+            pass
+
+    class OnGamepadControllerLayoutChangeClientEvent:
+        ''' 游戏手柄按键映射改变事件 '''
+        def __init__(self, dic):
+            self.action = dic.get("action")  # type: str
+            ''' 行为 '''
+            self.newKey = dic.get("newKey")  # type: int
+            ''' 修改后的键码，详见GamepadKeyType枚举 '''
+            self.oldKey = dic.get("oldKey")  # type: int
+            ''' 修改前的键码，详见GamepadKeyType枚举 '''
+
+    class OnGamepadKeyPressClientEvent:
+        ''' 游戏手柄按键事件 '''
+        def __init__(self, dic):
+            self.screenName = dic.get("screenName")  # type: str
+            ''' 当前screenName '''
+            self.key = dic.get("key")  # type: int
+            ''' 键码，详见GamepadKeyType枚举 '''
+            self.isDown = dic.get("isDown")  # type: str
+            ''' 是否按下，按下为1，弹起为0 '''
+
+    class OnGamepadStickClientEvent:
+        ''' 游戏手柄摇杆事件 '''
+        def __init__(self, dic):
+            self.key = dic.get("key")  # type: int
+            ''' 键码，详见GamepadKeyType枚举 '''
+            self.x = dic.get("x")  # type: float
+            ''' 摇杆水平方向的值，从左到右取值为 -1.0 ~ 1.0 '''
+            self.y = dic.get("y")  # type: float
+            ''' 摇杆竖直方向的值，从下到上取值为 -1.0 ~ 1.0 '''
+
+    class OnGamepadTriggerClientEvent:
+        ''' 游戏手柄扳机事件 '''
+        def __init__(self, dic):
+            self.key = dic.get("key")  # type: int
+            ''' 键码，详见GamepadKeyType枚举 '''
+            self.magnitude = dic.get("magnitude")  # type: float
+            ''' 扣动扳机的力度，取值为 0 ~ 1.0 '''
+
+    class OnKeyboardControllerLayoutChangeClientEvent:
+        ''' 键盘按键映射改变事件 '''
+        def __init__(self, dic):
+            self.action = dic.get("action")  # type: str
+            ''' 行为 '''
+            self.newKey = dic.get("newKey")  # type: int
+            ''' 修改后的键码，详见KeyBoardType枚举 '''
+            self.oldKey = dic.get("oldKey")  # type: int
+            ''' 修改前的键码，详见KeyBoardType枚举 '''
+
+    class OnMouseMiddleDownClientEvent:
+        ''' 鼠标按下中键时触发 '''
+        def __init__(self, dic):
+            self.isDown = dic.get("isDown")  # type: int
+            ''' 1为按下，0为弹起 '''
+            self.mousePositionX = dic.get("mousePositionX")  # type: float
+            ''' 按下时的x坐标 '''
+            self.mousePositionY = dic.get("mousePositionY")  # type: float
+            ''' 按下时的y坐标 '''
+
+    class AchievementButtonMovedClientEvent:
+        ''' 触发时机：使用自定义成就系统的时，拖动成就入口结束时触发 '''
+        def __init__(self, dic):
+            self.oldPosition = dic.get("oldPosition")  # type: tuple
+            ''' 移动前该控件相对父节点的坐标信息，第一项为横轴，第二项为纵轴 '''
+            self.newPosition = dic.get("newPosition")  # type: tuple
+            ''' 移动后该控件相对父节点的坐标信息，第一项为横轴，第二项为纵轴 '''
+
+    class CloseNeteaseShopEvent:
+        ''' 关闭商城界面时触发，包括脚本商城和Apollo插件商城 '''
+        def __init__(self, dic):
+            pass
+
+    class HudButtonChangedClientEvent:
+        ''' 当原生HUD按钮位置或大小发生改变时触发，例如玩家使用了自定义控件功能会触发，可在该事件中修改mod按钮的位置防止重叠 '''
+        def __init__(self, dic):
+            self.changedList = dic.get("changedList")  # type: tuple
+            ''' 修改后的按钮列表 '''
+
+    class PopScreenAfterClientEvent:
+        ''' screen移除触发 '''
+        def __init__(self, dic):
+            self.screenName = dic.get("screenName")  # type: str
+            ''' UI名字 '''
+            self.screenDef = dic.get("screenDef")  # type: str
+            ''' 包含命名空间的UI名字，格式为namespace.screenName '''
+
+    class ScreenSizeChangedClientEvent:
+        ''' 改变屏幕大小时会触发的事件 '''
+        def __init__(self, dic):
+            self.beforeX = dic.get("beforeX")  # type: float
+            ''' 屏幕大小改变前的宽度 '''
+            self.beforeY = dic.get("beforeY")  # type: float
+            ''' 屏幕大小改变前的高度 '''
+            self.afterX = dic.get("afterX")  # type: float
+            ''' 屏幕大小改变后的宽度 '''
+            self.afterY = dic.get("afterY")  # type: float
+            ''' 屏幕大小改变后的高度 '''
+
+    class EntityModelChangedClientEvent:
+        ''' 实体模型改变事件 '''
+        def __init__(self, dic):
+            self.id = dic.get("id")  # type: str
+            ''' 实体id '''
+
+    class HealthChangeClientEvent:
+        ''' 生命值改变事件 '''
+        def __init__(self, dic):
+            self.id = dic.get("id")  # type: str
+            ''' 实体id '''

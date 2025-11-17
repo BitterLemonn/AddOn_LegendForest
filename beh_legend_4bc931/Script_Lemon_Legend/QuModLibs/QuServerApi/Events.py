@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 class Events:
     ''' 服务端事件类 '''
     class InventoryItemChangedServerEvent:
@@ -528,10 +528,12 @@ class Events:
             ''' 生物Id '''
             self.cause = dic.get("cause")  # type: str
             ''' 伤害来源，详见Minecraft枚举值文档的ActorDamageCause '''
-            self.damage = dic.get("damage")  # type: int
-            ''' 伤害值 '''
+            self.damage = dic.get("damage")  # type: float
+            ''' 伤害值（被伤害吸收后的值），不可修改 '''
             self.absorbedDamage = dic.get("absorbedDamage")  # type: int
-            ''' 吸收的伤害值（原始伤害减去damage） '''
+            ''' 被伤害吸收效果吸收的伤害值 '''
+            self.customTag = dic.get("customTag")  # type: str
+            ''' 使用Hurt接口传入的自定义伤害类型 '''
 
     class ActuallyHurtServerEvent:
         ''' 实体实际受到伤害时触发，相比于DamageEvent，该伤害为经过护甲及buff计算后，实际的扣血量 '''
@@ -542,10 +544,16 @@ class Events:
             ''' 投射物id '''
             self.entityId = dic.get("entityId")  # type: str
             ''' 被伤害id '''
-            self.damage = dic.get("damage")  # type: int
-            ''' 伤害值，允许修改，设置为0则此次造成的伤害为0 '''
+            self.damage = dic.get("damage")  # type: float
+            ''' 伤害值（被伤害吸收后的值），允许修改，设置为0则此次造成的伤害为0，若设置数值和原来一样则视为没有修改 '''
+            self.invulnerableTime = dic.get("invulnerableTime")  # type: int
+            ''' 实体受击后，剩余的无懈可击帧数，在无懈可击时间内，damage和damage_f为超过上次伤害的部分 '''
+            self.lastHurt = dic.get("lastHurt")  # type: float
+            ''' 实体上次受到的伤害 '''
             self.cause = dic.get("cause")  # type: str
             ''' 伤害来源，详见Minecraft枚举值文档的ActorDamageCause '''
+            self.customTag = dic.get("customTag")  # type: str
+            ''' 使用Hurt接口传入的自定义伤害类型 '''
 
     class AddEffectServerEvent:
         ''' 触发时机：实体获得状态效果时 '''
@@ -558,8 +566,8 @@ class Events:
             ''' 状态效果的持续时间，单位秒 '''
             self.effectAmplifier = dic.get("effectAmplifier")  # type: int
             ''' 状态效果的放大倍数 '''
-            self.damage = dic.get("damage")  # type: int
-            ''' 状态造成的伤害值，如药水 '''
+            self.damage = dic.get("damage")  # type: float
+            ''' 状态造成的伤害值（真实扣除生命值的量）。只有持续时间为0时有用 '''
 
     class AddEntityServerEvent:
         ''' actor实体增加，事件触发，对应客户端AddEntityEvent '''
@@ -648,8 +656,8 @@ class Events:
         def __init__(self, dic):
             self.entityId = dic.get("entityId")  # type: str
             ''' 实体id '''
-            self.damage = dic.get("damage")  # type: int
-            ''' 伤害值（负数表示生命回复） '''
+            self.damage = dic.get("damage")  # type: float
+            ''' 伤害值（伤害吸收后实际扣血量），负数表示生命回复量 '''
             self.attributeBuffType = dic.get("attributeBuffType")  # type: int
             ''' 状态类型，参考AttributeBuffType '''
             self.duration = dic.get("duration")  # type: float
@@ -658,6 +666,8 @@ class Events:
             ''' 状态生命时间，单位秒（s） '''
             self.isInstantaneous = dic.get("isInstantaneous")  # type: bool
             ''' 是否为立即生效状态 '''
+            self.cause = dic.get("cause")  # type: str
+            ''' 伤害来源，详见Minecraft枚举值文档的ActorDamageCause '''
 
     class EntityLoadScriptEvent:
         ''' 数据库加载实体自定义数据时触发 '''
@@ -700,6 +710,8 @@ class Events:
         def __init__(self, dic):
             self.entityId = dic.get("entityId")  # type: str
             ''' 实体id '''
+            self.identifier = dic.get("identifier")  # type: str
+            ''' 实体identifier '''
 
     class JumpAnimBeginServerEvent:
         ''' 当跳跃动作开始时触发 '''
@@ -708,12 +720,16 @@ class Events:
             ''' 实体id '''
 
     class MobDieEvent:
-        ''' 实体被玩家杀死时触发 '''
+        ''' 实体死亡时触发 '''
         def __init__(self, dic):
             self.id = dic.get("id")  # type: str
             ''' 实体id '''
             self.attacker = dic.get("attacker")  # type: str
             ''' 伤害来源id '''
+            self.cause = dic.get("cause")  # type: str
+            ''' 伤害来源，详见Minecraft枚举值文档的ActorDamageCause '''
+            self.customTag = dic.get("customTag")  # type: str
+            ''' 使用Hurt接口传入的自定义伤害类型 '''
 
     class OnEntityAreaEvent:
         ''' 触发时机：通过RegisterEntityAOIEvent注册过AOI事件后，当有实体进入或离开注册感应区域时触发该事件。 '''
@@ -875,9 +891,11 @@ class Events:
             self.src = dic.get("src")  # type: str
             ''' 火焰创建者id '''
             self.fireTime = dic.get("fireTime")  # type: float
-            ''' 着火时间，单位秒 '''
+            ''' 着火时间，单位秒, 不支持修改 '''
             self.cancel = dic.get("cancel")  # type: bool
             ''' 是否取消此处火焰伤害 '''
+            self.cancelIgnite = dic.get("cancelIgnite")  # type: bool
+            ''' 是否取消点燃效果 '''
 
     class ServerSpawnMobEvent:
         ''' 游戏内自动生成怪物时触发 '''
@@ -1084,7 +1102,7 @@ class Events:
             ''' 玩家id '''
             self.victimId = dic.get("victimId")  # type: str
             ''' 受击者id '''
-            self.damage = dic.get("damage")  # type: int
+            self.damage = dic.get("damage")  # type: float
             ''' 伤害值：引擎传过来的值是0 允许脚本层修改为其他数 '''
             self.isValid = dic.get("isValid")  # type: int
             ''' 脚本是否设置伤害值：1表示是；0 表示否 '''
@@ -1092,6 +1110,8 @@ class Events:
             ''' 是否取消该次攻击，默认不取消 '''
             self.isKnockBack = dic.get("isKnockBack")  # type: bool
             ''' 是否支持击退效果，默认支持，当不支持时将屏蔽武器击退附魔效果 '''
+            self.isCrit = dic.get("isCrit")  # type: bool
+            ''' 本次攻击是否产生暴击,不支持修改 '''
 
     class PlayerDieEvent:
         ''' 触发时机：当玩家死亡时触发该事件。 '''
@@ -1100,6 +1120,10 @@ class Events:
             ''' 玩家id '''
             self.attacker = dic.get("attacker")  # type: str
             ''' 伤害来源id '''
+            self.cause = dic.get("cause")  # type: str
+            ''' 伤害来源，详见Minecraft枚举值文档的ActorDamageCause '''
+            self.customTag = dic.get("customTag")  # type: str
+            ''' 使用Hurt接口传入的自定义伤害类型 '''
 
     class PlayerEatFoodServerEvent:
         ''' 触发时机：玩家吃下食物时触发 '''
@@ -1108,6 +1132,10 @@ class Events:
             ''' 玩家Id '''
             self.itemDict = dic.get("itemDict")  # type: dict
             ''' 食物物品的物品信息字典 '''
+            self.hunger = dic.get("hunger")  # type: int
+            ''' 食物增加的饥饿值，可修改 '''
+            self.nutrition = dic.get("nutrition")  # type: float
+            ''' 食物的营养价值，回复饱和度 = 食物增加的饥饿值 * 食物的营养价值 * 2，饱和度最大不超过当前饥饿值，可修改 '''
 
     class PlayerHurtEvent:
         ''' 触发时机：当玩家受伤害前触发该事件。 '''
@@ -1116,6 +1144,18 @@ class Events:
             ''' 受击玩家id '''
             self.attacker = dic.get("attacker")  # type: str
             ''' 伤害来源实体id，若没有实体攻击，例如高空坠落，id为-1 '''
+            self.projectileId = dic.get("projectileId")  # type: str
+            ''' 抛射物id '''
+            self.cause = dic.get("cause")  # type: str
+            ''' 伤害来源，详见Minecraft枚举值文档的ActorDamageCause '''
+            self.damage = dic.get("damage")  # type: float
+            ''' 伤害值，允许修改，设置为0则此次造成的伤害为0 '''
+            self.absorb = dic.get("absorb")  # type: int
+            ''' 伤害吸收值 '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 是否取消 '''
+            self.customTag = dic.get("customTag")  # type: str
+            ''' 使用Hurt接口传入的自定义伤害类型 '''
 
     class PlayerInteractServerEvent:
         ''' 触发时机：玩家即将和某个实体交互 '''
@@ -1378,3 +1418,542 @@ class Events:
             ''' 设置为True时将取消本次拾取 '''
             self.pickupDelay = dic.get("pickupDelay")  # type: int
             ''' 取消拾取后重新设置该物品的拾取cd，小于15帧将视作15帧，大于等于97813帧将视作无法拾取 '''
+
+    class AchievementCompleteEvent:
+        ''' 玩家完成自定义成就时触发该事件 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.rootNodeId = dic.get("rootNodeId")  # type: str
+            ''' 所属的页面的根节点成就id '''
+            self.achievementId = dic.get("achievementId")  # type: str
+            ''' 达成的成就id '''
+            self.title = dic.get("title")  # type: str
+            ''' 成就标题 '''
+            self.description = dic.get("description")  # type: str
+            ''' 成就描述 '''
+
+    class CustomCommandTriggerServerEvent:
+        ''' 自定义命令触发事件 '''
+        def __init__(self, dic):
+            self.command = dic.get("command")  # type: str
+            ''' 自定义命令名称，对应json中的name字段 '''
+            self.args = dic.get("args")  # type: list
+            ''' 自定义命令参数 '''
+            self.variant = dic.get("variant")  # type: int
+            ''' 表示是哪条变体，范围[0, 9]，对应json中args键中的数字，未配置变体则为0 '''
+            self.origin = dic.get("origin")  # type: dict
+            ''' 触发源的信息 '''
+            self.return_failed = dic.get("return_failed")  # type: bool
+            ''' 设置自定义命令是否执行失败，默认为False，如果执行失败，返回信息以红色字体显示 '''
+            self.return_msg_key = dic.get("return_msg_key")  # type: str
+            ''' 设置返回给玩家或命令方块的信息，也支持通过语言文件(.lang)定义，默认值为commands.custom.success '''
+
+    class GlobalCommandServerEvent:
+        ''' 服务端全局命令事件，包括聊天栏发送、SetCommand接口、命令方块（矿车）、行为包动画执行命令 '''
+        def __init__(self, dic):
+            self.entityId = dic.get("entityId")  # type: str
+            ''' 执行命令的实体id, 如果没有此键，则是命令方块执行的命令 '''
+            self.command = dic.get("command")  # type: str
+            ''' 将要被执行的命令 '''
+            self.blockPos = dic.get("blockPos")  # type: tuple
+            ''' 执行命令的实体或方块的方块坐标 '''
+            self.dimension = dic.get("dimension")  # type: int
+            ''' 执行命令的实体或方块所在维度id '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 设置为True可以取消命令执行 '''
+
+    class PlaceNeteaseLargeFeatureServerEvent:
+        ''' 触发时机：网易版大型结构即将生成时服务端抛出该事件。 '''
+        def __init__(self, dic):
+            self.dimensionId = dic.get("dimensionId")  # type: int
+            ''' 维度id '''
+            self.pos = dic.get("pos")  # type: tuple
+            ''' 中心结构放置坐标(x, z) '''
+            self.rot = dic.get("rot")  # type: int
+            ''' 中心结构顺时针旋转角度 '''
+            self.depth = dic.get("depth")  # type: int
+            ''' 大型结构递归深度 '''
+            self.centerPool = dic.get("centerPool")  # type: str
+            ''' 中心池的identifier '''
+            self.ignoreFitInContext = dic.get("ignoreFitInContext")  # type: bool
+            ''' 是否允许生成过结构的地方是否可以继续生成结构 '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 设置为True时可阻止该大型结构的放置 '''
+
+    class PlayerIntendLeaveServerEvent:
+        ''' 触发时机：即将删除玩家时触发该事件，此时可以通过各种API获取玩家的当前状态。 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+
+    class OnLightningLevelChangeServerEvent:
+        ''' 打雷强度发生改变 '''
+        def __init__(self, dic):
+            self.oldLevel = dic.get("oldLevel")  # type: float
+            ''' 改变前的打雷强度 '''
+            self.newLevel = dic.get("newLevel")  # type: float
+            ''' 改变后的打雷强度 '''
+
+    class OnLocalLightningLevelChangeServerEvent:
+        ''' 独立维度天气打雷强度发生改变时触发 '''
+        def __init__(self, dic):
+            self.oldLevel = dic.get("oldLevel")  # type: float
+            ''' 改变前的打雷强度 '''
+            self.newLevel = dic.get("newLevel")  # type: float
+            ''' 改变后的打雷强度 '''
+            self.dimensionId = dic.get("dimensionId")  # type: int
+            ''' 独立天气维度id '''
+
+    class OnLocalRainLevelChangeServerEvent:
+        ''' 独立维度天气下雨强度发生改变时触发 '''
+        def __init__(self, dic):
+            self.oldLevel = dic.get("oldLevel")  # type: float
+            ''' 改变前的下雨强度 '''
+            self.newLevel = dic.get("newLevel")  # type: float
+            ''' 改变后的下雨强度 '''
+            self.dimensionId = dic.get("dimensionId")  # type: int
+            ''' 独立天气维度id '''
+
+    class OnRainLevelChangeServerEvent:
+        ''' 下雨强度发生改变 '''
+        def __init__(self, dic):
+            self.oldLevel = dic.get("oldLevel")  # type: float
+            ''' 改变前的下雨强度 '''
+            self.newLevel = dic.get("newLevel")  # type: float
+            ''' 改变后的下雨强度 '''
+
+    class EntityDieLoottableAfterServerEvent:
+        ''' 触发时机：生物死亡掉落物品之后 '''
+        def __init__(self, dic):
+            self.dieEntityId = dic.get("dieEntityId")  # type: str
+            ''' 死亡实体的entityId '''
+            self.attacker = dic.get("attacker")  # type: str
+            ''' 伤害来源的entityId '''
+            self.itemList = dic.get("itemList")  # type: list
+            ''' 掉落物品列表，每个元素为一个itemDict '''
+            self.itemEntityIdList = dic.get("itemEntityIdList")  # type: list
+            ''' 掉落物品entityId列表 '''
+
+    class EntityDroppedItemServerEvent:
+        ''' 触发时机：生物扔出物品时触发 '''
+        def __init__(self, dic):
+            self.entityId = dic.get("entityId")  # type: str
+            ''' 生物Id '''
+            self.itemDict = dic.get("itemDict")  # type: dict
+            ''' 扔出的物品的物品信息字典 '''
+            self.itemEntityId = dic.get("itemEntityId")  # type: str
+            ''' 物品实体Id '''
+
+    class EntityMotionStartServerEvent:
+        ''' 实体运动器开始事件。实体（包含玩家）添加运动器后，运动器开始运行时触发 '''
+        def __init__(self, dic):
+            self.motionId = dic.get("motionId")  # type: int
+            ''' 运动器id '''
+            self.entityId = dic.get("entityId")  # type: str
+            ''' 实体id '''
+
+    class EntityMotionStopServerEvent:
+        ''' 实体运动器停止事件。实体（包含玩家）添加运动器并开始运行后，运动器自动停止时触发 '''
+        def __init__(self, dic):
+            self.motionId = dic.get("motionId")  # type: int
+            ''' 运动器id '''
+            self.entityId = dic.get("entityId")  # type: str
+            ''' 实体id '''
+            self.remove = dic.get("remove")  # type: bool
+            ''' 是否移除该运动器，设置为False则保留，默认为True，即运动器停止后自动移除，该参数设置只对非玩家实体有效 '''
+
+    class EntityPickupItemServerEvent:
+        ''' 有minecraft:behavior.pickup_items行为的生物拾取物品时触发该事件 '''
+        def __init__(self, dic):
+            self.entityId = dic.get("entityId")  # type: str
+            ''' 生物Id '''
+            self.itemDict = dic.get("itemDict")  # type: dict
+            ''' 拾取的物品的物品信息字典 '''
+            self.secondaryActor = dic.get("secondaryActor")  # type: str
+            ''' 物品给予者id（一般是玩家），如果不存在给予者的话，这里为空字符串 '''
+
+    class HealthChangeBeforeServerEvent:
+        ''' 生物生命值或最大生命值发生变化之前触发 '''
+        def __init__(self, dic):
+            self.entityId = dic.get("entityId")  # type: str
+            ''' 实体id '''
+            self.from_ = dic.get("from")  # type: float
+            ''' 变化前的生命值 '''
+            self.to = dic.get("to")  # type: float
+            ''' 将要变化到的生命值，cancel设置为True时可以取消该变化，但是此参数不变 '''
+            self.byScript = dic.get("byScript")  # type: bool
+            ''' 是否通过SetAttrValue或SetAttrMaxValue调用产生的变化 '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 是否取消该变化 '''
+
+    class HealthChangeServerEvent:
+        ''' 生物生命值发生变化时触发 '''
+        def __init__(self, dic):
+            self.entityId = dic.get("entityId")  # type: str
+            ''' 实体id '''
+            self.from_ = dic.get("from")  # type: float
+            ''' 变化前的生命值 '''
+            self.to = dic.get("to")  # type: float
+            ''' 变化后的生命值 '''
+            self.byScript = dic.get("byScript")  # type: bool
+            ''' 是否通过SetAttrValue或SetAttrMaxValue调用产生的变化 '''
+
+    class OnGroundServerEvent:
+        ''' 实体着地事件。实体，掉落的物品，点燃的TNT掉落地面时触发 '''
+        def __init__(self, dic):
+            self.id = dic.get("id")  # type: str
+            ''' 实体id '''
+
+    class OnMobHitBlockServerEvent:
+        ''' 触发时机：通过OpenMobHitBlockDetection打开方块碰撞检测后，当生物（不包括玩家）碰撞到方块时触发该事件。 '''
+        def __init__(self, dic):
+            self.entityId = dic.get("entityId")  # type: str
+            ''' 碰撞到方块的生物Id '''
+            self.posX = dic.get("posX")  # type: int
+            ''' 碰撞方块x坐标 '''
+            self.posY = dic.get("posY")  # type: int
+            ''' 碰撞方块y坐标 '''
+            self.posZ = dic.get("posZ")  # type: int
+            ''' 碰撞方块z坐标 '''
+            self.blockId = dic.get("blockId")  # type: str
+            ''' 碰撞方块的identifier '''
+            self.auxValue = dic.get("auxValue")  # type: int
+            ''' 碰撞方块的附加值 '''
+            self.dimensionId = dic.get("dimensionId")  # type: int
+            ''' 维度id '''
+
+    class OnMobHitMobServerEvent:
+        ''' 触发时机：通过OpenPlayerHitMobDetection打开生物碰撞检测后，当生物间（包含玩家）碰撞时触发该事件。 '''
+        def __init__(self, dic):
+            self.mobId = dic.get("mobId")  # type: str
+            ''' 当前生物的id '''
+            self.hittedMobList = dic.get("hittedMobList")  # type: list
+            ''' 当前生物碰撞到的其他所有生物id的list '''
+
+    class MountTamingEvent:
+        ''' 玩家通过骑乘驯服生物后触发该事件 '''
+        def __init__(self, dic):
+            self.eid = dic.get("eid")  # type: str
+            ''' 生物id '''
+            self.pid = dic.get("pid")  # type: str
+            ''' 玩家id '''
+
+    class OnPlayerActionServerEvent:
+        ''' 玩家动作事件，当玩家开始/停止某些动作时触发该事件 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.actionType = dic.get("actionType")  # type: int
+            ''' 动作事件枚举，详见Minecraft枚举值文档的PlayerActionType '''
+
+    class PlayerDoInteractServerEvent:
+        ''' 玩家与有minecraft:interact组件的生物交互时触发该事件 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.itemDict = dic.get("itemDict")  # type: dict
+            ''' 交互时使用物品的物品信息字典 '''
+            self.interactEntityId = dic.get("interactEntityId")  # type: str
+            ''' 交互的生物entityId '''
+
+    class PlayerFeedEntityServerEvent:
+        ''' 玩家喂养生物时触发 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 主动喂养生物的玩家的唯一ID '''
+            self.entityId = dic.get("entityId")  # type: str
+            ''' 被喂养生物的唯一ID '''
+            self.itemDict = dic.get("itemDict")  # type: dict
+            ''' 当前玩家手持物品的物品信息字典 '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 是否取消触发，默认为False，若设为True，可阻止触发后续的生物喂养逻辑 '''
+
+    class PlayerHungerChangeServerEvent:
+        ''' 玩家饥饿度变化时触发该事件 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.hungerBefore = dic.get("hungerBefore")  # type: float
+            ''' 变化前的饥饿度 '''
+            self.hunger = dic.get("hunger")  # type: float
+            ''' 变化后的饥饿度 '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 是否取消饥饿度变化 '''
+
+    class PlayerNamedEntityServerEvent:
+        ''' 玩家用命名牌重命名实体时触发 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 主动命名实体的玩家的唯一ID '''
+            self.entityId = dic.get("entityId")  # type: str
+            ''' 被命名实体的唯一ID '''
+            self.preName = dic.get("preName")  # type: str
+            ''' 实体当前的名字 '''
+            self.afterName = dic.get("afterName")  # type: str
+            ''' 实体重命名后的名字 '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 是否取消触发，默认为False，若设为True，可阻止触发后续的实体命名逻辑 '''
+
+    class PlayerPermissionChangeServerEvent:
+        ''' 玩家权限变更事件 '''
+        def __init__(self, dic):
+            self.causePlayerId = dic.get("causePlayerId")  # type: str
+            ''' 发起者id '''
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.oldPermission = dic.get("oldPermission")  # type: dict
+            ''' 变化前的权限字典 '''
+            self.newPermission = dic.get("newPermission")  # type: dict
+            ''' 变化后的权限字典 '''
+            self.changeCause = dic.get("changeCause")  # type: int
+            ''' 变化原因，详见Minecraft枚举值文档的PermissionChangeCause '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 为true时，取消本次权限变更 '''
+
+    class PlayerSleepServerEvent:
+        ''' 玩家使用床睡觉成功 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+
+    class PlayerStopSleepServerEvent:
+        ''' 玩家停止睡觉 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+
+    class PlayerTrySleepServerEvent:
+        ''' 玩家尝试使用床睡觉 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 是否取消（开发者传入） '''
+
+    class ContainerItemChangedServerEvent:
+        ''' 容器物品变化事件 '''
+        def __init__(self, dic):
+            self.pos = dic.get("pos")  # type: tuple
+            ''' 容器坐标 '''
+            self.containerType = dic.get("containerType")  # type: int
+            ''' 容器类型，类型含义见：容器类型枚举 '''
+            self.slot = dic.get("slot")  # type: int
+            ''' 容器槽位 '''
+            self.dimensionId = dic.get("dimensionId")  # type: int
+            ''' 维度id '''
+            self.oldItemDict = dic.get("oldItemDict")  # type: dict
+            ''' 旧物品，格式参考物品信息字典 '''
+            self.newItemDict = dic.get("newItemDict")  # type: dict
+            ''' 新物品，格式参考物品信息字典 '''
+
+    class CraftItemOutputChangeServerEvent:
+        ''' 玩家从容器拿出生成物品时触发 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家实体id '''
+            self.itemDict = dic.get("itemDict")  # type: dict
+            ''' 生成的物品，格式参考物品信息字典 '''
+            self.screenContainerType = dic.get("screenContainerType")  # type: int
+            ''' 当前界面类型,类型含义见：容器类型枚举 '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 是否取消生成物品 '''
+
+    class FurnaceBurnFinishedServerEvent:
+        ''' 服务端熔炉烧制触发事件。熔炉, 高炉，烟熏炉烧出物品时触发 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 操作熔炉的玩家id '''
+            self.blockPos = dic.get("blockPos")  # type: tuple
+            ''' 方块坐标 '''
+            self.itemDict = dic.get("itemDict")  # type: dict
+            ''' 烧出的物品的物品信息字典 '''
+            self.dimensionId = dic.get("dimensionId")  # type: int
+            ''' 维度id '''
+
+    class ItemDurabilityChangedServerEvent:
+        ''' 物品耐久度变化事件 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.itemDict = dic.get("itemDict")  # type: dict
+            ''' 物品信息字典 '''
+            self.slot = dic.get("slot")  # type: int
+            ''' 槽位 '''
+            self.oldDurability = dic.get("oldDurability")  # type: int
+            ''' 旧耐久度 '''
+            self.newDurability = dic.get("newDurability")  # type: int
+            ''' 新耐久度 '''
+
+    class ItemPullOutCustomContainerServerEvent:
+        ''' 漏出物品到漏斗时触发该事件 '''
+        def __init__(self, dic):
+            self.blockName = dic.get("blockName")  # type: str
+            ''' 自定义容器方块identifier '''
+            self.dimension = dic.get("dimension")  # type: int
+            ''' 维度id '''
+            self.posX = dic.get("posX")  # type: int
+            ''' 容器x坐标 '''
+            self.posY = dic.get("posY")  # type: int
+            ''' 容器y坐标 '''
+            self.posZ = dic.get("posZ")  # type: int
+            ''' 容器z坐标 '''
+            self.toSlot = dic.get("toSlot")  # type: int
+            ''' 漏斗槽位 '''
+
+    class ItemPushInCustomContainerServerEvent:
+        ''' 漏斗漏入物品时触发该事件 '''
+        def __init__(self, dic):
+            self.blockName = dic.get("blockName")  # type: str
+            ''' 自定义容器方块identifier '''
+            self.dimension = dic.get("dimension")  # type: int
+            ''' 维度id '''
+            self.posX = dic.get("posX")  # type: int
+            ''' 容器x坐标 '''
+            self.posY = dic.get("posY")  # type: int
+            ''' 容器y坐标 '''
+            self.posZ = dic.get("posZ")  # type: int
+            ''' 容器z坐标 '''
+            self.fromSlot = dic.get("fromSlot")  # type: int
+            ''' 漏斗槽位 '''
+
+    class OnItemPutInEnchantingModelServerEvent:
+        ''' 触发时机：玩家将可附魔物品放到附魔台上时 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.itemDict = dic.get("itemDict")  # type: dict
+            ''' 放入的物品的物品信息字典 '''
+
+    class OnPlayerActiveShieldServerEvent:
+        ''' 触发时机：玩家激活/取消激活盾牌触发的事件 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.isActive = dic.get("isActive")  # type: bool
+            ''' 是否激活盾牌 '''
+
+    class OnPlayerBlockedByShieldAfterServerEvent:
+        ''' 触发时机：玩家使用盾牌抵挡伤害之后触发 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.attacker = dic.get("attacker")  # type: str
+            ''' 攻击者id '''
+            self.damage = dic.get("damage")  # type: float
+            ''' 伤害值 '''
+
+    class OnPlayerBlockedByShieldBeforeServerEvent:
+        ''' 触发时机：玩家使用盾牌抵挡伤害之前触发 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.attacker = dic.get("attacker")  # type: str
+            ''' 攻击者id '''
+            self.damage = dic.get("damage")  # type: float
+            ''' 伤害值 '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 是否取消盾牌抵挡 '''
+
+    class PlayerPickupArrowServerEvent:
+        ''' 玩家即将捡起抛射物时触发 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.arrowId = dic.get("arrowId")  # type: str
+            ''' 抛射物id '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 是否取消拾取 '''
+
+    class PlayerTryAddCustomContainerItemServerEvent:
+        ''' 玩家尝试将物品添加到自定义容器时触发该事件 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.blockName = dic.get("blockName")  # type: str
+            ''' 自定义容器方块identifier '''
+            self.posX = dic.get("posX")  # type: int
+            ''' 容器x坐标 '''
+            self.posY = dic.get("posY")  # type: int
+            ''' 容器y坐标 '''
+            self.posZ = dic.get("posZ")  # type: int
+            ''' 容器z坐标 '''
+            self.itemDict = dic.get("itemDict")  # type: dict
+            ''' 物品信息字典 '''
+            self.dimension = dic.get("dimension")  # type: int
+            ''' 维度id '''
+
+    class PlayerTryPutCustomContainerItemServerEvent:
+        ''' 玩家尝试将物品放入自定义容器时触发该事件 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.blockName = dic.get("blockName")  # type: str
+            ''' 自定义容器方块identifier '''
+            self.posX = dic.get("posX")  # type: int
+            ''' 容器x坐标 '''
+            self.posY = dic.get("posY")  # type: int
+            ''' 容器y坐标 '''
+            self.posZ = dic.get("posZ")  # type: int
+            ''' 容器z坐标 '''
+            self.toSlot = dic.get("toSlot")  # type: int
+            ''' 目标槽位 '''
+            self.itemDict = dic.get("itemDict")  # type: dict
+            ''' 物品信息字典 '''
+            self.dimension = dic.get("dimension")  # type: int
+            ''' 维度id '''
+
+    class PlayerTryRemoveCustomContainerItemServerEvent:
+        ''' 玩家尝试从自定义容器中移除物品时触发该事件 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.blockName = dic.get("blockName")  # type: str
+            ''' 自定义容器方块identifier '''
+            self.posX = dic.get("posX")  # type: int
+            ''' 容器x坐标 '''
+            self.posY = dic.get("posY")  # type: int
+            ''' 容器y坐标 '''
+            self.posZ = dic.get("posZ")  # type: int
+            ''' 容器z坐标 '''
+            self.fromSlot = dic.get("fromSlot")  # type: int
+            ''' 源槽位 '''
+            self.itemDict = dic.get("itemDict")  # type: dict
+            ''' 物品信息字典 '''
+            self.dimension = dic.get("dimension")  # type: int
+            ''' 维度id '''
+
+    class ShearsUseToBlockBeforeServerEvent:
+        ''' 触发时机：实体手持剪刀对方块使用时，有剪刀特殊效果的方块会在服务端线程触发该事件 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.blockName = dic.get("blockName")  # type: str
+            ''' 方块的identifier '''
+            self.auxValue = dic.get("auxValue")  # type: int
+            ''' 方块附加值 '''
+            self.x = dic.get("x")  # type: int
+            ''' 方块x坐标 '''
+            self.y = dic.get("y")  # type: int
+            ''' 方块y坐标 '''
+            self.z = dic.get("z")  # type: int
+            ''' 方块z坐标 '''
+            self.dimensionId = dic.get("dimensionId")  # type: int
+            ''' 维度id '''
+            self.cancel = dic.get("cancel")  # type: bool
+            ''' 是否取消 '''
+
+    class UIContainerItemChangedServerEvent:
+        ''' 合成容器物品发生变化时触发 '''
+        def __init__(self, dic):
+            self.playerId = dic.get("playerId")  # type: str
+            ''' 玩家id '''
+            self.containerType = dic.get("containerType")  # type: int
+            ''' 容器类型 '''
+            self.slotId = dic.get("slotId")  # type: int
+            ''' 槽位id '''
+            self.oldItemDict = dic.get("oldItemDict")  # type: dict
+            ''' 旧物品信息字典 '''
+            self.newItemDict = dic.get("newItemDict")  # type: dict
+            ''' 新物品信息字典 '''
+
