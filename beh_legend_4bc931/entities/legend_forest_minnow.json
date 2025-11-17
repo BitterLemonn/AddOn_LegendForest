@@ -2,6 +2,12 @@
     "format_version": "1.16.0",
     "minecraft:entity": {
         "components": {
+            "minecraft:despawn": {
+                "despawn_from_distance": {
+                    "min_distance": 48,
+                    "max_distance": 64
+                }
+            },
             "minecraft:is_hidden_when_invisible": {},
             "minecraft:experience_reward": {
                 "on_death": "query.last_hit_by_player ? Math.Random(1,2) : 0"
@@ -66,12 +72,6 @@
             },
             "minecraft:movement.sway": {
                 "sway_amplitude": 0.0
-            },
-            "minecraft:despawn": {
-                "despawn_from_distance": {
-                    "min_distance": 48,
-                    "max_distance": 64
-                }
             },
             "minecraft:behavior.swim_idle": {
                 "priority": 5,

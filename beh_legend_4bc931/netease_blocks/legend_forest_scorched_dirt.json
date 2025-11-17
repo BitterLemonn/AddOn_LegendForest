@@ -1,0 +1,31 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:map_color": "#483d34",
+            "netease:tier": {
+                "destroy_special": false,
+                "digger": "shovel",
+                "level": 0
+            },
+            "minecraft:light_dampening": 15,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.5
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 0.5
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "legend_forest:scorched_dirt"
+                }
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:scorched_dirt",
+            "register_to_creative_menu": true,
+            "category": "legend_forest"
+        }
+    }
+}

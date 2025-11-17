@@ -1,0 +1,108 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 1200.0
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 50.0
+            },
+            "minecraft:light_dampening": 6,
+            "minecraft:map_color": "#253748",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "legend_forest:planks_shimmer"
+                }
+            },
+            "minecraft:geometry": {
+                "identifier": "geometry.legend_forest.slab_model",
+                "bone_visibility": {
+                    "up": "q.block_state('minecraft:vertical_half') == 'top'",
+                    "down": "q.block_state('minecraft:vertical_half') == 'bottom'"
+                }
+            },
+            "netease:tier": {
+                "destroy_special": false,
+                "digger": "hatchet",
+                "level": 0
+            },
+            "netease:solid": {
+                "value": false
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:shimmer_slab",
+            "register_to_creative_menu": true,
+            "category": "legend_forest",
+            "traits": {
+                "minecraft:placement_position": {
+                    "enabled_states": [
+                        "minecraft:block_face",
+                        "minecraft:vertical_half"
+                    ]
+                }
+            }
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'top'",
+                "components": {
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            8,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            8,
+                            16
+                        ]
+                    },
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -8,
+                            8,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            8,
+                            16
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'bottom'",
+                "components": {
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            8,
+                            16
+                        ]
+                    },
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            8,
+                            16
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

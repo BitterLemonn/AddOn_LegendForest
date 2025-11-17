@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:loot": "",
+            "minecraft:map_color": "#4a251f",
+            "netease:tier": {
+                "destroy_special": true,
+                "digger": "pickaxe",
+                "level": 1
+            },
+            "minecraft:light_dampening": 15,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 2.0
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 6
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "legend_forest:ash_stone"
+                }
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:ash_stone",
+            "register_to_creative_menu": true,
+            "category": "legend_forest"
+        }
+    }
+}

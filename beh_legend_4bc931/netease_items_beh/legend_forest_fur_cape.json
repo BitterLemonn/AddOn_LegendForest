@@ -11,8 +11,23 @@
                 "knockback_resistance": 0,
                 "toughness": 0
             },
-            "netease:customtips": {
-                "value": "§7魔法保护 II§r"
+            "netease:initial_user_data": {
+                "ench": [
+                    {
+                        "id": {
+                            "__type__": 2,
+                            "__value__": 255
+                        },
+                        "modEnchant": {
+                            "__type__": 8,
+                            "__value__": "legend_forest:magic_protection"
+                        },
+                        "lvl": {
+                            "__type__": 2,
+                            "__value__": 2
+                        }
+                    }
+                ]
             }
         },
         "description": {

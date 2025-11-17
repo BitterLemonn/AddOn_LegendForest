@@ -10,7 +10,7 @@
             },
             "minecraft:light_dampening": 15,
             "minecraft:map_color": "#a084c6",
-            "minecraft:geometry": "geometry.legend_forest.full_block",
+            "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:collision_box": true,
             "minecraft:selection_box": true,
             "netease:tier": {

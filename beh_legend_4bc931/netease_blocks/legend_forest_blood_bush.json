@@ -1,0 +1,82 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:loot": "",
+            "minecraft:map_color": "#51170e",
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        0.9,
+                        0.8,
+                        0.9
+                    ],
+                    "min": [
+                        0.1,
+                        0.0,
+                        0.1
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "netease:block_random_offset": {
+                "x_scope": [
+                    0.0,
+                    0.5
+                ],
+                "z_scope": [
+                    0.0,
+                    0.5
+                ]
+            },
+            "netease:can_built_over": {
+                "value": true
+            },
+            "netease:may_place_on": {
+                "block": [
+                    "legend_forest:scorched_grass_block",
+                    "legend_forest:scorched_dirt"
+                ]
+            },
+            "netease:pathable": {
+                "value": true
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "netease:snow_recover_able": {
+                "value": true
+            },
+            "netease:solid": {
+                "value": false
+            },
+            "netease:water_destory": {
+                "value": true
+            },
+            "minecraft:light_dampening": 0,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.0
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 0.0
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:blood_bush",
+            "register_to_creative_menu": true,
+            "category": "legend_forest"
+        }
+    }
+}

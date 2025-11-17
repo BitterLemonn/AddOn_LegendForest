@@ -1,0 +1,84 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:flammable": {
+                "catch_chance_modifier": 60,
+                "destroy_chance_modifier": 100
+            },
+            "minecraft:loot": "",
+            "minecraft:map_color": "#f7c54c",
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        0.9,
+                        0.5,
+                        0.9
+                    ],
+                    "min": [
+                        0.1,
+                        0.0,
+                        0.1
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "netease:may_place_on": {
+                "block": [
+                    "minecraft:sand",
+                    "legend_forest:scorched_dirt",
+                    "legend_forest:scorched_grass_block"
+                ]
+            },
+            "netease:block_random_offset": {
+                "x_scope": [
+                    0.0,
+                    0.5
+                ],
+                "z_scope": [
+                    0.0,
+                    0.5
+                ]
+            },
+            "netease:pathable": {
+                "value": true
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "netease:snow_recover_able": {
+                "value": true
+            },
+            "netease:solid": {
+                "value": false
+            },
+            "netease:water_destory": {
+                "value": true
+            },
+            "minecraft:light_dampening": 0,
+            "minecraft:light_emission": 7,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.0
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 0.0
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:sunshine_cactus_ball",
+            "register_to_creative_menu": true,
+            "category": "legend_forest"
+        }
+    }
+}

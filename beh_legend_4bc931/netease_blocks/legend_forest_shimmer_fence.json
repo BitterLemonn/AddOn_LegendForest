@@ -1,0 +1,69 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 3.0
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 2.0
+            },
+            "minecraft:light_dampening": 0,
+            "minecraft:map_color": "#253748",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "legend_forest:planks_shimmer"
+                }
+            },
+            "minecraft:geometry": {
+                "identifier": "geometry.legend_forest.fence_model",
+                "bone_visibility": {
+                    "carried": "q.block_state('legend_forest:is_carried')",
+                    "base": "!q.block_state('legend_forest:is_carried')",
+                    "east": "q.block_state('legend_forest:east')",
+                    "north": "q.block_state('legend_forest:north')",
+                    "south": "q.block_state('legend_forest:south')",
+                    "west": "q.block_state('legend_forest:west')"
+                }
+            },
+            "netease:tier": {
+                "destroy_special": false,
+                "digger": "hatchet",
+                "level": 0
+            },
+            "netease:solid": {
+                "value": false
+            },
+            "netease:neighborchanged_sendto_script": {
+                "value": true
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:shimmer_fence",
+            "register_to_creative_menu": false,
+            "category": "legend_forest",
+            "states": {
+                "legend_forest:is_carried": [
+                    true,
+                    false
+                ],
+                "legend_forest:east": [
+                    false,
+                    true
+                ],
+                "legend_forest:north": [
+                    false,
+                    true
+                ],
+                "legend_forest:south": [
+                    false,
+                    true
+                ],
+                "legend_forest:west": [
+                    false,
+                    true
+                ]
+            }
+        }
+    }
+}

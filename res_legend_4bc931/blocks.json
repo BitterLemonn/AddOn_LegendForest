@@ -7,6 +7,44 @@
     "legend_forest:amber_ore": {
         "sound": "stone"
     },
+    "legend_forest:ash_coal_ore": {
+        "sound": "stone"
+    },
+    "legend_forest:ash_copper_ore": {
+        "sound": "stone"
+    },
+    "legend_forest:ash_diamond_ore": {
+        "sound": "stone"
+    },
+    "legend_forest:ash_emerald_ore": {
+        "sound": "stone"
+    },
+    "legend_forest:ash_gold_ore": {
+        "sound": "stone"
+    },
+    "legend_forest:ash_iron_ore": {
+        "sound": "stone"
+    },
+    "legend_forest:ash_lapis_ore": {
+        "sound": "stone"
+    },
+    "legend_forest:ash_redstone_ore": {
+        "sound": "stone"
+    },
+    "legend_forest:ash_soulium_ore": {
+        "sound": "stone"
+    },
+    "legend_forest:ash_stone": {
+        "sound": "stone"
+    },
+    "legend_forest:blood_bush": {
+        "model_item_texture": "legend_forest:blood_bush",
+        "model_textures": [
+            "legend_forest:blood_bush"
+        ],
+        "netease_model": "customblocks:web_preset",
+        "sound": "grass"
+    },
     "legend_forest:blue_mushroom": {
         "model_item_texture": "legend_forest:blue_mushroom",
         "model_textures": [
@@ -26,6 +64,9 @@
         "netease_model": "legend_forest:bottle_can",
         "sound": "glass"
     },
+    "legend_forest:bricks_log_petrified": {
+        "sound": "stone"
+    },
     "legend_forest:candle_flower_bottom": {
         "model_item_texture": "legend_forest:candle_flower_bottom",
         "model_textures": [
@@ -41,6 +82,15 @@
         ],
         "netease_model": "customblocks:web_preset",
         "sound": "grass"
+    },
+    "legend_forest:chiseled_bricks_log_petrified": {
+        "sound": "stone"
+    },
+    "legend_forest:chiseled_log_petrified": {
+        "sound": "stone"
+    },
+    "legend_forest:cut_log_petrified": {
+        "sound": "stone"
     },
     "legend_forest:dead_sword_easter_block": {
         "model_textures": [
@@ -68,6 +118,7 @@
     "legend_forest:glow_seaweed_block": {
         "sound": "grass"
     },
+    "legend_forest:goblin_spawn_block": {},
     "legend_forest:gold_branch": {
         "model_item_texture": "legend_forest:gold_branch",
         "model_textures": [
@@ -95,6 +146,9 @@
         "textures": "legend_forest:leaves_shimmer",
         "use_colormap": "textures/colormap/shimmer_colormap"
     },
+    "legend_forest:log_petrified": {
+        "sound": "stone"
+    },
     "legend_forest:log_shimmer": {
         "sound": "wood"
     },
@@ -120,6 +174,9 @@
     },
     "legend_forest:planks_shimmer": {
         "sound": "wood"
+    },
+    "legend_forest:polished_log_petrified": {
+        "sound": "stone"
     },
     "legend_forest:reed_shimmer_bottom": {
         "model_textures": [
@@ -150,6 +207,20 @@
         "netease_model": "customblocks:web_preset",
         "sound": "grass"
     },
+    "legend_forest:scorched_dirt": {
+        "sound": "gravel"
+    },
+    "legend_forest:scorched_grass": {
+        "sound": "grass",
+        "model_item_texture": "legend_forest:scorched_grass",
+        "model_textures": [
+            "legend_forest:scorched_grass"
+        ],
+        "netease_model": "customblocks:web_preset"
+    },
+    "legend_forest:scorched_grass_block": {
+        "sound": "grass"
+    },
     "legend_forest:shimmer_bud": {
         "model_item_texture": "legend_forest:shimmer_grass",
         "model_textures": [
@@ -157,6 +228,9 @@
         ],
         "netease_model": "customblocks:web_preset",
         "sound": "grass"
+    },
+    "legend_forest:shimmer_slab": {
+        "sound": "wood"
     },
     "legend_forest:shimmer_flower": {
         "model_item_texture": "legend_forest:shimmer_flower",
@@ -204,23 +278,21 @@
         "sound": "stone"
     },
     "legend_forest:stripped_log_shimmer": {
-        "carried_textures": {
-            "down": "legend_forest:stripped_log_shimmer_top",
-            "side": "legend_forest:stripped_log_shimmer_side",
-            "up": "legend_forest:stripped_log_shimmer_top"
-        },
-        "sound": "wood",
-        "textures": {
-            "down": "legend_forest:stripped_log_shimmer_side",
-            "east": "legend_forest:stripped_log_shimmer_side2",
-            "north": "legend_forest:stripped_log_shimmer_top",
-            "south": "legend_forest:stripped_log_shimmer_top",
-            "up": "legend_forest:stripped_log_shimmer_side",
-            "west": "legend_forest:stripped_log_shimmer_side2"
-        }
+        "sound": "wood"
     },
     "legend_forest:stripped_root_shimmer": {
         "sound": "wood"
+    },
+    "legend_forest:sunshine_cactus_ball": {
+        "sound": "grass",
+        "model_item_texture": "legend_forest:sunshine_cactus_ball",
+        "model_textures": [
+            "legend_forest:sunshine_cactus_ball"
+        ],
+        "netease_model": "customblocks:web_preset"
+    },
+    "legend_forest:sunshine_cactus": {
+        "sound": "cloth"
     },
     "legend_forest:yellow_leaves_cape_1": {
         "netease_model": "legend_forest:yellow_leaves_cape_1",

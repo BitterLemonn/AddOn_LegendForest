@@ -1,6 +1,38 @@
 # -*- coding: utf-8 -*-
 import math
 
+
+class FormatColorStr(object):
+    RED = "§c"
+    GREEN = "§a"
+    YELLOW = "§e"
+    BLUE = "§9"
+    WHITE = "§f"
+    GRAY = "§7"
+    DARK_GRAY = "§8"
+    BLACK = "§0"
+    GOLD = "§6"
+    DARK_RED = "§4"
+    DARK_GREEN = "§2"
+    DARK_BLUE = "§1"
+    DARK_AQUA = "§3"
+    DARK_PURPLE = "§5"
+    LIGHT_PURPLE = "§d"
+    MINECOIN_GOLD = "§g"
+    MATERIAL_QUARTZ = "§h"
+    MATERIAL_IRON = "§i"
+    MATERIAL_NETHERITE = "§j"
+    MATERIAL_REDSTONE = "§m"
+    MATERIAL_COPPER = "§n"
+    MATERIAL_GOLD = "§p"
+    MATERIAL_EMERALD = "§q"
+    MATERIAL_DIAMOND = "§s"
+    MATERIAL_LAPIS = "§t"
+    MATERIAL_AMETHYST = "§u"
+    MATERIAL_RESIN = "§v"
+    FORMATTER = "§"
+
+
 # 计算向量长度
 def normalizeVector(vector):
     """

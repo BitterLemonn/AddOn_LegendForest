@@ -14,8 +14,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "legend_forest:glow_seaweed_block",
-                    "render_method": "opaque"
+                    "texture": "legend_forest:glow_seaweed_block"
                 }
             }
         },

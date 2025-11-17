@@ -1,0 +1,77 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.cactus_shape_block",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "cactus_side",
+					"pivot": [0, 0, -5],
+					"cubes": [
+						{
+							"origin": [-8, 0, 7],
+							"size": [16, 16, 0],
+							"uv": {
+								"south": {"uv": [0, 0], "uv_size": [16, 16]}
+							}
+						},
+						{
+							"origin": [-7, 0, -8],
+							"size": [0, 16, 16],
+							"uv": {
+								"east": {"uv": [0, 0], "uv_size": [16, 16]}
+							}
+						},
+						{
+							"origin": [-8, 0, -7],
+							"size": [16, 16, 0],
+							"uv": {
+								"south": {"uv": [0, 0], "uv_size": [16, 16]}
+							}
+						},
+						{
+							"origin": [7, 0, -8],
+							"size": [0, 16, 16],
+							"uv": {
+								"west": {"uv": [0, 0], "uv_size": [16, 16]}
+							}
+						}
+					]
+				},
+				{
+					"name": "cactus_top",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7, 16, -7],
+							"size": [14, 0, 14],
+							"uv": {
+								"up": {"uv": [15, 15], "uv_size": [-14, -14]}
+							}
+						}
+					]
+				},
+				{
+					"name": "cactus_bottom",
+					"pivot": [0, 16, 0],
+					"cubes": [
+						{
+							"origin": [-7, 0, -7],
+							"size": [14, 0, 14],
+							"uv": {
+								"down": {"uv": [15, 15], "uv_size": [-14, -14]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,86 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:map_color": "#2b4451",
+            "netease:face_directional": {
+                "type": "facing_direction"
+            },
+            "netease:tier": {
+                "destroy_special": false,
+                "digger": "pickaxe",
+                "level": 1
+            },
+            "minecraft:light_dampening": 15,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 3.0
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 6.0
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "down": {
+                    "texture": "legend_forest:log_petrified_top"
+                },
+                "up": {
+                    "texture": "legend_forest:log_petrified_top"
+                },
+                "*": {
+                    "texture": "legend_forest:log_petrified_side"
+                }
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:log_petrified",
+            "register_to_creative_menu": true,
+            "category": "legend_forest",
+            "traits": {
+                "minecraft:placement_position": {
+                    "enabled_states": [
+                        "minecraft:block_face"
+                    ]
+                }
+            }
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('minecraft:block_face') == 'west' || q.block_state('minecraft:block_face') == 'east'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            0,
+                            90
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:block_face') == 'down' || q.block_state('minecraft:block_face') == 'up'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:block_face') == 'north' || q.block_state('minecraft:block_face') == 'south'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            90,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

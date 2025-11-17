@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "legend_forest:soulium_shovel"
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:soulium_shovel",
+            "register_to_create_menu": true
+        }
+    }
+}

@@ -128,6 +128,9 @@
             }
         },
         "components": {
+            "minecraft:despawn": {
+                "despawn_from_distance": {}
+            },
             "minecraft:attack": {
                 "damage": 3.0,
                 "effect_duration": 20,

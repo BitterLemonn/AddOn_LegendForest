@@ -1,4 +1,4 @@
-{
+  {
     "format_version": "1.10",
     "minecraft:item": {
         "components": {
@@ -11,8 +11,28 @@
                 "speed": 6,
                 "type": "sword"
             },
-            "netease:customtips": {
-                "value": "§7星芒修补 I§r\n§8在微光森林中击杀生物有几率产生额外掉落§r"
+            "netease:initial_user_data": {
+                "display": {
+                    "Lore": [
+                        "§r§8在微光森林中击杀生物有几率产生额外掉落§r"
+                    ]
+                },
+                "ench": [
+                    {
+                        "id": {
+                            "__type__": 2,
+                            "__value__": 255
+                        },
+                        "modEnchant": {
+                            "__type__": 8,
+                            "__value__": "legend_forest:star_recovery"
+                        },
+                        "lvl": {
+                            "__type__": 2,
+                            "__value__": 1
+                        }
+                    }
+                ]
             }
         },
         "description": {

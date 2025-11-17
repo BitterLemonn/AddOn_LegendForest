@@ -22,16 +22,13 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "bookshelf",
-                    "render_method": "opaque"
+                    "texture": "bookshelf"
                 },
                 "up": {
-                    "texture": "bookshelf_top",
-                    "render_method": "opaque"
+                    "texture": "bookshelf_top"
                 },
                 "down": {
-                    "texture": "bookshelf_top",
-                    "render_method": "opaque"
+                    "texture": "bookshelf_top"
                 }
             }
         },

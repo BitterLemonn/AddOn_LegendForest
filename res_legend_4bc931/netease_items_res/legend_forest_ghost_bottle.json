@@ -1,0 +1,17 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "legend_forest:ghost_bottle",
+            "netease:frame_anim_in_scene": {
+                "ticks_per_frame": 10,
+                "texture_path": "textures/items/ghost_bottle"
+            }
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:ghost_bottle",
+            "register_to_create_menu": true
+        }
+    }
+}

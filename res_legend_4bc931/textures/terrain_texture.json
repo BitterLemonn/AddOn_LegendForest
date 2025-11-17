@@ -4,8 +4,44 @@
         "legend_forest:amber_ore": {
             "textures": "textures/blocks/amber_ore"
         },
+        "legend_forest:ash_coal_ore": {
+            "textures": "textures/blocks/ash_coal_ore"
+        },
+        "legend_forest:ash_copper_ore": {
+            "textures": "textures/blocks/ash_copper_ore"
+        },
+        "legend_forest:ash_diamond_ore": {
+            "textures": "textures/blocks/ash_diamond_ore"
+        },
+        "legend_forest:ash_emerald_ore": {
+            "textures": "textures/blocks/ash_emerald_ore"
+        },
+        "legend_forest:ash_gold_ore": {
+            "textures": "textures/blocks/ash_gold_ore"
+        },
+        "legend_forest:ash_iron_ore": {
+            "textures": "textures/blocks/ash_iron_ore"
+        },
+        "legend_forest:ash_lapis_ore": {
+            "textures": "textures/blocks/ash_lapis_ore"
+        },
+        "legend_forest:ash_redstone_ore": {
+            "textures": "textures/blocks/ash_redstone_ore"
+        },
+        "legend_forest:ash_stone": {
+            "textures": "textures/blocks/ash_stone"
+        },
+        "legend_forest:ash_soulium_ore": {
+            "textures": "textures/blocks/ash_soulium_ore"
+        },
+        "legend_forest:blood_bush": {
+            "textures": "textures/blocks/blood_bush"
+        },
         "legend_forest:blue_mushroom": {
             "textures": "textures/blocks/blue_mushroom"
+        },
+        "legend_forest:bricks_log_petrified": {
+            "textures": "textures/blocks/bricks_log_petrified"
         },
         "legend_forest:bottle_can": {
             "textures": "textures/blocks/bug_bottle"
@@ -18,6 +54,18 @@
         },
         "legend_forest:carried_shimmer_lily": {
             "textures": "textures/items/carried_shimmer_lily"
+        },
+        "legend_forest:chiseled_bricks_log_petrified": {
+            "textures": "textures/blocks/chiseled_bricks_log_petrified"
+        },
+        "legend_forest:chiseled_log_petrified_side": {
+            "textures": "textures/blocks/chiseled_log_petrified_side"
+        },
+        "legend_forest:chiseled_log_petrified_top": {
+            "textures": "textures/blocks/chiseled_log_petrified_top"
+        },
+        "legend_forest:cut_log_petrified": {
+            "textures": "textures/blocks/cut_log_petrified"
         },
         "legend_forest:dead_sword_block": {
             "textures": "textures/blocks/dead_sword_easter_block"
@@ -73,6 +121,15 @@
         "legend_forest:leaves_shimmer_carried": {
             "textures": "textures/blocks/leaves_shimmer_opaque"
         },
+        "legend_forest:log_petrified_side": {
+            "textures": "textures/blocks/log_petrified_side"
+        },
+        "legend_forest:log_petrified_side2": {
+            "textures": "textures/blocks/log_petrified_side2"
+        },
+        "legend_forest:log_petrified_top": {
+            "textures": "textures/blocks/log_petrified_top"
+        },
         "legend_forest:log_shimmer_core": {
             "textures": "textures/blocks/log_shimmer_core"
         },
@@ -103,6 +160,9 @@
         "legend_forest:planks_shimmer": {
             "textures": "textures/blocks/planks_shimmer"
         },
+        "legend_forest:polished_log_petrified": {
+            "textures": "textures/blocks/polished_log_petrified"
+        },
         "legend_forest:reed_shimmer": {
             "textures": "textures/blocks/reed_shimmer"
         },
@@ -126,6 +186,18 @@
         },
         "legend_forest:sapling_shimmer": {
             "textures": "textures/items/sapling_shimmer"
+        },
+        "legend_forest:scorched_dirt": {
+            "textures": "textures/blocks/scorched_dirt"
+        },
+        "legend_forest:scorched_grass": {
+            "textures": "textures/blocks/scorched_grass"
+        },
+        "legend_forest:scorched_grass_block_side": {
+            "textures": "textures/blocks/scorched_grass_side"
+        },
+        "legend_forest:scorched_grass_block_top": {
+            "textures": "textures/blocks/scorched_grass_top"
         },
         "legend_forest:shimmer_flower": {
             "textures": "textures/blocks/shimmer_flower"
@@ -186,8 +258,26 @@
         "legend_forest:stripped_log_shimmer_top": {
             "textures": "textures/blocks/stripped_log_shimmer_top"
         },
-        "legend_forest:twigs_shimmer": {
-            "textures": "textures/blocks/twigs_shimmer"
+        "legend_forest:sunshine_cactus_ball": {
+            "textures": "textures/blocks/sunshine_cactus_ball"
+        },
+        "legend_forest:sunshine_cactus_bottom": {
+            "textures": "textures/blocks/sunshine_cactus_bottom"
+        },
+        "legend_forest:sunshine_cactus_dried_bottom": {
+            "textures": "textures/blocks/sunshine_cactus_dried_bottom"
+        },
+        "legend_forest:sunshine_cactus_dried_side": {
+            "textures": "textures/blocks/sunshine_cactus_dried_side"
+        },
+        "legend_forest:sunshine_cactus_dried_top": {
+            "textures": "textures/blocks/sunshine_cactus_dried_top"
+        },
+        "legend_forest:sunshine_cactus_side": {
+            "textures": "textures/blocks/sunshine_cactus_side"
+        },
+        "legend_forest:sunshine_cactus_top": {
+            "textures": "textures/blocks/sunshine_cactus_top"
         },
         "legend_forest:yellow_leaves_cape": {
             "textures": "textures/blocks/yellower_leaves_cape"

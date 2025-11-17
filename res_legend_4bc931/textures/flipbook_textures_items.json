@@ -5,6 +5,12 @@
         "ticks_per_frame": 10
     },
     {
+        "atlas_tile": "legend_forest:ghost_bottle",
+        "flipbook_texture": "textures/items/ghost_bottle",
+        "ticks_per_frame": 10,
+        "blend_frames": false
+    },
+    {
         "atlas_tile": "legend_forest:shimmer_bug",
         "flipbook_texture": "textures/items/shimmer_bug",
         "ticks_per_frame": 10

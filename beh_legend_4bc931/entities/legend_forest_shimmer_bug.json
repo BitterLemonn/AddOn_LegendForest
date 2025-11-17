@@ -7,6 +7,12 @@
             }
         },
         "components": {
+            "minecraft:despawn": {
+                "despawn_from_distance": {
+                    "min_distance": 48,
+                    "max_distance": 64
+                }
+            },
             "netease:ban_bandwidth_optimization": {},
             "minecraft:behavior.look_at_player": {
                 "look_distance": 8,
@@ -28,11 +34,6 @@
                     "cause": "fall",
                     "deals_damage": false
                 }
-            },
-            "minecraft:leashable": {
-                "soft_distance": 4.0,
-                "hard_distance": 6.0,
-                "max_distance": 10.0
             },
             "minecraft:breathable": {
                 "breathes_air": true,

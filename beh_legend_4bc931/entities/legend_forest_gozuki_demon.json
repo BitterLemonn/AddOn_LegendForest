@@ -1,0 +1,303 @@
+{
+    "format_version": "1.20.0",
+    "minecraft:entity": {
+        "component_groups": {
+            // 技术性组 - 移除攻击组件防止移动
+            "legend_forest:on_attack": {},
+            // 技术性组 - 添加攻击组件 用于寻路
+            "legend_forest:not_on_attack": {
+                "minecraft:attack": {
+                    "damage": 0.0
+                }
+            },
+            "legend_forest:shield_demon": {
+                "minecraft:variant": {
+                    "value": 0
+                },
+                "minecraft:behavior.nearest_attackable_target": {
+                    "must_see": true,
+                    "reselect_targets": true,
+                    "within_radius": 25.0,
+                    "must_see_forget_duration": 17.0,
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player"
+                            },
+                            "max_dist": 32.0
+                        }
+                    ]
+                },
+                "minecraft:environment_sensor": {
+                    "triggers": [
+                        {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "has_target"
+                                    },
+                                    {
+                                        "test": "target_distance",
+                                        "operator": "<=",
+                                        "value": 3.5
+                                    },
+                                    {
+                                        "test": "enum_property",
+                                        "domain": "legend_forest:on_attack",
+                                        "value": "false"
+                                    }
+                                ]
+                            },
+                            "event": "legend_forest:start_attack"
+                        },
+                        {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "enum_property",
+                                        "domain": "legend_forest:on_attack",
+                                        "value": "true"
+                                    },
+                                    {
+                                        "any_of": [
+                                            {
+                                                "test": "has_target",
+                                                "value": false
+                                            },
+                                            {
+                                                "test": "target_distance",
+                                                "operator": ">=",
+                                                "value": 4.0
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "event": "legend_forest:end_attack"
+                        }
+                    ]
+                }
+            },
+            "legend_forest:axe_demon": {
+                "minecraft:variant": {
+                    "value": 1
+                },
+                "minecraft:behavior.nearest_attackable_target": {
+                    "must_see": true,
+                    "reselect_targets": true,
+                    "within_radius": 25.0,
+                    "must_see_forget_duration": 17.0,
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player"
+                            },
+                            "max_dist": 48.0
+                        }
+                    ]
+                },
+                "minecraft:environment_sensor": {
+                    "triggers": [
+                        {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "has_target"
+                                    },
+                                    {
+                                        "test": "target_distance",
+                                        "operator": "<=",
+                                        "value": 3.5
+                                    },
+                                    {
+                                        "test": "enum_property",
+                                        "domain": "legend_forest:on_attack",
+                                        "value": "false"
+                                    }
+                                ]
+                            },
+                            "event": "legend_forest:start_attack"
+                        },
+                        {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "enum_property",
+                                        "domain": "legend_forest:on_attack",
+                                        "value": "true"
+                                    },
+                                    {
+                                        "any_of": [
+                                            {
+                                                "test": "has_target",
+                                                "value": false
+                                            },
+                                            {
+                                                "test": "target_distance",
+                                                "operator": ">=",
+                                                "value": 4.0
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "event": "legend_forest:end_attack"
+                        }
+                    ]
+                }
+            }
+        },
+        "components": {
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "deals_damage": false,
+                        "cause": "fall"
+                    }
+                ]
+            },
+            "minecraft:collision_box": {
+                "height": 1.95,
+                "width": 1.0
+            },
+            "minecraft:health": {
+                "max": 50.0,
+                "value": 50.0
+            },
+            "minecraft:jump.static": {
+            },
+            "minecraft:nameable": {
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:scale": {
+                "value": 1
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "undead",
+                    "monster",
+                    "mob",
+                    "gozuki_demon",
+                    "cow"
+                ]
+            },
+            "minecraft:underwater_movement": {
+                "value": 0.15
+            },
+            "minecraft:movement": {
+                "value": 0.25
+            },
+            "minecraft:movement.basic": {
+            },
+            "minecraft:navigation.walk": {
+                "avoid_water": true,
+                "can_open_doors": false,
+                "can_pass_doors": true,
+                "can_path_over_water": false,
+                "can_walk": true
+            },
+            "minecraft:behavior.float": {
+                "priority": 0
+            },
+            "minecraft:behavior.look_at_player": {
+                "look_distance": 8,
+                "priority": 6
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 8,
+                "speed_multiplier": 0.8
+            },
+            "minecraft:physics": {
+            },
+            "minecraft:behavior.melee_attack": {
+                "priority": 2,
+                "speed_multiplier": 1.15,
+                "cooldown_time": 9999,
+                "track_target": true,
+                "require_complete_path": true,
+                "reach_multiplier": 0.0
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:gozuki_demon",
+            "is_experimental": false,
+            "is_spawnable": true,
+            "is_summonable": true,
+            "properties": {
+                "legend_forest:on_attack": {
+                    "type": "enum",
+                    "values": ["false", "true"],
+                    "default": "false",
+                    "client_sync": true
+                },
+                "legend_forest:on_block": {
+                    "type": "enum",
+                    "values": ["false", "true"],
+                    "default": "false",
+                    "client_sync": true
+                }
+            }
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "randomize": [
+                    {
+                        "add": {
+                            "component_groups": [
+                                "legend_forest:shield_demon",
+                                "legend_forest:not_on_attack"
+                            ]
+                        },
+                        "weight": 30
+                    },
+                    {
+                        "add": {
+                            "component_groups": [
+                                "legend_forest:axe_demon",
+                                "legend_forest:not_on_attack"
+                            ]
+                        },
+                        "weight": 70
+                    }
+                ]
+            },
+            "legend_forest:start_attack": {
+                "add": {
+                    "component_groups": [
+                        "legend_forest:on_attack"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:not_on_attack"
+                    ]
+                },
+                "set_property": {
+                    "legend_forest:on_attack": "true"
+                }
+            },
+            "legend_forest:end_attack": {
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:on_attack"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "legend_forest:not_on_attack"
+                    ]
+                },
+                "set_property": {
+                    "legend_forest:on_attack": "false"
+                }
+            }
+        }
+    }
+}

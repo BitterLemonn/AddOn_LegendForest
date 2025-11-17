@@ -49,6 +49,9 @@
         "legend_forest:fur_leather": {
             "textures": "textures/items/fur_leather"
         },
+        "legend_forest:ghost_bottle": {
+            "textures": "textures/items/ghost_bottle"
+        },
         "legend_forest:goblin_ear": {
             "textures": "textures/items/goblin_ear"
         },
@@ -91,6 +94,9 @@
         "legend_forest:mushroom_meat": {
             "textures": "textures/items/mushroom_meat"
         },
+        "legend_forest:petrified_stick": {
+            "textures": "textures/items/petrified_stick"
+        },
         "legend_forest:pnakotic_manuscript": {
             "textures": "textures/items/pnakotic_manuscript"
         },
@@ -111,6 +117,21 @@
         },
         "legend_forest:shimmer_bug": {
             "textures": "textures/items/shimmer_bug"
+        },
+        "legend_forest:soulium_axe": {
+            "textures": "textures/items/soulium_axe"
+        },
+        "legend_forest:soulium_hoe": {
+            "textures": "textures/items/soulium_hoe"
+        },
+        "legend_forest:soulium_pickaxe": {
+            "textures": "textures/items/soulium_pickaxe"
+        },
+        "legend_forest:soulium_shovel": {
+            "textures": "textures/items/soulium_shovel"
+        },
+        "legend_forest:soulium_sword": {
+            "textures": "textures/items/soulium_sword"
         },
         "legend_forest:splendor_boots": {
             "textures": "textures/items/splendor_boots"

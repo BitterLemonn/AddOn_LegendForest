@@ -1,0 +1,101 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 0.4
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.4
+            },
+            "minecraft:light_dampening": 8,
+            "minecraft:light_emission": 6,
+            "minecraft:map_color": "#f7c54c",
+            "minecraft:geometry": "geometry.cactus_shape_block",
+            "minecraft:collision_box": {
+                "origin": [
+                    -7,
+                    0,
+                    -7
+                ],
+                "size": [
+                    14,
+                    15,
+                    14
+                ]
+            },
+            "netease:solid": {
+                "value": false
+            },
+            "netease:may_place_on": {
+                "block": [
+                    "minecraft:sand",
+                    "legend_forest:sunshine_cactus",
+                    "legend_forest:scorched_dirt",
+                    "legend_forest:scorched_grass_block"
+                ]
+            },
+            "netease:neighborchanged_sendto_script": {
+                "value": true
+            },
+            "netease:on_entity_inside": {
+                "send_python_event": true
+            },
+            "netease:random_tick": {
+                "enable": true,
+                "tick_to_script": true
+            }
+        },
+        "description": {
+            "category": "legend_forest",
+            "identifier": "legend_forest:sunshine_cactus",
+            "register_to_creative_menu": true,
+            "states": {
+                "lemon:powered": [
+                    true,
+                    false
+                ]
+            }
+        },
+        "permutations": [
+            {
+                "condition": "query.block_state('lemon:powered') == true",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "render_method": "alpha_test",
+                            "texture": "legend_forest:sunshine_cactus_side"
+                        },
+                        "up": {
+                            "render_method": "alpha_test",
+                            "texture": "legend_forest:sunshine_cactus_top"
+                        },
+                        "down": {
+                            "render_method": "alpha_test",
+                            "texture": "legend_forest:sunshine_cactus_bottom"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('lemon:powered') == false",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "render_method": "alpha_test",
+                            "texture": "legend_forest:sunshine_cactus_dried_side"
+                        },
+                        "up": {
+                            "render_method": "alpha_test",
+                            "texture": "legend_forest:sunshine_cactus_dried_top"
+                        },
+                        "down": {
+                            "render_method": "alpha_test",
+                            "texture": "legend_forest:sunshine_cactus_dried_bottom"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

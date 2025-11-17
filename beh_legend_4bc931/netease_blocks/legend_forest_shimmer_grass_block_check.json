@@ -23,16 +23,13 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "legend_forest:shimmer_grass_block_side",
-                    "render_method": "opaque"
+                    "texture": "legend_forest:shimmer_grass_block_side"
                 },
                 "up": {
-                    "texture": "legend_forest:shimmer_grass_block_top",
-                    "render_method": "opaque"
+                    "texture": "legend_forest:shimmer_grass_block_top"
                 },
                 "down": {
-                    "texture": "dirt",
-                    "render_method": "opaque"
+                    "texture": "dirt"
                 }
             }
         },

@@ -7,10 +7,11 @@ import commonUtils
 import math
 
 minecraftEnum = serverApi.GetMinecraftEnum()
+compFactory = serverApi.GetEngineCompFactory()
 
 
 def givePlayerItem(itemDict, playerId):
-    comp = serverApi.GetEngineCompFactory().CreateItem(playerId)
+    comp = compFactory.CreateItem(playerId)
     for i in range(0, 36):
         item = comp.GetPlayerItem(minecraftEnum.ItemPosType.INVENTORY, i, True)
         if item is None:
@@ -21,13 +22,13 @@ def givePlayerItem(itemDict, playerId):
 
 
 def getPlayerMode(playerId):
-    comp = serverApi.GetEngineCompFactory().CreateGame(levelId)
+    comp = compFactory.CreateGame(levelId)
     return comp.GetPlayerGameType(playerId)
 
 
 def decreaseItem(playerId, count, slot=-1):
     if getPlayerMode(playerId) != minecraftEnum.GameType.Creative:
-        comp = serverApi.GetEngineCompFactory().CreateItem(playerId)
+        comp = compFactory.CreateItem(playerId)
         if slot == -1:
             slot = comp.GetSelectSlotId()
 
@@ -38,7 +39,7 @@ def decreaseItem(playerId, count, slot=-1):
 
 def decreaseDurability(playerId, dur, slot=-1):
     if getPlayerMode(playerId) != minecraftEnum.GameType.Creative:
-        comp = serverApi.GetEngineCompFactory().CreateItem(playerId)
+        comp = compFactory.CreateItem(playerId)
         if slot == -1:
             slot = comp.GetSelectSlotId()
 
@@ -51,7 +52,7 @@ def decreaseDurability(playerId, dur, slot=-1):
 
 def createParticle(particleName, pos, playerId):
     x, y, z = pos
-    comp = serverApi.GetEngineCompFactory().CreateCommand(playerId)
+    comp = compFactory.CreateCommand(playerId)
     comp.SetCommand("/particle " + particleName + " " + str(x) + " " + str(y) + " " + str(z))
 
 
@@ -85,7 +86,7 @@ def getDistance(entityId1, entityId2):
 
 
 def searchNearestTargetBiome(pos, dm, targetList, maxRadius=25):
-    biomeComp = serverApi.GetEngineCompFactory().CreateBiome(levelId)
+    biomeComp = compFactory.CreateBiome(levelId)
 
     x, z = commonUtils.getChunkCenter(pos[0], pos[2])
 
@@ -111,7 +112,7 @@ def searchNearestTargetBiome(pos, dm, targetList, maxRadius=25):
 
 
 def setLookAt(entityId, targetId):
-    comp = serverApi.GetEngineCompFactory().CreateRot(entityId)
+    comp = compFactory.CreateRot(entityId)
     targetPos = Entity(targetId).Pos
     comp.SetEntityLookAtPos(targetPos, 0.5, 1, False)
 
@@ -130,7 +131,7 @@ def getEntityAround(entityId, radius, entityFilter=None):
             "value": "minecraft:health"
         }
 
-    comp = serverApi.GetEngineCompFactory().CreateGame(entityId)
+    comp = compFactory.CreateGame(entityId)
     return comp.GetEntitiesAround(entityId, int(radius), entityFilter)
 
 
@@ -174,14 +175,14 @@ def doHurt(entityId, damageList, targetId, cause=None, checkBlock=True, knock=Tr
     """
     if cause is None:
         cause = minecraftEnum.ActorDamageCause.EntityAttack
-    comp = serverApi.GetEngineCompFactory().CreateBlockInfo(levelId)
+    comp = compFactory.CreateBlockInfo(levelId)
     if checkBlock:
         if comp.CheckBlockToPos(Entity(entityId).Pos, Entity(targetId).Pos, Entity(entityId).Dm):
             return
 
-    difficulty = serverApi.GetEngineCompFactory().CreateGame(levelId).GetGameDiffculty()
+    difficulty = compFactory.CreateGame(levelId).GetGameDiffculty()
     damage = damageList[difficulty] if isinstance(damageList, list) else damageList
-    serverApi.GetEngineCompFactory().CreateHurt(targetId).Hurt(damage, cause, entityId, knocked=knock)
+    compFactory.CreateHurt(targetId).Hurt(damage, cause, entityId, knocked=knock)
 
 
 def shakeCamera(playerList, intensity, duration, shakeType="positional"):
@@ -194,7 +195,7 @@ def shakeCamera(playerList, intensity, duration, shakeType="positional"):
     """
     for player in playerList:
         Call(player, "OpenCameraShakeAfterReset", duration)
-        comp = serverApi.GetEngineCompFactory().CreateCommand(player)
+        comp = compFactory.CreateCommand(player)
         comp.SetCommand("/camerashake add @s {intensity} {duration} {shakeType}".format(
             intensity=intensity, duration=duration, shakeType=shakeType
         ))
@@ -208,7 +209,7 @@ def getSnapFloorPos(pos, dimensionId, limit=10):
     :param limit: 最大垂直搜索距离
     :return: 地面坐标
     """
-    comp = serverApi.GetEngineCompFactory().CreateBlockInfo(levelId)
+    comp = compFactory.CreateBlockInfo(levelId)
     for i in range(0, limit):
         block = comp.GetBlockNew((pos[0], pos[1] - i, pos[2]), dimensionId)
         if block and block["name"] != "minecraft:air":

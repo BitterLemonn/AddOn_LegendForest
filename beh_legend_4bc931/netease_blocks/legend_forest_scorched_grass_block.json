@@ -1,0 +1,38 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:map_color": "#511b17",
+            "netease:tier": {
+                "destroy_special": false,
+                "digger": "shovel",
+                "level": 0
+            },
+            "minecraft:loot": "loot_tables/legend_forest/blocks/dirt.json",
+            "minecraft:light_dampening": 15,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.6
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 0.6
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "legend_forest:scorched_grass_block_side"
+                },
+                "up": {
+                    "texture": "legend_forest:scorched_grass_block_top"
+                },
+                "down": {
+                    "texture": "legend_forest:scorched_dirt"
+                }
+            }
+        },
+        "description": {
+            "identifier": "legend_forest:scorched_grass_block",
+            "register_to_creative_menu": true,
+            "category": "legend_forest"
+        }
+    }
+}
