@@ -40,18 +40,27 @@ class PortalManager(object):
         return spatialGrid.findNearest(pos, self._targetDistance)
 
     def addPortalData(self, direction, pos, dm, toDm, toPos=None):
-        """添加传送门数据，同时更新空间索引"""
+        """添加传送门数据，同时更新空间索引
+        
+        类似原版Minecraft的传送门机制:
+        - 每个传送门存储其所在维度(dm)和目标维度(toDm)
+        - toPos存储目标维度中对应传送门的位置
+        - 不自动创建双向绑定,由调用方负责维护两个维度的传送门映射关系
+        """
         portalData = self.findPortalData(pos, dm)
         if portalData:
             logging.debug("PortalManager: 附近已有传送门: {}".format(portalData))
-            if toPos is not None:
-                # 需要从空间网格中移除旧数据并添加新数据
+            # 更新目标传送门信息
+            if toPos is not None or toDm is not None:
                 spatialGrid = self.getSpatialGrid(dm)
                 spatialGrid.remove(portalData)
-                portalData.toPos = toPos
+                if toPos is not None:
+                    portalData.toPos = toPos
+                if toDm is not None:
+                    portalData.toDm = toDm
                 spatialGrid.add(portalData)
                 logging.debug("PortalManager: 更新传送门信息: {}".format(portalData))
-            return
+            return portalData
 
         portalData = PortalData(direction=direction, pos=pos, dm=dm, toDm=toDm, toPos=toPos)
 
@@ -66,10 +75,7 @@ class PortalManager(object):
         spatialGrid.add(portalData)
 
         logging.debug("PortalManager: 添加传送门: {}".format(portalData))
-
-        # 添加双向传送门
-        if toPos is not None:
-            self.addPortalData(direction=direction, pos=toPos, dm=toDm, toDm=dm, toPos=pos)
+        return portalData
 
     def serialize(self):
         """序列化传送门数据"""

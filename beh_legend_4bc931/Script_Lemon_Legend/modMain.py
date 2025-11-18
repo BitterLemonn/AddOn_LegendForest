@@ -5,4 +5,4 @@ from .QuModLibs.QuMod import *
 MyMod = EasyMod()
 
 # server
-MyMod.Server("portal.server")
+MyMod.Server("portal.server.server")

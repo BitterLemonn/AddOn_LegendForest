@@ -11,6 +11,20 @@ class PortalFrameConfig(object):
     OVERWORLD_PORTAL = "legend_forest:forest_portal"
     FOREST_PORTAL = "legend_forest:overworld_portal"
 
+    FOREST_DIMENSION_ID = 340654
+    OVERWORLD_DIMENSION_ID = 0
+
+    PORTAL_BLOCK = frozenset([
+        OVERWORLD_PORTAL,
+        FOREST_PORTAL
+    ])
+
+    @classmethod
+    def isChangeByLegendPortal(cls, fromDimensionId, toDimensionId):
+        """判断传送是否由神话之森引起"""
+        return (toDimensionId == cls.FOREST_DIMENSION_ID) or \
+            (fromDimensionId == cls.FOREST_DIMENSION_ID and toDimensionId == cls.OVERWORLD_DIMENSION_ID)
+
     @staticmethod
     def getPortalBlock(dimensionId):
         """根据维度ID获取传送门方块类型"""
@@ -63,12 +77,12 @@ class PortalFrameConfig(object):
     def getCenterPosFromPortalBlock(portalBlockPos, direction):
         """从传送门方块位置反推核心位置"""
         x, y, z = portalBlockPos
-        
+
         # 传送门方块的y坐标范围是 centerY+1 到 centerY+3
         # 所以核心的y坐标是传送门方块的y-1, y-2, 或 y-3
         # 我们需要检查多个可能的核心位置
         possibleCenters = []
-        
+
         if direction == "x":
             # x方向的传送门方块可能在 centerX-1, centerX, centerX+1
             for dx in [-1, 0, 1]:
@@ -79,7 +93,7 @@ class PortalFrameConfig(object):
             for dz in [-1, 0, 1]:
                 for dy in [1, 2, 3]:
                     possibleCenters.append((x, y - dy, z - dz))
-        
+
         return possibleCenters
 
     @staticmethod

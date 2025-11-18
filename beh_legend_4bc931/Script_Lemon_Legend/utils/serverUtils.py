@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from .. import modConfig
 from ..QuModLibs.Server import *
 from ..QuModLibs.Modules.Services.Server import BaseService
 from ..logging import logging
@@ -205,6 +205,7 @@ def getSnapFloorPos(pos, dimensionId, limit=10):
     """
     获取指定位置最近的地面坐标
     :param pos: 位置
+    :type pos: tuple[int, int, int]
     :param dimensionId: 维度id
     :param limit: 最大垂直搜索距离
     :return: 地面坐标

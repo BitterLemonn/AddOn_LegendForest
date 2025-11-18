@@ -9,22 +9,22 @@ class logging(object):
     @classmethod
     def info(cls, message):
         if cls.USE_LOGGER and cls.LOG_LEVEL in ["INFO", "DEBUG"]:
-            print(cls._timeFormatter() + " [INFO] {}".format(message))
+            print("[{}]".format(cls._timeFormatter()) + " [INFO] {}".format(message))
 
     @classmethod
     def error(cls, message):
         if cls.USE_LOGGER:
-            print(cls._timeFormatter() + " [ERROR] {}".format(message))
+            print("[{}]".format(cls._timeFormatter()) + " [ERROR] {}".format(message))
 
     @classmethod
     def warn(cls, message):
         if cls.USE_LOGGER:
-            print(cls._timeFormatter() + " [WARN] {}".format(message))
+            print("[{}]".format(cls._timeFormatter()) + " [WARN] {}".format(message))
 
     @classmethod
     def debug(cls, message):
         if cls.USE_LOGGER and cls.LOG_LEVEL == "DEBUG":
-            print(cls._timeFormatter() + " [DEBUG] {}".format(message))
+            print("[{}]".format(cls._timeFormatter()) + " [DEBUG] {}".format(message))
 
     @classmethod
     def warning(cls, message):
