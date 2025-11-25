@@ -1,0 +1,43 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "idle": "animation.skull_snail.idle",
+                "move": "animation.skull_snail.move",
+                "bob": "animation.skull_snail.bob",
+                "hide": "animation.skull_snail.hide",
+                "show": "animation.skull_snail.show",
+                "vertical": "animation.skull_snail.vertical",
+                "move_controller": "controller.animation.skull_snail.move",
+                "vertical_controller": "controller.animation.skull_snail.vertical",
+                "hide_controller": "controller.animation.skull_snail.hide"
+            },
+            "geometry": {
+                "default": "geometry.skull_snail"
+            },
+            "identifier": "legend_forest:skull_snail",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "scripts": {
+                "animate": [
+                    "bob",
+                    "move_controller",
+                    "vertical_controller",
+                    "hide_controller"
+                ]
+            },
+            "spawn_egg": {
+                "base_color": "#83869d",
+                "overlay_color": "#e2e3ec"
+            },
+            "textures": {
+                "default": "textures/entity/skull_snail"
+            }
+        }
+    }
+}

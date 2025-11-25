@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
+from ..manager.portalManager import PortalManager
 from ...QuModLibs.Server import levelId
 from ...logging import logging
-from ...manager.portalManager import PortalManager
 from ...modConfig import PORTAL_DATA_KEY
 from ...portal.config import PortalFrameConfig
 from ...utils.serverUtils import compFactory

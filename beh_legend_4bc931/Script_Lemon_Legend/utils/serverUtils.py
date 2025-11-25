@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-from .. import modConfig
-from ..QuModLibs.Server import *
-from ..QuModLibs.Modules.Services.Server import BaseService
-from ..logging import logging
-import commonUtils
 import math
+from mod.common import minecraftEnum
 
-minecraftEnum = serverApi.GetMinecraftEnum()
+import commonUtils
+from ..QuModLibs.Modules.Services.Server import BaseService
+from ..QuModLibs.Server import *
+from ..logging import logging
+
 compFactory = serverApi.GetEngineCompFactory()
 
 
@@ -54,6 +54,24 @@ def createParticle(particleName, pos, playerId):
     x, y, z = pos
     comp = compFactory.CreateCommand(playerId)
     comp.SetCommand("/particle " + particleName + " " + str(x) + " " + str(y) + " " + str(z))
+
+
+def setCooldown(playerId, time=5):
+    return UsingCooldownServerService.access().setCooldown(playerId, time)
+
+
+def swing(playerId):
+    Call(playerId, "swing")
+
+
+def playSoundAll(soundName, pos, playerId):
+    comp = compFactory.CreateCommand(playerId)
+    x, y, z = pos
+    comp.SetCommand("/playsound {} @s {} {} {}".format(soundName, x, y, z))
+
+
+def playSound(soundName, pos, playerId):
+    Call(playerId, "playSound", {"soundName": soundName, "pos": pos})
 
 
 @BaseService.Init

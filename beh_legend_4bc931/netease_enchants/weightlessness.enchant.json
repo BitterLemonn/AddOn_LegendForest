@@ -1,0 +1,19 @@
+{
+        "netease:enchant": {
+        // 必填项
+        "identifier": "legend_forest:weightlessness", // 自定义附魔id，需全为小写字母
+        "description": "enchantment.legend_forest.weightlessness", // 自定义附魔名称，对应zh_CN.lang中的langStr
+        "primary_slots": ["armor_feet"], // 附魔槽位，被附魔物品只有槽位相同才能附魔成功
+        "cost": [25, 35, 50],
+        // 附魔威力等级对应的经验消耗，会影响砂轮移除魔咒时返回的经验值以及在附魔台上被附魔到该魔咒的概率（cost越大附魔概率越小）;列表内元素数量需与max_level一致，否则注册失败
+
+        // 选填项
+        "frequency": "uncommon", // 自定义附魔稀有度，影响铁砧结合附魔物品的经验消耗，默认为common
+        "is_treasure_only": false, // 设为true时为宝藏型魔咒，将影响附魔获取方式，默认为false
+        "is_discoverable": true, // 设为false时为宝藏型魔咒，将影响附魔获取方式，默认为true
+        "is_lootable": true, // 设为true时可以通过与图书管理员交易获得，默认为true
+        "is_curse": false, // 设为true时为诅咒附魔，不可通过砂轮移除，默认为false
+        "max_level": 3, // 附魔威力等级，设置后会自动在创造物品栏注册各等级的附魔书，默认为1
+        "incompatible": []  // 冲突附魔名称
+    }
+}

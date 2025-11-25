@@ -1,0 +1,39 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.gozuki_demon.axe.attack": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "common_attack0": "query.mod.animation_index == 1.0"
+                        },
+                        {
+                            "common_attack1": "query.mod.animation_index == 2.0"
+                        }
+                    ],
+                    "blend_transition": 0.2
+                },
+                "common_attack0": {
+                    "animations": ["axe_attack0"],
+                    "transitions": [
+                        {
+                            "default": "q.all_animations_finished || query.mod.animation_index == 0.0"
+                        }
+                    ],
+                    "blend_transition": 0.2
+                },
+                "common_attack1": {
+                    "animations": ["axe_attack1"],
+                    "transitions": [
+                        {
+                            "default": "q.all_animations_finished || query.mod.animation_index == 0.0"
+                        }
+                    ],
+                    "blend_transition": 0.2
+                }
+            }
+        }
+    }
+}

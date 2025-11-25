@@ -26,7 +26,6 @@ class PortalManagerService(BaseService):
         expiredPlayers = [playerId for playerId, time in self.inPortalBlockPlayers.items() if time <= 0]
         for playerId in expiredPlayers:
             del self.inPortalBlockPlayers[playerId]
-            logging.debug("移除传送门方块内玩家: {}".format(playerId))
         if len(self.inPortalBlockPlayers) == 0:
             self.unListenForEvent(Events.OnScriptTickServer, self.onScriptTick)
 
@@ -34,7 +33,6 @@ class PortalManagerService(BaseService):
         """当玩家维度更改时 判断是否需要检查位置"""
         if playerId in self.inPortalBlockPlayers.keys():
             self.needCheckPosPlayers[playerId] = (fromDim, fromPos)
-            logging.debug("玩家维度更改 需要检查位置: {}".format(playerId))
             del self.inPortalBlockPlayers[playerId]
 
     def isPlayerNeedCheckPos(self, playerId):

@@ -1,0 +1,24 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.gozuki_demon": {
+            "materials": [{"*": "Material.default"}],
+            "arrays": {
+                "textures": {
+                    "Array.base": [
+                        "Texture.shield",
+                        "Texture.axe"
+                    ]
+                },
+                "geometries": {
+                    "Array.base": [
+                        "Geometry.shield",
+                        "Geometry.axe"
+                    ]
+                }
+            },
+            "geometry": "Array.base[q.variant]",
+            "textures": ["Array.base[q.variant]"]
+        }
+    }
+}

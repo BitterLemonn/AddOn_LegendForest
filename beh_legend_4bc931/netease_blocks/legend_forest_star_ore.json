@@ -2,7 +2,7 @@
     "format_version": "1.21.0",
     "minecraft:block": {
         "components": {
-            "minecraft:loot": "loot_tables/legend_forest/blocks/star_ore.json",
+            "minecraft:loot": "loot_tables/legend_forest/blocks/ores/star_ore.json",
             "minecraft:map_color": "#a4477e",
             "netease:tier": {
                 "destroy_special": true,

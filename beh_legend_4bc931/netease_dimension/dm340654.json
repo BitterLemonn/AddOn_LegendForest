@@ -22,7 +22,7 @@
                 {
                     "type": "replace",
                     "from_biome": "shimmer_forest",
-                    "to_biome": "shimmer_forest_lake",
+                    "to_biome": "shimmer_forest_pond",
                     "percentage": 0.1
                 },
                 {

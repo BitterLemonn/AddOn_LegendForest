@@ -21,20 +21,6 @@
                     {
                         "id": {
                             "__type__": 2,
-                            "__value__": 255
-                        },
-                        "modEnchant": {
-                            "__type__": 8,
-                            "__value__": "legend_forest:magnetic_force"
-                        },
-                        "lvl": {
-                            "__type__": 2,
-                            "__value__": 1
-                        }
-                    },
-                    {
-                        "id": {
-                            "__type__": 2,
                             "__value__": 17
                         },
                         "lvl": {

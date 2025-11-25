@@ -2,12 +2,12 @@
 from .destroyer import PortalDestroyer
 from .portalService import PortalManagerService
 from .validator import PortalValidator
+from ..manager.portalManager import PortalManager
 from ... import modConfig
 from ...QuModLibs.Modules.Services.Server import BaseService
 from ...QuModLibs.Server import *
 from ...data.biomeData import BiomesEnum
 from ...logging import logging
-from ...manager.portalManager import PortalManager
 from ...modConfig import PORTAL_DATA_KEY
 from ...portal.config import PortalFrameConfig
 from ...utils import serverUtils, commonUtils
@@ -41,8 +41,7 @@ class PortalServerService(BaseService):
 
             if blockName != PortalFrameConfig.CORE_BLOCK:
                 compFactory.CreateGame(levelId) \
-                    .SetOnePopupNotice(playerId, "请在传送门核心上使用月结晶",
-                                       FormatColorStr.RED + "传送门开启失败")
+                    .SetOnePopupNotice(playerId, "请在传送门核心上使用月结晶", FormatColorStr.RED + "传送门开启失败")
                 return
 
             self.createPortalByFrame(playerId, pos, dimensionId)
@@ -128,7 +127,7 @@ class PortalServerService(BaseService):
 
         # 确定目标位置
         targetPos = originPos
-        if toDimensionId == 928808:
+        if toDimensionId == 340654:
             # 传送到神话维度,查找目标群系
             biomePos = serverUtils.searchNearestTargetBiome(originPos, toDimensionId, BiomesEnum.getShimmerBiomes())
             if biomePos:
@@ -179,7 +178,8 @@ class PortalServerService(BaseService):
         # 检测中空
         isEmpty, errorPos = validator.validateEmpty(pos, validDirection)
         if not isEmpty:
-            validator.showError("框架内含有非空气方块", "传送门框架搭建不正确", errorPos)
+            if errorPos:
+                validator.showError("框架内含有非空气方块", "传送门框架搭建不正确", errorPos)
             return
 
         # 生成传送门
@@ -189,14 +189,14 @@ class PortalServerService(BaseService):
         """生成传送门"""
         # 消耗物品
         serverUtils.decreaseItem(playerId, 1)
-        Call(playerId, "Swing")
+        serverUtils.swing(playerId)
 
         # 添加传送门数据,只设置目标维度ID,toPos在实际传送时创建目标传送门后设置
         if not self.portalManager.findPortalData(pos, dimensionId):
             # 计算本传送门的传送出口位置（传送门前方一格）
             selfTeleportPos = self._calculateTeleportPos(pos, direction)
             # 根据当前维度确定目标维度
-            targetDim = 928808 if dimensionId == 0 else 0
+            targetDim = 340654 if dimensionId == 0 else 0
             self.portalManager.addPortalData(
                 direction=direction,
                 pos=pos,
@@ -218,19 +218,10 @@ class PortalServerService(BaseService):
                                             dimensionId=dimensionId, updateNeighbors=False)
 
         # 播放音效
-        self.commandComp.SetCommand("/playsound block.end_portal.spawn {} {} {}".format(pos[0], pos[1], pos[2]))
+        serverUtils.playSoundAll("block.end_portal.spawn", pos, playerId)
 
     def _createNewPortal(self, targetPos, toDimensionId, fromDimensionId, fromPos, playerId, retryCount=0):
-        """在目标位置创建新传送门
-        
-        Args:
-            targetPos: 目标位置(传送门核心方块位置)
-            toDimensionId: 目标维度ID
-            fromDimensionId: 来源维度ID
-            fromPos: 来源传送门位置
-            playerId: 玩家ID
-            retryCount: 重试次数
-        """
+        """在目标位置创建新传送门"""
         # 重试上限
         if retryCount > 5:
             logging.error("传送门生成失败,超过重试次数")
@@ -289,8 +280,7 @@ class PortalServerService(BaseService):
         self._bindPortalData(centerPos, toDimensionId, fromPos, fromDimensionId, direction)
 
         # 播放音效
-        self.commandComp.SetCommand("/playsound block.end_portal.spawn {} {} {}".format(
-            centerPos[0], centerPos[1], centerPos[2]))
+        serverUtils.playSoundAll("block.end_portal.spawn", centerPos, playerId)
 
     @staticmethod
     def _calculateTeleportPos(portalCenterPos, direction):

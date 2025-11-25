@@ -1,0 +1,31 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.gozuki_demon.move": {
+            "loop": true,
+            "anim_time_update": "query.modified_distance_moved / 10",
+            "bones": {
+                "upper": {
+                    "rotation": [0, "math.sin(60 * query.anim_time) * 10", 0]
+                },
+                "rightArm": {
+                    "rotation": ["math.sin(60 * query.anim_time) * 5", 0, 10]
+                },
+                "leftArm": {
+                    "rotation": [0, 0, -10]
+                },
+                "dress": {
+                    "rotation": ["20 + math.sin(80 * query.anim_time) * 10 ", 0, 0]
+                }
+            }
+        },
+        "animation.gozuki_demon.idle": {
+            "loop": true,
+            "bones": {
+                "dress": {
+                    "rotation": ["10 + math.sin(query.anim_time * 80) * 10", 0, 0]
+                }
+            }
+        }
+    }
+}

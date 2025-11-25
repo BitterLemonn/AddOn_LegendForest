@@ -1,0 +1,69 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.gozuki_demon.shield.attack": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "has_target": "query.has_target && query.mod.animation_index == 0.0"
+                        },
+                        {
+                            "block": "query.mod.animation_index == 1.0"
+                        },
+                        {
+                            "attack": "query.mod.animation_index == 2.0"
+                        }
+                    ],
+                    "blend_transition": 0.2
+                },
+                "has_target": {
+                    "animations": ["has_target"],
+                    "transitions": [
+                        {
+                            "default": "!query.has_target"
+                        },
+                        {
+                            "block": "query.mod.animation_index == 1.0"
+                        },
+                        {
+                            "attack": "query.mod.animation_index == 2.0"
+                        }
+                    ],
+                    "blend_transition": 0.2
+                },
+                "block": {
+                    "animations": ["block"],
+                    "transitions": [
+                        {
+                            "default": "query.mod.animation_index == 0.0"
+                        },
+                        {
+                            "counter": "query.mod.animation_index == 3.0"
+                        }
+                    ],
+                    "blend_transition": 0.2
+                },
+                "attack": {
+                    "animations": ["shield_attack"],
+                    "transitions": [
+                        {
+                            "default": "query.mod.animation_index == 0.0"
+                        }
+                    ],
+                    "blend_transition": 0.2
+                },
+                "counter": {
+                    "animations": ["counter"],
+                    "transitions": [
+                        {
+                            "default": "query.mod.animation_index == 0.0"
+                        }
+                    ],
+                    "blend_transition": 0.2
+                }
+            }
+        }
+    }
+}

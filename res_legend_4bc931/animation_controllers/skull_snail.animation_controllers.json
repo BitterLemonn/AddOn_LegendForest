@@ -1,0 +1,70 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.skull_snail.move": {
+            "initial_state": "default",
+            "states": {
+                "move": {
+                    "animations": ["move"],
+                    "transitions": [
+                        {"default": "q.ground_speed <= 0.0"}
+                    ],
+                    "blend_transition": 0.2
+                },
+                "default": {
+                    "animations": ["idle"],
+                    "transitions": [
+                        {"move": "q.ground_speed > 0.0"}
+                    ],
+                    "blend_transition": 0.2
+                }
+            }
+        },
+        "controller.animation.skull_snail.vertical": {
+            "initial_state": "default",
+            "states": {
+                "bob": {
+                    "animations": ["vertical"],
+                    "transitions": [
+                        {"default": "!query.is_wall_climbing"}
+                    ],
+                    "blend_transition": 0.5
+                },
+                "default": {
+                    "transitions": [
+                        {"bob": "query.is_wall_climbing"}
+                    ],
+                    "blend_transition": 0.2
+                }
+            }
+        },
+        "controller.animation.skull_snail.hide": {
+            "initial_state": "default",
+            "states": {
+                "hide": {
+                    "animations": ["hide"],
+                    "transitions": [
+                        {"show": "q.mark_variant == 2"},
+                        {"default": "q.mark_variant == 0"}
+                    ],
+                    "blend_transition": 0.2
+                },
+                "show": {
+                    "animations": ["show"],
+                    "transitions": [
+                        {"default": "q.mark_variant == 0"},
+                        {"hide": "q.mark_variant == 1"}
+                    ],
+                    "blend_transition": 0.2
+                },
+                "default": {
+                    "transitions": [
+                        {"hide": "q.mark_variant == 1"},
+                        {"show": "q.mark_variant == 2"}
+                    ],
+                    "blend_transition": 0.2
+                }
+            }
+        }
+    }
+}

@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+from ..modConfig import FOREST_DIMENSION_ID, OVERWORLD_DIMENSION_ID
+
+
 class PortalFrameConfig(object):
     """传送门框架配置类"""
 
@@ -11,9 +14,6 @@ class PortalFrameConfig(object):
     OVERWORLD_PORTAL = "legend_forest:forest_portal"
     FOREST_PORTAL = "legend_forest:overworld_portal"
 
-    FOREST_DIMENSION_ID = 340654
-    OVERWORLD_DIMENSION_ID = 0
-
     PORTAL_BLOCK = frozenset([
         OVERWORLD_PORTAL,
         FOREST_PORTAL
@@ -22,8 +22,8 @@ class PortalFrameConfig(object):
     @classmethod
     def isChangeByLegendPortal(cls, fromDimensionId, toDimensionId):
         """判断传送是否由神话之森引起"""
-        return (toDimensionId == cls.FOREST_DIMENSION_ID) or \
-            (fromDimensionId == cls.FOREST_DIMENSION_ID and toDimensionId == cls.OVERWORLD_DIMENSION_ID)
+        return (toDimensionId == FOREST_DIMENSION_ID) or \
+            (fromDimensionId == FOREST_DIMENSION_ID and toDimensionId == OVERWORLD_DIMENSION_ID)
 
     @staticmethod
     def getPortalBlock(dimensionId):

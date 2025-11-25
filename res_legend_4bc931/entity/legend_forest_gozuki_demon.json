@@ -1,0 +1,39 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "bob": "animation.humanoid.bob",
+                "look_at_target": "animation.common.look_at_target",
+                "move": "animation.gozuki_demon.move",
+                "idle": "animation.gozuki_demon.idle",
+                "common_controller": "controller.animation.gozuki_demon.common"
+            },
+            "geometry": {
+                "axe": "geometry.gozuki_demon.axe",
+                "shield": "geometry.gozuki_demon.shield"
+            },
+            "identifier": "legend_forest:gozuki_demon",
+            "materials": {
+                "default": "entity_emissive_alpha"
+            },
+            "render_controllers": [
+                "controller.render.gozuki_demon"
+            ],
+            "scripts": {
+                "animate": [
+                    "look_at_target",
+                    "common_controller"
+                ]
+            },
+            "spawn_egg": {
+                "base_color": "#625954",
+                "overlay_color": "#2e2925"
+            },
+            "textures": {
+                "axe": "textures/entity/gozuki_demon/gozuki_demon_axe",
+                "shield": "textures/entity/gozuki_demon/gozuki_demon_shield"
+            }
+        }
+    }
+}

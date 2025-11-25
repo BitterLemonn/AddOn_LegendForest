@@ -40,7 +40,7 @@ class PortalValidator(object):
             if blockName != "minecraft:air":
                 # 如果已经是传送门方块，允许通过
                 if blockName in [PortalFrameConfig.OVERWORLD_PORTAL, PortalFrameConfig.FOREST_PORTAL]:
-                    continue
+                    return False, None
                 return False, pos
 
         return True, None

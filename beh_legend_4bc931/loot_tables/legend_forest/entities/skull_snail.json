@@ -1,0 +1,33 @@
+{
+    "pools": [
+        {
+            "conditions": [
+                {
+                    "condition": "killed_by_player"
+                }
+            ],
+            "entries": [
+                {
+                    "functions": [
+                        {
+                            "count": {
+                                "max": 1,
+                                "min": 0
+                            },
+                            "function": "set_count"
+                        }
+                    ],
+                    "name": "minecraft:bone",
+                    "type": "item",
+                    "weight": 49
+                },
+                {
+                    "name": "minecraft:skull",
+                    "type": "item",
+                    "weight": 1
+                }
+            ],
+            "rolls": 1
+        }
+    ]
+}

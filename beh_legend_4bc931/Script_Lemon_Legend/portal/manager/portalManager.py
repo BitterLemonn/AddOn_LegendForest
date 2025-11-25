@@ -2,8 +2,8 @@
 import math
 import pickle
 
-from ..data.portalData import SpatialGrid, PortalData
-from ..logging import logging
+from ...data.portalData import SpatialGrid, PortalData
+from ...logging import logging
 
 
 # 单例模式

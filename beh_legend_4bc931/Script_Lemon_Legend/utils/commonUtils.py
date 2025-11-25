@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 import math
+from math import floor
+
+from mod.common import minecraftEnum
 
 
 class FormatColorStr(object):
@@ -33,18 +36,14 @@ class FormatColorStr(object):
     FORMATTER = "§"
 
 
-# 计算向量长度
 def normalizeVector(vector):
-    """
-    将向量归一化
-    :param vector: 向量
-    :return: 归一化后的向量
-    """
+    """向量归一化"""
     length = math.sqrt(sum(coord ** 2 for coord in vector))
     return (coord / length for coord in vector)
 
 
 def findPointBehind(posXZ, sight, distance):  # type: (tuple, tuple, float) -> tuple[int, int]
+    """获取指定位置后方一定距离的点"""
     dir_x, dir_y = normalizeVector(sight)
     new_x = posXZ[0] - dir_x * distance
     new_y = posXZ[1] - dir_y * distance
@@ -52,43 +51,29 @@ def findPointBehind(posXZ, sight, distance):  # type: (tuple, tuple, float) -> t
 
 
 def isInChunk(pos, chunk):
+    """检查位置是否在区块内"""
     chunkIndexX, chunkIndexZ = chunk
     return chunkIndexX * 16 <= pos[0] < chunkIndexX * 16 + 15 and chunkIndexZ * 16 <= pos[2] < chunkIndexZ * 16 + 15
 
 
-def rotateVectorY(vector, angle_degrees):
-    """
-    以y轴为旋转轴旋转向量
-    :param vector: 向量
-    :param angle_degrees: 旋转角度
-    :return: 旋转后的向量
-    """
-    angle_radians = math.radians(angle_degrees)
-    x = vector[0] * math.cos(angle_radians) - vector[2] * math.sin(angle_radians)
-    z = vector[0] * math.sin(angle_radians) + vector[2] * math.cos(angle_radians)
+def rotateVectorY(vector, angleDegrees):
+    """以y轴为旋转轴旋转向量"""
+    angleRadians = math.radians(angleDegrees)
+    x = vector[0] * math.cos(angleRadians) - vector[2] * math.sin(angleRadians)
+    z = vector[0] * math.sin(angleRadians) + vector[2] * math.cos(angleRadians)
     return x, vector[1], z
 
 
-def rotateVectorX(vector, angle_degrees):
-    """
-    以x轴为旋转轴旋转向量
-    :param vector: 向量
-    :param angle_degrees: 旋转角度
-    :return: 旋转后的向量
-    """
-    angle_radians = math.radians(angle_degrees)
-    y = vector[1] * math.cos(angle_radians) - vector[2] * math.sin(angle_radians)
-    z = vector[1] * math.sin(angle_radians) + vector[2] * math.cos(angle_radians)
+def rotateVectorX(vector, angleDegrees):
+    """以x轴为旋转轴旋转向量"""
+    angleRadians = math.radians(angleDegrees)
+    y = vector[1] * math.cos(angleRadians) - vector[2] * math.sin(angleRadians)
+    z = vector[1] * math.sin(angleRadians) + vector[2] * math.cos(angleRadians)
     return vector[0], y, z
 
 
 def unitVector(fromPos, toPos):
-    """
-    计算fromPos到toPos两点之间的单位向量
-    :param fromPos:
-    :param toPos:
-    :return: 单位向量 (x, y, z)
-    """
+    """计算fromPos到toPos两点之间的单位向量"""
     delta_x = toPos[0] - fromPos[0]
     delta_y = toPos[1] - fromPos[1]
     delta_z = toPos[2] - fromPos[2]
@@ -97,13 +82,7 @@ def unitVector(fromPos, toPos):
 
 
 def getAngleBetweenVectors(v1, v2, isDismissY=False):
-    """
-    计算两个单位向量之间的夹角
-    :param v1: 单位向量1
-    :param v2: 单位向量2
-    :param isDismissY: 是否忽略y轴
-    :return: 夹角 弧度
-    """
+    """计算两个单位向量之间的夹角"""
     if isDismissY:
         v1 = (v1[0], 0, v1[2])
         v2 = (v2[0], 0, v2[2])
@@ -114,25 +93,36 @@ def getAngleBetweenVectors(v1, v2, isDismissY=False):
 
 
 def isFrontOf(p1, p2, sight):
-    """
-    判断p2是否在p1的视线前方
-    :param p1: 视线起点
-    :param p2: 目标点
-    :param sight: 视线方向
-    :return: 是否在视线前方
-    """
+    """判断p2是否在p1的视线前方"""
     return sum((p2[i] - p1[i]) * sight[i] for i in range(3)) > 0
 
 
 def getIntPos(floatPos):
-    """
-    将浮点坐标转换为整数坐标
-    """
-    return int(math.floor(floatPos[0])), int(math.floor(floatPos[1])), int(math.floor(floatPos[2]))
+    """将浮点坐标转换为整数坐标 """
+    return (int(floor(i)) for i in floatPos)
 
 
 def getDistance(p1, p2):
+    """计算两点之间的距离"""
     return math.sqrt(sum((p1[i] - p2[i]) ** 2 for i in range(3)))
+
+
+def getTargetPosWithFacing(pos, facing, opposite=False):
+    """根据朝向获取目标位置"""
+    x, y, z = pos
+    if facing == minecraftEnum.Facing.North:  # north
+        z -= 1 if not opposite else -1
+    elif facing == minecraftEnum.Facing.South:  # south
+        z += 1 if not opposite else -1
+    elif facing == minecraftEnum.Facing.West:  # west
+        x -= 1 if not opposite else -1
+    elif facing == minecraftEnum.Facing.East:  # east
+        x += 1 if not opposite else -1
+    elif facing == minecraftEnum.Facing.Up:  # up
+        y += 1 if not opposite else -1
+    elif facing == minecraftEnum.Facing.Down:  # down
+        y -= 1 if not opposite else -1
+    return x, y, z
 
 
 def singleton(cls):
@@ -147,12 +137,14 @@ def singleton(cls):
 
 
 def getChunkCenter(x, z):
+    """获取区块中心坐标"""
     chunkX = (x // 16) * 16 + 8
     chunkZ = (z // 16) * 16 + 8
     return chunkX, chunkZ
 
 
 def getRGBFloatByStr(colorStr):
+    """通过十六进制颜色字符串获取RGB浮点值"""
     colorStr = colorStr[1:]
     r = int(colorStr[0:2], 16) / 255.0
     g = int(colorStr[2:4], 16) / 255.0

@@ -1,0 +1,39 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "look_at_target": "animation.common.look_at_target",
+                "move": "animation.bell_ghost.move",
+                "bob": "animation.bell_ghost.bob"
+            },
+            "geometry": {
+                "default": "geometry.bell_ghost"
+            },
+            "identifier": "legend_forest:bell_ghost",
+            "materials": {
+                "default": "entity_emissive_alpha"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "particle_effects": {
+                "bell_ghost": "legend_forest:bell_ghost_spirituality"
+            },
+            "scripts": {
+                "animate": [
+                    "look_at_target",
+                    {"move": "query.modified_move_speed > 0.0"},
+                    "bob"
+                ]
+            },
+            "spawn_egg": {
+                "base_color": "#2cc9ff",
+                "overlay_color": "#9cfcff"
+            },
+            "textures": {
+                "default": "textures/entity/bell_ghost"
+            }
+        }
+    }
+}
