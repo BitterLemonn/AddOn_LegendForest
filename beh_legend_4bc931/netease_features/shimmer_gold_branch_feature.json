@@ -1,0 +1,21 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:single_block_feature": {
+        "description": {
+            "identifier": "legend_forest:shimmer_gold_branch_feature"
+        },
+        "places_block": "legend_forest:gold_branch",
+        "enforce_placement_rules": true,
+        "enforce_survivability_rules": true,
+        "may_place_on": [
+            "legend_forest:shimmer_grass_block",
+            "legend_forest:shimmer_grass_block_check"
+        ],
+        "may_replace": [
+            "legend_forest:shimmer_grass",
+            "legend_forest:shimmer_bud",
+            "legend_forest:shimmer_flower",
+            "minecraft:air"
+        ]
+    }
+}

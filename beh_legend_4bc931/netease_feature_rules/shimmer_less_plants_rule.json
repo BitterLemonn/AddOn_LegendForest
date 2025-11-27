@@ -16,13 +16,13 @@
             "placement_pass": "surface_pass"
         },
         "description": {
-            "identifier": "legend_forest:shimmer_flower_rule",
-            "places_feature": "legend_forest:shimmer_flower_scatter_feature"
+            "identifier": "legend_forest:shimmer_less_plants_rule",
+            "places_feature": "legend_forest:shimmer_plants_scatter_feature"
         },
+        // 不实际放置植物 用于骨粉生成
         "distribution": {
             "coordinate_eval_order": "zxy",
-            "iterations": 3,
-            "scatter_chance": 70,
+            "iterations": 0,
             "x": 0,
             "y": 0,
             "z": 0

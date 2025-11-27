@@ -74,6 +74,12 @@ def playSound(soundName, pos, playerId):
     Call(playerId, "playSound", {"soundName": soundName, "pos": pos})
 
 
+def playParticle(particleName, pos, playerId=None):
+    comp = compFactory.CreateCommand(playerId if playerId else levelId)
+    x, y, z = pos
+    comp.SetCommand("/particle {} {} {} {}".format(particleName, x, y, z))
+
+
 @BaseService.Init
 class UsingCooldownServerService(BaseService):
 

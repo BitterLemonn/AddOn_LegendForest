@@ -14,6 +14,11 @@
                             "test": "has_biome_tag",
                             "operator": "==",
                             "value": "overworld_generation"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "operator": "==",
+                            "value": "shimmer_forest"
                         }
                     ]
                 }
@@ -26,7 +31,7 @@
         },
         "distribution": {
             "coordinate_eval_order": "zxy",
-            "iterations": 12,
+            "iterations": 10,
             "x": {
                 "distribution": "uniform",
                 "extent": [

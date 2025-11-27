@@ -9,16 +9,6 @@
                             "operator": "==",
                             "test": "has_biome_tag",
                             "value": "shimmer_forest"
-                        },
-                        {
-                            "operator": "==",
-                            "test": "has_biome_tag",
-                            "value": "shimmer_forest_hills"
-                        },
-                        {
-                            "operator": "==",
-                            "test": "has_biome_tag",
-                            "value": "shimmer_flower_forest"
                         }
                     ]
                 }
@@ -31,7 +21,8 @@
         },
         "distribution": {
             "coordinate_eval_order": "zxy",
-            "iterations": "math.abs(query.noise(v.originx, v.originz)) < 0.25 ? math.random_integer(0, 8) == 0 : 0",
+            "iterations": "math.abs(q.noise(v.originx, v.originz)) < 0.25 ? 1 : 0",
+            "scatter_chance": 5.0,
             "x": {
                 "distribution": "uniform",
                 "extent": [
@@ -39,7 +30,7 @@
                     16
                 ]
             },
-            "y": "query.heightmap(variable.originx, variable.originz) - 1",
+            "y": "q.heightmap(v.originx, v.originz) - 1",
             "z": {
                 "distribution": "uniform",
                 "extent": [

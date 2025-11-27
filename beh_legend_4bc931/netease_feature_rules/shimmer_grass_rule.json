@@ -9,16 +9,6 @@
                             "operator": "==",
                             "test": "has_biome_tag",
                             "value": "shimmer_forest"
-                        },
-                        {
-                            "operator": "==",
-                            "test": "has_biome_tag",
-                            "value": "shimmer_forest_hills"
-                        },
-                        {
-                            "operator": "==",
-                            "test": "has_biome_tag",
-                            "value": "shimmer_flower_forest"
                         }
                     ]
                 }
@@ -31,22 +21,11 @@
         },
         "distribution": {
             "coordinate_eval_order": "zxy",
-            "iterations": 15,
-            "x": {
-                "distribution": "uniform",
-                "extent": [
-                    0,
-                    15
-                ]
-            },
-            "y": "query.get_height_at(variable.originx, variable.originz)",
-            "z": {
-                "distribution": "uniform",
-                "extent": [
-                    0,
-                    15
-                ]
-            }
+            "iterations": 3,
+            "scatter_chance": 80,
+            "x": 0,
+            "y": 0,
+            "z": 0
         }
     }
 }

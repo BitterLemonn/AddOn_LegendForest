@@ -4,17 +4,14 @@
         "description": {
             "identifier": "legend_forest:shimmer_flower_scatter_feature"
         },
-        "places_feature": "legend_forest:shimmer_flower_snap_feature",
+        "places_feature": "legend_forest:shimmer_flower_random_feature",
         "iterations": 3,
         "scatter_chance": 50.0,
         "x": {
             "distribution": "uniform",
             "extent": [0, 15]
         },
-        "y": {
-            "distribution": "uniform",
-            "extent": [0, 15]
-        },
+        "y": "q.heightmap(v.worldx, v.worldz)",
         "z": {
             "distribution": "uniform",
             "extent": [0, 15]

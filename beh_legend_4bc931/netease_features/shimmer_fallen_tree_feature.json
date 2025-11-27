@@ -2,42 +2,21 @@
     "format_version": "1.13.0",
     "minecraft:tree_feature": {
         "description": {
-            "identifier": "legend_forest:shimmer_tree_feature"
+            "identifier": "legend_forest:shimmer_fallen_tree_feature"
         },
-        "fancy_trunk": {
-            "trunk_height": {
-                "base": 35,
-                "variance": 15,
-                "scale": 0.618
+        "fallen_trunk": {
+            "log_length": {
+                "range_min": 6,
+                "range_max": 12
             },
-            "trunk_width": 2,
             "trunk_block": {
                 "name": "legend_forest:log_shimmer",
                 "states": {}
             },
-            "branches": {
-                "slope": 0.67,
-                "density": 0.25,
-                "min_altitude_factor": 0.25
-            },
-            "width_scale": 1.0,
-            "foliage_altitude_factor": 0.2
-        },
-        "canopy": {
-            "canopy_offset": {
-                "min": 0,
-                "max": 4
-            },
-            "canopy_slope": {
-                "rise": 3,
-                "run": 2
-            },
-            "min_width": 2,
-            "variation_chance": {
-                "numerator": 1,
-                "denominator": 4
-            },
-            "leaf_block": "legend_forest:leaves_shimmer"
+            "trunk_decoration": {
+                "decoration_block": "minecraft:vine",
+                "decoration_chance": 75.0
+            }
         },
         "base_block": [
             "minecraft:dirt",

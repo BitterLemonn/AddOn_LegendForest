@@ -1,0 +1,12 @@
+{
+    "format_version": "1.3.0",
+    "minecraft:sequence_feature": {
+        "description": {
+            "identifier": "legend_forest:shimmer_reed_seq_feature"
+        },
+        "features": [
+            "legend_forest:shimmer_reed_bottom_feature",
+            "legend_forest:shimmer_reed_top_scatter_feature"
+        ]
+    }
+}

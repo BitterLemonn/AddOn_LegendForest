@@ -9,16 +9,6 @@
                             "operator": "==",
                             "test": "has_biome_tag",
                             "value": "shimmer_forest"
-                        },
-                        {
-                            "operator": "==",
-                            "test": "has_biome_tag",
-                            "value": "shimmer_forest_hills"
-                        },
-                        {
-                            "operator": "==",
-                            "test": "has_biome_tag",
-                            "value": "shimmer_flower_forest"
                         }
                     ]
                 }

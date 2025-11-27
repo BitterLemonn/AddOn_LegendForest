@@ -6,23 +6,36 @@
                 {
                     "any_of": [
                         {
-                            "operator": "==",
                             "test": "has_biome_tag",
+                            "operator": "==",
+                            "value": "overworld"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "operator": "==",
+                            "value": "overworld_generation"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "operator": "==",
                             "value": "shimmer_forest"
                         }
                     ]
                 }
             ],
-            "placement_pass": "surface_pass"
+            "placement_pass": "underground_pass"
         },
         "description": {
-            "identifier": "legend_forest:shimmer_malfurion_tower_frequent_rule",
-            "places_feature": "legend_forest:shimmer_mal_tower_random_frequent_feature"
+            "identifier": "legend_forest:moon_stone_lower_rule",
+            "places_feature": "legend_forest:moon_stone_feature"
         },
         "distribution": {
             "coordinate_eval_order": "zxy",
-            "iterations": "math.abs(q.noise(v.originx, v.originz) < 0.3) ? 1 : 0",
-            "scatter_chance": 2.0,
+            "iterations": 1,
+            "scatter_chance": {
+                "numerator": 1,
+                "denominator": 2
+            },
             "x": {
                 "distribution": "uniform",
                 "extent": [
@@ -30,7 +43,13 @@
                     16
                 ]
             },
-            "y": "q.heightmap(v.originx, v.originz)",
+            "y": {
+                "distribution": "uniform",
+                "extent": [
+                    -64,
+                    -48
+                ]
+            },
             "z": {
                 "distribution": "uniform",
                 "extent": [

@@ -4,7 +4,7 @@
         "description": {
             "identifier": "legend_forest:moon_stone_feature"
         },
-        "count": 3,
+        "count": 9,
         "replace_rules": [
             {
                 "places_block": "legend_forest:moon_stone",

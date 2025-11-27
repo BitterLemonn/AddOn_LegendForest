@@ -1,0 +1,19 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:single_block_feature": {
+        "description": {
+            "identifier": "legend_forest:shimmer_tree_cave_vine_anchor_feature"
+        },
+        "places_block": "minecraft:cave_vines",
+        "enforce_placement_rules": false,
+        "enforce_survivability_rules": false,
+        "may_attach_to": {
+            "top": [
+                "legend_forest:leaves_shimmer"
+            ]
+        },
+        "may_replace": [
+            "minecraft:air"
+        ]
+    }
+}

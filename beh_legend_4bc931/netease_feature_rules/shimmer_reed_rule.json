@@ -3,7 +3,7 @@
     "minecraft:feature_rules": {
         "description": {
             "identifier": "legend_forest:shimmer_reed_rule",
-            "places_feature": "legend_forest:reed_shimmer_seq_feature"
+            "places_feature": "legend_forest:shimmer_reed_seq_feature"
         },
         "conditions": {
             "placement_pass": "surface_pass",
@@ -11,7 +11,7 @@
                 {
                     "operator": "==",
                     "test": "has_biome_tag",
-                    "value": "shimmer_flower_forest"
+                    "value": "shimmer_forest_pond"
                 }
             ]
         },

@@ -1,0 +1,12 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:weighted_random_feature": {
+        "description": {
+            "identifier": "legend_forest:shimmer_plants_random_feature"
+        },
+        "features": [
+            ["legend_forest:shimmer_flower_random_feature", 2],
+            ["legend_forest:shimmer_grass_random_feature", 8]
+        ]
+    }
+}

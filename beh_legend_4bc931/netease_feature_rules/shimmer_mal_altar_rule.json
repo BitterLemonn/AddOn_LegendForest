@@ -9,29 +9,20 @@
                             "operator": "==",
                             "test": "has_biome_tag",
                             "value": "shimmer_forest"
-                        },
-                        {
-                            "operator": "==",
-                            "test": "has_biome_tag",
-                            "value": "shimmer_forest_hills"
-                        },
-                        {
-                            "operator": "==",
-                            "test": "has_biome_tag",
-                            "value": "shimmer_flower_forest"
                         }
                     ]
                 }
             ],
-            "placement_pass": "surface_pass"
+            "placement_pass": "after_underground_pass"
         },
         "description": {
             "identifier": "legend_forest:shimmer_mal_altar_rule",
-            "places_feature": "legend_forest:shimmer_mal_altar_seq_feature"
+            "places_feature": "legend_forest:shimmer_mal_altar_agg_feature"
         },
         "distribution": {
             "coordinate_eval_order": "zxy",
-            "iterations": "query.noise(variable.originx, variable.originz) <= 0.1 ? math.random_integer(0, 32) == 0 : 0",
+            "iterations": "math.abs(q.noise(v.originx, v.originz)) <= 0.1 ? 1 : 0",
+            "scatter_chance": 5.0,
             "x": {
                 "distribution": "uniform",
                 "extent": [
@@ -39,7 +30,7 @@
                     16
                 ]
             },
-            "y": "query.heightmap(variable.originx, variable.originz)",
+            "y": 0,
             "z": {
                 "distribution": "uniform",
                 "extent": [

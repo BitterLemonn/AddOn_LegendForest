@@ -13,16 +13,16 @@
                     ]
                 }
             ],
-            "placement_pass": "surface_pass"
+            "placement_pass": "after_surface_pass"
         },
         "description": {
-            "identifier": "legend_forest:shimmer_malfurion_tower_frequent_rule",
-            "places_feature": "legend_forest:shimmer_mal_tower_random_frequent_feature"
+            "identifier": "legend_forest:shimmer_fallen_tree_rule",
+            "places_feature": "legend_forest:shimmer_fallen_tree_feature"
         },
         "distribution": {
             "coordinate_eval_order": "zxy",
-            "iterations": "math.abs(q.noise(v.originx, v.originz) < 0.3) ? 1 : 0",
-            "scatter_chance": 2.0,
+            "iterations": "q.noise(v.originx, v.originz) < 0.5 ? 1 : 0",
+            "scatter_chance": 30.0,
             "x": {
                 "distribution": "uniform",
                 "extent": [

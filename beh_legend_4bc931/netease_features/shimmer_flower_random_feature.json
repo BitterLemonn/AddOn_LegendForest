@@ -5,11 +5,11 @@
             "identifier": "legend_forest:shimmer_flower_random_feature"
         },
         "features": [
-            ["legend_forest:blue_mushroom_feature", 10],
+            ["legend_forest:shimmer_blue_mushroom_feature", 10],
             ["legend_forest:shimmer_rose_feature", 10],
             ["legend_forest:shimmer_flower_feature", 20],
-            ["legend_forest:candle_flower_seq_feature", 5],
-            ["legend_forest:gold_branch_feature", 1]
+            ["legend_forest:shimmer_candle_flower_seq_feature", 5],
+            ["legend_forest:shimmer_gold_branch_feature", 1]
         ]
     }
 }

@@ -2,18 +2,18 @@
     "format_version": "1.13.0",
     "minecraft:scatter_feature": {
         "description": {
-            "identifier": "legend_forest:shimmer_grass_scatter_feature"
+            "identifier": "legend_forest:shimmer_plants_scatter_feature"
         },
-        "places_feature": "legend_forest:shimmer_grass_random_feature",
+        "places_feature": "legend_forest:shimmer_plants_random_feature",
         "iterations": 25,
         "x": {
             "distribution": "uniform",
-            "extent": [0, 15]
+            "extent": [-6, 6]
         },
-        "y": "q.heightmap(v.worldx, v.worldz)",
+        "y": 0,
         "z": {
             "distribution": "uniform",
-            "extent": [0, 15]
+            "extent": [-6, 6]
         }
     }
 }

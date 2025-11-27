@@ -5,7 +5,7 @@
             "identifier": "legend_forest:shimmer_waterlily_random_feature"
         },
         "features": [
-            ["legend_forest:shimmer_waterlily_feature", 1],
+            ["legend_forest:shimmer_waterlily_feature", 2],
             ["legend_forest:shimmer_shimmer_lily_feature", 1]
         ]
     }
