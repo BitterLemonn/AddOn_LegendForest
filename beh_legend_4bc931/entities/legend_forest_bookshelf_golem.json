@@ -80,7 +80,7 @@
                 "minecraft:damage_sensor": {
                     "triggers": [
                         {
-                            "deals_damage": false,
+                            "deals_damage": "no",
                             "cause": "all",
                             "on_damage": {
                                 "event": "legend_forest:on_damage_not_awake"
@@ -118,7 +118,7 @@
                 "minecraft:damage_sensor": {
                     "triggers": [
                         {
-                            "deals_damage": false,
+                            "deals_damage": "no",
                             "cause": "all"
                         }
                     ]
@@ -131,7 +131,7 @@
                 "minecraft:damage_sensor": {
                     "triggers": [
                         {
-                            "deals_damage": false,
+                            "deals_damage": "no",
                             "cause": "magic"
                         },
                         {
@@ -140,7 +140,7 @@
                         },
                         {
                             "cause": "self_destruct",
-                            "deals_damage": false,
+                            "deals_damage": "no",
                             "on_damage": {
                                 "filters": {
                                     "all_of": [
@@ -253,7 +253,7 @@
                 "minecraft:damage_sensor": {
                     "triggers": [
                         {
-                            "deals_damage": false,
+                            "deals_damage": "no",
                             "cause": "all"
                         }
                     ]

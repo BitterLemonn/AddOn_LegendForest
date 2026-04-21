@@ -1,5 +1,5 @@
 {
-    "format_version": "1.12.0",
+    "format_version": "1.21.90",
     "minecraft:entity": {
         "component_groups": {
             "legend_forest:normal_sensor": {
@@ -18,15 +18,15 @@
                                 "target": "self",
                                 "event": "legend_forest:death"
                             },
-                            "deals_damage": false,
+                            "deals_damage": "no",
                             "cause": "self_destruct"
                         },
                         {
-                            "deals_damage": false,
+                            "deals_damage": "no",
                             "cause": "fall"
                         },
                         {
-                            "deals_damage": true,
+                            
                             "cause": "all",
                             "damage_multiplier": 0.75
                         }
@@ -49,15 +49,15 @@
                                 "target": "self",
                                 "event": "legend_forest:death"
                             },
-                            "deals_damage": false,
+                            "deals_damage": "no",
                             "cause": "self_destruct"
                         },
                         {
-                            "deals_damage": false,
+                            "deals_damage": "no",
                             "cause": "fall"
                         },
                         {
-                            "deals_damage": true,
+                            
                             "cause": "all",
                             "damage_multiplier": 0.15
                         }
@@ -68,7 +68,7 @@
                 "minecraft:damage_sensor": {
                     "triggers": {
                         "cause": "all",
-                        "deals_damage": false
+                        "deals_damage": "no"
                     }
                 },
                 "minecraft:timer": {
@@ -163,7 +163,7 @@
                 "minecraft:damage_sensor": {
                     "triggers": {
                         "cause": "all",
-                        "deals_damage": false
+                        "deals_damage": "no"
                     }
                 },
                 "minecraft:timer": {

@@ -1,5 +1,5 @@
 {
-    "format_version": "1.15.0",
+    "format_version": "1.21.90",
     "minecraft:entity": {
         "description": {
             "identifier": "legend_forest:ice_bolt",
@@ -9,16 +9,12 @@
         },
         "component_groups": {
             "legend_forest:despawned": {
-                "minecraft:instant_despawn": {
-                }
+                "minecraft:instant_despawn": {}
             },
             "legend_forest:despawning": {
                 "minecraft:timer": {
                     "looping": false,
-                    "time": [
-                        1.5,
-                        1.5
-                    ],
+                    "time": [1.5, 1.5],
                     "time_down_event": {
                         "event": "legend_forest:despawn"
                     }
@@ -26,6 +22,9 @@
             }
         },
         "components": {
+            "netease:custom_entity_type": {
+                "value": "projectile_entity"
+            },
             "minecraft:collision_box": {
                 "height": 0.25,
                 "width": 0.5
@@ -33,7 +32,7 @@
             "minecraft:damage_sensor": {
                 "triggers": [
                     {
-                        "deals_damage": false,
+                        "deals_damage": "no",
                         "cause": "all"
                     }
                 ]
@@ -52,19 +51,14 @@
                     }
                 ]
             },
-            "minecraft:persistent": {
-            },
+            "minecraft:persistent": {},
             "minecraft:projectile": {
                 "anchor": 1,
                 "gravity": 0.05,
                 "hit_sound": "glass",
                 "inertia": 1,
                 "liquid_inertia": 1,
-                "offset": [
-                    0,
-                    0.1,
-                    0
-                ],
+                "offset": [0, 0.1, 0],
                 "on_hit": {
                     "definition_event": {
                         "affect_projectile": true,
@@ -74,16 +68,12 @@
                         }
                     },
                     "impact_damage": {
-                        "damage": [
-                            2,
-                            4
-                        ],
+                        "damage": [2, 4],
                         "destroy_on_hit": true,
                         "knockback": true,
                         "semi_random_diff_damage": true
                     },
-                    "remove_on_hit": {
-                    }
+                    "remove_on_hit": {}
                 },
                 "power": 1.8,
                 "should_bounce": true,
@@ -98,21 +88,15 @@
         "events": {
             "legend_forest:despawn": {
                 "add": {
-                    "component_groups": [
-                        "legend_forest:despawned"
-                    ]
+                    "component_groups": ["legend_forest:despawned"]
                 },
                 "remove": {
-                    "component_groups": [
-                        "legend_forest:despawning"
-                    ]
+                    "component_groups": ["legend_forest:despawning"]
                 }
             },
             "legend_forest:despawning": {
                 "add": {
-                    "component_groups": [
-                        "legend_forest:despawning"
-                    ]
+                    "component_groups": ["legend_forest:despawning"]
                 }
             }
         }

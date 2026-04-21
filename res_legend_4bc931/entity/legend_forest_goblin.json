@@ -18,6 +18,7 @@
                 "melee_attack": "animation.goblin.sword.attack",
                 "move": "animation.goblin.move",
                 "piglin_attack_controller": "controller.animation.goblin.attack",
+                "riding.body": "animation.humanoid.riding.body",
                 "riding.arms": "animation.humanoid.riding.arms",
                 "riding.legs": "animation.humanoid.riding.legs",
                 "riding_controller": "controller.animation.humanoid.riding",

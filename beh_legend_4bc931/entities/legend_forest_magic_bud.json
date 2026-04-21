@@ -1,5 +1,5 @@
 {
-    "format_version": "1.12.0",
+    "format_version": "1.21.90",
     "minecraft:entity": {
         "component_groups": {
             "legend_forest:has_explode": {
@@ -42,13 +42,11 @@
                     "target_in_sight_time": 0.1
                 },
                 "minecraft:shooter": {
-                    "def": "legend_forest:wind_arrow",
-                    "type": "Arrow"
+                    "def": "legend_forest:wind_arrow"
                 }
             }
         },
         "components": {
-            "netease:ban_bandwidth_optimization": {},
             "minecraft:behavior.look_at_player": {
                 "look_distance": 8,
                 "priority": 6
@@ -68,11 +66,11 @@
                 "triggers": [
                     {
                         "cause": "fall",
-                        "deals_damage": false
+                        "deals_damage": "no"
                     },
                     {
                         "cause": "entity_explosion",
-                        "deals_damage": false
+                        "deals_damage": "no"
                     }
                 ]
             },

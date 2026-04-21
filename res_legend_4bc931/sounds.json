@@ -3,10 +3,7 @@
         "entities": {
             "legend_forest:magic_deer": {
                 "volume": 0.8,
-                "pitch": [
-                    0.8,
-                    1.2
-                ],
+                "pitch": [0.8, 1.2],
                 "events": {
                     "ambient": "mob.llama.idle",
                     "death": "mob.llama.death",
@@ -19,23 +16,14 @@
                     },
                     "eat": {
                         "sound": "mob.llama.eat",
-                        "volume": [
-                            0.5,
-                            1.5
-                        ],
-                        "pitch": [
-                            0.8,
-                            1.2
-                        ]
+                        "volume": [0.5, 1.5],
+                        "pitch": [0.8, 1.2]
                     }
                 }
             },
             "legend_forest:goblin": {
                 "volume": 0.8,
-                "pitch": [
-                    0.8,
-                    1.2
-                ],
+                "pitch": [0.8, 1.2],
                 "events": {
                     "ambient": "legend_forest_mob.goblin.say",
                     "hurt": "legend_forest_mob.goblin.hurt",
@@ -49,10 +37,7 @@
             },
             "legend_forest:hog": {
                 "volume": 1.0,
-                "pitch": [
-                    0.8,
-                    1.2
-                ],
+                "pitch": [0.8, 1.2],
                 "events": {
                     "ambient": "mob.hoglin.ambient",
                     "angry": "mob.hoglin.angry",
@@ -69,10 +54,7 @@
             },
             "legend_forest:shimmer_bug": {
                 "volume": 0.1,
-                "pitch": [
-                    0.76,
-                    1.14
-                ],
+                "pitch": [0.76, 1.14],
                 "events": {
                     "ambient": "legend_forest.shimmer_bug.say",
                     "hurt": "mob.bat.hurt",
@@ -80,22 +62,19 @@
                     "takeoff": {
                         "sound": "mob.bat.takeoff",
                         "volume": 0.05,
-                        "pitch": [
-                            0.8,
-                            1.2
-                        ]
+                        "pitch": [0.8, 1.2]
                     }
                 }
             },
             "legend_forest:ice_bolt": {
-                "volume": 0.0
+                "volume": 0.0,
+                "events": {
+                    "hurt": ""
+                }
             },
             "legend_forest:malfurion": {
                 "volume": 0.8,
-                "pitch": [
-                    0.8,
-                    1.2
-                ],
+                "pitch": [0.8, 1.2],
                 "events": {
                     "hurt": {
                         "sound": "legend_forest_mob.malfurion.hurt",

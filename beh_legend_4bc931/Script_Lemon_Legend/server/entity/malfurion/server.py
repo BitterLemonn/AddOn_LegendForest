@@ -129,39 +129,20 @@ class MalfurionServerService(BaseService):
         damage = data["damage"]
 
         if Entity(entityId).Identifier == "legend_forest:malfurion":
-            # 分段限制伤害
-            damageL1 = min(damage, 15)
-            damageL2 = 0
-            damageL3 = 0
-            if damageL1 == 15:
-                damageL2 = min(damage - 20, 15)
-            if damageL2 == 15:
-                damageL3 = min(damage - 35, 15)
-            damage = damageL1 + damageL2 * 0.5 + damageL3 * 0.25
-            data["damage_f"] = damage
+            # 分段限制伤害（防止秒杀）
+            # damageL1 = min(damage, 15)
+            # damageL2 = 0
+            # damageL3 = 0
+            # if damageL1 == 15:
+            #     damageL2 = min(damage - 20, 15)
+            # if damageL2 == 15:
+            #     damageL3 = min(damage - 35, 15)
+            # damage = damageL1 + damageL2 * 0.5 + damageL3 * 0.25
+            # data["damage_f"] = damage
 
-            # 累积伤害计数
+            # 累积伤害计数（交给AI组件智能处理）
             from Script_Lemon_Legend.server.entity.malfurion.behaviorComp import AIComp
 
             aiComp = AIComp.getComp(entityId)  # type: AIComp|None
             if aiComp:
                 aiComp.addDamageCount(damage)
-
-            # # 受伤计数 触发瞬移
-            # if cause == minecraftEnum.ActorDamageCause.EntityAttack \
-            #         or cause == minecraftEnum.ActorDamageCause.Projectile \
-            #         or cause == minecraftEnum.ActorDamageCause.Magic or Entity(
-            #     srcId).Identifier == "minecraft:player":
-            #     dataComp = serverApi.GetEngineCompFactory().CreateExtraData(entityId)
-            #     hurtCount = dataComp.GetExtraData("hurtCount")
-            #     hurtCount = dataComp.SetExtraData("hurtCount", 1) if hurtCount is None else hurtCount
-            #     dataComp.SetExtraData("hurtCount", hurtCount + random.randint(1, 2))
-            #
-            #     eventComp = serverApi.GetEngineCompFactory().CreateEntityEvent(entityId)
-            #     if hurtCount >= random.randint(12, 16) and \
-            #             Entity(entityId).Health.Value > Entity(entityId).Health.Max / 5.0:
-            #         dataComp.SetExtraData("hurtCount", 0)
-            #         eventComp.TriggerCustomEvent(entityId, "legend_forest:teleport")
-
-            # if Entity(srcId).Identifier == "minecraft:player":
-            #     MalManager().SetAttacker(entityId, srcId)

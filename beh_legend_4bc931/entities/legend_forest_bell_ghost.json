@@ -1,8 +1,7 @@
 {
-    "format_version": "1.12.0",
+    "format_version": "1.21.90",
     "minecraft:entity": {
-        "component_groups": {
-        },
+        "component_groups": {},
         "components": {
             "minecraft:despawn": {
                 "despawn_from_distance": {}
@@ -15,10 +14,8 @@
                 "max": 5.0,
                 "value": 5.0
             },
-            "minecraft:jump.static": {
-            },
-            "minecraft:nameable": {
-            },
+            "minecraft:jump.static": {},
+            "minecraft:nameable": {},
             "minecraft:pushable": {
                 "is_pushable": false,
                 "is_pushable_by_piston": false
@@ -30,11 +27,7 @@
                 "value": 0.12
             },
             "minecraft:type_family": {
-                "family": [
-                    "ghost",
-                    "undead",
-                    "bell_ghost"
-                ]
+                "family": ["ghost", "undead", "bell_ghost"]
             },
             "minecraft:underwater_movement": {
                 "value": 0.15
@@ -63,9 +56,7 @@
                 "interval": 0,
                 "hover_height": [1, 8]
             },
-            "minecraft:physics": {
-            },
-            "netease:ban_bandwidth_optimization": {}
+            "minecraft:physics": {}
         },
         "description": {
             "identifier": "legend_forest:bell_ghost",

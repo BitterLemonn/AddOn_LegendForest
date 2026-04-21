@@ -77,7 +77,6 @@ class BiomeChangeService(BaseService):
 
     def changeBiome(self, biomeName):
         targetBiomeType = BiomesEnum.getBiomesType(biomeName)
-        print("targetBiomeType:", targetBiomeType)
         if targetBiomeType != self.biomeType:
             if self.nowBusiness is not None:
                 self.removeBusiness(self.nowBusiness)
@@ -169,8 +168,11 @@ class AbandonEffectBusiness(BaseBusiness):
             realTime = abs(math.fmod(comp.GetTime(), 24000) - 6000)
             skyLightColor = self.__smoothTransitionRGB((1, 1, 1), (0.05, 0.05, 0.05), realTime / 24000.0)
             skyColor = commonUtils.getRGBFloatByStr("#51170E")
-            targetColor = (skyColor[0] * skyLightColor[0], skyColor[1] * skyLightColor[1],
-                           skyColor[2] * skyLightColor[2])
+            targetColor = (
+                skyColor[0] * skyLightColor[0],
+                skyColor[1] * skyLightColor[1],
+                skyColor[2] * skyLightColor[2],
+            )
             self.lerpChangeSkyColor(targetColor, 1)
 
         isSprint = self.molangComp.EvalMolangExpression("q.is_sprinting")
@@ -190,8 +192,11 @@ class AbandonEffectBusiness(BaseBusiness):
         if nowTick <= tick and self.alive:
             r, g, b = self.__smoothTransitionRGB(nowColor[:3], targetColor[:3], nowTick / tick)
             comp.SetSkyColor((r, g, b, 1.0))
-            (compFactory.CreateGame(levelId)
-             .AddTimer(0.0, lambda: self.lerpChangeSkyColor(targetColor, tick, nowColor, nowTick + 1)))
+            (
+                compFactory.CreateGame(levelId).AddTimer(
+                    0.0, lambda: self.lerpChangeSkyColor(targetColor, tick, nowColor, nowTick + 1)
+                )
+            )
         elif self.alive and isStart:
             self.isStart = True
 
@@ -204,8 +209,9 @@ class AbandonEffectBusiness(BaseBusiness):
 
     def playFootprintParticle(self):
         if self.footprintParticle is None:
-            pid = self.particleComp.CreateBindEntityNew("legend_forest:abandon_footprint", playerId,
-                                                        bone_name="leftLeg", offset=(0, -0.5, 0))
+            pid = self.particleComp.CreateBindEntityNew(
+                "legend_forest:abandon_footprint", playerId, bone_name="leftLeg", offset=(0, -0.5, 0)
+            )
             self.pIdList.append(pid)
             self.footprintParticle = pid
 

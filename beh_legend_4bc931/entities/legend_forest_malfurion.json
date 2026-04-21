@@ -8,15 +8,15 @@
                     "triggers": [
                         {
                             "cause": "entity_explosion",
-                            "deals_damage": false
+                            "deals_damage": "no"
                         },
                         {
                             "cause": "fire",
-                            "deals_damage": false
+                            "deals_damage": "no"
                         },
                         {
                             "cause": "fire_tick",
-                            "deals_damage": false
+                            "deals_damage": "no"
                         },
                         {
                             "on_damage": {
@@ -31,7 +31,7 @@
                                 "target": "self",
                                 "event": "legend_forest:dying"
                             },
-                            "deals_damage": false,
+                            "deals_damage": "no",
                             "cause": "self_destruct"
                         }
                     ]
@@ -43,7 +43,7 @@
                     "triggers": [
                         {
                             "cause": "all",
-                            "deals_damage": false
+                            "deals_damage": "no"
                         }
                     ]
                 }
@@ -66,7 +66,7 @@
                     "value": 0.15
                 },
                 "minecraft:movement": {
-                    "value": 0.25
+                    "value": 0.35
                 },
                 "minecraft:behavior.ranged_attack": {
                     "priority": 0,
@@ -123,108 +123,6 @@
                     "speed_multiplier": 0.8
                 }
             },
-            // 召唤藤蔓
-            "legend_forest:summoner": {
-                "minecraft:behavior.summon_entity": {
-                    "priority": 0,
-                    "summon_choices": [
-                        {
-                            "cast_duration": 2.0,
-                            "cooldown_time": 3.6,
-                            "max_activation_range": 4.0,
-                            "min_activation_range": 0.0,
-                            "particle_color": "#FF664D59",
-                            "sequence": [
-                                {
-                                    "base_delay": 1.0,
-                                    "delay_per_summon": 0.0,
-                                    "entity_lifespan": 5.5,
-                                    "entity_type": "legend_forest:spawn_vine",
-                                    "num_entities_spawned": 4,
-                                    "shape": "circle",
-                                    "size": 1.5,
-                                    "sound_event": "prepare.attack",
-                                    "target": "self"
-                                },
-                                {
-                                    "base_delay": 1.0,
-                                    "delay_per_summon": 0.0,
-                                    "entity_lifespan": 5.5,
-                                    "entity_type": "legend_forest:spawn_vine",
-                                    "num_entities_spawned": 10,
-                                    "shape": "circle",
-                                    "size": 4.5,
-                                    "target": "self"
-                                }
-                            ],
-                            "start_sound_event": "cast.spell",
-                            "weight": 2
-                        },
-                        {
-                            "cast_duration": 2.0,
-                            "cooldown_time": 1.2,
-                            "max_activation_range": 4.0,
-                            "min_activation_range": 0.0,
-                            "particle_color": "#FF664D59",
-                            "sequence": [
-                                {
-                                    "base_delay": 1.0,
-                                    "delay_per_summon": 0.0,
-                                    "entity_lifespan": 1.1,
-                                    "entity_type": "minecraft:evocation_fang",
-                                    "num_entities_spawned": 6,
-                                    "shape": "circle",
-                                    "size": 1.5,
-                                    "sound_event": "prepare.attack",
-                                    "target": "self"
-                                },
-                                {
-                                    "base_delay": 1.0,
-                                    "delay_per_summon": 0.0,
-                                    "entity_lifespan": 1.1,
-                                    "entity_type": "minecraft:evocation_fang",
-                                    "num_entities_spawned": 12,
-                                    "shape": "circle",
-                                    "size": 4.5,
-                                    "target": "self"
-                                }
-                            ],
-                            "start_sound_event": "cast.spell",
-                            "weight": 2
-                        },
-                        {
-                            "cast_duration": 2.0,
-                            "cooldown_time": 2.4,
-                            "min_activation_range": 3.0,
-                            "particle_color": "#FF664D59",
-                            "sequence": [
-                                {
-                                    "base_delay": 1.0,
-                                    "delay_per_summon": 0.1,
-                                    "entity_lifespan": 5.5,
-                                    "entity_type": "legend_forest:spawn_vine",
-                                    "num_entities_spawned": 8,
-                                    "shape": "line",
-                                    "size": 14,
-                                    "target": "self"
-                                },
-                                {
-                                    "base_delay": 0.0,
-                                    "delay_per_summon": 0.2,
-                                    "entity_lifespan": 1.1,
-                                    "entity_type": "minecraft:evocation_fang",
-                                    "num_entities_spawned": 12,
-                                    "shape": "line",
-                                    "size": 14,
-                                    "target": "self"
-                                }
-                            ],
-                            "start_sound_event": "cast.spell",
-                            "weight": 3
-                        }
-                    ]
-                }
-            },
             // 死亡动画
             "legend_forest:dying": {
                 "minecraft:mark_variant": {
@@ -255,12 +153,9 @@
             "minecraft:behavior.hurt_by_target": {
                 "priority": 1
             },
-            "minecraft:can_climb": {
-            },
-            "minecraft:jump.static": {
-            },
-            "minecraft:movement.basic": {
-            },
+            "minecraft:can_climb": {},
+            "minecraft:jump.static": {},
+            "minecraft:movement.basic": {},
             "minecraft:navigation.walk": {
                 "avoid_water": true,
                 "can_open_doors": true,
@@ -273,8 +168,7 @@
             "minecraft:mark_variant": {
                 "value": 0
             },
-            "minecraft:persistent": {
-            },
+            "minecraft:persistent": {},
             "minecraft:boss": {
                 "hud_range": 55,
                 "name": "森茂祭司(化身)"
@@ -321,8 +215,7 @@
             "minecraft:knockback_resistance": {
                 "value": 0.65
             },
-            "minecraft:physics": {
-            },
+            "minecraft:physics": {},
             "minecraft:pushable": {
                 "is_pushable": true,
                 "is_pushable_by_piston": true
@@ -331,12 +224,7 @@
                 "value": 1.0
             },
             "minecraft:type_family": {
-                "family": [
-                    "mob",
-                    "monster",
-                    "boss",
-                    "malfurion"
-                ]
+                "family": ["mob", "monster", "boss", "malfurion"]
             },
             "minecraft:follow_range": {
                 "value": 48
@@ -372,7 +260,6 @@
                         "legend_forest:normal_sensor",
                         "legend_forest:not_attack",
                         "legend_forest:alive",
-                        "legend_forest:summoner",
                         "legend_forest:not_attack"
                     ]
                 }
@@ -380,14 +267,10 @@
             // 死亡状态
             "legend_forest:dead": {
                 "add": {
-                    "component_groups": [
-                        "legend_forest:dead"
-                    ]
+                    "component_groups": ["legend_forest:dead"]
                 },
                 "remove": {
-                    "component_groups": [
-                        "legend_forest:dying"
-                    ]
+                    "component_groups": ["legend_forest:dying"]
                 }
             },
             // 传送
@@ -428,53 +311,22 @@
                     }
                 ]
             },
-            // 召唤藤蔓
-            "legend_forest:summon_spell": {
-                "sequence": [
-                    {
-                        "set_property": {
-                            "legend_forest:on_attack": "true",
-                            "legend_forest:can_use_skill": "false"
-                        }
-                    },
-                    {
-                        "add": {
-                            "component_groups": [
-                                "legend_forest:summoner"
-                            ]
-                        },
-                        "remove": {
-                            "component_groups": [
-                                "legend_forest:not_attack"
-                            ]
-                        }
-                    }
-                ]
-            },
             // 技能开始
             "legend_forest:skill_start": {
                 "remove": {
-                    "component_groups": [
-                        "legend_forest:not_attack"
-                    ]
+                    "component_groups": ["legend_forest:not_attack"]
                 },
                 "add": {
-                    "component_groups": [
-                        "legend_forest:on_attack"
-                    ]
+                    "component_groups": ["legend_forest:on_attack"]
                 }
             },
             // 技能结束
             "legend_forest:skill_end": {
                 "remove": {
-                    "component_groups": [
-                        "legend_forest:on_attack"
-                    ]
+                    "component_groups": ["legend_forest:on_attack"]
                 },
                 "add": {
-                    "component_groups": [
-                        "legend_forest:not_attack"
-                    ]
+                    "component_groups": ["legend_forest:not_attack"]
                 }
             }
         }

@@ -48,8 +48,9 @@ class ServerService(BaseService):
             elif data.blockName == "legend_forest:bookshelf_golem_spawn_block":
                 spawnEntity = "legend_forest:bookshelf_golem"
             if spawnEntity:
+                pos = data.posX + 0.5, data.posY, data.posZ + 0.5
                 System.CreateEngineEntityByTypeStr(spawnEntity, pos, (0, 0), data.dimension)
-
+                
     @BaseService.Listen(Events.OnEntityInsideBlockServerEvent)
     def onEntityInsideBlockEvent(self, data):
         data = Events.OnEntityInsideBlockServerEvent(data)

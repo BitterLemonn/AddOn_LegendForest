@@ -1,5 +1,5 @@
 {
-    "format_version": "1.12.0",
+    "format_version": "1.21.90",
     "minecraft:entity": {
         "component_groups": {
             "legend_forest:hanging": {
@@ -31,11 +31,10 @@
             }
         },
         "components": {
-            "netease:ban_bandwidth_optimization": {},
             "minecraft:damage_sensor": {
                 "triggers": {
                     "cause": "all",
-                    "deals_damage": false
+                    "deals_damage": "no"
                 }
             },
             "minecraft:pushable": {

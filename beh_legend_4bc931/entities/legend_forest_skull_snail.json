@@ -22,7 +22,7 @@
                     "triggers": [
                         {
                             "cause": "all",
-                            "deals_damage": true,
+                            "deals_damage": "yes",
                             "on_damage": {
                                 "event": "legend_forest:hiding"
                             }
@@ -63,7 +63,7 @@
                     "triggers": [
                         {
                             "cause": "all",
-                            "deals_damage": true
+                            "deals_damage": "yes"
                         }
                     ]
                 },

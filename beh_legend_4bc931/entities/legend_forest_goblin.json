@@ -1,19 +1,17 @@
 {
-    "format_version": "1.12.0",
+    "format_version": "1.21.90",
     "minecraft:entity": {
         "component_groups": {
             "slow_shooter": {
                 "minecraft:shooter": {
                     "aux_val": 19,
-                    "def": "minecraft:arrow",
-                    "type": "Arrow"
+                    "def": "minecraft:arrow"
                 }
             },
             "normal_shooter": {
                 "minecraft:shooter": {
                     "aux_val": 0,
-                    "def": "minecraft:arrow",
-                    "type": "Arrow"
+                    "def": "minecraft:arrow"
                 }
             },
             "goblin_jockey": {
@@ -69,19 +67,12 @@
                     "reselect_targets": true
                 },
                 "minecraft:type_family": {
-                    "family": [
-                        "mob",
-                        "goblin",
-                        "goblin_hunter",
-                        "monster"
-                    ]
+                    "family": ["mob", "goblin", "goblin_hunter", "monster"]
                 }
             },
             "jockey_range_unit": {
                 "minecraft:behavior.charge_held_item": {
-                    "items": [
-                        "minecraft:bow"
-                    ],
+                    "items": ["minecraft:bow"],
                     "priority": 3
                 },
                 "minecraft:behavior.ranged_attack": {
@@ -120,8 +111,7 @@
                 },
                 "minecraft:shooter": {
                     "aux_val": 0,
-                    "def": "minecraft:arrow",
-                    "type": "Arrow"
+                    "def": "minecraft:arrow"
                 },
                 "minecraft:variant": {
                     "value": 0
@@ -174,11 +164,7 @@
             },
             "not_hunter": {
                 "minecraft:type_family": {
-                    "family": [
-                        "mob",
-                        "goblin",
-                        "monster"
-                    ]
+                    "family": ["mob", "goblin", "monster"]
                 }
             },
             "ranged_unit": {
@@ -186,9 +172,7 @@
                     "value": 24
                 },
                 "minecraft:behavior.charge_held_item": {
-                    "items": [
-                        "minecraft:bow"
-                    ],
+                    "items": ["minecraft:bow"],
                     "priority": 3
                 },
                 "minecraft:behavior.ranged_attack": {
@@ -369,12 +353,7 @@
                     ]
                 },
                 "minecraft:type_family": {
-                    "family": [
-                        "mob",
-                        "goblin",
-                        "goblin_shaman",
-                        "monster"
-                    ]
+                    "family": ["mob", "goblin", "goblin_shaman", "monster"]
                 },
                 "minecraft:behavior.avoid_mob_type": {
                     "priority": 1,
@@ -455,23 +434,27 @@
             },
             "shaman_checking_1": {
                 "minecraft:entity_sensor": {
-                    "event": "legend_forest:shaman_check_1_over",
-                    "event_filters": {
-                        "any_of": [
-                            {
-                                "subject": "other",
-                                "test": "is_family",
-                                "value": "goblin"
+                    "subsensors": [
+                        {
+                            "event": "legend_forest:shaman_check_1_over",
+                            "event_filters": {
+                                "any_of": [
+                                    {
+                                        "subject": "other",
+                                        "test": "is_family",
+                                        "value": "goblin"
+                                    },
+                                    {
+                                        "subject": "other",
+                                        "test": "is_family",
+                                        "value": "player"
+                                    }
+                                ]
                             },
-                            {
-                                "subject": "other",
-                                "test": "is_family",
-                                "value": "player"
-                            }
-                        ]
-                    },
-                    "minimum_count": 2,
-                    "sensor_range": 16
+                            "minimum_count": 2,
+                            "range": [16, 5]
+                        }
+                    ]
                 },
                 "minecraft:mark_variant": {
                     "value": 0
@@ -479,14 +462,18 @@
             },
             "shaman_checking_2": {
                 "minecraft:entity_sensor": {
-                    "event": "legend_forest:shaman_spelling",
-                    "event_filters": {
-                        "test": "has_target",
-                        "subject": "self"
-                    },
-                    "require_all": true,
-                    "minimum_count": 1,
-                    "sensor_range": 1
+                    "subsensors": [
+                        {
+                            "event": "legend_forest:shaman_spelling",
+                            "event_filters": {
+                                "test": "has_target",
+                                "subject": "self"
+                            },
+                            "require_all": true,
+                            "minimum_count": 1,
+                            "range": [1, 5]
+                        }
+                    ]
                 },
                 "minecraft:mark_variant": {
                     "value": 0
@@ -511,17 +498,20 @@
                 "despawn_from_distance": {}
             },
             "minecraft:damage_sensor": {
-                "on_damage": {
-                    "filters": {
-                        "test": "is_family",
-                        "subject": "other",
-                        "value": "goblin"
-                    },
-                    "deals_damage": false
-                }
+                "triggers": [
+                    {
+                        "on_damage": {
+                            "filters": {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "goblin"
+                            },
+                            "deals_damage": "no"
+                        }
+                    }
+                ]
             },
-            "minecraft:annotation.open_door": {
-            },
+            "minecraft:annotation.open_door": {},
             "minecraft:behavior.avoid_mob_type": {
                 "avoid_mob_sound": "retreat",
                 "entity_types": [
@@ -627,8 +617,7 @@
                 "suffocate_time": 0,
                 "total_supply": 15
             },
-            "minecraft:can_climb": {
-            },
+            "minecraft:can_climb": {},
             "minecraft:celebrate_hunt": {
                 "broadcast": true,
                 "celebrate_sound": "celebrate",
@@ -657,8 +646,7 @@
                 "height": 1.65,
                 "width": 0.65
             },
-            "minecraft:equip_item": {
-            },
+            "minecraft:equip_item": {},
             "minecraft:experience_reward": {
                 "on_death": "query.last_hit_by_player ? 1 + (query.equipment_count * Math.Random(1,2)) : 0"
             },
@@ -672,18 +660,15 @@
             "minecraft:inventory": {
                 "inventory_size": 2
             },
-            "minecraft:jump.static": {
-            },
+            "minecraft:jump.static": {},
             "minecraft:loot": {
                 "table": "loot_tables/legend_forest/entities/goblin.json"
             },
             "minecraft:movement": {
                 "value": 0.35
             },
-            "minecraft:movement.basic": {
-            },
-            "minecraft:nameable": {
-            },
+            "minecraft:movement.basic": {},
+            "minecraft:nameable": {},
             "minecraft:navigation.walk": {
                 "avoid_water": true,
                 "can_open_doors": true,
@@ -691,8 +676,7 @@
                 "can_path_over_water": false,
                 "can_walk": true
             },
-            "minecraft:physics": {
-            },
+            "minecraft:physics": {},
             "minecraft:pushable": {
                 "is_pushable": true,
                 "is_pushable_by_piston": true
@@ -1058,24 +1042,16 @@
                 "randomize": [
                     {
                         "add": {
-                            "component_groups": [
-                                "melee_unit",
-                                "hunter"
-                            ]
+                            "component_groups": ["melee_unit", "hunter"]
                         },
-                        "remove": {
-                        },
+                        "remove": {},
                         "weight": 45
                     },
                     {
                         "add": {
-                            "component_groups": [
-                                "melee_unit",
-                                "not_hunter"
-                            ]
+                            "component_groups": ["melee_unit", "not_hunter"]
                         },
-                        "remove": {
-                        },
+                        "remove": {},
                         "weight": 20
                     },
                     {
@@ -1086,8 +1062,7 @@
                                 "normal_shooter"
                             ]
                         },
-                        "remove": {
-                        },
+                        "remove": {},
                         "weight": 10
                     },
                     {
@@ -1098,8 +1073,7 @@
                                 "normal_shooter"
                             ]
                         },
-                        "remove": {
-                        },
+                        "remove": {},
                         "weight": 5
                     },
                     {
@@ -1116,55 +1090,38 @@
                         "shaman_cooldown"
                     ]
                 },
-                "remove": {
-                }
+                "remove": {}
             },
             "legend_forest:shaman_cooldown_end": {
                 "add": {
-                    "component_groups": [
-                        "shaman_checking_1"
-                    ]
+                    "component_groups": ["shaman_checking_1"]
                 },
                 "remove": {
-                    "component_groups": [
-                        "shaman_cooldown"
-                    ]
+                    "component_groups": ["shaman_cooldown"]
                 }
             },
             "legend_forest:shaman_check_1_over": {
                 "add": {
-                    "component_groups": [
-                        "shaman_checking_2"
-                    ]
+                    "component_groups": ["shaman_checking_2"]
                 },
                 "remove": {
-                    "component_groups": [
-                        "shaman_checking_1"
-                    ]
+                    "component_groups": ["shaman_checking_1"]
                 }
             },
             "legend_forest:shaman_cast_spell": {
                 "remove": {
-                    "component_groups": [
-                        "shaman_spelling"
-                    ]
+                    "component_groups": ["shaman_spelling"]
                 },
                 "add": {
-                    "component_groups": [
-                        "shaman_cooldown"
-                    ]
+                    "component_groups": ["shaman_cooldown"]
                 }
             },
             "legend_forest:shaman_spelling": {
                 "add": {
-                    "component_groups": [
-                        "shaman_spelling"
-                    ]
+                    "component_groups": ["shaman_spelling"]
                 },
                 "remove": {
-                    "component_groups": [
-                        "shaman_checking_2"
-                    ]
+                    "component_groups": ["shaman_checking_2"]
                 }
             },
             // 哥布林弓箭手切换箭矢
@@ -1197,14 +1154,10 @@
                     "legend_forest:now_shooter": "slow"
                 },
                 "add": {
-                    "component_groups": [
-                        "slow_shooter"
-                    ]
+                    "component_groups": ["slow_shooter"]
                 },
                 "remove": {
-                    "component_groups": [
-                        "normal_shooter"
-                    ]
+                    "component_groups": ["normal_shooter"]
                 }
             },
             "legend_forest:change_to_normal": {
@@ -1212,14 +1165,10 @@
                     "legend_forest:now_shooter": "normal"
                 },
                 "add": {
-                    "component_groups": [
-                        "normal_shooter"
-                    ]
+                    "component_groups": ["normal_shooter"]
                 },
                 "remove": {
-                    "component_groups": [
-                        "slow_shooter"
-                    ]
+                    "component_groups": ["slow_shooter"]
                 }
             }
         }
