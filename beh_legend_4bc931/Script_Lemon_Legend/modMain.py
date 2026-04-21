@@ -1,17 +1,22 @@
 # -*- coding: utf-8 -*-
 
-from .QuModLibs.QuMod import *
+from Script_Lemon_Legend.QuModLibs.QuMod import *
 
 MyMod = EasyMod()
 
 # server
-MyMod.Server("portal.server.server")
-MyMod.Server("items.server.server")
-MyMod.Server("enchantment.server.server")
-MyMod.Server("ores.server.server")
-MyMod.Server("blocks.server.server")
-MyMod.Server("terrain.server.server")
+MyMod.Server("server.portal.server")
+MyMod.Server("server.items.server")
+MyMod.Server("server.enchantment.server")
+MyMod.Server("server.ores.server")
+MyMod.Server("server.blocks.server")
+MyMod.Server("server.terrain.server")
+MyMod.Server("server.entity.malfurion.server")
+MyMod.Server("server.entity.vine.server")
+MyMod.Server("server.entity.goblinShaman.server")
 
 # client
-MyMod.Client("items.client.client")
-MyMod.Client("blocks.client.client")
+MyMod.Client("client.items.client")
+MyMod.Client("client.blocks.client")
+MyMod.Client("client.terrain.client")
+MyMod.Client("client.entity.client")

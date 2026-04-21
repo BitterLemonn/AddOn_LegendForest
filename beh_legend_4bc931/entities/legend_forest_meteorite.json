@@ -5,7 +5,7 @@
             "legend_forest:hanging": {
                 "minecraft:timer": {
                     "looping": false,
-                    "time": [1.2, 1.2],
+                    "time": [0.8, 0.8],
                     "time_down_event": {
                         "event": "legend_forest:falling"
                     }

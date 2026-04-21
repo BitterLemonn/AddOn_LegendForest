@@ -48,15 +48,6 @@
                     ]
                 }
             },
-            // 技术性组 - 技能cd
-            "legend_forest:skill_cd": {
-                "minecraft:timer": {
-                    "time": [0, 6],
-                    "time_down_event": {
-                        "event": "legend_forest:skill_cd_over"
-                    }
-                }
-            },
             // 技术性组 - 取消攻击组件 取消寻路
             "legend_forest:on_attack": {
                 "minecraft:underwater_movement": {
@@ -64,6 +55,9 @@
                 },
                 "minecraft:movement": {
                     "value": 0.0
+                },
+                "minecraft:behavior.look_at_target": {
+                    "priority": 0
                 }
             },
             // 技术性组 - 添加攻击组件用于寻路
@@ -82,10 +76,6 @@
                     "attack_interval_min": 0.0,
                     "attack_interval_max": 0.0,
                     "attack_radius": 16.0
-                },
-                "minecraft:behavior.look_at_player": {
-                    "look_distance": 8,
-                    "priority": 8
                 },
                 "minecraft:behavior.look_at_target": {
                     "priority": 3
@@ -131,65 +121,6 @@
                 "minecraft:behavior.random_stroll": {
                     "priority": 8,
                     "speed_multiplier": 0.8
-                },
-                "minecraft:environment_sensor": {
-                    "triggers": [
-                        {
-                            "filters": {
-                                "all_of": [
-                                    {
-                                        "test": "enum_property",
-                                        "domain": "legend_forest:on_attack",
-                                        "value": "false"
-                                    },
-                                    {
-                                        "test": "enum_property",
-                                        "domain": "legend_forest:on_teleport",
-                                        "value": "false"
-                                    },
-                                    {
-                                        "test": "has_target"
-                                    },
-                                    {
-                                        "test": "target_distance",
-                                        "operator": "<=",
-                                        "value": 20
-                                    },
-                                    {
-                                        "test": "target_distance",
-                                        "operator": ">",
-                                        "value": 4
-                                    }
-                                ]
-                            },
-                            "event": "legend_forest:random_attack"
-                        },
-                        {
-                            "filters": {
-                                "all_of": [
-                                    {
-                                        "test": "enum_property",
-                                        "domain": "legend_forest:on_attack",
-                                        "value": "false"
-                                    },
-                                    {
-                                        "test": "enum_property",
-                                        "domain": "legend_forest:on_teleport",
-                                        "value": "false"
-                                    },
-                                    {
-                                        "test": "has_target"
-                                    },
-                                    {
-                                        "test": "target_distance",
-                                        "operator": "<=",
-                                        "value": 4
-                                    }
-                                ]
-                            },
-                            "event": "legend_forest:random_attack_close_distance"
-                        }
-                    ]
                 }
             },
             // 召唤藤蔓
@@ -415,27 +346,7 @@
             "identifier": "legend_forest:malfurion",
             "is_experimental": false,
             "is_spawnable": true,
-            "is_summonable": true,
-            "properties": {
-                "legend_forest:on_attack": {
-                    "type": "enum",
-                    "values": ["false", "true"],
-                    "default": "false",
-                    "client_sync": true
-                },
-                "legend_forest:on_teleport": {
-                    "type": "enum",
-                    "values": ["false", "true"],
-                    "default": "false",
-                    "client_sync": true
-                },
-                "legend_forest:can_use_skill": {
-                    "type": "enum",
-                    "values": ["false", "true"],
-                    "default": "true",
-                    "client_sync": true
-                }
-            }
+            "is_summonable": true
         },
         "events": {
             "minecraft:entity_spawned": {
@@ -462,8 +373,7 @@
                         "legend_forest:not_attack",
                         "legend_forest:alive",
                         "legend_forest:summoner",
-                        "legend_forest:not_attack",
-                        "legend_forest:skill_cd"
+                        "legend_forest:not_attack"
                     ]
                 }
             },
@@ -480,167 +390,9 @@
                     ]
                 }
             },
-            // 选择召唤技能或不执行任何动作
-            "legend_forest:random_attack_close_distance": {
-                "randomize": [
-                    {
-                        "weight": 7,
-                        "trigger": {
-                            "event": "legend_forest:summon_spell"
-                        }
-                    },
-                    {
-                        "weight": 3,
-                        "trigger": {
-                            "event": "legend_forest:do_nothing"
-                        }
-                    }
-                ]
-            },
-            // 不做任何动作
-            "legend_forest:do_nothing": {
-                "set_property": {
-                    "legend_forest:on_attack": "true"
-                }
-            },
-            // 选择普通攻击或随机技能
-            "legend_forest:random_attack": {
-                "sequence": [
-                    {
-                        "set_property": {
-                            "legend_forest:on_attack": "true"
-                        }
-                    },
-                    {
-                        "filters": {
-                            "test": "enum_property",
-                            "domain": "legend_forest:can_use_skill",
-                            "value": "true"
-                        },
-                        "randomize": [
-                            {
-                                "weight": 7,
-                                "trigger": {
-                                    "event": "legend_forest:random_skill"
-                                }
-                            },
-                            {
-                                "weight": 3,
-                                "trigger": {
-                                    "event": "legend_forest:normal_attack"
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "filters": {
-                            "test": "enum_property",
-                            "domain": "legend_forest:can_use_skill",
-                            "value": "false"
-                        },
-                        "trigger": {
-                            "event": "legend_forest:normal_attack"
-                        }
-                    }
-                ]
-            },
-            // 触发随机技能
-            "legend_forest:random_skill": {
-                "sequence": [
-                    {
-                        "set_property": {
-                            "legend_forest:can_use_skill": "false"
-                        }
-                    },
-                    {
-                        "filters": {
-                            "all_of": [
-                                {
-                                    "test": "has_target"
-                                },
-                                {
-                                    "test": "target_distance",
-                                    "operator": "<=",
-                                    "value": 8
-                                }
-                            ]
-                        },
-                        "randomize": [
-                            {
-                                "weight": 2,
-                                "trigger": {
-                                    "event": "legend_forest:ice_spell"
-                                }
-                            },
-                            {
-                                "weight": 2,
-                                "trigger": {
-                                    "event": "legend_forest:fire_spell"
-                                }
-                            },
-                            {
-                                "weight": 6,
-                                "trigger": {
-                                    "event": "legend_forest:summon_spell"
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "filters": {
-                            "all_of": [
-                                {
-                                    "test": "has_target"
-                                },
-                                {
-                                    "test": "target_distance",
-                                    "operator": ">",
-                                    "value": 8
-                                }
-                            ]
-                        },
-                        "randomize": [
-                            {
-                                "weight": 6,
-                                "trigger": {
-                                    "event": "legend_forest:ice_spell"
-                                }
-                            },
-                            {
-                                "weight": 4,
-                                "trigger": {
-                                    "event": "legend_forest:fire_spell"
-                                }
-                            }
-                        ]
-                    }
-                ]
-            },
-            // 技能cd结束
-            "legend_forest:skill_cd_over": {
-                "sequence": [
-                    {
-                        "set_property": {
-                            "legend_forest:can_use_skill": "true"
-                        }
-                    },
-                    {
-                        "remove": {
-                            "component_groups": [
-                                "legend_forest:skill_cd"
-                            ]
-                        }
-                    }
-                ]
-            },
             // 传送
             "legend_forest:teleport": {
                 "sequence": [
-                    {
-                        "set_property": {
-                            "legend_forest:on_teleport": "true"
-                        }
-                    },
                     {
                         "add": {
                             "component_groups": [
@@ -660,11 +412,6 @@
             // 传送结束
             "legend_forest:teleport_end": {
                 "sequence": [
-                    {
-                        "set_property": {
-                            "legend_forest:on_teleport": "false"
-                        }
-                    },
                     {
                         "remove": {
                             "component_groups": [
@@ -704,101 +451,31 @@
                     }
                 ]
             },
-            // 冰锥法术
-            "legend_forest:ice_spell": {
-                "add": {
-                    "component_groups": [
-                        "legend_forest:on_attack"
-                    ]
-                },
+            // 技能开始
+            "legend_forest:skill_start": {
                 "remove": {
                     "component_groups": [
                         "legend_forest:not_attack"
                     ]
-                }
-            },
-            // 火球法术
-            "legend_forest:fire_spell": {
-                "add": {
-                    "component_groups": [
-                        "legend_forest:on_attack"
-                    ]
-                },
-                "remove": {
-                    "component_groups": [
-                        "legend_forest:not_attack"
-                    ]
-                }
-            },
-            // 普通攻击
-            "legend_forest:normal_attack": {
-                "add": {
-                    "component_groups": [
-                        "legend_forest:on_attack"
-                    ]
-                },
-                "remove": {
-                    "component_groups": [
-                        "legend_forest:not_attack"
-                    ]
-                }
-            },
-            // 攻击结束 - 可以使用下一次攻击
-            "legend_forest:attack_end": {
-                "sequence": [
-                    {
-                        "set_property": {
-                            "legend_forest:on_attack": "false"
-                        }
-                    },
-                    {
-                        "remove": {
-                            "component_groups": [
-                                "legend_forest:on_attack"
-                            ]
-                        },
-                        "add": {
-                            "component_groups": [
-                                "legend_forest:not_attack"
-                            ]
-                        }
-                    }
-                ]
-            },
-            // 普通攻击结束 - 可以移动
-            "legend_forest:normal_attack_end": {
-                "remove": {
-                    "component_groups": [
-                        "legend_forest:on_attack"
-                    ]
                 },
                 "add": {
                     "component_groups": [
-                        "legend_forest:not_attack"
+                        "legend_forest:on_attack"
                     ]
                 }
             },
             // 技能结束
             "legend_forest:skill_end": {
-                "sequence": [
-                    {
-                        "remove": {
-                            "component_groups": [
-                                "legend_forest:summoner"
-                            ]
-                        },
-                        "add": {
-                            "component_groups": [
-                                "legend_forest:skill_cd"
-                            ]
-                        }
-                    },
-                    {
-                        "trigger": {
-                            "event": "legend_forest:attack_end"
-                        }
-                    }
-                ]
+                "remove": {
+                    "component_groups": [
+                        "legend_forest:on_attack"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "legend_forest:not_attack"
+                    ]
+                }
             }
         }
     }
