@@ -1,11 +1,10 @@
 # -*- coding=utf-8 -*-
-import random
 
+from Script_Lemon_Legend.QuModLibs.Modules.EntityComps.Server import QBaseEntityComp
+from Script_Lemon_Legend.QuModLibs.Server import *
 from Script_Lemon_Legend.common.utils import commonUtils
 from Script_Lemon_Legend.server.entity.malfurion.malfurionSkillComp import MalfurionSkillComp
-from Script_Lemon_Legend.QuModLibs.Modules.EntityComps.Server import QBaseEntityComp
 from Script_Lemon_Legend.server.utils.serverUtils import compFactory, getDistance
-from Script_Lemon_Legend.QuModLibs.Server import *
 
 
 @QBaseEntityComp.regEntity(

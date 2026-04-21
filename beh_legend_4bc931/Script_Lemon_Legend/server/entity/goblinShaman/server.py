@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from Script_Lemon_Legend.QuModLibs.Server import *
 from Script_Lemon_Legend.QuModLibs.Modules.Services.Server import BaseService
+from Script_Lemon_Legend.QuModLibs.Server import *
 
 
 @BaseService.Init

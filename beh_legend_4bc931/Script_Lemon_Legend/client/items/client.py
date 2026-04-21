@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-from mod.common import minecraftEnum
-
 from Script_Lemon_Legend.QuModLibs.Client import *
 from Script_Lemon_Legend.QuModLibs.Modules.Services.Client import BaseService, QRequests
 from Script_Lemon_Legend.client.utils.clientUtils import compFactory
+from mod.common import minecraftEnum
 
 
 @BaseService.Init

@@ -1,14 +1,13 @@
 # -*- coding=utf-8 -*-
 import random
 
-from mod.common import minecraftEnum
-
 from Script_Lemon_Legend.QuModLibs.Modules.Services.Server import BaseService
 from Script_Lemon_Legend.QuModLibs.Server import *
 from Script_Lemon_Legend.common.data.doublePlantData import DoublePlantData
 from Script_Lemon_Legend.common.utils.logging import logging
 from Script_Lemon_Legend.server.utils import serverUtils
 from Script_Lemon_Legend.server.utils.serverUtils import compFactory
+from mod.common import minecraftEnum
 
 
 @BaseService.Init

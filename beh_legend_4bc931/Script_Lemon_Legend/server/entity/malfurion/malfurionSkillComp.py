@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
+from Script_Lemon_Legend.QuModLibs.Modules.EntityComps.Server import QBaseEntityComp, QEntityCompFlags
+from Script_Lemon_Legend.server.entity.attack.attackComp import AttackComp
 from Script_Lemon_Legend.server.entity.malfurion.skill.fireSpell import FireSpellSkill
 from Script_Lemon_Legend.server.entity.malfurion.skill.iceThorn import IceThornSkill
 from Script_Lemon_Legend.server.entity.malfurion.skill.normalAttack import NormalAttack
 from Script_Lemon_Legend.server.entity.malfurion.skill.teleport import TeleportSkill
 from Script_Lemon_Legend.server.entity.malfurion.skill.vineChain import VineChain
 from Script_Lemon_Legend.server.entity.malfurion.skill.vineCircle import VineCircle
-from Script_Lemon_Legend.server.entity.attack.attackComp import AttackComp
 from Script_Lemon_Legend.server.entity.stateMachine.skillManager import SkillManagerComp
-from Script_Lemon_Legend.QuModLibs.Modules.EntityComps.Server import QBaseEntityComp, QEntityCompFlags
 
 
 @QBaseEntityComp.regEntity("legend_forest:malfurion", )

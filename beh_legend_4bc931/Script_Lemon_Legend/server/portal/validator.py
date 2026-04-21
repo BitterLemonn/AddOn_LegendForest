@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from Script_Lemon_Legend.common.config.portalFrameConfig import PortalFrameConfig
-from Script_Lemon_Legend.server.utils import serverUtils
 from Script_Lemon_Legend.common.utils.commonUtils import FormatColorStr
+from Script_Lemon_Legend.server.utils import serverUtils
 from Script_Lemon_Legend.server.utils.serverUtils import compFactory
 
 

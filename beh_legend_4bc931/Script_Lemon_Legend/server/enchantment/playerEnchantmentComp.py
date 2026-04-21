@@ -1,13 +1,12 @@
 # -*- encoding: utf-8 -*-
 import json
 
-from mod.common import minecraftEnum
-
 from Script_Lemon_Legend.QuModLibs.Modules.EntityComps.Server import QBaseEntityComp
 from Script_Lemon_Legend.QuModLibs.Server import *
-from Script_Lemon_Legend.common.utils.logging import logging
 from Script_Lemon_Legend.common.utils.ItemFactory import ItemFactory
+from Script_Lemon_Legend.common.utils.logging import logging
 from Script_Lemon_Legend.server.utils.serverUtils import compFactory
+from mod.common import minecraftEnum
 
 
 class _EnchantData(object):

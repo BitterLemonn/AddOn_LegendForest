@@ -3,9 +3,9 @@ import math
 
 from Script_Lemon_Legend.QuModLibs.Client import *
 from Script_Lemon_Legend.QuModLibs.Modules.Services.Client import BaseService, BaseBusiness
+from Script_Lemon_Legend.client.utils.clientUtils import compFactory
 from Script_Lemon_Legend.common.data.biomeData import BiomesEnum
 from Script_Lemon_Legend.common.utils import commonUtils
-from Script_Lemon_Legend.client.utils.clientUtils import compFactory
 
 
 # @singleton

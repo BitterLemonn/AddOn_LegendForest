@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-from Script_Lemon_Legend.common.config.portalManager import PortalManager
 from Script_Lemon_Legend.QuModLibs.Server import levelId
-from Script_Lemon_Legend.common.utils.logging import logging
 from Script_Lemon_Legend.common.config.modConfig import PORTAL_DATA_KEY
 from Script_Lemon_Legend.common.config.portalFrameConfig import PortalFrameConfig
+from Script_Lemon_Legend.common.config.portalManager import PortalManager
+from Script_Lemon_Legend.common.utils.logging import logging
 from Script_Lemon_Legend.server.utils.serverUtils import compFactory
 
 

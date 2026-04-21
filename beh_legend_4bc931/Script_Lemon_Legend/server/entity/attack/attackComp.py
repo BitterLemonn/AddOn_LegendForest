@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 import math
 
-from Script_Lemon_Legend.common.utils import commonUtils
-
 from Script_Lemon_Legend.QuModLibs.Server import *
+from Script_Lemon_Legend.common.utils import commonUtils
 from Script_Lemon_Legend.server.utils import serverUtils
 from Script_Lemon_Legend.server.utils.serverUtils import compFactory
 

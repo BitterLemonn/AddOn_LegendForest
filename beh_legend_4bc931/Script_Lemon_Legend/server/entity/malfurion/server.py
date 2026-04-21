@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 import random
 
-from mod.common import minecraftEnum
 from Script_Lemon_Legend.QuModLibs.Modules.Services.Server import BaseService
 from Script_Lemon_Legend.QuModLibs.Server import *
 from Script_Lemon_Legend.common.config import modConfig
 from Script_Lemon_Legend.server.entity.malfurion.malfurionSkillComp import MalfurionSkillComp
 from Script_Lemon_Legend.server.utils import serverUtils
 from Script_Lemon_Legend.server.utils.serverUtils import compFactory
+from mod.common import minecraftEnum
 
 
 @BaseService.Init
