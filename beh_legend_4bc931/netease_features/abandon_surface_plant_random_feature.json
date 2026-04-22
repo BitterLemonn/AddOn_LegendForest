@@ -1,0 +1,14 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:weighted_random_feature": {
+        "description": {
+            "identifier": "legend_forest:abandon_surface_plant_random_feature"
+        },
+        "features": [
+            ["legend_forest:abandon_scorched_grass_feature", 30],
+            ["legend_forest:abandon_blood_bush_feature", 30],
+            ["legend_forest:abandon_sunshine_cactus_ball_feature", 3],
+            ["legend_forest:abandon_sunshine_cactus_seq_feature", 1]
+        ]
+    }
+}

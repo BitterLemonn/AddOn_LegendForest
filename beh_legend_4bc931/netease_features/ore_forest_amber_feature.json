@@ -2,12 +2,13 @@
     "format_version": "1.13.0",
     "minecraft:ore_feature": {
         "description": {
-            "identifier": "legend_forest:moon_stone_feature"
+            "identifier": "legend_forest:ore_forest_amber_feature"
         },
-        "count": 9,
+        "count": 5,
+        "discard_chance_on_air_exposure": 1.0,
         "replace_rules": [
             {
-                "places_block": "legend_forest:moon_stone",
+                "places_block": "legend_forest:amber_ore",
                 "may_replace": [
                     {
                         "name": "minecraft:stone"
@@ -15,7 +16,7 @@
                 ]
             },
             {
-                "places_block": "legend_forest:deepslate_moon_stone",
+                "places_block": "legend_forest:deepslate_amber_ore",
                 "may_replace": [
                     {
                         "name": "minecraft:deepslate"

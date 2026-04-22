@@ -1,0 +1,14 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:scatter_feature": {
+        "description": {
+            "identifier": "legend_forest:abandon_sharp_stone_direction_scatter_feature"
+        },
+        "places_feature": "legend_forest:abandon_sharp_stone_agg_feature",
+        "iterations": "t.step = t.step - 1; (t.step == 0) ? {t.step = t.temp_step; t.radius = t.radius - 1;}; return 1;",
+        "coordinate_eval_order": "zxy",
+        "x": "t.direction == 0 ? -1 : (t.direction == 1 ? 1 : 0)",
+        "y": 1,
+        "z": "t.direction == 2 ? -1 : (t.direction == 3 ? 1 : 0)"
+    }
+}

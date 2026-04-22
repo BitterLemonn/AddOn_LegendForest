@@ -1,0 +1,42 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:feature_rules": {
+        "conditions": {
+            "minecraft:biome_filter": [
+                {
+                    "all_of": [
+                        {
+                            "operator": "==",
+                            "test": "has_biome_tag",
+                            "value": "abandon_land"
+                        }
+                    ]
+                }
+            ],
+            "placement_pass": "surface_pass"
+        },
+        "description": {
+            "identifier": "legend_forest:abandon_sharp_stone_rule",
+            "places_feature": "legend_forest:abandon_sharp_stone_position_seq_feature"
+        },
+        "distribution": {
+            "coordinate_eval_order": "zxy",
+            "iterations": "t.radius = math.random_integer(2, 4); t.step=math.random_integer(2,5); t.temp_step = t.step; t.direction = math.random_integer(0,3); return math.random_integer(0, 16) == 0;",
+            "x": {
+                "distribution": "uniform",
+                "extent": [
+                    0,
+                    15
+                ]
+            },
+            "y": "q.heightmap(v.originx, v.originz)",
+            "z": {
+                "distribution": "uniform",
+                "extent": [
+                    0,
+                    15
+                ]
+            }
+        }
+    }
+}

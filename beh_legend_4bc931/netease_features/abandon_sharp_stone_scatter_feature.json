@@ -1,0 +1,14 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:scatter_feature": {
+        "description": {
+            "identifier": "legend_forest:abandon_sharp_stone_scatter_feature"
+        },
+        "places_feature": "legend_forest:abandon_sharp_stone_random_feature",
+        "iterations": "t.itx=-t.radius; t.itz=-t.radius; return math.pow(t.radius * 2, 2);",
+        "coordinate_eval_order": "zxy",
+        "x": "t.itx",
+        "y": "t.is_place ? 0 : -999",
+        "z": "t.is_place = (math.pow(t.itz,2) + math.pow(t.itx,2)) <= math.pow(t.radius, 2) ? 1 : 0;t.tempz = t.itz;t.itz = t.itz+1;(t.itz==t.radius)?{ t.itz=-t.radius; t.itx=t.itx+1;};return t.tempz;"
+    }
+}

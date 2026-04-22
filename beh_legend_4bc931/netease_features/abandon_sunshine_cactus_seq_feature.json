@@ -1,0 +1,13 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:sequence_feature": {
+        "description": {
+            "identifier": "legend_forest:abandon_sunshine_cactus_seq_feature"
+        },
+        "features": [
+            "legend_forest:abandon_sunshine_cactus_locate_feature",
+            "legend_forest:abandon_sunshine_cactus_locate_reset_feature",
+            "legend_forest:abandon_sunshine_cactus_growing_feature"
+        ]
+    }
+}

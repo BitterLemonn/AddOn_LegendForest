@@ -1,0 +1,42 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:feature_rules": {
+        "conditions": {
+            "minecraft:biome_filter": [
+                {
+                    "all_of": [
+                        {
+                            "operator": "==",
+                            "test": "has_biome_tag",
+                            "value": "abandon_land"
+                        }
+                    ]
+                }
+            ],
+            "placement_pass": "surface_pass"
+        },
+        "description": {
+            "identifier": "legend_forest:abandon_chain_ring_rule",
+            "places_feature": "legend_forest:abandon_chain_ring_next_seq_feature"
+        },
+        "distribution": {
+            "coordinate_eval_order": "zxy",
+            "iterations": "t.last_placement = math.random_integer(8,14); return math.abs(math.mod(v.originx, 16 * math.random(2,4))) < 16 && math.abs(math.mod(v.originz, 16  * math.random(2,4))) < 4 ? 1 : 0;",
+            "x": {
+                "distribution": "uniform",
+                "extent": [
+                    0,
+                    15
+                ]
+            },
+            "y": "q.heightmap(v.originx, v.originz) + math.random_integer(6, 20)",
+            "z": {
+                "distribution": "uniform",
+                "extent": [
+                    0,
+                    15
+                ]
+            }
+        }
+    }
+}

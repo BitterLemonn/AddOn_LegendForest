@@ -1,0 +1,19 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:aggregate_feature": {
+        "description": {
+            "identifier": "legend_forest:abandon_ash_block_replace_agg_feature"
+        },
+        "features": [
+            "legend_forest:abandon_ash_coal_ore_feature",
+            "legend_forest:abandon_ash_copper_ore_feature",
+            "legend_forest:abandon_ash_diamond_ore_feature",
+            "legend_forest:abandon_ash_emerald_ore_feature",
+            "legend_forest:abandon_ash_gold_ore_feature",
+            "legend_forest:abandon_ash_iron_ore_feature",
+            "legend_forest:abandon_ash_lapis_ore_feature",
+            "legend_forest:abandon_ash_redstone_ore_feature",
+            "legend_forest:abandon_ash_stone_feature"
+        ]
+    }
+}

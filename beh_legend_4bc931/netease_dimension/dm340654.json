@@ -11,11 +11,15 @@
                     "pool": [
                         {
                             "biome_type": "shimmer_forest",
-                            "weight": 8
+                            "weight": 4
+                        },
+                        {
+                            "biome_type": "abandon_land",
+                            "weight": 4
                         },
                         {
                             "biome_type": "ocean",
-                            "weight": 2
+                            "weight": 1
                         }
                     ]
                 },

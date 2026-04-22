@@ -1,0 +1,43 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:tree_feature": {
+        "description": {
+            "identifier": "legend_forest:abandon_petrified_tree_feature"
+        },
+        "base_block": ["legend_forest:scorched_dirt", "legend_forest:scorched_grass_block"],
+        "base_cluster": {
+            "num_clusters": 4,
+            "cluster_radius": 3,
+            "may_replace": ["minecraft:air"]
+        },
+        "cherry_trunk": {
+            "trunk_block": "legend_forest:log_petrified",
+            "trunk_height": {
+                "base": 8,
+                "variance": 4,
+                "scale": 1
+            },
+            "trunk_width": 1,
+            "width_scale": 1,
+            "branches": {
+                "tree_type_weights": {
+                    "one_branch": 3,
+                    "two_branches": 5,
+                    "two_branches_and_trunk": 2
+                }
+            }
+        },
+        "may_grow_through": [
+            "legend_forest:scorched_dirt",
+            "legend_forest:scorched_grass_block"
+        ],
+        "may_grow_on": [
+            "legend_forest:scorched_dirt",
+            "legend_forest:scorched_grass_block"
+        ],
+        "may_replace": [
+            "minecraft:air",
+            "legend_forest:scorched_grass_block"
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:scatter_feature": {
+        "description": {
+            "identifier": "legend_forest:abandon_chain_next_scatter_feature"
+        },
+        "places_feature": "legend_forest:abandon_chain_next_seq_feature",
+        "iterations": "t.last_placement = t.last_placement - 1; return t.last_placement != 0 ? 1 : 0;",
+        "x": 0,
+        "y": 8,
+        "z": 0
+    }
+}

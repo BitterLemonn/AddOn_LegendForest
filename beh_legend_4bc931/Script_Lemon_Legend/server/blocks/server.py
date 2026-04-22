@@ -38,6 +38,16 @@ class ServerService(BaseService):
         pos = data.posX, data.posY, data.posZ
         # 刷怪石产生怪物
         if data.blockName in modConfig.SPAWN_BLOCKS:
+            # 检测附近是否有玩家
+            comp = compFactory.CreateGame(levelId)
+            startPos = (data.posX - 24, data.posY - 24, data.posZ - 24)
+            endPos = (data.posX + 24, data.posY + 24, data.posZ + 24)
+            entityList = comp.GetEntitiesInSquareArea(None, startPos, endPos, data.dimension)
+            if not any(
+                serverApi.serverlevel.get_entity_identifier(entityId) == "minecraft:player" for entityId in entityList
+            ):
+                return
+
             comp = compFactory.CreateBlockInfo(levelId)
             comp.SetBlockNew(pos, {"name": "minecraft:air"}, dimensionId=data.dimension, updateNeighbors=False)
             spawnEntity = None
@@ -50,7 +60,7 @@ class ServerService(BaseService):
             if spawnEntity:
                 pos = data.posX + 0.5, data.posY, data.posZ + 0.5
                 System.CreateEngineEntityByTypeStr(spawnEntity, pos, (0, 0), data.dimension)
-                
+
     @BaseService.Listen(Events.OnEntityInsideBlockServerEvent)
     def onEntityInsideBlockEvent(self, data):
         data = Events.OnEntityInsideBlockServerEvent(data)

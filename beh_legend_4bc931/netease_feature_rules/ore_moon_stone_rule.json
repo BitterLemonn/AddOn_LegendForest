@@ -26,16 +26,12 @@
             "placement_pass": "underground_pass"
         },
         "description": {
-            "identifier": "legend_forest:moon_stone_lower_rule",
-            "places_feature": "legend_forest:moon_stone_feature"
+            "identifier": "legend_forest:ore_moon_stone_rule",
+            "places_feature": "legend_forest:ore_moon_stone_feature"
         },
         "distribution": {
             "coordinate_eval_order": "zxy",
-            "iterations": 1,
-            "scatter_chance": {
-                "numerator": 1,
-                "denominator": 2
-            },
+            "iterations": 4,
             "x": {
                 "distribution": "uniform",
                 "extent": [
@@ -44,10 +40,10 @@
                 ]
             },
             "y": {
-                "distribution": "uniform",
+                "distribution": "triangle",
                 "extent": [
                     -64,
-                    -48
+                    24
                 ]
             },
             "z": {

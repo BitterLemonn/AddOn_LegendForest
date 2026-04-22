@@ -1,0 +1,13 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:scatter_feature": {
+        "description": {
+            "identifier": "legend_forest:abandon_petrified_tree_scatter_feature"
+        },
+        "places_feature": "legend_forest:abandon_log_petrified_snap_feature",
+        "iterations": "t.radius = math.random(2,5); t.itx = -t.radius; t.itz = -t.radius - 1; return math.pow(t.radius * 2 + 1, 2);",
+        "x": "t.itx",
+        "y": "t.distance = math.round(math.sqrt(math.pow(t.itx, 2) + math.pow(t.itz, 2))); t.height = t.distance < t.radius ? (math.pow(t.radius, 2) - (math.pow(t.distance, 2) * 2) + math.random(-2, 2)) : -999; t.height = t.height > 0 ? (t.distance == 0 ? t.height + (t.radius / 2) : t.height) : 0; return 5;",
+        "z": "t.itz = t.itz + 1; t.itz > t.radius ? {t.itz = -t.radius - 1; t.itx = t.itx + 1;}; return t.itz;"
+    }
+}

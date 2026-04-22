@@ -8,9 +8,10 @@
 .github
 .vscode
 .clinerules
-ModAPI_API_Index.md
-ModAPI_Event_Index.md
+.claude
 world_icon.jpeg
 .qu_packages
-mcdkStart.py
 .mcdev.json
+.mcp.json
+*.exe
+*.zip

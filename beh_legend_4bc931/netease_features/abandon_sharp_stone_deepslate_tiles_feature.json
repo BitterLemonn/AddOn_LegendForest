@@ -1,0 +1,21 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:single_block_feature": {
+        "description": {
+            "identifier": "legend_forest:abandon_sharp_stone_deepslate_tiles_feature"
+        },
+        "places_block": "minecraft:deepslate_tiles",
+        "enforce_placement_rules": false,
+        "enforce_survivability_rules": false,
+        "may_replace": [
+            "minecraft:air",
+            "minecraft:stone",
+            "legend_forest:scorched_dirt",
+            "legend_forest:scorched_grass_block",
+            "legend_forest:blood_bush",
+            "legend_forest:log_petrified",
+            "legend_forest:sunshine_cactus_ball",
+            "legend_forest:sunshine_cactus"
+        ]
+    }
+}

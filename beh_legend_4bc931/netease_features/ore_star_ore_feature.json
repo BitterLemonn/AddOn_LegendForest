@@ -2,13 +2,13 @@
     "format_version": "1.13.0",
     "minecraft:ore_feature": {
         "description": {
-            "identifier": "legend_forest:forest_amber_feature"
+            "identifier": "legend_forest:ore_star_ore_feature"
         },
-        "count": 5,
-        "discard_chance_on_air_exposure": 1.0,
+        "count": 10,
+        "discard_chance_on_air_exposure": 0.2,
         "replace_rules": [
             {
-                "places_block": "legend_forest:amber_ore",
+                "places_block": "legend_forest:star_ore",
                 "may_replace": [
                     {
                         "name": "minecraft:stone"
@@ -16,7 +16,7 @@
                 ]
             },
             {
-                "places_block": "legend_forest:deepslate_amber_ore",
+                "places_block": "legend_forest:deepslate_star_ore",
                 "may_replace": [
                     {
                         "name": "minecraft:deepslate"

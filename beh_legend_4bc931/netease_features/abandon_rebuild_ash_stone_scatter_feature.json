@@ -1,0 +1,19 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:scatter_feature": {
+        "description": {
+            "identifier": "legend_forest:abandon_rebuild_ash_stone_scatter_feature"
+        },
+        "places_feature": "legend_forest:abandon_ash_block_replace_agg_feature",
+        "iterations": "t.height = q.heightmap(v.originx,v.originz); return (q.is_biome(v.originx, v.originz, 2) || q.is_biome(v.originx, v.originz, 17) || q.is_biome(v.originx, v.originz, 130)) ? t.height : 0;",
+        "x": 0,
+        "y": {
+            "distribution": "fixed_grid",
+            "extent": [
+                0,
+                "t.height"
+            ]
+        },
+        "z": 0
+    }
+}

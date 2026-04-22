@@ -1,0 +1,18 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:single_block_feature": {
+        "description": {
+            "identifier": "legend_forest:abandon_blood_bush_feature"
+        },
+        "places_block": "legend_forest:blood_bush",
+        "enforce_placement_rules": true,
+        "enforce_survivability_rules": true,
+        "may_replace": [
+            "minecraft:air"
+        ],
+        "may_place_on": [
+            "legend_forest:scorched_grass_block",
+            "legend_forest:scorched_dirt"
+        ]
+    }
+}

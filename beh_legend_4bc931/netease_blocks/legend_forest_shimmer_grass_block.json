@@ -20,18 +20,6 @@
             },
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 0.6
-            },
-            "minecraft:geometry": "minecraft:geometry.full_block",
-            "minecraft:material_instances": {
-                "*": {
-                    "texture": "legend_forest:shimmer_grass_block_side"
-                },
-                "up": {
-                    "texture": "legend_forest:shimmer_grass_block_top"
-                },
-                "down": {
-                    "texture": "dirt"
-                }
             }
         },
         "description": {

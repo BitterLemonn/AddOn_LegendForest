@@ -1,0 +1,15 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:single_block_feature": {
+        "description": {
+            "identifier": "legend_forest:abandon_ash_copper_ore_feature"
+        },
+        "places_block": "legend_forest:ash_copper_ore",
+        "enforce_placement_rules": false,
+        "enforce_survivability_rules": false,
+        "may_replace": [
+            "minecraft:copper_ore",
+            "minecraft:deepslate_copper_ore"
+        ]
+    }
+}

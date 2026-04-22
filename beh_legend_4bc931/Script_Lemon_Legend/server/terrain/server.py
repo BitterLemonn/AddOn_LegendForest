@@ -3,6 +3,7 @@ import random
 
 from Script_Lemon_Legend.QuModLibs.Modules.Services.Server import BaseService
 from Script_Lemon_Legend.QuModLibs.Server import *
+from Script_Lemon_Legend.common.config import modConfig
 from Script_Lemon_Legend.common.data.doublePlantData import DoublePlantData
 from Script_Lemon_Legend.common.utils.logging import logging
 from Script_Lemon_Legend.server.utils import serverUtils
@@ -16,6 +17,12 @@ class ServerService(BaseService):
     def __init__(self):
         BaseService.__init__(self)
         self.saplings = ["legend_forest:sapling_shimmer"]
+
+    @BaseService.Listen(Events.ServerSpawnMobEvent)
+    def onServerSpawnMobEvent(self, data):
+        args = Events.ServerSpawnMobEvent(data)
+        if args.dimensionId == modConfig.FOREST_DIMENSION_ID and args.realIdentifier.startswith("minecraft:"):
+            data["cancel"] = True
 
     @BaseService.Listen(Events.BlockNeighborChangedServerEvent)
     def onBlockNeighborChangedServerEvent(self, data):

@@ -1,0 +1,25 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:structure_template_feature": {
+        "description": {
+            "identifier": "legend_forest:abandon_chain_ring_feature"
+        },
+        "structure_name": "legend_forest:abandon_chain_ring",
+        "adjustment_radius": 0,
+        "facing_direction": "west",
+        "constraints": {
+            "block_intersection": {
+                "block_whitelist": [
+                    "minecraft:air",
+                    "legend_forest:scorched_dirt",
+                    "legend_forest:scorched_grass_block",
+                    "legend_forest:ash_stone",
+                    "legend_forest:scorched_grass",
+                    "legend_forest:blood_bush",
+                    "legend_forest:log_petrified",
+                    "legend_forest:sunshine_cactus_ball"
+                ]
+            }
+        }
+    }
+}

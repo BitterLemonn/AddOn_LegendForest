@@ -1,0 +1,13 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:weighted_random_feature": {
+        "description": {
+            "identifier": "legend_forest:abandon_sharp_stone_random_feature"
+        },
+        "features": [
+            ["legend_forest:abandon_sharp_stone_cracked_deepslate_tiles_feature", 2],
+            ["legend_forest:abandon_sharp_stone_deepslate_feature", 5],
+            ["legend_forest:abandon_sharp_stone_deepslate_tiles_feature", 3]
+        ]
+    }
+}

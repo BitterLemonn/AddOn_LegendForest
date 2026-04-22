@@ -1,0 +1,12 @@
+{
+    "format_version": "1.3.0",
+    "minecraft:sequence_feature": {
+        "description": {
+            "identifier": "legend_forest:abandon_chain_ring_next_seq_feature"
+        },
+        "features": [
+            "legend_forest:abandon_chain_ring_feature",
+            "legend_forest:abandon_chain_ring_next_scatter_feature"
+        ]
+    }
+}

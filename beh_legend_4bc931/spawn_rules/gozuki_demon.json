@@ -8,18 +8,13 @@
                         {
                             "operator": "==",
                             "test": "has_biome_tag",
-                            "value": "shimmer_forest"
+                            "value": "abandon_land"
                         }
                     ]
                 },
-                "minecraft:brightness_filter": {
-                    "max": 12,
-                    "min": 0,
-                    "adjust_for_weather": true
-                },
                 "minecraft:density_limit": {
-                    "surface": 8,
-                    "underground": 8
+                    "surface": 4,
+                    "underground": 4
                 },
                 "minecraft:difficulty_filter": {
                     "max": "hard",
@@ -27,23 +22,22 @@
                 },
                 "minecraft:distance_filter": {
                     "max": 32,
-                    "min": 8
+                    "min": 12
                 },
                 "minecraft:herd": {
                     "max_size": 4,
                     "min_size": 1
                 },
                 "minecraft:spawns_on_surface": {
-                },
-                "minecraft:spawns_underground": {
+
                 },
                 "minecraft:weight": {
-                    "default": 1000
+                    "default": 20
                 }
             }
         ],
         "description": {
-            "identifier": "legend_forest:goblin",
+            "identifier": "legend_forest:gozuki_demon",
             "population_control": "monster"
         }
     }
