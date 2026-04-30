@@ -6,7 +6,7 @@
         },
         "features": [
             "legend_forest:abandon_sharp_stone_stone_feature",
-            "legend_forest:abandon_sharp_stone_agg_feature"
+            "legend_forest:abandon_sharp_stone_scatter_feature"
         ]
     }
 }

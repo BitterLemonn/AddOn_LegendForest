@@ -5,34 +5,33 @@
             "minecraft:biome_filter": [
                 {
                     "all_of": [
-                        // 阻止生成
                         {
                             "operator": "==",
                             "test": "has_biome_tag",
-                            "value": "end"
+                            "value": "abandon_land"
                         }
                     ]
                 }
             ],
-            "placement_pass": "before_underground_pass"
+            "placement_pass": "first_pass"
         },
         "description": {
-            "identifier": "legend_forest:abandon_surface_scorched_grass_block_rule",
-            "places_feature": "legend_forest:abandon_rebuild_scorched_grass_block_scatter_feature"
+            "identifier": "legend_forest:abandon_cave_rule",
+            "places_feature": "legend_forest:abandon_cave_scatter_feature"
         },
         "distribution": {
             "coordinate_eval_order": "zxy",
-            "iterations": 256,
+            "iterations": "return math.random_integer(1,2);",
             "x": {
-                "distribution": "fixed_grid",
+                "distribution": "uniform",
                 "extent": [
                     0,
                     15
                 ]
             },
-            "y": 0,
+            "y": "q.heightmap(v.originx, v.originz) - math.random_integer(8, 40)",
             "z": {
-                "distribution": "fixed_grid",
+                "distribution": "uniform",
                 "extent": [
                     0,
                     15

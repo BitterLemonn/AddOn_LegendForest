@@ -5,10 +5,10 @@
             "identifier": "legend_forest:abandon_sharp_stone_scatter_feature"
         },
         "places_feature": "legend_forest:abandon_sharp_stone_random_feature",
-        "iterations": "t.itx=-t.radius; t.itz=-t.radius; return math.pow(t.radius * 2, 2);",
+        "iterations": "t.level=0;t.levels_at_r=0;t.cur_r=t.radius;t.ix=-t.radius;t.iz=-t.radius;t.dx=t.direction==0?-1:(t.direction==1?1:0);t.dz=t.direction==2?-1:(t.direction==3?1:0);return t.radius*t.temp_step*math.pow(2*t.radius,2);",
         "coordinate_eval_order": "zxy",
-        "x": "t.itx",
-        "y": "t.is_place ? 0 : -999",
-        "z": "t.is_place = (math.pow(t.itz,2) + math.pow(t.itx,2)) <= math.pow(t.radius, 2) ? 1 : 0;t.tempz = t.itz;t.itz = t.itz+1;(t.itz==t.radius)?{ t.itz=-t.radius; t.itx=t.itx+1;};return t.tempz;"
+        "x": "t.valid?(t.cx+t.level*t.dx):0",
+        "y": "t.valid?t.level:-999",
+        "z": "t.cx=t.ix;t.cz=t.iz;t.valid=(t.cur_r>0)&&((t.cx*t.cx+t.cz*t.cz)<=t.cur_r*t.cur_r);t.rz=t.valid?(t.cz+t.level*t.dz):0;t.iz=t.iz+1;t.eor=t.iz>t.cur_r;t.iz=t.eor?-t.cur_r:t.iz;t.ix=t.eor?t.ix+1:t.ix;t.eol=t.ix>t.cur_r;t.ix=t.eol?-t.cur_r:t.ix;t.level=t.eol?t.level+1:t.level;t.levels_at_r=t.eol?t.levels_at_r+1:t.levels_at_r;t.shrink=t.eol&&(t.levels_at_r>=t.temp_step);t.cur_r=t.shrink?t.cur_r-1:t.cur_r;t.levels_at_r=t.shrink?0:t.levels_at_r;t.ix=t.shrink?-t.cur_r:t.ix;t.iz=t.shrink?-t.cur_r:t.iz;return t.rz;"
     }
 }

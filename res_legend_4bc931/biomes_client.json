@@ -1,37 +1,25 @@
 {
     "biomes": {
-        "dm928808_forest": {
+        "shimmer_forest": {
             "water_surface_color": "#a58ae4",
             "water_fog_color": "#8065bf",
             "fog_color": "#47315e"
         },
-        "dm928808_forest_hills": {
+        "shimmer_forest_hills": {
             "water_surface_color": "#a58ae4",
             "water_fog_color": "#8065bf",
             "fog_color": "#47315e"
         },
-        "dm928808_flower_forest": {
+        "shimmer_forest_pond": {
             "water_surface_color": "#a58ae4",
             "water_fog_color": "#8065bf",
             "fog_color": "#47315e"
         },
-        "dm928808_desert": {
-            "water_surface_color": "#9e2612",
-            "remove_all_prior_fog": true,
-            "inherit_from_prior_fog": true,
-            "fog_identifier": "legend_forest:abandon_land_fog"
-        },
-        "dm928808_desert_mutated": {
-            "water_surface_color": "#9e2612",
-            "remove_all_prior_fog": true,
-            "inherit_from_prior_fog": true,
-            "fog_identifier": "legend_forest:abandon_land_fog"
-        },
-        "dm928808_desert_hills": {
+        "abandon_land": {
             "water_surface_color": "#9e2612",
             "remove_all_prior_fog": true,
             "inherit_from_prior_fog": true,
             "fog_identifier": "legend_forest:abandon_land_fog"
         }
     }
-}
+}   

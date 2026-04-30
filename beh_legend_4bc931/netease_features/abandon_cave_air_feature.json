@@ -1,0 +1,25 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:single_block_feature": {
+        "description": {
+            "identifier": "legend_forest:abandon_cave_air_feature"
+        },
+        "places_block": "minecraft:air",
+        "enforce_placement_rules": false,
+        "enforce_survivability_rules": false,
+        "may_replace": [
+            "minecraft:stone",
+            "minecraft:deepslate",
+            "minecraft:deepslate_tiles",
+            "minecraft:granite",
+            "minecraft:diorite",
+            "minecraft:andesite",
+            "minecraft:tuff",
+            "minecraft:gravel",
+            "minecraft:dirt",
+            "legend_forest:ash_stone",
+            "legend_forest:scorched_dirt",
+            "legend_forest:scorched_grass_block"
+        ]
+    }
+}

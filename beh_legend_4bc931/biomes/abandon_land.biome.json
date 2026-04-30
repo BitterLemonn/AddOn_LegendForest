@@ -13,21 +13,6 @@
                 "sea_material": "minecraft:water",
                 "top_material": "legend_forest:scorched_grass_block"
             },
-            // "netease:overworld_surface": {
-            //     "adjustments": [
-            //         {
-            //             "type": "fill",
-            //             "min_height": "t.caveScale = 40; t.baseHeight = 24; t.noiseAmplitude = 3; t.waveScale = 50; t.waveAmp = 4; t.detailScale = 18; t.detailAmp = 1.5; t.rat = math.max(0, q.noise(v.worldx/70, v.worldz/70)); t.caveTopNoise = q.noise(v.worldx/t.caveScale, v.worldz/t.caveScale) * t.noiseAmplitude; t.detailNoise = q.noise(v.worldx/t.detailScale, v.worldz/t.detailScale) * t.detailAmp; t.wavePart = math.sin(v.worldx/t.waveScale) * math.cos(v.worldz/t.waveScale) * t.waveAmp + math.cos(v.worldx/(t.waveScale*0.65)) * math.sin(v.worldz/(t.waveScale*0.65)) * (t.waveAmp*0.6); t.maxHeight = t.baseHeight + t.caveTopNoise + t.wavePart + t.detailNoise + t.rat * 1.8; t.equalChance = q.noise(v.worldx/30, v.worldz/30) > 0.7; return t.equalChance ? t.maxHeight : math.min(t.maxHeight, 26 + t.caveTopNoise + t.wavePart + t.detailNoise - t.rat * 1.5);",
-            //             "max_height": "t.caveScale = 40; t.baseHeight = 30; t.noiseAmplitude = 3; t.waveScale = 50; t.waveAmp = 4; t.detailScale = 18; t.detailAmp = 1.5; t.rat = math.max(0, q.noise(v.worldx/70, v.worldz/70)); t.caveTopNoise = q.noise(v.worldx/t.caveScale, v.worldz/t.caveScale) * t.noiseAmplitude; t.detailNoise = q.noise(v.worldx/t.detailScale, v.worldz/t.detailScale) * t.detailAmp; t.wavePart = math.sin(v.worldx/t.waveScale) * math.cos(v.worldz/t.waveScale) * t.waveAmp + math.cos(v.worldx/(t.waveScale*0.65)) * math.sin(v.worldz/(t.waveScale*0.65)) * (t.waveAmp*0.6); return t.baseHeight + t.caveTopNoise + t.wavePart + t.detailNoise + t.rat * 1.8;",
-            //             "pool": [
-            //                 {
-            //                     "fill_block": "minecraft:air",
-            //                     "weight": 1
-            //                 }
-            //             ]
-            //         }
-            //     ]
-            // },
             "abandon_land": {},
             "dm340654": {}
         },
