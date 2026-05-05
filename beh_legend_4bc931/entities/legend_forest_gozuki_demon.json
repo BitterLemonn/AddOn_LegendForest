@@ -2,12 +2,20 @@
     "format_version": "1.20.0",
     "minecraft:entity": {
         "component_groups": {
-            // 技术性组 - 移除攻击组件防止移动
             "legend_forest:on_attack": {},
-            // 技术性组 - 添加攻击组件 用于寻路
             "legend_forest:not_on_attack": {
                 "minecraft:attack": {
                     "damage": 0.0
+                },
+                "minecraft:behavior.melee_attack": {
+                    "priority": 2,
+                    "speed_multiplier": 1.15,
+                    "track_target": true,
+                    "require_complete_path": true,
+                    "cooldown_time": 9999,
+                    "reach_multiplier": 0.0,
+                    "x_max_rotation": 180,
+                    "y_max_head_rotation": 180
                 }
             },
             "legend_forest:shield_demon": {
@@ -30,6 +38,27 @@
                         }
                     ]
                 },
+                "minecraft:behavior.python_custom:shield_block": {
+                    "priority": 3,
+                    "module_path": "Script_Lemon_Legend.server.entity.gozuki.goals",
+                    "class_name": "ShieldBlockGoal",
+                    "arg_dict": {},
+                    "control_flags": ["move"]
+                },
+                "minecraft:behavior.python_custom:shield_bash": {
+                    "priority": 3,
+                    "module_path": "Script_Lemon_Legend.server.entity.gozuki.goals",
+                    "class_name": "ShieldBashGoal",
+                    "arg_dict": {},
+                    "control_flags": ["move"]
+                },
+                "minecraft:behavior.python_custom:charge_rush": {
+                    "priority": 1,
+                    "module_path": "Script_Lemon_Legend.server.entity.gozuki.goals",
+                    "class_name": "ChargeRushGoal",
+                    "arg_dict": { "is_axe": false },
+                    "control_flags": ["move", "look"]
+                },
                 "minecraft:environment_sensor": {
                     "triggers": [
                         {
@@ -41,7 +70,7 @@
                                     {
                                         "test": "target_distance",
                                         "operator": "<=",
-                                        "value": 3.5
+                                        "value": 0.5
                                     },
                                     {
                                         "test": "enum_property",
@@ -69,7 +98,7 @@
                                             {
                                                 "test": "target_distance",
                                                 "operator": ">=",
-                                                "value": 4.0
+                                                "value": 1.5
                                             }
                                         ]
                                     }
@@ -100,6 +129,27 @@
                         }
                     ]
                 },
+                "minecraft:behavior.python_custom:heavy_cleave": {
+                    "priority": 2,
+                    "module_path": "Script_Lemon_Legend.server.entity.gozuki.goals",
+                    "class_name": "AxeHeavyCleaveGoal",
+                    "arg_dict": {},
+                    "control_flags": ["move"]
+                },
+                "minecraft:behavior.python_custom:chop": {
+                    "priority": 3,
+                    "module_path": "Script_Lemon_Legend.server.entity.gozuki.goals",
+                    "class_name": "AxeChopGoal",
+                    "arg_dict": {},
+                    "control_flags": ["move"]
+                },
+                "minecraft:behavior.python_custom:charge_rush": {
+                    "priority": 1,
+                    "module_path": "Script_Lemon_Legend.server.entity.gozuki.goals",
+                    "class_name": "ChargeRushGoal",
+                    "arg_dict": { "is_axe": true },
+                    "control_flags": ["move", "look"]
+                },
                 "minecraft:environment_sensor": {
                     "triggers": [
                         {
@@ -111,7 +161,7 @@
                                     {
                                         "test": "target_distance",
                                         "operator": "<=",
-                                        "value": 3.5
+                                        "value": 0.5
                                     },
                                     {
                                         "test": "enum_property",
@@ -139,7 +189,7 @@
                                             {
                                                 "test": "target_distance",
                                                 "operator": ">=",
-                                                "value": 4.0
+                                                "value": 1.5
                                             }
                                         ]
                                     }
@@ -168,25 +218,14 @@
                 "max": 50.0,
                 "value": 50.0
             },
-            "minecraft:jump.static": {
-            },
-            "minecraft:nameable": {
-            },
+            "minecraft:jump.static": {},
+            "minecraft:nameable": {},
             "minecraft:pushable": {
                 "is_pushable": false,
                 "is_pushable_by_piston": false
             },
-            "minecraft:scale": {
-                "value": 1
-            },
             "minecraft:type_family": {
-                "family": [
-                    "undead",
-                    "monster",
-                    "mob",
-                    "gozuki_demon",
-                    "cow"
-                ]
+                "family": ["undead", "monster", "mob", "gozuki_demon", "cow"]
             },
             "minecraft:underwater_movement": {
                 "value": 0.15
@@ -194,8 +233,7 @@
             "minecraft:movement": {
                 "value": 0.25
             },
-            "minecraft:movement.basic": {
-            },
+            "minecraft:movement.basic": {},
             "minecraft:navigation.walk": {
                 "avoid_water": true,
                 "can_open_doors": false,
@@ -206,24 +244,14 @@
             "minecraft:behavior.float": {
                 "priority": 0
             },
-            "minecraft:behavior.look_at_player": {
-                "look_distance": 8,
-                "priority": 6
+            "minecraft:behavior.look_at_target": {
+                "priority": 1
             },
             "minecraft:behavior.random_stroll": {
                 "priority": 8,
                 "speed_multiplier": 0.8
             },
-            "minecraft:physics": {
-            },
-            "minecraft:behavior.melee_attack": {
-                "priority": 2,
-                "speed_multiplier": 1.15,
-                "cooldown_time": 9999,
-                "track_target": true,
-                "require_complete_path": true,
-                "reach_multiplier": 0.0
-            }
+            "minecraft:physics": {}
         },
         "description": {
             "identifier": "legend_forest:gozuki_demon",
@@ -270,14 +298,10 @@
             },
             "legend_forest:start_attack": {
                 "add": {
-                    "component_groups": [
-                        "legend_forest:on_attack"
-                    ]
+                    "component_groups": ["legend_forest:on_attack"]
                 },
                 "remove": {
-                    "component_groups": [
-                        "legend_forest:not_on_attack"
-                    ]
+                    "component_groups": ["legend_forest:not_on_attack"]
                 },
                 "set_property": {
                     "legend_forest:on_attack": "true"
@@ -285,14 +309,10 @@
             },
             "legend_forest:end_attack": {
                 "remove": {
-                    "component_groups": [
-                        "legend_forest:on_attack"
-                    ]
+                    "component_groups": ["legend_forest:on_attack"]
                 },
                 "add": {
-                    "component_groups": [
-                        "legend_forest:not_on_attack"
-                    ]
+                    "component_groups": ["legend_forest:not_on_attack"]
                 },
                 "set_property": {
                     "legend_forest:on_attack": "false"

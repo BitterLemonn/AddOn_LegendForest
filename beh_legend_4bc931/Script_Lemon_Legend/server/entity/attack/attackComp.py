@@ -14,8 +14,17 @@ class AttackComp(object):
 
         self.gameComp = compFactory.CreateGame(levelId)
 
-    def setSectorAttackArgs(self, delayTime, distance, angle, damageList, entityFilter=None, checkBlock=True,
-                            knocked=True, additionalMotion=None):
+    def setSectorAttackArgs(
+        self,
+        delayTime,
+        distance,
+        angle,
+        damageList,
+        entityFilter=None,
+        checkBlock=True,
+        knocked=True,
+        additionalMotion=None,
+    ):
         """
         释放扇形攻击
         :param delayTime: 延迟时间
@@ -34,9 +43,15 @@ class AttackComp(object):
         :type additionalMotion: AttackServer.AdditionalMotion
         """
 
-        self.gameComp.AddTimer(delayTime,
-                               lambda: self._onAttack(distance, angle, damageList, entityFilter, checkBlock, knocked,
-                                                      additionalMotion))
+        # # 攻击开始时立即面向目标，使动画方向正确
+        # targetId = compFactory.CreateAction(self._entityId).GetAttackTarget()
+        # if targetId and targetId != "-1":
+        #     serverUtils.setLookAt(self._entityId, targetId)
+
+        self.gameComp.AddTimer(
+            delayTime,
+            lambda: self._onAttack(distance, angle, damageList, entityFilter, checkBlock, knocked, additionalMotion),
+        )
 
     def setAoeAttackArgs(self, delayTime, radius, damageList, entityFilter=None, checkBlock=True, knocked=True):
         """
@@ -52,8 +67,9 @@ class AttackComp(object):
         :param checkBlock: 是否被方块阻挡
         :param knocked: 是否击退
         """
-        self.gameComp.AddTimer(delayTime,
-                               lambda: self._onAoeAttack(radius, damageList, entityFilter, checkBlock, knocked))
+        self.gameComp.AddTimer(
+            delayTime, lambda: self._onAoeAttack(radius, damageList, entityFilter, checkBlock, knocked)
+        )
 
     def setSectorProjectileAttackArgs(self, delayTime, targetId, angle, num, projectileName):
         """
@@ -69,8 +85,7 @@ class AttackComp(object):
         :param projectileName: 弹射物名称
         :type projectileName: str
         """
-        self.gameComp.AddTimer(delayTime,
-                               lambda: self._setStepSectorProjectile(targetId, angle, num, projectileName))
+        self.gameComp.AddTimer(delayTime, lambda: self._setStepSectorProjectile(targetId, angle, num, projectileName))
 
     def summonEntity(self, delayTime, entityName, pos, rot=(0, 0), isSnapToFloor=False, limit=10):
         """
@@ -88,11 +103,20 @@ class AttackComp(object):
         :param limit: 垂直搜索最大范围(仅在贴地时有效)
         :type limit: int
         """
-        self.gameComp.AddTimer(delayTime,
-                               lambda: self._summonEntity(entityName, pos, rot, isSnapToFloor, limit))
+        self.gameComp.AddTimer(delayTime, lambda: self._summonEntity(entityName, pos, rot, isSnapToFloor, limit))
 
-    def summonEntityCircle(self, delayTime, entityName, centerPos, radius, count=None, summonDelay=0.0, rot=(0, 0),
-                           isSnapToFloor=True, limit=10):
+    def summonEntityCircle(
+        self,
+        delayTime,
+        entityName,
+        centerPos,
+        radius,
+        count=None,
+        summonDelay=0.0,
+        rot=(0, 0),
+        isSnapToFloor=True,
+        limit=10,
+    ):
         """
         召唤实体 centerPos为中心，radius为半径的圆周上均匀分布
         :param delayTime: 延迟时间
@@ -134,13 +158,25 @@ class AttackComp(object):
                 pos = (x, centerPos[1], z)
 
                 # 使用默认参数捕获位置值
-                self.gameComp.AddTimer(summonDelay * i,
-                                       lambda p=pos: self._summonEntity(entityName, p, rot, isSnapToFloor, limit))
+                self.gameComp.AddTimer(
+                    summonDelay * i, lambda p=pos: self._summonEntity(entityName, p, rot, isSnapToFloor, limit)
+                )
 
         self.gameComp.AddTimer(delayTime, _summonEntityCircle)
 
-    def summonEntityLine(self, delayTime, entityName, startPos, endPos, summonDelay=0.0, count=5, rot=(0, 0),
-                         isSnapToFloor=True, limit=10, spacing=None):
+    def summonEntityLine(
+        self,
+        delayTime,
+        entityName,
+        startPos,
+        endPos,
+        summonDelay=0.0,
+        count=5,
+        rot=(0, 0),
+        isSnapToFloor=True,
+        limit=10,
+        spacing=None,
+    ):
         """
         召唤实体(线性分布)
         :param delayTime: 延迟时间
@@ -194,12 +230,15 @@ class AttackComp(object):
             for i in range(actualCount):
                 # 计算当前实体的位置偏移
                 offset = actualSpacing * i
-                pos = (startPos[0] + direction[0] * offset,
-                       startPos[1] + direction[1] * offset,
-                       startPos[2] + direction[2] * offset)
+                pos = (
+                    startPos[0] + direction[0] * offset,
+                    startPos[1] + direction[1] * offset,
+                    startPos[2] + direction[2] * offset,
+                )
 
-                self.gameComp.AddTimer(summonDelay * i,
-                                       lambda p=pos: self._summonEntity(entityName, p, rot, isSnapToFloor, limit))
+                self.gameComp.AddTimer(
+                    summonDelay * i, lambda p=pos: self._summonEntity(entityName, p, rot, isSnapToFloor, limit)
+                )
 
         self.gameComp.AddTimer(delayTime, _summonEntityLine)
 
@@ -213,17 +252,26 @@ class AttackComp(object):
             targetId = compFactory.CreateAction(self._entityId).GetAttackTarget()
             motion = commonUtils.unitVector(Entity(self._entityId).FootPos, Entity(targetId).FootPos)
             motion = (motion[0], 0.1, motion[2])
-        self.gameComp.AddTimer(delayTime,
-                               lambda: compFactory.CreateActorMotion(self._entityId).SetMotion(motion))
+        self.gameComp.AddTimer(delayTime, lambda: compFactory.CreateActorMotion(self._entityId).SetMotion(motion))
 
     def _onAttack(self, radius, angle, damageList, entityFilter, checkBlock, knocked, additionalMotion):
         if Entity(self._entityId).Health.Value > 0.1:
+            # 用攻击目标方向作为扇形中心，避免身体朝向未更新导致判定偏移
+            centerDir = None
+            targetId = compFactory.CreateAction(self._entityId).GetAttackTarget()
+            if targetId and targetId != "-1":
+                centerDir = commonUtils.unitVector(Entity(self._entityId).FootPos, Entity(targetId).FootPos)
+                # serverUtils.setLookAt(self._entityId, targetId)
+
             # 扇形攻击包含1格内的aoe攻击
             self._onAoeAttack(1, damageList, entityFilter, checkBlock, knocked, additionalMotion)
 
-            targetList = serverUtils.getEntityInSector(self._entityId, radius, angle, entityFilter)
-            targetList = [target for target in targetList if
-                          target != self._entityId and Entity(target).Identifier != "minecraft:item"]
+            targetList = serverUtils.getEntityInSector(self._entityId, radius, angle, entityFilter, centerDir)
+            targetList = [
+                target
+                for target in targetList
+                if target != self._entityId and Entity(target).Identifier != "minecraft:item"
+            ]
             knocked = False if additionalMotion is not None else knocked
             for target in targetList:
                 motionComp = compFactory.CreateActorMotion(target)
@@ -231,8 +279,11 @@ class AttackComp(object):
                 if additionalMotion is not None:
                     # 解析额外动量
                     unitVector = commonUtils.unitVector(Entity(self._entityId).Pos, Entity(target).Pos)
-                    targetMotion = (unitVector[0] * additionalMotion.backwardMotion, additionalMotion.upwardMotion,
-                                    unitVector[2] * additionalMotion.backwardMotion)
+                    targetMotion = (
+                        unitVector[0] * additionalMotion.backwardMotion,
+                        additionalMotion.upwardMotion,
+                        unitVector[2] * additionalMotion.backwardMotion,
+                    )
                     if Entity(target).Identifier == "minecraft:player":
                         motionComp.SetPlayerMotion(targetMotion)
                     else:
@@ -241,16 +292,22 @@ class AttackComp(object):
     def _onAoeAttack(self, radius, damageList, entityFilter, checkBlock, knocked, additionalMotion=None):
         if Entity(self._entityId).Health.Value > 0.1:
             targetList = serverUtils.getEntityAround(self._entityId, radius, entityFilter)
-            targetList = [target for target in targetList if
-                          target != self._entityId and Entity(target).Identifier != "minecraft:item"]
+            targetList = [
+                target
+                for target in targetList
+                if target != self._entityId and Entity(target).Identifier != "minecraft:item"
+            ]
             for target in targetList:
                 motionComp = compFactory.CreateActorMotion(target)
                 serverUtils.doHurt(self._entityId, damageList, target, checkBlock=checkBlock, knock=knocked)
                 if additionalMotion is not None:
                     # 解析额外动量
                     unitVector = commonUtils.unitVector(Entity(self._entityId).Pos, Entity(target).Pos)
-                    targetMotion = (unitVector[0] * additionalMotion.backwardMotion, additionalMotion.upwardMotion,
-                                    unitVector[2] * additionalMotion.backwardMotion)
+                    targetMotion = (
+                        unitVector[0] * additionalMotion.backwardMotion,
+                        additionalMotion.upwardMotion,
+                        unitVector[2] * additionalMotion.backwardMotion,
+                    )
                     if Entity(target).Identifier == "minecraft:player":
                         motionComp.SetPlayerMotion(targetMotion)
                     else:
@@ -280,7 +337,7 @@ class AttackComp(object):
             param = {
                 "position": (fromPos[0] + dire[0], fromPos[1] + dire[1], fromPos[2] + dire[2]),
                 "direction": dire,
-                "power": max(1.6, 0.1 * distance)
+                "power": max(1.6, 0.1 * distance),
             }
             comp = compFactory.CreateProjectile(levelId)
             comp.CreateProjectileEntity(self._entityId, projectileName, param)

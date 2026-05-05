@@ -7,7 +7,15 @@
                 "look_at_target": "animation.common.look_at_target",
                 "move": "animation.gozuki_demon.move",
                 "idle": "animation.gozuki_demon.idle",
-                "common_controller": "controller.animation.gozuki_demon.common"
+                "common_controller": "controller.animation.gozuki_demon.common",
+                "axe_attack0": "animation.gozuki_demon.axe.attack0",
+                "axe_attack1": "animation.gozuki_demon.axe.attack1",
+                "axe_attack_controller": "controller.animation.gozuki_demon.axe.attack",
+                "has_target": "animation.gozuki_demon.shield.has_target",
+                "block": "animation.gozuki_demon.shield.block",
+                "shield_attack": "animation.gozuki_demon.shield.attack",
+                "counter": "animation.gozuki_demon.shield.counter",
+                "shield_attack_controller": "controller.animation.gozuki_demon.shield.attack"
             },
             "geometry": {
                 "axe": "geometry.gozuki_demon.axe",
@@ -17,13 +25,13 @@
             "materials": {
                 "default": "entity_emissive_alpha"
             },
-            "render_controllers": [
-                "controller.render.gozuki_demon"
-            ],
+            "render_controllers": ["controller.render.gozuki_demon"],
             "scripts": {
                 "animate": [
                     "look_at_target",
-                    "common_controller"
+                    "common_controller",
+                    "axe_attack_controller",
+                    "shield_attack_controller"
                 ]
             },
             "spawn_egg": {

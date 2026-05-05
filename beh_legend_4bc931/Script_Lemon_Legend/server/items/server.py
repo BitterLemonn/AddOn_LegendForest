@@ -87,10 +87,8 @@ class BaseServerService(BaseService):
                             break
                     if curHealth:
                         newItem["userData"] = {"health": curHealth}
-                        print(newItem["userData"])
 
                     comp.SpawnItemToPlayerCarried(newItem, data.playerId)
-                    print(comp.GetPlayerItem(minecraftEnum.ItemPosType.CARRIED, 0, True))
 
     @BaseService.REG_API("items/server/disenchant")
     def onDisenchantBookUsed(self, data):

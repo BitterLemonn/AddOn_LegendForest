@@ -169,22 +169,23 @@ def getEntityAround(entityId, radius, entityFilter=None):
         entityFilter = {"test": "has_component", "value": "minecraft:health"}
 
     comp = compFactory.CreateGame(entityId)
-    return comp.GetEntitiesAround(entityId, int(radius), entityFilter)
+    return comp.GetEntitiesAround(entityId, int(math.ceil(radius)), entityFilter)
 
 
-def getEntityInSector(entityId, radius, angle, entityFilter=None):
+def getEntityInSector(entityId, radius, angle, entityFilter=None, centerDir=None):
     """
     获取指定实体视野扇形范围内的实体
     :param entityId: 生物id
     :param radius: 扇形半径
     :param angle: 扇形角度
     :param entityFilter: 过滤条件(默认为带有生命值组件的所有生物)
+    :param centerDir: 扇形中心方向(单位向量), 为None时使用实体朝向
     :return: 实体列表 type: list[str]
     """
     targetList = getEntityAround(entityId, radius, entityFilter)
     entityPos = Entity(entityId).FootPos
-    # 获取生物的朝向单位向量
-    sightDir = Entity(entityId).DirFromRot
+    # 使用传入方向或实体朝向
+    sightDir = centerDir if centerDir else Entity(entityId).DirFromRot
     result = []
     for target in targetList:
         if target == entityId:
