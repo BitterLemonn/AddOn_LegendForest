@@ -1,5 +1,5 @@
 {
-    "format_version": "1.14.0",
+    "format_version": "1.21.110",
     "minecraft:biome": {
         "components": {
             "minecraft:overworld_height": {
@@ -13,11 +13,12 @@
                 "sea_material": "minecraft:water",
                 "top_material": "legend_forest:scorched_grass_block"
             },
-            "abandon_land": {},
-            "dm340654": {}
+            "minecraft:tags": {
+                "tags": ["abandon_land", "dm340654"]
+            }
         },
         "description": {
-            "identifier": "abandon_land"
+            "identifier": "legend_forest:abandon_land"
         }
     }
 }

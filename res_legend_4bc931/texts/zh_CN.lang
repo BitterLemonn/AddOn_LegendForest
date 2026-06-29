@@ -162,6 +162,7 @@ tile.legend_forest:spawn_goblin_block.name=哥布林刷怪石
 tile.legend_forest:spawner_malfurion.name=森茂祭司刷怪笼
 tile.legend_forest:star_block.name=星尘块
 tile.legend_forest:star_ore.name=星粒矿石
+tile.legend_forest:star_pillar.name=星尘柱
 tile.legend_forest:stripped_log_shimmer.name=去皮微光原木
 tile.legend_forest:stripped_root_shimmer.name=去皮微光木
 tile.legend_forest:sunshine_cactus_ball.name=日濯仙人球

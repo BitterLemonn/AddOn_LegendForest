@@ -10,11 +10,11 @@
                     //在16*16的区域内将一些坐标点根据pool中的元素进行填充，weight可以改变该群系出现的比例
                     "pool": [
                         {
-                            "biome_type": "shimmer_forest",
+                            "biome_type": "legend_forest:shimmer_forest",
                             "weight": 4
                         },
                         {
-                            "biome_type": "abandon_land",
+                            "biome_type": "legend_forest:abandon_land",
                             "weight": 4
                         },
                         {
@@ -25,14 +25,14 @@
                 },
                 {
                     "type": "replace",
-                    "from_biome": "shimmer_forest",
-                    "to_biome": "shimmer_forest_pond",
+                    "from_biome": "legend_forest:shimmer_forest",
+                    "to_biome": "legend_forest:shimmer_forest_pond",
                     "percentage": 0.1
                 },
                 {
                     "type": "replace",
-                    "from_biome": "shimmer_forest",
-                    "to_biome": "shimmer_forest_hills",
+                    "from_biome": "legend_forest:shimmer_forest",
+                    "to_biome": "legend_forest:shimmer_forest_hills",
                     "percentage": 0.3
                 },
                 {
@@ -49,13 +49,13 @@
                 },
                 {
                     "type": "transition",
-                    "biome_a": "shimmer_forest",
+                    "biome_a": "legend_forest:shimmer_forest",
                     "biome_b": "ocean",
                     "biome_transition": "beach"
                 },
                 {
                     "type": "transition",
-                    "biome_a": "shimmer_forest_hills",
+                    "biome_a": "legend_forest:shimmer_forest_hills",
                     "biome_b": "ocean",
                     "biome_transition": "beach"
                 },

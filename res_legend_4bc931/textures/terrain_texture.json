@@ -249,6 +249,12 @@
         "legend_forest:star_ore": {
             "textures": "textures/blocks/star_ore"
         },
+        "legend_forest:star_pillar_side": {
+            "textures": "textures/blocks/star_pillar_side"
+        },
+        "legend_forest:star_pillar_top": {
+            "textures": "textures/blocks/star_pillar_top"
+        },
         "legend_forest:stripped_log_shimmer_side": {
             "textures": "textures/blocks/stripped_log_shimmer_side"
         },

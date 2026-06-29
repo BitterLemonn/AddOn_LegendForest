@@ -2,7 +2,7 @@
     "format_version": "1.21.70",
     "minecraft:client_biome": {
         "description": {
-            "identifier": "shimmer_forest"
+            "identifier": "legend_forest:shimmer_forest"
         },
         "components": {
             "minecraft:fog_appearance": {

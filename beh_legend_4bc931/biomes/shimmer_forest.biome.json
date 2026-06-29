@@ -1,11 +1,10 @@
 {
-    "format_version": "1.13.0",
+    "format_version": "1.21.110",
     "minecraft:biome": {
         "description": {
-            "identifier": "shimmer_forest"
+            "identifier": "legend_forest:shimmer_forest"
         },
         "components": {
-            "dm340654": {},
             "minecraft:overworld_height": {
                 "noise_type": "default"
             },
@@ -17,7 +16,9 @@
                 "sea_material": "minecraft:water",
                 "top_material": "legend_forest:shimmer_grass_block_check"
             },
-            "shimmer_forest": {}
+            "minecraft:tags": {
+                "tags": ["shimmer_forest", "dm340654"]
+            }
         }
     }
 }

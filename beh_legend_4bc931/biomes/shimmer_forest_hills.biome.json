@@ -1,8 +1,7 @@
 {
-    "format_version": "1.13.0",
+    "format_version": "1.21.110",
     "minecraft:biome": {
         "components": {
-            "dm340654": {},
             "minecraft:overworld_height": {
                 "noise_type": "default_mutated"
             },
@@ -14,11 +13,12 @@
                 "sea_material": "minecraft:water",
                 "top_material": "legend_forest:shimmer_grass_block_check"
             },
-            "shimmer_forest": {},
-            "shimmer_forest_hills": {}
+            "minecraft:tags": {
+                "tags": ["shimmer_forest", "shimmer_forest_hills", "dm340654"]
+            }
         },
         "description": {
-            "identifier": "shimmer_forest_hills"
+            "identifier": "legend_forest:shimmer_forest_hills"
         }
     }
 }
