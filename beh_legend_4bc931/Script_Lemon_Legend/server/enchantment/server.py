@@ -19,21 +19,19 @@ class EnchantmentServerService(BaseService):
         itemComp.GetUserDataInEvent("OnNewArmorExchangeServerEvent")
         itemComp.GetUserDataInEvent("OnCarriedNewItemChangedServerEvent")
 
-    @BaseService.Listen(Events.OnNewArmorExchangeServerEvent)
+    @BaseService.Listen("OnNewArmorExchangeServerEvent")
     def onNewArmorExchangeServerEvent(self, data):
-        data = Events.OnNewArmorExchangeServerEvent(data)
-        oldEnchantMentList = ItemFactory.fromDict(data.oldArmorDict).getAllEnchantments()
-        newEnchantMentList = ItemFactory.fromDict(data.newArmorDict).getAllEnchantments()
+        oldEnchantMentList = ItemFactory.fromDict(data["oldArmorDict"]).getAllEnchantments()
+        newEnchantMentList = ItemFactory.fromDict(data["newArmorDict"]).getAllEnchantments()
 
-        self.handleTakeOff(oldEnchantMentList, data.playerId)
-        self.handlePutOn(newEnchantMentList, data.playerId)
+        self.handleTakeOff(oldEnchantMentList, data["playerId"])
+        self.handlePutOn(newEnchantMentList, data["playerId"])
 
-    @BaseService.Listen(Events.MobDieEvent)
+    @BaseService.Listen("MobDieEvent")
     def onMobDieEvent(self, data):
-        data = Events.MobDieEvent(data)
-        if not Entity(data.attacker).IsPlayer:
+        if not Entity(data["attacker"]).IsPlayer:
             return
-        itemComp = compFactory.CreateItem(data.attacker)
+        itemComp = compFactory.CreateItem(data["attacker"])
         carriedItem = itemComp.GetPlayerItem(minecraftEnum.ItemPosType.CARRIED, 0, True)
         if not carriedItem:
             return
@@ -42,21 +40,20 @@ class EnchantmentServerService(BaseService):
             if enchantMent.get("modEnchant") == "legend_forest:soul_shield":
                 level = enchantMent.get("lvl", 0)
                 if random.random() < max(0.15 * level, 0.3):
-                    effectComp = compFactory.CreateEffect(data.attacker)
+                    effectComp = compFactory.CreateEffect(data["attacker"])
                     effectComp.AddEffectToEntity("absorption", 10, level - 1, True)
-                    x, y, z = Entity(data.id).Pos
+                    x, y, z = Entity(data["id"]).Pos
                     targetPos = (x, y + 1.5, z)
-                    serverUtils.createParticle("legend_forest:soul_shield", targetPos, data.attacker)
+                    serverUtils.createParticle("legend_forest:soul_shield", targetPos, data["attacker"])
                 break
 
-    @BaseService.Listen(Events.OnCarriedNewItemChangedServerEvent)
+    @BaseService.Listen("OnCarriedNewItemChangedServerEvent")
     def onCarriedNewItemChangedServerEvent(self, data):
-        data = Events.OnCarriedNewItemChangedServerEvent(data)
-        oldEnchantMentList = ItemFactory.fromDict(data.oldItemDict).getAllEnchantments()
-        newEnchantMentList = ItemFactory.fromDict(data.newItemDict).getAllEnchantments()
+        oldEnchantMentList = ItemFactory.fromDict(data["oldItemDict"]).getAllEnchantments()
+        newEnchantMentList = ItemFactory.fromDict(data["newItemDict"]).getAllEnchantments()
 
-        self.handlePutOnWithItem(newEnchantMentList, data.playerId, data.newItemDict)
-        self.handleTakeOffWithItem(oldEnchantMentList, data.playerId, data.oldItemDict)
+        self.handlePutOnWithItem(newEnchantMentList, data["playerId"], data["newItemDict"])
+        self.handleTakeOffWithItem(oldEnchantMentList, data["playerId"], data["oldItemDict"])
 
     @staticmethod
     def handleTakeOff(enchantMentList, playerId):

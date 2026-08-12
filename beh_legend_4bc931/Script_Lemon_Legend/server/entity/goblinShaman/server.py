@@ -8,7 +8,7 @@ class ShamanServerService(BaseService):
     def __init__(self):
         BaseService.__init__(self)
 
-    @BaseService.Listen(Events.EntityDefinitionsEventServerEvent)
+    @BaseService.Listen("EntityDefinitionsEventServerEvent")
     def EntityDefinitionsEventServerEvent(self, data):
         entityId = data['entityId']
         event = data['eventName']

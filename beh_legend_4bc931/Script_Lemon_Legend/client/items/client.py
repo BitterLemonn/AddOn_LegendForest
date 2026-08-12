@@ -13,7 +13,7 @@ class ItemClientService(BaseService):
         self.itemComp = compFactory.CreateItem(playerId)
         self.itemComp.GetUserDataInEvent("ClientItemTryUseEvent")
 
-    @BaseService.Listen(Events.ClientItemTryUseEvent)
+    @BaseService.Listen("ClientItemTryUseEvent")
     def onClientItemTryUseEvent(self, data):
         offItem = self.itemComp.GetPlayerItem(minecraftEnum.ItemPosType.OFFHAND, 0, True)
         if offItem and offItem["newItemName"] == "legend_forest:book_disenchanted":

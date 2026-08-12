@@ -14,7 +14,7 @@ class PortalManagerService(BaseService):
     def addInPortalBlockPlayer(self, playerId):
         """添加处于传送门方块内的玩家ID"""
         if len(self.inPortalBlockPlayers) == 0:
-            self.listenForEvent(Events.OnScriptTickServer, self.onScriptTick)
+            self.listenForEvent("OnScriptTickServer", self.onScriptTick)
         self.inPortalBlockPlayers[playerId] = 30
 
     def onScriptTick(self):
@@ -27,7 +27,7 @@ class PortalManagerService(BaseService):
         for playerId in expiredPlayers:
             del self.inPortalBlockPlayers[playerId]
         if len(self.inPortalBlockPlayers) == 0:
-            self.unListenForEvent(Events.OnScriptTickServer, self.onScriptTick)
+            self.unListenForEvent("OnScriptTickServer", self.onScriptTick)
 
     def changeDimension(self, playerId, fromDim, fromPos):
         """当玩家维度更改时 判断是否需要检查位置"""

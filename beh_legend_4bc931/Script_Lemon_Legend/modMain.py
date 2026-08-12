@@ -16,6 +16,7 @@ MyMod.Server("server.entity.malfurion.server")
 MyMod.Server("server.entity.vine.server")
 MyMod.Server("server.entity.goblinShaman.server")
 MyMod.Server("server.entity.gozuki.server")
+MyMod.Server("server.entity.bookshelf_golem.server")
 
 # client
 MyMod.Client("client.items.client")

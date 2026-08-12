@@ -9,6 +9,8 @@
                 "ground_attack_fast": "animation.bookshelf_golem.ground_attack_fast",
                 "ground_attack_hard": "animation.bookshelf_golem.ground_attack_hard",
                 "lit_attack": "animation.bookshelf_golem.lit_attack",
+                "leap_slam": "animation.bookshelf_golem.leap_slam",
+                "shockwave": "animation.bookshelf_golem.shockwave",
                 "death": "animation.bookshelf_golem.dead",
                 "sleep": "animation.bookshelf_golem.sleep",
                 "awake": "animation.bookshelf_golem.awake",

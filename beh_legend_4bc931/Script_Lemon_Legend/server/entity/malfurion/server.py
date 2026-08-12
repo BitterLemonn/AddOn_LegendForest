@@ -45,59 +45,56 @@ class MalfurionServerService(BaseService):
         ]
         self.iceBoltDamageList = [0, 2, 5, 7]
 
-    @BaseService.Listen(Events.EntityDefinitionsEventServerEvent)
+    @BaseService.Listen("EntityDefinitionsEventServerEvent")
     def onEntityDefinitionsEvent(self, data):
-        data = Events.EntityDefinitionsEventServerEvent(data)
-        if not Entity(data.entityId).Identifier == "legend_forest:malfurion":
+        if not Entity(data["entityId"]).Identifier == "legend_forest:malfurion":
             return
 
-        malComp = MalfurionSkillComp.getComp(data.entityId)  # type: MalfurionSkillComp
+        malComp = MalfurionSkillComp.getComp(data["entityId"])  # type: MalfurionSkillComp
         if not malComp:
             return
 
-    @BaseService.Listen(Events.HealthChangeBeforeServerEvent)
-    def onHealthChangeBeforeEvent(self, events):
-        data = Events.HealthChangeBeforeServerEvent(events)
-        entity = Entity(data.entityId)
-        if entity.Identifier == "legend_forest:malfurion" and data.to <= 0:
-            events["cancel"] = True
+    @BaseService.Listen("HealthChangeBeforeServerEvent")
+    def onHealthChangeBeforeEvent(self, data):
+        entity = Entity(data["entityId"])
+        if entity.Identifier == "legend_forest:malfurion" and data["to"] <= 0:
+            data["cancel"] = True
 
             def suicide():
-                extraComp = compFactory.CreateExtraData(data.entityId)
+                extraComp = compFactory.CreateExtraData(data["entityId"])
                 extraComp.SetExtraData("legend_forest:isDead", True)
                 entity.Health.SetValue(0.01)
-                eventComp = compFactory.CreateEntityEvent(data.entityId)
-                eventComp.TriggerCustomEvent(data.entityId, "legend_forest:dying")
+                eventComp = compFactory.CreateEntityEvent(data["entityId"])
+                eventComp.TriggerCustomEvent(data["entityId"], "legend_forest:dying")
 
             serverUtils.runNextTick(suicide)
 
-    @BaseService.Listen(Events.ProjectileDoHitEffectEvent)
+    @BaseService.Listen("ProjectileDoHitEffectEvent")
     def onProjectileDoHitEffectEvent(self, data):
-        data = Events.ProjectileDoHitEffectEvent(data)
-        if Entity(data.id).Identifier == "legend_forest:ice_bolt":
-            targetType = data.hitTargetType
+        if Entity(data["id"]).Identifier == "legend_forest:ice_bolt":
+            targetType = data["hitTargetType"]
 
             if targetType == "ENTITY":
-                entityId = data.targetId
+                entityId = data["targetId"]
                 if Entity(entityId).Identifier in modConfig.ICE_THORN_FILTER:
                     return
 
                 serverUtils.doHurt(
-                    data.srcId,
+                    data["srcId"],
                     self.iceBoltDamageList,
                     entityId,
                     cause=minecraftEnum.ActorDamageCause.Magic,
                     checkBlock=False,
                 )
                 return
-            blockPos = data.x, data.y, data.z
+            blockPos = data["x"], data["y"], data["z"]
 
             # 生成冰块 冰锥
-            dimensionId = Entity(data.id).Dm
+            dimensionId = Entity(data["id"]).Dm
             randomPosList = [(random.randint(-5, 5), 0, random.randint(-5, 5)) for _ in range(0, random.randint(1, 3))]
             for randomPos in randomPosList:
                 x, y, z = randomPos
-                targetPos = targetX, targetY, targetZ = data.x + x, data.y, data.z + z
+                targetPos = targetX, targetY, targetZ = data["x"] + x, data["y"], data["z"] + z
                 upPos = targetX, targetY + 1, targetZ
                 downPos = targetX, targetY - 1, targetZ
                 blockComp = compFactory.CreateBlockInfo(levelId)

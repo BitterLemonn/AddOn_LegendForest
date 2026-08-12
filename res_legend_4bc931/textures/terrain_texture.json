@@ -199,6 +199,9 @@
         "legend_forest:scorched_grass_block_top": {
             "textures": "textures/blocks/scorched_grass_top"
         },
+        "legend_forest:shimmer_bud": {
+            "textures": "textures/blocks/shimmer_bud"
+        },
         "legend_forest:shimmer_flower": {
             "textures": "textures/blocks/shimmer_flower"
         },
@@ -230,9 +233,6 @@
                     }
                 ]
             }
-        },
-        "legend_forest:shimmer_grass_short": {
-            "textures": "textures/blocks/shimmer_grass_short"
         },
         "legend_forest:shimmer_lily": {
             "textures": "textures/blocks/shimmer_lily"

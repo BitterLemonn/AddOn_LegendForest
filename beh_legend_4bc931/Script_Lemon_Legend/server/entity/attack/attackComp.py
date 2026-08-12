@@ -71,6 +71,21 @@ class AttackComp(object):
             delayTime, lambda: self._onAoeAttack(radius, damageList, entityFilter, checkBlock, knocked)
         )
 
+    def doSectorAttack(
+        self,
+        distance,
+        angle,
+        damageList,
+        entityFilter=None,
+        checkBlock=True,
+        knocked=True,
+        additionalMotion=None,
+    ):
+        self._onAttack(distance, angle, damageList, entityFilter, checkBlock, knocked, additionalMotion)
+
+    def doAoeAttack(self, radius, damageList, entityFilter=None, checkBlock=True, knocked=True):
+        self._onAoeAttack(radius, damageList, entityFilter, checkBlock, knocked)
+
     def setSectorProjectileAttackArgs(self, delayTime, targetId, angle, num, projectileName):
         """
         扇形范围内发射弹射物

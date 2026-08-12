@@ -2,14 +2,14 @@
     "format_version": "1.18.0",
     "netease:large_feature_pool": {
         "description": {
-            "identifier": "legend_forest:witch_tower_main"
+            "identifier": "legend_forest:magic_tower_main"
         },
         "end_pool": "minecraft:empty",
         "pool": [
             {
                 "match_terrain": true,
-                "path": "legend_forest:witch_tower",
-                "structure_name": "legend_forest:witch_tower_main",
+                "path": "legend_forest:magic_tower",
+                "structure_name": "legend_forest:magic_tower_main",
                 "weight": 1
             }
         ]

@@ -11,8 +11,8 @@
             270
         ],
         "description": {
-            "identifier": "legend_forest:witch_tower",
-            "place_pool": "legend_forest:witch_tower_main"
+            "identifier": "legend_forest:magic_tower",
+            "place_pool": "legend_forest:magic_tower_main"
         },
         "height": "variable.height",
         "ignore_fit_in_context": false,

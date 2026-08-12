@@ -232,7 +232,6 @@ def shakeCamera(playerList, intensity, duration, shakeType="positional"):
     :param shakeType: 抖动类型
     """
     for player in playerList:
-        Call(player, "OpenCameraShakeAfterReset", duration)
         comp = compFactory.CreateCommand(player)
         comp.SetCommand(
             "/camerashake add @s {intensity} {duration} {shakeType}".format(

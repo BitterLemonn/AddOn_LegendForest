@@ -11,7 +11,7 @@ class ClientService(BaseService):
     def __init__(self):
         BaseService.__init__(self)
 
-    @BaseService.Listen(Events.ClientItemUseOnEvent)
+    @BaseService.Listen("ClientItemUseOnEvent")
     def onClientItemUseOnEvent(self, data):
         blockName = data["blockName"]
         itemDict = data["itemDict"]

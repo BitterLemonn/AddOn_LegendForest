@@ -18,99 +18,96 @@ class ServerService(BaseService):
         BaseService.__init__(self)
         self.saplings = ["legend_forest:sapling_shimmer"]
 
-    @BaseService.Listen(Events.ServerSpawnMobEvent)
+    @BaseService.Listen("ServerSpawnMobEvent")
     def onServerSpawnMobEvent(self, data):
-        args = Events.ServerSpawnMobEvent(data)
-        if args.dimensionId == modConfig.FOREST_DIMENSION_ID and args.realIdentifier.startswith("minecraft:"):
+        if data["dimensionId"] == modConfig.FOREST_DIMENSION_ID and data["realIdentifier"].startswith("minecraft:"):
             data["cancel"] = True
 
-    @BaseService.Listen(Events.BlockNeighborChangedServerEvent)
+    @BaseService.Listen("BlockNeighborChangedServerEvent")
     def onBlockNeighborChangedServerEvent(self, data):
-        data = Events.BlockNeighborChangedServerEvent(data)
-        pos = data.posX, data.posY, data.posZ
+        pos = data["posX"], data["posY"], data["posZ"]
         # 微光草方块更新后改为tick
-        if data.blockName == "legend_forest:shimmer_grass_block_check":
+        if data["blockName"] == "legend_forest:shimmer_grass_block_check":
             comp = compFactory.CreateBlockInfo(levelId)
             comp.SetBlockNew(
-                pos, {"name": "legend_forest:shimmer_grass_block"}, dimensionId=data.dimensionId, updateNeighbors=False
+                pos, {"name": "legend_forest:shimmer_grass_block"}, dimensionId=data["dimensionId"], updateNeighbors=False
             )
         # 蜡烛花和微光芦苇破坏
         elif (
-            "legend_forest:candle_flower_bottom" == data.blockName
-            and "legend_forest:candle_flower_upper" == data.fromBlockName
+            "legend_forest:candle_flower_bottom" == data["blockName"]
+            and "legend_forest:candle_flower_upper" == data["fromBlockName"]
         ):
             comp = compFactory.CreateBlockInfo(levelId)
-            comp.SetBlockNew(pos, {"name": "minecraft:air"}, dimensionId=data.dimensionId, updateNeighbors=False)
+            comp.SetBlockNew(pos, {"name": "minecraft:air"}, dimensionId=data["dimensionId"], updateNeighbors=False)
         elif (
-            "legend_forest:reed_shimmer_bottom" == data.blockName
-            and "legend_forest:reed_shimmer_top" == data.fromBlockName
+            "legend_forest:reed_shimmer_bottom" == data["blockName"]
+            and "legend_forest:reed_shimmer_top" == data["fromBlockName"]
         ):
             comp = compFactory.CreateBlockInfo(levelId)
             comp.SetBlockNew(
-                pos, {"name": "minecraft:water", "aux": 0}, dimensionId=data.dimensionId, updateNeighbors=False
+                pos, {"name": "minecraft:water", "aux": 0}, dimensionId=data["dimensionId"], updateNeighbors=False
             )
 
-    @BaseService.Listen(Events.ServerItemUseOnEvent)
+    @BaseService.Listen("ServerItemUseOnEvent")
     def onServerItemUseOnEvent(self, data):
-        data = Events.ServerItemUseOnEvent(data)
-        pos = data.x, data.y, data.z
+        pos = data["x"], data["y"], data["z"]
 
         # 双层植物放置
-        if DoublePlantData.isDoublePlant(data.itemDict["newItemName"]):
-            plantData = DoublePlantData.getPlantData(data.itemDict["newItemName"])
+        if DoublePlantData.isDoublePlant(data["itemDict"]["newItemName"]):
+            plantData = DoublePlantData.getPlantData(data["itemDict"]["newItemName"])
             plantSoil = plantData.plantSoil
-            if data.blockName in plantSoil and data.face == minecraftEnum.Facing.Up:
-                if serverUtils.setCooldown(data.entityId):
-                    comp = compFactory.CreateBlockInfo(data.entityId)
-                    replacePos = (data.x, data.y + 1, data.z)
+            if data["blockName"] in plantSoil and data["face"] == minecraftEnum.Facing.Up:
+                if serverUtils.setCooldown(data["entityId"]):
+                    comp = compFactory.CreateBlockInfo(data["entityId"])
+                    replacePos = (data["x"], data["y"] + 1, data["z"])
                     upperPos = (replacePos[0], replacePos[1] + 1, replacePos[2])
                     # 判断是否可替换
-                    upperBlock = comp.GetBlockNew(upperPos, data.dimensionId)
-                    replaceBlock = comp.GetBlockNew(replacePos, data.dimensionId)
+                    upperBlock = comp.GetBlockNew(upperPos, data["dimensionId"])
+                    replaceBlock = comp.GetBlockNew(replacePos, data["dimensionId"])
                     if not upperBlock["name"] == "minecraft:air":
                         return
                     if (plantData.needWater and replaceBlock["name"] == "minecraft:water") or (
                         not plantData.needWater and replaceBlock["name"] == "minecraft:air"
                     ):
-                        serverUtils.decreaseItem(data.entityId, 1)
-                        serverUtils.swing(data.entityId)
-                        serverUtils.playSoundAll("dig.grass", pos, data.entityId)
+                        serverUtils.decreaseItem(data["entityId"], 1)
+                        serverUtils.swing(data["entityId"])
+                        serverUtils.playSoundAll("dig.grass", pos, data["entityId"])
                         comp.SetBlockNew(
                             replacePos,
                             {"name": plantData.plantBottom},
-                            dimensionId=data.dimensionId,
+                            dimensionId=data["dimensionId"],
                             updateNeighbors=False,
                         )
                         comp.SetBlockNew(
                             upperPos,
-                            {"name": data.itemDict["newItemName"]},
-                            dimensionId=data.dimensionId,
+                            {"name": data["itemDict"]["newItemName"]},
+                            dimensionId=data["dimensionId"],
                             updateNeighbors=False,
                         )
 
-        if data.blockName in self.saplings and "bone_meal" in data.itemDict["newItemName"]:
-            if serverUtils.setCooldown(data.entityId):
-                serverUtils.decreaseItem(data.entityId, 1)
-                serverUtils.swing(data.entityId)
-                serverUtils.playSoundAll("item.bone_meal.use", pos, data.entityId)
+        if data["blockName"] in self.saplings and "bone_meal" in data["itemDict"]["newItemName"]:
+            if serverUtils.setCooldown(data["entityId"]):
+                serverUtils.decreaseItem(data["entityId"], 1)
+                serverUtils.swing(data["entityId"])
+                serverUtils.playSoundAll("item.bone_meal.use", pos, data["entityId"])
                 serverUtils.playParticle("minecraft:crop_growth_emitter", pos)
                 randomNum = random.randint(0, 3)
                 if randomNum == 0:
-                    self.checkSaplingGrow(data.blockName, pos, data.dimensionId)
-        elif "legend_forest:shimmer_grass_block" in data.blockName and "bone_meal" in data.itemDict["newItemName"]:
-            if serverUtils.setCooldown(data.entityId):
-                comp = compFactory.CreateBlockInfo(data.entityId)
-                topPos = data.x, data.y + 1, data.z
-                topBlock = comp.GetBlockNew(topPos, data.dimensionId)
-                particlePos = (data.x + random.random(), data.y + 1, data.z + random.random())
+                    self.checkSaplingGrow(data["blockName"], pos, data["dimensionId"])
+        elif "legend_forest:shimmer_grass_block" in data["blockName"] and "bone_meal" in data["itemDict"]["newItemName"]:
+            if serverUtils.setCooldown(data["entityId"]):
+                comp = compFactory.CreateBlockInfo(data["entityId"])
+                topPos = data["x"], data["y"] + 1, data["z"]
+                topBlock = comp.GetBlockNew(topPos, data["dimensionId"])
+                particlePos = (data["x"] + random.random(), data["y"] + 1, data["z"] + random.random())
                 if topBlock["name"] == "minecraft:air":
-                    serverUtils.decreaseItem(data.entityId, 1)
-                    serverUtils.swing(data.entityId)
-                    serverUtils.playSoundAll("item.bone_meal.use", pos, data.entityId)
+                    serverUtils.decreaseItem(data["entityId"], 1)
+                    serverUtils.swing(data["entityId"])
+                    serverUtils.playSoundAll("item.bone_meal.use", pos, data["entityId"])
                     serverUtils.playParticle("minecraft:crop_growth_area_emitter", particlePos)
 
                     comp = compFactory.CreateGame(levelId)
-                    comp.PlaceFeature("legend_forest:shimmer_plants_scatter_feature", data.dimensionId, topPos)
+                    comp.PlaceFeature("legend_forest:shimmer_plants_scatter_feature", data["dimensionId"], topPos)
 
     @staticmethod
     def checkSaplingGrow(saplingName, pos, dimensionId):

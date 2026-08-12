@@ -29,7 +29,7 @@ class PortalServerService(BaseService):
         portalData = comp.GetExtraData(PORTAL_DATA_KEY)
         self.portalManager.deserialize(portalData)
 
-    @BaseService.Listen(Events.ItemUseOnAfterServerEvent)
+    @BaseService.Listen("ItemUseOnAfterServerEvent")
     def onItemUseOn(self, data):
         playerId = data.get("entityId")
         itemDict = data.get("itemDict")
@@ -50,7 +50,7 @@ class PortalServerService(BaseService):
 
             self.createPortalByFrame(playerId, pos, dimensionId)
 
-    @BaseService.Listen(Events.BlockNeighborChangedServerEvent)
+    @BaseService.Listen("BlockNeighborChangedServerEvent")
     def onBlockNeighborChangedServerEvent(self, data):
         """传送门方块邻接变化事件处理"""
         blockPos = (data["posX"], data["posY"], data["posZ"])
@@ -86,24 +86,22 @@ class PortalServerService(BaseService):
             portalService = PortalManagerService.access()  # type: PortalManagerService
             portalService.addInPortalBlockPlayer(entityId)
 
-    @BaseService.Listen(Events.DimensionChangeServerEvent)
+    @BaseService.Listen("DimensionChangeServerEvent")
     def onDimensionChangeServerEvent(self, data):
         """玩家传送维度时 检测是否使用传送门传送"""
-        data = Events.DimensionChangeServerEvent(data)
-        if Entity(data.playerId).IsPlayer and PortalFrameConfig.isChangeByLegendPortal(
-            data.fromDimensionId, data.toDimensionId
+        if Entity(data["playerId"]).IsPlayer and PortalFrameConfig.isChangeByLegendPortal(
+            data["fromDimensionId"], data["toDimensionId"]
         ):
-            fromPos = data.fromX, data.fromY, data.fromZ
+            fromPos = data["fromX"], data["fromY"], data["fromZ"]
             portalService = PortalManagerService.access()  # type: PortalManagerService
-            portalComp = portalService.changeDimension(data.playerId, data.fromDimensionId, fromPos)
+            portalComp = portalService.changeDimension(data["playerId"], data["fromDimensionId"], fromPos)
 
-    @BaseService.Listen(Events.DimensionChangeFinishServerEvent)
+    @BaseService.Listen("DimensionChangeFinishServerEvent")
     def onDimensionChangeFinish(self, data):
-        data = Events.DimensionChangeFinishServerEvent(data)
-        if PortalFrameConfig.isChangeByLegendPortal(data.fromDimensionId, data.toDimensionId):
+        if PortalFrameConfig.isChangeByLegendPortal(data["fromDimensionId"], data["toDimensionId"]):
             portalService = PortalManagerService.access()  # type: PortalManagerService
-            if portalService.isPlayerNeedCheckPos(data.playerId):
-                self.findAndTeleportToPortal(data.playerId, data.toDimensionId, data.toPos)
+            if portalService.isPlayerNeedCheckPos(data["playerId"]):
+                self.findAndTeleportToPortal(data["playerId"], data["toDimensionId"], data["toPos"])
                 return
 
     def findAndTeleportToPortal(self, playerId, toDimensionId, originPos):

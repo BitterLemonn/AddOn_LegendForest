@@ -15,24 +15,22 @@ class SpawnVineServerService(BaseService):
         self.gameComp = compFactory.CreateGame(levelId)
         self.damageList = [0, 3, 5, 8]
 
-    @BaseService.Listen(Events.OnMobHitMobServerEvent)
+    @BaseService.Listen("OnMobHitMobServerEvent")
     def onMobHitMobServerEvent(self, data):
-        data = Events.OnMobHitMobServerEvent(data)
-
         def onPlayerCanMove():
             playerComp.SetPlayerMovable(True)
 
         def onMobCanMove():
             aiComp.SetBlockControlAi(True, False)
 
-        dataComp = compFactory.CreateExtraData(data.mobId)
+        dataComp = compFactory.CreateExtraData(data["mobId"])
         isAttack = dataComp.GetExtraData("attack")
         isHurt = dataComp.GetExtraData("hurt")
 
         if not isAttack or isHurt:
             return
 
-        for entityId in data.hittedMobList:
+        for entityId in data["hittedMobList"]:
             if Entity(entityId).Identifier in frozenset(["legend_forest:spawn_vine", "legend_forest:malfurion"]):
                 continue
 
@@ -41,7 +39,7 @@ class SpawnVineServerService(BaseService):
 
             dataComp.SetExtraData("hurt", True)
             serverUtils.doHurt(
-                data.mobId, self.damageList, entityId, minecraftEnum.ActorDamageCause.Magic, False, False
+                data["mobId"], self.damageList, entityId, minecraftEnum.ActorDamageCause.Magic, False, False
             )
 
             if serverUtils.playerIsNotCreative(entityId):
@@ -54,18 +52,16 @@ class SpawnVineServerService(BaseService):
                 aiComp.SetBlockControlAi(False, False)
                 self.gameComp.AddTimer(2.0, lambda: onMobCanMove())
 
-    @BaseService.Listen(Events.AddEntityServerEvent)
+    @BaseService.Listen("AddEntityServerEvent")
     def onAddEntityServerEvent(self, data):
-        data = Events.AddEntityServerEvent(data)
-        if data.engineTypeStr == "legend_forest:spawn_vine":
-            entityId = data.id
+        if data["engineTypeStr"] == "legend_forest:spawn_vine":
+            entityId = data["id"]
             comp = compFactory.CreatePlayer(entityId)
             comp.OpenPlayerHitMobDetection()
             Call("*", "setShadowFalse", entityId)
 
-    @BaseService.Listen(Events.EntityDefinitionsEventServerEvent)
+    @BaseService.Listen("EntityDefinitionsEventServerEvent")
     def onEntityDefinitionsEventServerEvent(self, data):
-        data = Events.EntityDefinitionsEventServerEvent(data)
-        if Entity(data.entityId).Identifier == "legend_forest:spawn_vine" and data.eventName == "legend_forest:attack":
-            entityComp = compFactory.CreateExtraData(data.entityId)
+        if Entity(data["entityId"]).Identifier == "legend_forest:spawn_vine" and data["eventName"] == "legend_forest:attack":
+            entityComp = compFactory.CreateExtraData(data["entityId"])
             entityComp.SetExtraData("attack", True)

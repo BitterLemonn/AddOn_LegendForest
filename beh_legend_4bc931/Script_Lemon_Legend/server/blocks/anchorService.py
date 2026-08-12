@@ -29,7 +29,7 @@ class AnchorService(BaseService):
         compFactory.CreatePlayer(playerId).SetPlayerRespawnPos(spawnPos, dimensionId)
         compFactory.CreateMsg(playerId).NotifyOneMessage(playerId, commonUtils.FormatColorStr.GRAY + "已设置重生点")
 
-    @BaseService.Listen(Events.PlayerRespawnFinishServerEvent)
+    @BaseService.Listen("PlayerRespawnFinishServerEvent")
     def _onPlayerRespawnFinish(self, data):
         playerId = data["playerId"]
         if playerId in self.__anchorOverList:
@@ -51,7 +51,7 @@ class AnchorService(BaseService):
             if level <= 0:
                 self._removePlayerSpawnAnchor(playerId)
 
-    @BaseService.Listen(Events.ServerPlayerTryDestroyBlockEvent)
+    @BaseService.Listen("ServerPlayerTryDestroyBlockEvent")
     def _onPlayerTryDestroyBlock(self, data):
         pos = (data["x"], data["y"], data["z"])
         blockName = data["fullName"]

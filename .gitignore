@@ -16,3 +16,5 @@ world_icon.jpeg
 *.exe
 *.zip
 docs/
+.agents/
+CLAUDE.md
