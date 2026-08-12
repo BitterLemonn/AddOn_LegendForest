@@ -1,5 +1,5 @@
 {
-    "format_version": "1.21.110",
+    "format_version": "1.21.90",
     "minecraft:biome": {
         "description": {
             "identifier": "legend_forest:shimmer_forest"
@@ -8,13 +8,16 @@
             "minecraft:overworld_height": {
                 "noise_type": "default"
             },
-            "minecraft:surface_parameters": {
-                "foundation_material": "minecraft:stone",
-                "mid_material": "minecraft:dirt",
-                "sea_floor_depth": 0,
-                "sea_floor_material": "minecraft:dirt",
-                "sea_material": "minecraft:water",
-                "top_material": "legend_forest:shimmer_grass_block_check"
+            "minecraft:surface_builder": {
+                "builder": {
+                    "type": "minecraft:overworld",
+                    "foundation_material": "minecraft:stone",
+                    "mid_material": "minecraft:dirt",
+                    "sea_floor_depth": 0,
+                    "sea_floor_material": "minecraft:dirt",
+                    "sea_material": "minecraft:water",
+                    "top_material": "legend_forest:shimmer_grass_block_check"
+                }
             },
             "minecraft:tags": {
                 "tags": ["shimmer_forest", "dm340654"]

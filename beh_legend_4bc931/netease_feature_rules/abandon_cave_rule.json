@@ -13,7 +13,7 @@
                     ]
                 }
             ],
-            "placement_pass": "first_pass"
+            "placement_pass": "underground_pass"
         },
         "description": {
             "identifier": "legend_forest:abandon_cave_rule",
@@ -21,20 +21,30 @@
         },
         "distribution": {
             "coordinate_eval_order": "zxy",
-            "iterations": "return math.random_integer(1,2);",
+            "iterations": "t.main_len=math.random_integer(14,20);t.branch_len=math.random_integer(6,10);t.branch_at=math.random_integer(5,t.main_len-5);t.cx=0;t.cy=0;t.cz=0;t.heading=math.random_integer(0,7);t.run=math.random_integer(3,5);t.dy=math.random_integer(-1,1);t.hr=math.random_integer(1,2);t.vr=math.random_integer(1,2);t.bx=0;t.by=0;t.bz=0;t.bheading=0;return 1;",
+            "scatter_chance": {
+                "numerator": 1,
+                "denominator": 10
+            },
             "x": {
                 "distribution": "uniform",
                 "extent": [
                     0,
-                    15
+                    16
                 ]
             },
-            "y": "q.heightmap(v.originx, v.originz) - math.random_integer(8, 40)",
+            "y": {
+                "distribution": "uniform",
+                "extent": [
+                    8,
+                    56
+                ]
+            },
             "z": {
                 "distribution": "uniform",
                 "extent": [
                     0,
-                    15
+                    16
                 ]
             }
         }

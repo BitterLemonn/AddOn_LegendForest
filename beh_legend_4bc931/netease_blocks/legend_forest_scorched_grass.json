@@ -1,5 +1,5 @@
 {
-    "format_version": "1.21.0",
+    "format_version": "1.21.100",
     "minecraft:block": {
         "components": {
             "minecraft:flammable": {
@@ -8,61 +8,60 @@
             },
             "minecraft:loot": "",
             "minecraft:map_color": "#381310",
-            "netease:aabb": {
-                "clip": {
-                    "max": [
-                        0.9,
-                        0.8,
-                        0.9
-                    ],
-                    "min": [
-                        0.1,
-                        0.0,
-                        0.1
-                    ]
-                },
-                "collision": {
-                    "max": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "min": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ]
+            "minecraft:light_dampening": 0,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.0
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 0.0
+            },
+            "minecraft:geometry": "minecraft:geometry.cross",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "legend_forest:scorched_grass",
+                    "render_method": "alpha_test_single_sided",
+                    "ambient_occlusion": 0.0,
+                    "face_dimming": false
                 }
             },
-            "netease:block_random_offset": {
-                "x_scope": [
-                    0.0,
-                    0.5
-                ],
-                "z_scope": [
-                    0.0,
-                    0.5
-                ]
+            "minecraft:collision_box": false,
+            "minecraft:selection_box": {
+                "origin": [-7, 0, -7],
+                "size": [14, 13, 14]
             },
-            "netease:may_place_on": {
-                "block": [
-                    "minecraft:grass",
-                    "minecraft:dirt",
-                    "minecraft:podzol",
-                    "minecraft:farmland",
-                    "minecraft:mycelium",
-                    "minecraft:dirt_with_roots",
-                    "legend_forest:shimmer_grass_block",
-                    "legend_forest:shimmer_grass_block_check",
-                    "legend_forest:scorched_grass_block",
-                    "legend_forest:scorched_dirt"
+            "minecraft:random_offset": {
+                "x": {
+                    "steps": 0,
+                    "range": {"min": -4, "max": 4}
+                },
+                "z": {
+                    "steps": 0,
+                    "range": {"min": -4, "max": 4}
+                }
+            },
+            "minecraft:replaceable": {},
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": ["up"],
+                        "block_filter": [
+                            "minecraft:grass",
+                            "minecraft:dirt",
+                            "minecraft:podzol",
+                            "minecraft:farmland",
+                            "minecraft:mycelium",
+                            "minecraft:dirt_with_roots",
+                            "legend_forest:shimmer_grass_block",
+                            "legend_forest:shimmer_grass_block_check",
+                            "legend_forest:scorched_grass_block",
+                            "legend_forest:scorched_dirt"
+                        ]
+                    }
                 ]
             },
             "netease:pathable": {
                 "value": true
-            },
-            "netease:render_layer": {
-                "value": "alpha"
             },
             "netease:snow_recover_able": {
                 "value": true
@@ -72,14 +71,6 @@
             },
             "netease:water_destory": {
                 "value": true
-            },
-            "minecraft:light_dampening": 0,
-            "minecraft:light_emission": 0,
-            "minecraft:destructible_by_mining": {
-                "seconds_to_destroy": 0.0
-            },
-            "minecraft:destructible_by_explosion": {
-                "explosion_resistance": 0.0
             }
         },
         "description": {

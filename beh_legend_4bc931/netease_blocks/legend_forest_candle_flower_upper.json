@@ -1,5 +1,5 @@
 {
-    "format_version": "1.21.0",
+    "format_version": "1.21.100",
     "minecraft:block": {
         "components": {
             "minecraft:flammable": {
@@ -7,35 +7,29 @@
                 "destroy_chance_modifier": 100
             },
             "minecraft:map_color": "#a4731d",
-            "netease:aabb": {
-                "clip": {
-                    "max": [
-                        0.9,
-                        0.9,
-                        0.9
-                    ],
-                    "min": [
-                        0.1,
-                        -1.0,
-                        0.1
-                    ]
-                },
-                "collision": {
-                    "max": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "min": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ]
+            "minecraft:light_dampening": 0,
+            "minecraft:light_emission": 12,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.0
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 0.0
+            },
+            "minecraft:geometry": "minecraft:geometry.cross",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "legend_forest:candle_flower_upper",
+                    "render_method": "alpha_test_single_sided",
+                    "ambient_occlusion": 0.0,
+                    "face_dimming": false
                 }
             },
-            "netease:may_place_on": {
-                "block": [
-                    "legend_forest:candle_flower_bottom"
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": ["up"],
+                        "block_filter": ["legend_forest:candle_flower_bottom"]
+                    }
                 ]
             },
             "netease:neighborchanged_sendto_script": {
@@ -48,9 +42,6 @@
                 "enable": true,
                 "tick_to_script": true
             },
-            "netease:render_layer": {
-                "value": "alpha"
-            },
             "netease:snow_recover_able": {
                 "value": true
             },
@@ -60,13 +51,15 @@
             "netease:water_destory": {
                 "value": true
             },
-            "minecraft:light_dampening": 0,
-            "minecraft:light_emission": 12,
-            "minecraft:destructible_by_mining": {
-                "seconds_to_destroy": 0.0
-            },
-            "minecraft:destructible_by_explosion": {
-                "explosion_resistance": 0.0
+            "netease:aabb": {
+                "clip": {
+                    "max": [0.9, 0.9, 0.9],
+                    "min": [0.1, -1.0, 0.1]
+                },
+                "collision": {
+                    "max": [0.0, 0.0, 0.0],
+                    "min": [0.0, 0.0, 0.0]
+                }
             }
         },
         "description": {

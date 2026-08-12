@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.0",
+    "format_version": "1.21.100",
     "minecraft:entity": {
         "component_groups": {
             // 技术性组 - 移除攻击组件防止移动
@@ -26,15 +26,6 @@
                 "minecraft:behavior.look_at_target": {
                     "look_distance": 8,
                     "priority": 4
-                }
-            },
-            // 技术性组 - 添加地面攻击冷却
-            "legend_forest:ground_attack_cd": {
-                "minecraft:timer": {
-                    "time": [3, 10],
-                    "time_down_event": {
-                        "event": "legend_forest:ground_attack_cd_over"
-                    }
                 }
             },
             // 未觉醒状态
@@ -80,7 +71,7 @@
                 "minecraft:damage_sensor": {
                     "triggers": [
                         {
-                            "deals_damage": "no",
+                            "deals_damage": "no_but_side_effects_apply",
                             "cause": "all",
                             "on_damage": {
                                 "event": "legend_forest:on_damage_not_awake"
@@ -118,7 +109,7 @@
                 "minecraft:damage_sensor": {
                     "triggers": [
                         {
-                            "deals_damage": "no",
+                            "deals_damage": "no_but_side_effects_apply",
                             "cause": "all"
                         }
                     ]
@@ -153,60 +144,6 @@
                                 "target": "self",
                                 "event": "legend_forest:die"
                             }
-                        }
-                    ]
-                },
-                "minecraft:environment_sensor": {
-                    "triggers": [
-                        {
-                            "filters": {
-                                "all_of": [
-                                    {
-                                        "test": "has_target"
-                                    },
-                                    {
-                                        "test": "target_distance",
-                                        "operator": "<=",
-                                        "value": 6.0
-                                    },
-                                    {
-                                        "test": "target_distance",
-                                        "operator": ">",
-                                        "value": 3.5
-                                    },
-                                    {
-                                        "test": "enum_property",
-                                        "domain": "legend_forest:on_attack",
-                                        "value": "false"
-                                    },
-                                    {
-                                        "test": "enum_property",
-                                        "domain": "legend_forest:can_use_ground_attack",
-                                        "value": "true"
-                                    }
-                                ]
-                            },
-                            "event": "legend_forest:ground_attack"
-                        },
-                        {
-                            "filters": {
-                                "all_of": [
-                                    {
-                                        "test": "has_target"
-                                    },
-                                    {
-                                        "test": "target_distance",
-                                        "operator": "<=",
-                                        "value": 3.5
-                                    },
-                                    {
-                                        "test": "enum_property",
-                                        "domain": "legend_forest:on_attack",
-                                        "value": "false"
-                                    }
-                                ]
-                            },
-                            "event": "legend_forest:random_choose_attack"
                         }
                     ]
                 },
@@ -260,7 +197,7 @@
                 },
                 "minecraft:timer": {
                     "time": 2.1,
-                    "looping": true,
+                    "looping": false,
                     "time_down_event": {
                         "event": "legend_forest:dead"
                     }
@@ -360,21 +297,7 @@
             "identifier": "legend_forest:bookshelf_golem",
             "is_experimental": false,
             "is_spawnable": true,
-            "is_summonable": true,
-            "properties": {
-                "legend_forest:on_attack": {
-                    "type": "enum",
-                    "values": ["false", "true"],
-                    "default": "false",
-                    "client_sync": true
-                },
-                "legend_forest:can_use_ground_attack": {
-                    "type": "enum",
-                    "values": ["false", "true"],
-                    "default": "true",
-                    "client_sync": true
-                }
-            }
+            "is_summonable": true
         },
         "events": {
             "minecraft:entity_spawned": {
@@ -385,180 +308,21 @@
                     ]
                 }
             },
-            "legend_forest:ground_attack_cd_over": {
+            "legend_forest:skill_start": {
                 "remove": {
-                    "component_groups": [
-                        "legend_forest:ground_attack_cd"
-                    ]
+                    "component_groups": ["legend_forest:not_on_attack"]
                 },
-                "set_property": {
-                    "legend_forest:can_use_ground_attack": "true"
+                "add": {
+                    "component_groups": ["legend_forest:on_attack"]
                 }
             },
-            "legend_forest:random_choose_attack": {
-                "sequence": [
-                    {
-                        "set_property": {
-                            "legend_forest:on_attack": "true"
-                        }
-                    },
-                    {
-                        "filters": {
-                            "test": "enum_property",
-                            "domain": "legend_forest:can_use_ground_attack",
-                            "value": "false"
-                        },
-                        "trigger": {
-                            "event": "legend_forest:lit_attack",
-                            "target": "self"
-                        }
-                    },
-                    {
-                        "filters": {
-                            "test": "enum_property",
-                            "domain": "legend_forest:can_use_ground_attack",
-                            "value": "true"
-                        },
-                        "randomize": [
-                            {
-                                "weight": 8,
-                                "trigger": {
-                                    "event": "legend_forest:ground_attack",
-                                    "target": "self"
-                                }
-                            },
-                            {
-                                "weight": 2,
-                                "trigger": {
-                                    "event": "legend_forest:lit_attack",
-                                    "target": "self"
-                                }
-                            }
-                        ]
-                    }
-                ]
-            },
-            "legend_forest:ground_attack": {
-                "sequence": [
-                    {
-                        "set_property": {
-                            "legend_forest:on_attack": "true"
-                        }
-                    },
-                    {
-                        "add": {
-                            "component_groups": [
-                                "legend_forest:on_attack"
-                            ]
-                        },
-                        "remove": {
-                            "component_groups": [
-                                "legend_forest:not_on_attack",
-                                "legend_forest:facing_target"
-                            ]
-                        },
-                        "randomize": [
-                            {
-                                "weight": 9,
-                                "trigger": {
-                                    "event": "legend_forest:ground_attack_general",
-                                    "target": "self"
-                                }
-                            },
-                            {
-                                "weight": 9,
-                                "trigger": {
-                                    "event": "legend_forest:ground_attack_fast",
-                                    "target": "self"
-                                }
-                            },
-                            {
-                                "weight": 2,
-                                "trigger": {
-                                    "event": "legend_forest:ground_attack_hard",
-                                    "target": "self"
-                                }
-                            }
-                        ]
-                    }
-                ]
-            },
-            "legend_forest:lit_attack": {
-                "sequence": [
-                    {
-                        "set_property": {
-                            "legend_forest:on_attack": "true"
-                        }
-                    },
-                    {
-                        "add": {
-                            "component_groups": [
-                                "legend_forest:on_attack"
-                            ]
-                        },
-                        "remove": {
-                            "component_groups": [
-                                "legend_forest:not_on_attack"
-                            ]
-                        }
-                    }
-                ]
-            },
-            "legend_forest:attack_over": {
-                "sequence": [
-                    {
-                        "filters": {
-                            "test": "enum_property",
-                            "domain": "legend_forest:on_attack",
-                            "value": "true"
-                        },
-                        "set_property": {
-                            "legend_forest:on_attack": "false"
-                        },
-                        "remove": {
-                            "component_groups": [
-                                "legend_forest:on_attack"
-                            ]
-                        },
-                        "add": {
-                            "component_groups": [
-                                "legend_forest:not_on_attack",
-                                "legend_forest:facing_target"
-                            ]
-                        }
-                    }
-                ]
-            },
-            "legend_forest:ground_attack_over": {
-                "sequence": [
-                    {
-                        "remove": {
-                            "component_groups": [
-                                "legend_forest:ground_attack_general",
-                                "legend_forest:ground_attack_fast",
-                                "legend_forest:ground_attack_hard"
-                            ]
-                        },
-                        "add": {
-                            "component_groups": [
-                                "legend_forest:ground_attack_cd"
-                            ]
-                        },
-                        "set_property": {
-                            "legend_forest:can_use_ground_attack": "false"
-                        },
-                        "trigger": {
-                            "event": "legend_forest:attack_over",
-                            "target": "self"
-                        }
-                    }
-                ]
-            },
-            "legend_forest:ground_attack_general": {
-            },
-            "legend_forest:ground_attack_fast": {
-            },
-            "legend_forest:ground_attack_hard": {
+            "legend_forest:skill_end": {
+                "remove": {
+                    "component_groups": ["legend_forest:on_attack"]
+                },
+                "add": {
+                    "component_groups": ["legend_forest:not_on_attack"]
+                }
             },
             "legend_forest:on_damage_not_awake": {
                 "sequence": [
@@ -613,7 +377,6 @@
                         "legend_forest:alive",
                         "legend_forest:awaking",
                         "legend_forest:not_awaken",
-                        "legend_forest:ground_attack_cd",
                         "legend_forest:on_attack",
                         "legend_forest:not_on_attack"
                     ]

@@ -1,53 +1,9 @@
 {
-    "format_version": "1.21.0",
+    "format_version": "1.21.100",
     "minecraft:block": {
         "components": {
             "minecraft:map_color": "#70e6e0",
-            "netease:aabb": {
-                "clip": {
-                    "max": [
-                        0.8,
-                        0.7,
-                        0.8
-                    ],
-                    "min": [
-                        0.2,
-                        0.0,
-                        0.2
-                    ]
-                },
-                "collision": {
-                    "max": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "min": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ]
-                }
-            },
-            "netease:on_entity_inside": {
-                "send_python_event": true
-            },
-            "netease:pathable": {
-                "value": true
-            },
-            "netease:render_layer": {
-                "value": "alpha"
-            },
             "minecraft:loot": "",
-            "netease:solid": {
-                "value": false
-            },
-            "netease:neighborchanged_sendto_script": {
-                "value": true
-            },
-            "netease:water_destory": {
-                "value": true
-            },
             "minecraft:light_dampening": 0,
             "minecraft:light_emission": 0,
             "minecraft:destructible_by_mining": {
@@ -55,6 +11,35 @@
             },
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 0.0
+            },
+            "minecraft:geometry": "minecraft:geometry.cross",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "legend_forest:ice_thorn",
+                    "render_method": "alpha_test_single_sided",
+                    "ambient_occlusion": 0.0,
+                    "face_dimming": false
+                }
+            },
+            "minecraft:collision_box": false,
+            "minecraft:selection_box": {
+                "origin": [-6, 0, -6],
+                "size": [12, 11, 12]
+            },
+            "netease:on_entity_inside": {
+                "send_python_event": true
+            },
+            "netease:neighborchanged_sendto_script": {
+                "value": true
+            },
+            "netease:pathable": {
+                "value": true
+            },
+            "netease:solid": {
+                "value": false
+            },
+            "netease:water_destory": {
+                "value": true
             }
         },
         "description": {

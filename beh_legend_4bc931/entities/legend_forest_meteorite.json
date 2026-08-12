@@ -24,6 +24,7 @@
             "legend_forest:explosion": {
                 "minecraft:explode": {
                     "breaks_blocks": false,
+                    "causes_fire": false,
                     "fuse_length": 0,
                     "fuse_lit": true,
                     "power": 2
