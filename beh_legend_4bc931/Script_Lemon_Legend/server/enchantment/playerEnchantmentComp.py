@@ -102,7 +102,7 @@ class PlayerEnchantmentComp(QBaseEntityComp):
         logging.debug("设置玩家磁力区域: {}".format(area))
         comp.SetPickUpArea((area, area, area))
 
-    def changeWeightlessnessLevel(self):
+    def changeWeightlessnessLevel(self, retry=0):
         """失重"""
         gameComp = compFactory.CreateGame(levelId)
         gravityComp = compFactory.CreateGravity(self.playerId)
@@ -111,8 +111,12 @@ class PlayerEnchantmentComp(QBaseEntityComp):
         gravity = levelGravity + self.weightlessnessLevel * 0.015 + (0.015 if self.weightlessnessLevel > 0 else 0)
         logging.debug("设置玩家重力: {}".format(gravity))
         if not gravityComp.SetGravity(gravity):
+            # 玩家离线等场景会一直失败，限制重试次数兜底
+            if retry >= 3:
+                logging.error("设置玩家重力失败，已达重试上限，放弃")
+                return
             logging.warning("设置玩家重力失败，延时重试")
-            gameComp.AddTimer(1, lambda: self.changeWeightlessnessLevel())
+            gameComp.AddTimer(1, lambda: self.changeWeightlessnessLevel(retry + 1))
 
     def changeMagicProtectionLevel(self):
         """魔法保护"""

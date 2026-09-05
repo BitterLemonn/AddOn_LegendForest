@@ -284,9 +284,6 @@
         },
         "legend_forest:sunshine_cactus_top": {
             "textures": "textures/blocks/sunshine_cactus_top"
-        },
-        "legend_forest:yellow_leaves_cape": {
-            "textures": "textures/blocks/yellower_leaves_cape"
         }
     },
     "texture_name": "atlas.terrain"

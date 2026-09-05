@@ -18,6 +18,6 @@
         "ignore_fit_in_context": false,
         "max_depth": 1,
         "min_town_separation": 1,
-        "town_spacing": 18
+        "town_spacing": 36
     }
 }

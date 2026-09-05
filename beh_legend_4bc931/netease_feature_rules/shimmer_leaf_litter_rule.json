@@ -16,12 +16,12 @@
             "placement_pass": "after_surface_pass"
         },
         "description": {
-            "identifier": "legend_forest:shimmer_yellow_cape_rule",
-            "places_feature": "legend_forest:shimmer_yellow_leaves_cape_scatter_feature"
+            "identifier": "legend_forest:shimmer_leaf_litter_rule",
+            "places_feature": "legend_forest:shimmer_leaf_litter_feature"
         },
         "distribution": {
             "coordinate_eval_order": "zxy",
-            "iterations": 8,
+            "iterations": 64,
             "x": {
                 "distribution": "uniform",
                 "extent": [
@@ -29,7 +29,7 @@
                     16
                 ]
             },
-            "y": 0,
+            "y": "q.heightmap(v.originx, v.originz)",
             "z": {
                 "distribution": "uniform",
                 "extent": [

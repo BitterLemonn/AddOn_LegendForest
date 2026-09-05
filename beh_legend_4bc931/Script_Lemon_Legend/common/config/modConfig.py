@@ -48,9 +48,6 @@ CANT_SILK_TOUCH_BLOCKS = SHEARS_SILK_TOUCH_BLOCKS | frozenset([
     "legend_forest:shimmer_reed_bottom",
     "legend_forest:spawn_goblin_block",
     "legend_forest:twig_shimmer",
-    "legend_forest:yellow_leaves_cape_1",
-    "legend_forest:yellow_leaves_cape_2",
-    "legend_forest:yellow_leaves_cape_3",
 ])
 
 # 刷怪方块

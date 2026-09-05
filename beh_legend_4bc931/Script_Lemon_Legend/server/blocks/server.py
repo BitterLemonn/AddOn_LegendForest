@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import random
-import re
 
 from Script_Lemon_Legend.QuModLibs.Modules.Services.Server import BaseService
 from Script_Lemon_Legend.QuModLibs.Server import *
@@ -72,34 +71,6 @@ class ServerService(BaseService):
             comp.SetBlockNew(pos, {"name": "minecraft:air"}, 1, Entity(data["entityId"]).Dm)
             comp = compFactory.CreateEffect(data["entityId"])
             comp.AddEffectToEntity("slowness", 5, 0, True)
-
-    @BaseService.REG_API("blocks/server/itemUseOn")
-    def onClientItemUseOn(self, data):
-        pos = (data["x"], data["y"], data["z"])
-        playerId = getLoaderSystem().rpcPlayerId
-
-        # --------落叶堆叠放置--------
-        if (
-            "legend_forest" in data["blockName"]
-            and "leaves_cape" in data["blockName"]
-            and "leaves_cape" in data["itemDict"]["newItemName"]
-        ):
-            if "3" not in data["blockName"] and serverUtils.setCooldown(playerId, 3):
-                # 检查玩家是否手持目标物品
-                item = compFactory.CreateItem(playerId)
-                itemDict = item.GetPlayerItem(minecraftEnum.ItemPosType.CARRIED, 0)
-                if not ItemFactory.compireItems(itemDict, data["itemDict"]):
-                    return
-
-                serverUtils.decreaseItem(playerId, 1)
-                serverUtils.swing(playerId)
-                serverUtils.playSoundAll("dig.grass", pos, playerId)
-
-                comp = compFactory.CreateBlockInfo(playerId)
-                num = re.findall(r"\d+", data["blockName"])[0]
-                num = int(num) + 1
-                capeName = data["blockName"].replace(re.findall(r"\d+", data["blockName"])[0], str(num))
-                comp.SetBlockNew(pos, {"name": capeName}, dimensionId=Entity(playerId).Dm)
 
     @BaseService.Listen("ServerItemUseOnEvent")
     def onItemUseOnEvent(self, data):

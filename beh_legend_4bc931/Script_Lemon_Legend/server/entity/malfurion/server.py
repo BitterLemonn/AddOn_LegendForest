@@ -39,9 +39,6 @@ class MalfurionServerService(BaseService):
             "legend_forest:golden_bush",
             "legend_forest:touch_flower_upper",
             "legend_forest:touch_flower_down",
-            "legend_forest:yellower_leaves_cape_1",
-            "legend_forest:yellower_leaves_cape_2",
-            "legend_forest:yellower_leaves_cape_3",
         ]
         self.iceBoltDamageList = [0, 2, 5, 7]
 

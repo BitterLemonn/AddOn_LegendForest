@@ -255,17 +255,5 @@
     },
     "legend_forest:sunshine_cactus": {
         "sound": "cloth"
-    },
-    "legend_forest:yellow_leaves_cape_1": {
-        "netease_model": "legend_forest:yellow_leaves_cape_1",
-        "sound": "grass"
-    },
-    "legend_forest:yellow_leaves_cape_2": {
-        "netease_model": "legend_forest:yellow_leaves_cape_2",
-        "sound": "grass"
-    },
-    "legend_forest:yellow_leaves_cape_3": {
-        "netease_model": "legend_forest:yellow_leaves_cape_3",
-        "sound": "grass"
     }
 }

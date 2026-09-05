@@ -21,7 +21,7 @@
         },
         "distribution": {
             "coordinate_eval_order": "zxy",
-            "iterations": "q.noise(v.originx, v.originz) < 0.5 ? 20 : 14",
+            "iterations": "q.noise(v.originx, v.originz) < 0.5 ? 8 : 4",
             "x": {
                 "distribution": "uniform",
                 "extent": [
@@ -33,7 +33,7 @@
             "z": {
                 "distribution": "uniform",
                 "extent": [
-                    0,
+                    0, 
                     16
                 ]
             }
