@@ -17,4 +17,5 @@ world_icon.jpeg
 *.zip
 docs/
 .agents/
+.codex/
 CLAUDE.md

@@ -1,4 +1,4 @@
-[mcp_servers.blockbench-mcp]
+[mcp_servers.blockbench]
 url = "http://localhost:3000/bb-mcp"
 
 [mcp_servers.mc-dev-assitant]

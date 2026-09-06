@@ -98,25 +98,53 @@ class ForestParticleBusiness(BaseBusiness):
         self.particleComp = compFactory.CreateParticleSystem(None)
         self.pIdList = []
         self.environmentParticle = "legend_forest:leaves_fall"
+        self.particleCooldown = 0
+        self.remainingChecks = 8
+        self.playerPos = None
 
     def onCreate(self):
         BaseBusiness.onCreate(self)
         # TODO: 播放背景音乐
-        self.playParticle()
+        self.listenForEvent("BlockAnimateRandomTickEvent", self.onBlockAnimateRandomTick)
+
+    def onTick(self):
+        self.remainingChecks = 8
+        self.playerPos = None
+        if self.particleCooldown > 0:
+            self.particleCooldown -= 1
 
     def onStop(self):
+        self.unListenForEvent("BlockAnimateRandomTickEvent", self.onBlockAnimateRandomTick)
         for pid in self.pIdList:
             if self.particleComp.Exist(pid):
                 self.particleComp.Remove(pid)
         self.pIdList = []
         BaseBusiness.onStop(self)
 
-    def playParticle(self):
-        pid = self.particleComp.CreateBindEntityNew(self.environmentParticle, playerId, bone_name="head")
-        if self.particleComp.Exist(pid):
+    def onBlockAnimateRandomTick(self, args):
+        # 高频回调先限流；冷却/预算耗尽时不读参数、不调用引擎接口。
+        if self.particleCooldown > 0 or self.remainingChecks <= 0:
+            return
+        if args["blockName"] != "legend_forest:leaves_shimmer":
+            return
+        self.remainingChecks -= 1
+        if self.playerPos is None:
+            self.playerPos = Entity(playerId).FootPos
+            if self.playerPos is None:
+                self.remainingChecks = 0
+                return
+        x, y, z = args["blockPos"]
+        dx = x + 0.5 - self.playerPos[0]
+        dy = y - self.playerPos[1]
+        dz = z + 0.5 - self.playerPos[2]
+        if dy < -8 or dy > 64 or dx * dx + dz * dz > 1024:
+            return
+        # 水平32格、上方64格覆盖高树冠；每3个客户端Tick最多一片。
+        self.particleCooldown = 3
+        self.pIdList = [pid for pid in self.pIdList if self.particleComp.Exist(pid)]
+        pid = self.particleComp.Create(self.environmentParticle, (x + 0.5, y - 0.05, z + 0.5), (0, 0, 0))
+        if pid:
             self.pIdList.append(pid)
-        else:
-            compFactory.CreateGame(levelId).AddTimer(1, self.playParticle)
 
 
 class AbandonEffectBusiness(BaseBusiness):

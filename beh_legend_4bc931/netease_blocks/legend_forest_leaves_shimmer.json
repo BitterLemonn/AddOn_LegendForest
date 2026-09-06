@@ -8,6 +8,9 @@
             },
             "minecraft:map_color": "#1f5141",
             "netease:no_crop_face_block": {},
+            "netease:block_animate_random_tick": {
+                "trigger_rate": 0.1
+            },
             "netease:render_layer": {
                 "value": "optionalAlpha"
             },
