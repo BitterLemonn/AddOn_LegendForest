@@ -1,0 +1,67 @@
+{
+    "format_version": "1.21.80",
+    "minecraft:block_culling_rules": {
+        "description": {
+            "identifier": "legend_forest:leaves_culling"
+        },
+        "rules": [
+            {
+                "cull_against_full_and_opaque": true,
+                "condition": "same_culling_layer",
+                "direction": "up",
+                "geometry_part": {
+                    "bone": "block",
+                    "cube": 0,
+                    "face": "up"
+                }
+            },
+            {
+                "cull_against_full_and_opaque": true,
+                "condition": "same_culling_layer",
+                "direction": "east",
+                "geometry_part": {
+                    "bone": "block",
+                    "cube": 0,
+                    "face": "east"
+                }
+            },
+            {
+                "cull_against_full_and_opaque": true,
+                "condition": "same_culling_layer",
+                "direction": "south",
+                "geometry_part": {
+                    "bone": "block",
+                    "cube": 0,
+                    "face": "south"
+                }
+            },
+            {
+                "cull_against_full_and_opaque": true,
+                "direction": "down",
+                "geometry_part": {
+                    "bone": "block",
+                    "cube": 0,
+                    "face": "down"
+                }
+            },
+            {
+                "cull_against_full_and_opaque": true,
+                "direction": "west",
+                "geometry_part": {
+                    "bone": "block",
+                    "cube": 0,
+                    "face": "west"
+                }
+            },
+            {
+                "cull_against_full_and_opaque": true,
+                "direction": "north",
+                "geometry_part": {
+                    "bone": "block",
+                    "cube": 0,
+                    "face": "north"
+                }
+            }
+        ]
+    }
+}

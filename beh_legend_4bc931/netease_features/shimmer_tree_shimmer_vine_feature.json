@@ -1,0 +1,136 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:growing_plant_feature": {
+        "description": {
+            "identifier": "legend_forest:shimmer_tree_shimmer_vine_feature"
+        },
+        "height_distribution": [
+            [
+                {
+                    "range_min": 2,
+                    "range_max": 10
+                },
+                3
+            ],
+            [
+                {
+                    "range_min": 1,
+                    "range_max": 3
+                },
+                3
+            ],
+            [
+                {
+                    "range_min": 3,
+                    "range_max": 7
+                },
+                6
+            ]
+        ],
+        "growth_direction": "DOWN",
+        "body_blocks": [
+            [
+                {
+                    "name": "legend_forest:shimmer_vine",
+                    "states": {
+                        "legend_forest:vine_type": 0,
+                        "legend_forest:has_berries": false
+                    }
+                },
+                4
+            ],
+            [
+                {
+                    "name": "legend_forest:shimmer_vine",
+                    "states": {
+                        "legend_forest:vine_type": 1,
+                        "legend_forest:has_berries": false
+                    }
+                },
+                3
+            ],
+            [
+                {
+                    "name": "legend_forest:shimmer_vine",
+                    "states": {
+                        "legend_forest:vine_type": 2,
+                        "legend_forest:has_berries": false
+                    }
+                },
+                3
+            ],
+            [
+                {
+                    "name": "legend_forest:shimmer_vine",
+                    "states": {
+                        "legend_forest:vine_type": 3,
+                        "legend_forest:has_berries": false
+                    }
+                },
+                2
+            ],
+            [
+                {
+                    "name": "legend_forest:shimmer_vine",
+                    "states": {
+                        "legend_forest:vine_type": 0,
+                        "legend_forest:has_berries": true
+                    }
+                },
+                2
+            ],
+            [
+                {
+                    "name": "legend_forest:shimmer_vine",
+                    "states": {
+                        "legend_forest:vine_type": 1,
+                        "legend_forest:has_berries": true
+                    }
+                },
+                2
+            ],
+            [
+                {
+                    "name": "legend_forest:shimmer_vine",
+                    "states": {
+                        "legend_forest:vine_type": 2,
+                        "legend_forest:has_berries": true
+                    }
+                },
+                2
+            ],
+            [
+                {
+                    "name": "legend_forest:shimmer_vine",
+                    "states": {
+                        "legend_forest:vine_type": 3,
+                        "legend_forest:has_berries": true
+                    }
+                },
+                1
+            ]
+        ],
+        "head_blocks": [
+            [
+                {
+                    "name": "legend_forest:shimmer_vine",
+                    "states": {
+                        "legend_forest:vine_type": 4,
+                        "legend_forest:has_berries": false
+                    }
+                },
+                4
+            ],
+            [
+                {
+                    "name": "legend_forest:shimmer_vine",
+                    "states": {
+                        "legend_forest:vine_type": 4,
+                        "legend_forest:has_berries": true
+                    }
+                },
+                1
+            ]
+        ]
+    }
+}

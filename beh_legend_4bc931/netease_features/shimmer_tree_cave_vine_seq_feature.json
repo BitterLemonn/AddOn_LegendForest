@@ -6,7 +6,7 @@
         },
         "features": [
             "legend_forest:shimmer_tree_cave_vine_anchor_feature",
-            "minecraft:cave_vine_feature"
+            "legend_forest:shimmer_tree_shimmer_vine_feature"
         ]
     }
 }

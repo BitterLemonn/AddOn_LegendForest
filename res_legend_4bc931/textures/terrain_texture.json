@@ -121,6 +121,12 @@
         "legend_forest:leaves_shimmer_carried": {
             "textures": "textures/blocks/leaves_shimmer_opaque"
         },
+        "legend_forest:leaves_shimmer_yellow": {
+            "textures": "textures/blocks/leaves_shimmer_yellow"
+        },
+        "legend_forest:leaves_shimmer_yellow_carried": {
+            "textures": "textures/blocks/leaves_shimmer_yellow_opaque"
+        },
         "legend_forest:log_petrified_side": {
             "textures": "textures/blocks/log_petrified_side"
         },
@@ -284,6 +290,36 @@
         },
         "legend_forest:sunshine_cactus_top": {
             "textures": "textures/blocks/sunshine_cactus_top"
+        },
+        "legend_forest:shimmer_vine_straight": {
+            "textures": "textures/blocks/shimmer_vine_straight"
+        },
+        "legend_forest:shimmer_vine_straight_berries": {
+            "textures": "textures/blocks/shimmer_vine_straight_berries"
+        },
+        "legend_forest:shimmer_vine_branch_l": {
+            "textures": "textures/blocks/shimmer_vine_branch_l"
+        },
+        "legend_forest:shimmer_vine_branch_l_berries": {
+            "textures": "textures/blocks/shimmer_vine_branch_l_berries"
+        },
+        "legend_forest:shimmer_vine_branch_r": {
+            "textures": "textures/blocks/shimmer_vine_branch_r"
+        },
+        "legend_forest:shimmer_vine_branch_r_berries": {
+            "textures": "textures/blocks/shimmer_vine_branch_r_berries"
+        },
+        "legend_forest:shimmer_vine_twisted": {
+            "textures": "textures/blocks/shimmer_vine_twisted"
+        },
+        "legend_forest:shimmer_vine_twisted_berries": {
+            "textures": "textures/blocks/shimmer_vine_twisted_berries"
+        },
+        "legend_forest:shimmer_vine_head": {
+            "textures": "textures/blocks/shimmer_vine_head"
+        },
+        "legend_forest:shimmer_vine_head_berries": {
+            "textures": "textures/blocks/shimmer_vine_head_berries"
         }
     },
     "texture_name": "atlas.terrain"

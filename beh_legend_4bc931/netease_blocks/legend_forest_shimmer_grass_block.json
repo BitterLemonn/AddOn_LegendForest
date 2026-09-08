@@ -2,7 +2,7 @@
     "format_version": "1.21.0",
     "minecraft:block": {
         "components": {
-            "minecraft:map_color": "#512a50",
+            "minecraft:map_color": "#336667",
             "netease:random_tick": {
                 "enable": true,
                 "tick_to_script": true

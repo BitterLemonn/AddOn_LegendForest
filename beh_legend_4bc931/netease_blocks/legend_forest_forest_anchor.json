@@ -24,12 +24,7 @@
             "register_to_creative_menu": true,
             "category": "legend_forest",
             "states": {
-                "legend_forest:charged_level": [
-                    0,
-                    1,
-                    2,
-                    3
-                ]
+                "legend_forest:charged_level": [0, 1, 2, 3]
             }
         },
         "permutations": [

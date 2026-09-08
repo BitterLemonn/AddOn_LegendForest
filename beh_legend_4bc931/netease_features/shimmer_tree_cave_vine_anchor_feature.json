@@ -4,7 +4,13 @@
         "description": {
             "identifier": "legend_forest:shimmer_tree_cave_vine_anchor_feature"
         },
-        "places_block": "minecraft:cave_vines",
+        "places_block": {
+            "name": "legend_forest:shimmer_vine",
+            "states": {
+                "legend_forest:vine_type": 0,
+                "legend_forest:has_berries": false
+            }
+        },
         "enforce_placement_rules": false,
         "enforce_survivability_rules": false,
         "may_attach_to": {

@@ -1,0 +1,72 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:tree_feature": {
+        "description": {
+            "identifier": "legend_forest:overworld_savanna_shimmer_tree_feature"
+        },
+        "fancy_trunk": {
+            "trunk_height": {
+                "base": 15,
+                "variance": 10,
+                "scale": 0.618
+            },
+            "trunk_width": 2,
+            "trunk_block": "legend_forest:log_shimmer",
+            "branches": {
+                "slope": 0.381,
+                "density": 1.0,
+                "min_altitude_factor": 0.2
+            },
+            "width_scale": 1.0,
+            "foliage_altitude_factor": 0.3
+        },
+        "fancy_canopy": {
+            "height": 2,
+            "radius": 4,
+            "leaf_block": {
+                "name": "legend_forest:leaves_shimmer",
+                "states": {
+                    "legend_forest:color": 1
+                }
+            },
+            "canopy_decoration": {
+                "decoration_block": "minecraft:vine",
+                "decoration_chance": {
+                    "numerator": 1,
+                    "denominator": 4
+                },
+                "num_steps": 4,
+                "step_direction": "down"
+            }
+        },
+        "base_block": [
+            "minecraft:dirt",
+            {
+                "name": "minecraft:dirt",
+                "states": {
+                    "dirt_type": "coarse"
+                }
+            }
+        ],
+        "may_grow_on": [
+            "legend_forest:shimmer_grass_block",
+            "legend_forest:shimmer_grass_block_check",
+            {"tags": "q.any_tag('dirt')"}
+        ],
+        "may_replace": [
+            "minecraft:air",
+            {"tags": "q.any_tag('minecraft:leaves') || q.any_tag('plant')"}
+        ],
+        "may_grow_through": [
+            "minecraft:dirt",
+            "minecraft:grass",
+            "legend_forest:shimmer_grass_block",
+            {
+                "name": "minecraft:dirt",
+                "states": {
+                    "dirt_type": "coarse"
+                }
+            }
+        ]
+    }
+}

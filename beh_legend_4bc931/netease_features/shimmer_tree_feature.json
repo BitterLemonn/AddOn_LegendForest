@@ -29,13 +29,7 @@
             "leaf_block": "legend_forest:leaves_shimmer"
         },
         "base_block": [
-            "minecraft:dirt",
-            {
-                "name": "minecraft:dirt",
-                "states": {
-                    "dirt_type": "coarse"
-                }
-            }
+            "minecraft:dirt"
         ],
         "may_grow_on": [
             "legend_forest:shimmer_grass_block",

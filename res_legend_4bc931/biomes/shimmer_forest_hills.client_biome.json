@@ -5,6 +5,11 @@
             "identifier": "legend_forest:shimmer_forest_hills"
         },
         "components": {
+            "minecraft:foliage_appearance": {
+                "color": {
+                    "color_map": "foliage"
+                }
+            },
             "minecraft:fog_appearance": {
                 "fog_identifier": "minecraft:fog_forest"
             },

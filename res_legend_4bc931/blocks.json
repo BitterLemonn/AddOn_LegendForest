@@ -113,15 +113,7 @@
         "sound": "glass"
     },
     "legend_forest:leaves_shimmer": {
-        "brightness_gamma": 0.8,
-        "carried_textures": "legend_forest:leaves_shimmer_carried",
-        "isotropic": {
-            "down": true,
-            "up": true
-        },
-        "sound": "grass",
-        "textures": "legend_forest:leaves_shimmer",
-        "use_colormap": "textures/colormap/shimmer_colormap"
+        "sound": "grass"
     },
     "legend_forest:log_petrified": {
         "sound": "stone"
@@ -255,5 +247,8 @@
     },
     "legend_forest:sunshine_cactus": {
         "sound": "cloth"
+    },
+    "legend_forest:shimmer_vine": {
+        "sound": "grass"
     }
 }

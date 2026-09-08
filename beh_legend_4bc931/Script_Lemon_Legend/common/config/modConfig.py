@@ -11,6 +11,7 @@ DANGEROUS_BLOCKS = frozenset([
     "minecraft:air",
     "legend_forest:log_shimmer",
     "legend_forest:leaves_shimmer",
+    "legend_forest:shimmer_vine",
     "minecraft:cave_vines",
     "minecraft:cave_vines_body_with_berries",
     "minecraft:cave_vines_head_with_berries",

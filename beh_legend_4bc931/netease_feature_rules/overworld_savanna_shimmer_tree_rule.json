@@ -8,12 +8,7 @@
                         {
                             "operator": "==",
                             "test": "has_biome_tag",
-                            "value": "forest"
-                        },
-                        {
-                            "operator": "==",
-                            "test": "has_biome_tag",
-                            "value": "jungle"
+                            "value": "savanna"
                         }
                     ]
                 }
@@ -21,8 +16,8 @@
             "placement_pass": "surface_pass"
         },
         "description": {
-            "identifier": "legend_forest:overworld_shimmer_tree_rule",
-            "places_feature": "legend_forest:overworld_shimmer_tree_feature"
+            "identifier": "legend_forest:overworld_savanna_shimmer_tree_rule",
+            "places_feature": "legend_forest:overworld_savanna_shimmer_tree_feature"
         },
         "distribution": {
             "coordinate_eval_order": "zxy",

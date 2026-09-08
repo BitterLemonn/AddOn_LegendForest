@@ -26,11 +26,13 @@
             },
             "enable_attachables": true,
             "geometry": {
-                "default": "geometry.goblin"
+                "default": "geometry.legendforest.goblin_common",
+                "common": "geometry.legendforest.goblin_common",
+                "shaman": "geometry.legendforest.goblin_shaman"
             },
             "identifier": "legend_forest:goblin",
             "materials": {
-                "default": "entity_emissive_alpha"
+                "default": "entity_alphatest"
             },
             "particle_effects": {
                 "magic_circle": "legend_forest:magic_circle",
@@ -75,8 +77,7 @@
                 "overlay_color": "#ADFF2F"
             },
             "textures": {
-                "default": "textures/entity/goblin",
-                "shaman": "textures/entity/goblin_shaman"
+                "default": "textures/entity/goblin"
             }
         }
     }

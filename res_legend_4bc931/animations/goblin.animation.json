@@ -128,10 +128,10 @@
 		"animation.goblin.shaman.magic": {
 			"animation_length": 4,
 			"bones": {
-				"rightArm": {
+				"rightarm": {
 					"rotation": ["-150 - math.sin(query.anim_time * 160) * 15", "math.sin(query.anim_time * 160) * 15", "-math.cos(query.anim_time * 160) * 15"]
 				},
-				"leftArm": {
+				"leftarm": {
 					"rotation": ["-100 + math.sin(query.anim_time * 160) * 10", "-math.sin(query.anim_time * 160) * 10", "math.cos(query.anim_time * 160) * 5"]
 				}
 			},

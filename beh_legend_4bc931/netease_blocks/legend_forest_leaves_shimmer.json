@@ -1,21 +1,21 @@
 {
-    "format_version": "1.21.0",
+    "format_version": "1.21.120",
     "minecraft:block": {
         "components": {
             "minecraft:flammable": {
                 "catch_chance_modifier": 30,
                 "destroy_chance_modifier": 60
             },
-            "minecraft:map_color": "#1f5141",
-            "netease:no_crop_face_block": {},
+            "minecraft:map_color": {
+                "color": "#1f5141",
+                "tint_method": "default_foliage"
+            },
+            "minecraft:destruction_particles": {
+                "texture": "legend_forest:leaves_shimmer",
+                "tint_method": "default_foliage"
+            },
             "netease:block_animate_random_tick": {
                 "trigger_rate": 0.1
-            },
-            "netease:render_layer": {
-                "value": "optionalAlpha"
-            },
-            "netease:solid": {
-                "value": false
             },
             "minecraft:loot": "loot_tables/legend_forest/blocks/sapling_shimmer.json",
             "minecraft:light_dampening": 2,
@@ -27,10 +27,59 @@
                 "explosion_resistance": 0.2
             }
         },
+        "permutations": [
+            {
+                "condition": "q.block_state('legend_forest:color') == 0",
+                "components": {
+                    "minecraft:geometry": {
+                        "identifier": "geometry.legend_forest.full_block",
+                        "culling": "legend_forest:leaves_culling",
+                        "culling_layer": "minecraft:culling_layer.leaves"
+                    },
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "legend_forest:leaves_shimmer",
+                            "render_method": "alpha_test_to_opaque",
+                            "ambient_occlusion": 0.8,
+                            "face_dimming": true,
+                            "isotropic": true,
+                            "tint_method": "default_foliage"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('legend_forest:color') == 1",
+                "components": {
+                    "minecraft:geometry": {
+                        "identifier": "geometry.legend_forest.full_block",
+                        "culling": "legend_forest:leaves_culling",
+                        "culling_layer": "minecraft:culling_layer.leaves"
+                    },
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "legend_forest:leaves_shimmer_yellow",
+                            "render_method": "alpha_test_to_opaque",
+                            "ambient_occlusion": 0.8,
+                            "face_dimming": true,
+                            "isotropic": true,
+                            "tint_method": "default_foliage"
+                        }
+                    },
+                    "minecraft:destruction_particles": {
+                        "texture": "legend_forest:leaves_shimmer_yellow",
+                        "tint_method": "default_foliage"
+                    }
+                }
+            }
+        ],
         "description": {
             "identifier": "legend_forest:leaves_shimmer",
             "register_to_creative_menu": true,
-            "category": "legend_forest"
+            "category": "legend_forest",
+            "states": {
+                "legend_forest:color": [0, 1]
+            }
         }
     }
 }
