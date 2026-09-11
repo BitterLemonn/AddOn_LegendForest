@@ -58,6 +58,12 @@
         "legend_forest:goblin_spawn_egg": {
             "textures": "textures/items/goblin_spawn_egg"
         },
+        "legend_forest:hog_spawn_egg": {
+            "textures": "textures/items/hog_spawn_egg"
+        },
+        "legend_forest:magic_deer_spawn_egg": {
+            "textures": "textures/items/magic_deer_spawn_egg"
+        },
         "legend_forest:goblin_soup": {
             "textures": "textures/items/goblin_soup"
         },

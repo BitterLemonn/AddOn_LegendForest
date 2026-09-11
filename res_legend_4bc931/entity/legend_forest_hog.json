@@ -37,8 +37,7 @@
                 ]
             },
             "spawn_egg": {
-                "base_color": "#723913",
-                "overlay_color": "#905136"
+                "texture": "legend_forest:hog_spawn_egg"
             },
             "textures": {
                 "default": "textures/entity/hog"

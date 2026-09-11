@@ -15,7 +15,9 @@
                 "textures": {
                     "Array.deer_texture": [
                         "Texture.default",
-                        "Texture.shimmer"
+                        "Texture.spotted",
+                        "Texture.shimmer",
+                        "Texture.shimmer_spotted"
                     ]
                 }
             }

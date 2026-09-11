@@ -4,7 +4,7 @@
         "components": {
             "minecraft:map_color": "#e6c547",
             "minecraft:light_dampening": 0,
-            "minecraft:light_emission": 3,
+            "minecraft:light_emission": 8,
             "minecraft:destructible_by_mining": {
                 "seconds_to_destroy": 0.0
             },

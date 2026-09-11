@@ -32,12 +32,13 @@
                 ]
             },
             "spawn_egg": {
-                "base_color": "#F4A460",
-                "overlay_color": "#A0522D"
+                "texture": "legend_forest:magic_deer_spawn_egg"
             },
             "textures": {
                 "default": "textures/entity/magic_deer",
-                "shimmer": "textures/entity/magic_deer_shimmer"
+                "spotted": "textures/entity/magic_deer_spotted",
+                "shimmer": "textures/entity/magic_deer_shimmer",
+                "shimmer_spotted": "textures/entity/magic_deer_shimmer_spotted"
             }
         }
     }
