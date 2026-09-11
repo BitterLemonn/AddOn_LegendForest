@@ -1,0 +1,24 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.magic_deer": {
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Array.deer_texture[query.variant]"
+            ],
+            "arrays": {
+                "textures": {
+                    "Array.deer_texture": [
+                        "Texture.default",
+                        "Texture.shimmer"
+                    ]
+                }
+            }
+        }
+    }
+}

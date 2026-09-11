@@ -55,6 +55,9 @@
         "legend_forest:goblin_ear": {
             "textures": "textures/items/goblin_ear"
         },
+        "legend_forest:goblin_spawn_egg": {
+            "textures": "textures/items/goblin_spawn_egg"
+        },
         "legend_forest:goblin_soup": {
             "textures": "textures/items/goblin_soup"
         },

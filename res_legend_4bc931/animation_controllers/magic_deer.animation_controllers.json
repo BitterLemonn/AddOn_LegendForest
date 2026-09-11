@@ -1,39 +1,146 @@
 {
     "format_version": "1.10.0",
     "animation_controllers": {
-        "controller.animation.magic_deer.attack": {
-            "initial_state": "default",
+        "controller.animation.magic_deer.general": {
+            "initial_state": "idle",
             "states": {
-                "attacking": {
-                    "animations": [
-                        "attack"
-                    ],
-                    "transitions": [
-                        {
-                            "default": "variable.attack_time <= 0.05"
-                        }
-                    ]
-                },
                 "idle": {
                     "animations": [
                         "idle"
                     ],
+                    "blend_transition": 0.35,
                     "transitions": [
                         {
-                            "default": "query.any_animation_finished"
+                            "attack": "variable.attack_time > 0.0"
+                        },
+                        {
+                            "run": "query.ground_speed > 4.8 && query.ground_speed > 0.1"
+                        },
+                        {
+                            "walk": "query.ground_speed > 0.05 || query.modified_move_speed > 0.02"
+                        },
+                        {
+                            "idle_look": "query.all_animations_finished && math.random(0, 100) < 25"
+                        },
+                        {
+                            "idle_ear_flick": "query.all_animations_finished && math.random(0, 100) < 33.33"
+                        },
+                        {
+                            "idle_sniff": "query.all_animations_finished && math.random(0, 100) < 50"
+                        },
+                        {
+                            "idle": "query.all_animations_finished"
                         }
                     ]
                 },
-                "default": {
+                "idle_look": {
                     "animations": [
-                        "look_at_target"
+                        "idle_look"
                     ],
+                    "blend_transition": 0.25,
                     "transitions": [
                         {
-                            "attacking": "query.has_target && variable.attack_time"
+                            "attack": "variable.attack_time > 0.0"
                         },
                         {
-                            "idle": "math.random(1,8) == 1"
+                            "run": "query.ground_speed > 4.8 && query.ground_speed > 0.1"
+                        },
+                        {
+                            "walk": "query.ground_speed > 0.05 || query.modified_move_speed > 0.02"
+                        },
+                        {
+                            "idle": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "idle_ear_flick": {
+                    "animations": [
+                        "idle_ear_flick"
+                    ],
+                    "blend_transition": 0.25,
+                    "transitions": [
+                        {
+                            "attack": "variable.attack_time > 0.0"
+                        },
+                        {
+                            "run": "query.ground_speed > 4.8 && query.ground_speed > 0.1"
+                        },
+                        {
+                            "walk": "query.ground_speed > 0.05 || query.modified_move_speed > 0.02"
+                        },
+                        {
+                            "idle": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "idle_sniff": {
+                    "animations": [
+                        "idle_sniff"
+                    ],
+                    "blend_transition": 0.25,
+                    "transitions": [
+                        {
+                            "attack": "variable.attack_time > 0.0"
+                        },
+                        {
+                            "run": "query.ground_speed > 4.8 && query.ground_speed > 0.1"
+                        },
+                        {
+                            "walk": "query.ground_speed > 0.05 || query.modified_move_speed > 0.02"
+                        },
+                        {
+                            "idle": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "walk": {
+                    "animations": [
+                        "walk"
+                    ],
+                    "blend_transition": 0.25,
+                    "transitions": [
+                        {
+                            "attack": "variable.attack_time > 0.0"
+                        },
+                        {
+                            "run": "query.is_sprinting || query.ground_speed > 4.8"
+                        },
+                        {
+                            "idle": "query.ground_speed <= 0.05 && query.modified_move_speed <= 0.02"
+                        }
+                    ]
+                },
+                "run": {
+                    "animations": [
+                        "run"
+                    ],
+                    "blend_transition": 0.25,
+                    "transitions": [
+                        {
+                            "attack": "variable.attack_time > 0.0"
+                        },
+                        {
+                            "walk": "!query.is_sprinting && query.ground_speed <= 4.3 && (query.ground_speed > 0.05 || query.modified_move_speed > 0.02)"
+                        },
+                        {
+                            "idle": "query.ground_speed <= 0.05 && query.modified_move_speed <= 0.02"
+                        }
+                    ]
+                },
+                "attack": {
+                    "animations": [
+                        "attack"
+                    ],
+                    "blend_transition": 0.05,
+                    "transitions": [
+                        {
+                            "run": "query.all_animations_finished && query.ground_speed > 4.8"
+                        },
+                        {
+                            "walk": "query.all_animations_finished && (query.ground_speed > 0.05 || query.modified_move_speed > 0.02)"
+                        },
+                        {
+                            "idle": "query.all_animations_finished"
                         }
                     ]
                 }

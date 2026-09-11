@@ -15,7 +15,7 @@
             },
             "identifier": "legend_forest:hog",
             "materials": {
-                "default": "entity"
+                "default": "entity_alphatest"
             },
             "render_controllers": [
                 "controller.render.default"

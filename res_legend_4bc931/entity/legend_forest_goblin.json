@@ -73,8 +73,7 @@
                 ]
             },
             "spawn_egg": {
-                "base_color": "#006400",
-                "overlay_color": "#ADFF2F"
+                "texture": "legend_forest:goblin_spawn_egg"
             },
             "textures": {
                 "default": "textures/entity/goblin"

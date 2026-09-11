@@ -3,13 +3,15 @@
     "minecraft:client_entity": {
         "description": {
             "animations": {
-                "attack": "animation.magic_deer.attack",
+                "attack": "animation.magic_deer.attack_antlers",
                 "idle": "animation.magic_deer.idle",
+                "idle_look": "animation.magic_deer.idle_look",
+                "idle_ear_flick": "animation.magic_deer.idle_ear_flick",
+                "idle_sniff": "animation.magic_deer.idle_sniff",
+                "walk": "animation.magic_deer.walk",
+                "run": "animation.magic_deer.run",
                 "baby_transform": "animation.magic_deer.baby_transform",
-                "look_at_target": "animation.common.look_at_target",
-                "setup": "animation.cow.setup.v1.0",
-                "walk": "animation.quadruped.walk",
-                "general_controller": "controller.animation.magic_deer.attack"
+                "general_controller": "controller.animation.magic_deer.general"
             },
             "geometry": {
                 "default": "geometry.magic_deer"
@@ -19,14 +21,10 @@
                 "default": "entity_alphatest"
             },
             "render_controllers": [
-                "controller.render.default"
+                "controller.render.magic_deer"
             ],
             "scripts": {
                 "animate": [
-                    "setup",
-                    {
-                        "walk": "query.modified_move_speed"
-                    },
                     {
                         "baby_transform": "query.is_baby"
                     },
@@ -38,7 +36,8 @@
                 "overlay_color": "#A0522D"
             },
             "textures": {
-                "default": "textures/entity/magic_deer"
+                "default": "textures/entity/magic_deer",
+                "shimmer": "textures/entity/magic_deer_shimmer"
             }
         }
     }
