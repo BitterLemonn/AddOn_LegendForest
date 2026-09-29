@@ -115,6 +115,12 @@
         "legend_forest:ice_thorn_carried": {
             "textures": "textures/blocks/ice_thorn_carried"
         },
+        "legend_forest:leaves_pale_olive": {
+            "textures": "textures/blocks/leaves_pale_olive"
+        },
+        "legend_forest:leaves_pale_olive_carried": {
+            "textures": "textures/blocks/leaves_pale_olive_opaque"
+        },
         "legend_forest:leaves_shimmer": {
             "textures": "textures/blocks/leaves_shimmer"
         },
@@ -126,6 +132,12 @@
         },
         "legend_forest:leaves_shimmer_yellow_carried": {
             "textures": "textures/blocks/leaves_shimmer_yellow_opaque"
+        },
+        "legend_forest:log_pale_olive_side": {
+            "textures": "textures/blocks/log_pale_olive_side"
+        },
+        "legend_forest:log_pale_olive_top": {
+            "textures": "textures/blocks/log_pale_olive_top"
         },
         "legend_forest:log_petrified_side": {
             "textures": "textures/blocks/log_petrified_side"
@@ -162,6 +174,9 @@
         },
         "legend_forest:planks_glow_seaweed": {
             "textures": "textures/blocks/planks_glow_seaweed"
+        },
+        "legend_forest:planks_pale_olive": {
+            "textures": "textures/blocks/planks_pale_olive"
         },
         "legend_forest:planks_shimmer": {
             "textures": "textures/blocks/planks_shimmer"
@@ -260,6 +275,12 @@
         },
         "legend_forest:star_pillar_top": {
             "textures": "textures/blocks/star_pillar_top"
+        },
+        "legend_forest:stripped_log_pale_olive_side": {
+            "textures": "textures/blocks/stripped_log_pale_olive_side"
+        },
+        "legend_forest:stripped_log_pale_olive_top": {
+            "textures": "textures/blocks/stripped_log_pale_olive_top"
         },
         "legend_forest:stripped_log_shimmer_side": {
             "textures": "textures/blocks/stripped_log_shimmer_side"

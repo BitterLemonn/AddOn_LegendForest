@@ -1,0 +1,113 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:tree_feature": {
+        "description": {
+            "identifier": "legend_forest:pale_olive_tree_feature"
+        },
+        "mangrove_roots": {
+            "max_root_width": 1,
+            "max_root_length": 5,
+            "y_offset": {
+                "range_min": 1,
+                "range_max": 2
+            },
+            "root_block": {
+                "name": "legend_forest:log_pale_olive",
+                "states": {
+                    "minecraft:block_face": "up"
+                }
+            },
+            "muddy_root_block": {
+                "name": "legend_forest:log_pale_olive",
+                "states": {
+                    "minecraft:block_face": "up"
+                }
+            },
+            "mud_block": "minecraft:mud",
+            "roots_may_grow_through": [
+                "minecraft:air",
+                "minecraft:tallgrass",
+                "minecraft:mud",
+                "legend_forest:leaves_pale_olive"
+            ]
+        },
+        "acacia_trunk": {
+            "trunk_width": 1,
+            "trunk_height": {
+                "base": 8,
+                "intervals": [3],
+                "min_height_for_canopy": 5
+            },
+            "trunk_block": {
+                "name": "legend_forest:log_pale_olive"
+            },
+            "trunk_lean": {
+                "allow_diagonal_growth": true,
+                "lean_height": {
+                    "range_min": 4,
+                    "range_max": 6
+                },
+                "lean_steps": {
+                    "range_min": 2,
+                    "range_max": 4
+                },
+                "lean_length": {
+                    "range_min": 3,
+                    "range_max": 5
+                }
+            },
+            "branches": {
+                "branch_length": {
+                    "range_min": 2,
+                    "range_max": 3
+                },
+                "branch_position": {
+                    "range_min": 0,
+                    "range_max": 2
+                },
+                "branch_chance": 100,
+                "branch_canopy": {
+                    "acacia_canopy": {
+                        "canopy_size": 3,
+                        "leaf_block": "legend_forest:leaves_pale_olive",
+                        "simplify_canopy": false
+                    }
+                }
+            }
+        },
+        "cherry_canopy": {
+            "height": 4,
+            "radius": 6,
+            "leaf_block": "legend_forest:leaves_pale_olive",
+            "wide_bottom_layer_hole_chance": 25,
+            "corner_hole_chance": 40,
+            "hanging_leaves_chance": 30,
+            "hanging_leaves_extension_chance": 15
+        },
+        "base_block": [
+            {
+                "name": "legend_forest:log_pale_olive",
+                "states": {
+                    "minecraft:block_face": "up"
+                }
+            }
+        ],
+        "may_grow_on": [
+            "minecraft:grass",
+            "minecraft:dirt",
+            "legend_forest:shimmer_grass_block",
+            "legend_forest:shimmer_grass_block_check",
+            { "tags": "q.any_tag('dirt')" }
+        ],
+        "may_replace": [
+            "minecraft:air",
+            "minecraft:tallgrass",
+            "legend_forest:leaves_pale_olive"
+        ],
+        "may_grow_through": [
+            "minecraft:air",
+            "minecraft:tallgrass",
+            "legend_forest:leaves_pale_olive"
+        ]
+    }
+}
